@@ -5,6 +5,7 @@ type Data = {
   name: string
 }
 
+// express api 마냥 req, res 사용가능.
 export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>

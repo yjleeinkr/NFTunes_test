@@ -1,34 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+`npx create-next-app@latest --ts`
 
-## Getting Started
+## next.js dev 실행
+`npm run dev`
 
-First, run the development server:
+## 라우팅
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+`pages` 디렉토리가 라우터연결의 root 위치가 된다.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- ex) `pages/api/hello` = `http://localhost:3000/api/hello`
+- ex) `pages/markets/index` = `http://localhost:3000/markets`
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Next.js 의 'get' 함수들
+> 해당 함수들은 호출하지 않아도 빌드시 자동으로 실행된다.
+> 즉, 해당 페이지의 컴포넌트가 랜더 되기전에 먼저 실행됨
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### getStaticProps
+해당 페이지 별로 데이터를 패칭함. (state 에 들어감.)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### getStaticPaths
+정해진 path 에 한해 정적라우팅이 되도록 함 (속도가 매우 빨라짐 ..?) 
 
-## Learn More
+### getServerSideProps
+빌드와 상관없이 매 페이지 요청마다 데이터를 서버로부터 가져옴.
 
-To learn more about Next.js, take a look at the following resources:
+## styled-component
+이슈 : css 가 랜더되는 속도가 페이지 랜더보다 느리다는데...
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## tailwindCss
