@@ -1,4 +1,4 @@
-import { MainMarket } from "../components/MainMarkets";
+import { MainMarket } from "../src/features/markets/MainMarkets";
 
 import {GetStaticProps, GetServerSideProps, NextPage} from 'next'
 import { getMarkets } from "./api/market.api";
