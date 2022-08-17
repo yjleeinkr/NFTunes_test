@@ -9,7 +9,7 @@ const IndexPage: NextPage = () => {
     <div className={styles.container}>
       <Head>
         <title>Redux Toolkit</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/front/public/favicon.ico" />
       </Head>
       <header className={styles.header}>
         <img src="/logo.svg" className={styles.logo} alt="logo" />
@@ -21,7 +21,7 @@ const IndexPage: NextPage = () => {
           <span>Learn </span>
           <a
             className={styles.link}
-            href="https://reactjs.org/"
+            href="front/pages/counter/index"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -30,7 +30,7 @@ const IndexPage: NextPage = () => {
           <span>, </span>
           <a
             className={styles.link}
-            href="https://redux.js.org/"
+            href="front/pages/counter/index"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -39,7 +39,7 @@ const IndexPage: NextPage = () => {
           <span>, </span>
           <a
             className={styles.link}
-            href="https://redux-toolkit.js.org/"
+            href="front/pages/counter/index"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -48,7 +48,7 @@ const IndexPage: NextPage = () => {
           ,<span> and </span>
           <a
             className={styles.link}
-            href="https://react-redux.js.org/"
+            href="front/pages/counter/index"
             target="_blank"
             rel="noopener noreferrer"
           >

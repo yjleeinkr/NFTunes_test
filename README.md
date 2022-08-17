@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# dApp_Store
-=======
 ## Front
 > ### 1. git clone, pull 이후 `npm install` 실행
 > 
@@ -75,4 +72,3 @@
 
 ### rtk-thunk
 파일 주석, 링크 참조
->>>>>>> front/main
