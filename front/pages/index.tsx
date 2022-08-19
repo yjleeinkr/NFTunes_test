@@ -1,32 +1,37 @@
-import { MainMarket } from "../src/features/markets/MainMarkets";
+import Head from "next/head";
+import Link from 'next/link';
 
-import {GetStaticProps, GetServerSideProps, NextPage} from 'next'
-import { getMarkets } from "./api/market.api";
+export default function Home() {
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+      <Head>
+        <title>Create Next App</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-// main Market 에 getStaticProps 로 등록된  markets 를 넘김
-export default function Main( { markets } : IMainProps) {
-  return(
-    <div>
-      <MainMarket markets={ markets } />
+      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
+        <h1 className="text-6xl font-bold">
+          Welcome to{" "}
+          <a className="text-blue-600" href="https://nextjs.org">
+            Next.js!
+          </a>
+        </h1>
+        <Link href = "/counter" >
+          <a className="text-6xl text-blue-600 font-bold">
+            /counter
+          </a>
+        </Link>
+        <Link href = "/markets" >
+          <a className="text-6xl text-blue-600 font-bold">
+            /markets
+          </a>
+        </Link>
+        <Link href = "/testzk" >
+          <a className="text-6xl text-blue-600 font-bold">
+            /testzk
+          </a>
+        </Link>
+      </main>
     </div>
-  )
-}
-
-// Main 랜더링 전에 실행되어 markets state 를 등록하려고 시도함!
-export const getStaticProps: GetStaticProps = async () => {
-  // API 에서 목록 받아옴.
-  const { markets } = await getMarkets();
-
-  // markets 가 존재하지 않을시 props 등록 취소.
-  if(!markets) {
-    return {
-      notFound: true,
-    }
-  }
-
-  return {
-    props: {
-      markets
-    }
-  };
+  );
 }
