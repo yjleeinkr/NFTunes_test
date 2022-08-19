@@ -9,14 +9,14 @@ export default function MarketPage({ market }: any) {
   const router = useRouter();
   // fallback : page's props is Empty
   if(router.isFallback) {// boolean
-   return <div>Loading...</div>
+   return <div className="flex flex-col items-center justify-center min-h-screen py-2">Loading...</div>
   }
 
   return (
-    <>
-      <div>잘 나오니?</div>
-      <div>{market}</div>
-    </>
+    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+      <h1>잘 나오니?</h1>
+      <h2>{market}</h2>
+    </div>
   )
 }
 
