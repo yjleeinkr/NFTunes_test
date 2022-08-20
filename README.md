@@ -1,5 +1,15 @@
 ## Front
 
+> ### 1. `cd front`
+> 
+> ### 2. git clone, pull 이후 `npm install or npm i` 실행
+> 
+> ### 3. front 실행 : `npm run dev`
+
+## 디렉토리
+```bash
+
+
 > ### 1. git clone, pull 이후 `npm install` 실행
 >
 > ### 2. front 실행 : `npm run dev`
@@ -8,20 +18,21 @@
 
 ```shell
 |
-|-- @types
+|-- @types // d.ts 모음
 |
-|-- pages
+|-- pages // 페이지 라우팅
 |   |-- api
 |   |-- counter
 |   |-- markets
 |-- public
 |
-|-- src
-|   |-- app
-|   |-- features
+|-- src // 컴포넌트, 기능위주
+|   |-- app // 반복 사용하는 함수 (ex: customHook, web3)
+|   |-- features // 해당 페이지의 기능
 |   |   |-- counter
 |   |   |-- markets
-|   |-- modules
+|   |   |-- zkSync
+|   |-- modules // rtk store 모음 (comineReducer)
 |
 |-- styles
 |
@@ -45,9 +56,8 @@
 >
 > 회원가입, 로그인 화면
 
----
+# 스택 설명
 
-# 기술 스택 설명
 
 ## 라우팅
 
@@ -63,12 +73,13 @@
 > 즉, 해당 페이지의 컴포넌트가 **랜더 되기전에** 먼저 실행됨
 
 ### getStaticProps
-
-해당 페이지 별로 데이터를 패칭함. (state 에 들어감.)
+해당 페이지 별로 데이터를 패칭함. (Props 를 페이지에 내려줌)
 
 ### getStaticPaths
 
 정해진 path 에 한해 정적라우팅이 되도록 함 (속도가 매우 빨라짐 ..?)
+
+또한 prams 를 넣어 해당 페이지에서 내려받을수 있다.
 
 ### getServerSideProps
 
@@ -76,9 +87,14 @@
 
 ### styled-component
 
-이슈 : css 가 랜더되는 속도가 페이지 랜더보다 느리다는데... 모르겠땅
 
-### tailwindCss
+### tailwindCSS
+```bash
+/pages/_app.tsx
+
+import '../styles/globals.css'
+```
+한번 import 로 모든 tsx 에서 `tailwindCSS` 사용 가능
 
 ### rtk
 
