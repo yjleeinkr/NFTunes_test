@@ -9,10 +9,10 @@ export default function AccountPage({ account }:any) {
   }
 
   return (
-    <>
-      <div>{account}의 개별 페이지입니다.</div>
-      <div>여기는 무슨페이지가 될까</div>
-    </>
+    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+      <h1>{account}의 개별 페이지입니다.</h1>
+      <h1>여기는 무슨페이지가 될까</h1>
+    </div>
   )
 }
 
