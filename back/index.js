@@ -1,8 +1,12 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const { sequelize } = require('./database/models/index');
+const mongoose = require('mongoose');
 const router = require('./routes/index');
+
+require('dotenv').config();
+const PORT = process.env.PORT || 4000;
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/nftMarket';
 
 app.use(
   cors({
@@ -14,11 +18,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/api', router);
 
-app.listen(4000, async () => {
+app.listen(PORT, async () => {
   try {
-    await sequelize.sync({ alter: true });
-    console.log('db synced, server onload 4000 🚀');
-  } catch (err) {
-    console.log(err);
+    await mongoose.connect(MONGODB_URI);
+    console.log(`connected to mongoDB, server's running on ${PORT} 🚀`);
+  } catch (error) {
+    console.log(error);
   }
 });
