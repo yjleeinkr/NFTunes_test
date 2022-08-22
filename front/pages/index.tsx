@@ -31,6 +31,11 @@ export default function Home() {
             /testzk
           </a>
         </Link>
+        <Link href = "/_main" >
+          <a className="text-6xl text-blue-600 font-bold">
+            /_main
+          </a>
+        </Link>
       </main>
     </div>
   );
