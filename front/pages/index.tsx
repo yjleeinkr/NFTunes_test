@@ -28,12 +28,12 @@ export default function Home() {
         </Link>
         <Link href = "/testzk" >
           <a className="text-6xl text-blue-600 font-bold">
-            /testzk
+            /testzk ( 여기까지는 next 예제 페이지 3개임 )
           </a>
         </Link>
         <Link href = "/_main" >
           <a className="text-6xl text-blue-600 font-bold">
-            /_main
+            /_main ( 여기가 메인페이지임! `/_main` 은 임시 라우팅임! )
           </a>
         </Link>
       </main>
