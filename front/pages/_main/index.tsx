@@ -22,10 +22,10 @@ const TempMain: NextPage = () => {
         <title>임시 인덱스</title>
         <meta name="description" content="임시 인덱스 페이지입니다." />
       </Head>
-      <div onWheel = {( e => wheel(e) )}>
+      <div className="w-full h-full"  onWheel = {( e => wheel(e) )}>
         <Header eventProps = {isWheel} />
-        <div className="w-full h-full bg-[#000]">
-          테스트중임다
+        <div className="w-full min-h-screen" style={{background: 'url(/test_bac.png)'}}>
+          <div className="mt-20 text-white">테스즈</div>
         </div>
       </div>
     </div>
