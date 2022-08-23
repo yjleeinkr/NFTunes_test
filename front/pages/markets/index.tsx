@@ -1,12 +1,12 @@
 import { MainMarket } from "../../src/features/markets/MainMarkets";
 
 import {GetStaticProps, GetServerSideProps, NextPage} from 'next'
-import { getMarkets } from "../api/market.api";
+import { getMarkets } from "../api/market.api"
 
 // main Market 에 getStaticProps 로 등록된  markets 를 넘김
 export default function Main( { markets }: IMainProps ) {
   return(
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="pt-20 flex flex-col items-center justify-center min-h-screen py-2">
       <MainMarket markets={ markets } />
     </div>
   )

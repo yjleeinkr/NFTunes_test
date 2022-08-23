@@ -1,5 +1,5 @@
 import Web3 from 'web3'
-import useWeb3 from '../../app/useWeb3'
+import useWeb3 from '../../hooks/useWeb3'
 import { useEffect, useState } from 'react';
 import ZkSync from './ZkSync';
 

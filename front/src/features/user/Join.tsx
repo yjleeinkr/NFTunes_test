@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import useWeb3 from '../../app/useWeb3';
-import { useAppSelector, useAppDispatch } from '../../app/hooks';
+import { useState } from 'react';
+import useWeb3 from '../../hooks/useWeb3';
+import { useAppSelector, useAppDispatch } from '../../hooks/exhook';
 import { joinAsync, userState } from './userSlice';
 import Login from './Login';
 

@@ -27,7 +27,7 @@
 |-- public
 |
 |-- src // 컴포넌트, 기능위주
-|   |-- app // 반복 사용하는 함수 (ex: customHook, web3)
+|   |-- hooks // 반복 사용하는 함수 (ex: customHook, web3)
 |   |-- features // 해당 페이지의 기능
 |   |   |-- counter
 |   |   |-- markets
