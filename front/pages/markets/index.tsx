@@ -1,21 +1,13 @@
 import { MainMarket } from "../../src/features/markets/MainMarkets";
 
 import {GetStaticProps, GetServerSideProps, NextPage} from 'next'
-import { getMarkets } from "../api/market.api";
-import { useWheels } from '../../src/hooks/useWheel';
-import Header from '../../src/features/_main/Header';
+import { getMarkets } from "../api/market.api"
 
 // main Market 에 getStaticProps 로 등록된  markets 를 넘김
 export default function Main( { markets }: IMainProps ) {
-
-  const { isWheel, eventWheel } = useWheels()
-
   return(
-    <div onWheel = {( e => eventWheel(e) )}>
-      <Header eventProps = {isWheel} />
-      <div className="pt-20 flex flex-col items-center justify-center min-h-screen py-2">
-        <MainMarket markets={ markets } />
-      </div>
+    <div className="pt-20 flex flex-col items-center justify-center min-h-screen py-2">
+      <MainMarket markets={ markets } />
     </div>
   )
 }
