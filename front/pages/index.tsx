@@ -16,12 +16,14 @@ const Main: NextPage = () => {
         <title>임시 인덱스</title>
         <meta name="description" content="임시 인덱스 페이지입니다." />
       </Head>
-      <div className="w-full h-full"  onWheel = {( e => eventWheel(e) )}>
+      <div className="w-full h-full" onWheel = {( e => eventWheel(e) )}>
         <Header eventProps = {isWheel} />
         <Gnb />
-        <div className="pt-20 w-full min-h-screen" style={{background: 'url(/test_bac.png)'}}>
-          <div className="text-white">
-            <span>테스트테스트</span>
+        <div className="w-full h-screen bg-black">
+          <div id="main-inner" className="mx-auto max-w-7xl pt-20 w-full min-h-screen" style={{background: 'url(/test_bac.png)'}}>
+            <div className="text-white">
+              <span>테스트테스트</span>
+            </div>
           </div>
         </div>
       </div>
