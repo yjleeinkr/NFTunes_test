@@ -19,7 +19,7 @@ function Counter() {
   const incrementValue = Number(incrementAmount) || 0
 
   return (
-    <div>
+    <div className="pt-20">
       <div className={styles.row}>
         <button
           className={styles.button}
