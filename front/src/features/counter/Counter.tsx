@@ -1,6 +1,5 @@
 import { useState } from 'react'
 
-// 커스텀 훅에
 import { useAppSelector, useAppDispatch } from '../../hooks/exhook'
 import {
   decrement,
