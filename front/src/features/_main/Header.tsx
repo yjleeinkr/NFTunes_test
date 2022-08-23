@@ -6,7 +6,6 @@ import { gnbCount, handleGnb } from './gnbSlice';
 
 const Header = ( { eventProps } ) => {
   let router = useRouter();
-  console.log(router)
   const dispatch = useAppDispatch()
 
   const moveHeader = () => {

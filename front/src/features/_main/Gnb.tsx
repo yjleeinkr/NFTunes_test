@@ -5,10 +5,9 @@ import { gnbCount, handleGnb } from './gnbSlice';
 const Gnb = () => {
   const dispatch = useAppDispatch()
   const topProperty = useAppSelector(gnbCount)
-  console.log(topProperty)
 
   return(
-    <div className={`fixed bg-slate-400 w-full h-screen left-0 right-auto bottom-auto ${topProperty}`}>
+    <div className={`fixed ${topProperty} bg-slate-400 w-full h-screen left-0 right-auto bottom-auto `}>
       <a onClick={() => dispatch(handleGnb())}>gnbTest</a>
     </div>
   )
