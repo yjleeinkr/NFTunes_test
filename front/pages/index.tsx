@@ -1,42 +1,37 @@
-import Head from "next/head";
-import Link from 'next/link';
+import { NextPage } from 'next';
+import Head from 'next/head';
 
-export default function Home() {
+import Header from '../src/features/_main/Header';
+import { useState } from 'react';
+
+// 'next/document' 의 `Head` 컴포넌트 를 사용함으로 SEO(Search Engine Optimization) 를 가능하게 만듬.
+const Main: NextPage = () => {
+  const [isWheel,setIsWheel] = useState<number>(-1)
+
+  const wheel = (e) => {
+    if (e.nativeEvent.deltaY > 0) {
+      setIsWheel(e.nativeEvent.deltaY)
+    } else {
+      setIsWheel(e.nativeEvent.deltaY)
+    }
+  }
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="h-full">
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>임시 인덱스</title>
+        <meta name="description" content="임시 인덱스 페이지입니다." />
       </Head>
-
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{" "}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
-        <Link href = "/counter" >
-          <a className="text-6xl text-blue-600 font-bold">
-            /counter
-          </a>
-        </Link>
-        <Link href = "/markets" >
-          <a className="text-6xl text-blue-600 font-bold">
-            /markets
-          </a>
-        </Link>
-        <Link href = "/testzk" >
-          <a className="text-6xl text-blue-600 font-bold">
-            /testzk ( 여기까지는 next 예제 페이지 3개임 )
-          </a>
-        </Link>
-        <Link href = "/_main" >
-          <a className="text-6xl text-blue-600 font-bold">
-            /_main ( 여기가 메인페이지임! `/_main` 은 임시 라우팅임! )
-          </a>
-        </Link>
-      </main>
+      <div className="w-full h-full"  onWheel = {( e => wheel(e) )}>
+        <Header eventProps = {isWheel} />
+        <div className="pt-20 w-full min-h-screen" style={{background: 'url(/test_bac.png)'}}>
+          <div className="text-white">
+            <span>테스즈</span>
+          </div>
+        </div>
+      </div>
     </div>
-  );
+  )
 }
+
+export default Main

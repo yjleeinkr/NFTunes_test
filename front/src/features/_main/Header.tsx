@@ -6,11 +6,6 @@ const Header = ( { eventProps } ) => {
   console.log(router)
 
   let amount
-  if (eventProps > 0) {
-    amount = -100
-  } else if (eventProps < 0 ) {
-    amount = 100
-  }
 
   const header = () => {
     let temp
