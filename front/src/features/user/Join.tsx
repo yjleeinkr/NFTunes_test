@@ -24,6 +24,7 @@ const Join = () => {
 
   return (
     <div>
+      <></>
       <input
         type="text"
         name="nickname"
