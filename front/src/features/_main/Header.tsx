@@ -1,13 +1,10 @@
 import { useRouter } from 'next/router'
+import Link from 'next/link';
 
 const Header = ( { eventProps } ) => {
   let router = useRouter();
 
-  console.log(router)
-
-  let amount
-
-  const header = () => {
+  const moveHeader = () => {
     let temp
     if (eventProps < 0) {
       temp = 'translate-y-0'
@@ -21,22 +18,16 @@ const Header = ( { eventProps } ) => {
     )
   }
 
-  const tabs = () => {
-    for (let i; i<=3; i++) {
-
-    }
-  }
-
   return(
-    <div className={header()}>
+    <div className={moveHeader()}>
       <div id="inner" className="flex justify-between text-zinc-400 items-center w-full h-full py-3.5 pr-9 pl-9 box-border mr-auto ml-auto">
         <a id="logo" className="">
           <span>Logo</span>
         </a>
         <div id="h-tab" className="flex justify-between w-52">
-          <a className="hover:text-white cursor-pointer">탭 1 임</a>
-          <a className="hover:text-white cursor-pointer">탭 2 임</a>
-          <a className="hover:text-white cursor-pointer">탭 3 임</a>
+          <Link href="/counter" className="hover:text-white cursor-pointer">Counter</Link>
+          <Link href="/markets" className="hover:text-white cursor-pointer">markets</Link>
+          <Link href="/testzk" className="hover:text-white cursor-pointer">testzk</Link>
         </div>
         {
 

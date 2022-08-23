@@ -2,10 +2,12 @@ import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
 
 // 각 리듀서 임포트. (기능별로 나눠놓은 features 에서)
 import counterReducer from '../features/counter/counterSlice'
+import wheelReducer from '../features/_main/headerSlice'
 
 // automatically combineReducer
 const reducer = {
-  counter: counterReducer
+  counter: counterReducer,
+  wheel: wheelReducer
 }
 
 // 가져온 리듀서를 createStore() 해줌.
