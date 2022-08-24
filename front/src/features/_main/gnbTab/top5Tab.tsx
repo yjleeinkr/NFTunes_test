@@ -8,13 +8,13 @@ const Top5Tab = (props) => {
 
   const musicList = () => {
     return tempArr2.map((v)=>{
-      return <Link href="/">{v}</Link>
+      return <span><Link href="/">{v}</Link></span>
     })
   }
 
   const auctionList = () => {
     return tempArr.map((v)=>{
-        return <Link href="/">{v}</Link>
+      return <span><Link href="/">{v}</Link></span>
     })
   }
 
@@ -22,14 +22,14 @@ const Top5Tab = (props) => {
     case 'music':
       return (
         <>
-          <Link href="/">Music Top 5</Link>
+          <h1><Link href="/">Music Top 5</Link></h1>
           {musicList()}
         </>
       )
     case 'auction':
       return (
         <>
-          <Link href="/">Auction Top 5</Link>
+          <h1><Link href="/">Auction Top 5</Link></h1>
           {auctionList()}
         </>
       )
