@@ -66,7 +66,7 @@ const MusicMenu = styled.ul`
 
 const IndividualMenu = styled.li`
   /* background: pink; */
-  width: 10%;
+  width: 12%;
   height: 100%;
   text-align: center;
   font-size: 20px;
