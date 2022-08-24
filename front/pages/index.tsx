@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { useWheels } from '../src/hooks/useWheel';
 import Header from '../src/features/_main/Header';
 import Gnb from '../src/features/_main/Gnb';
-
+import Login from '../src/features/user/Login';
 // 'next/document' 의 `Head` 컴포넌트 를 사용함으로 SEO(Search Engine Optimization) 를 가능하게 만듬.
 const Main: NextPage = () => {
   const { isWheel, eventWheel } = useWheels();
@@ -24,7 +24,7 @@ const Main: NextPage = () => {
             style={{ background: 'url(/test_bac.png)' }}
           >
             <div className="text-white">
-              <span>테스트테스트</span>
+              <Login />
             </div>
           </div>
         </div>

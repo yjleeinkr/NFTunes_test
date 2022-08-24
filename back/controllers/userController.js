@@ -23,6 +23,19 @@ exports.join = async (req, res) => {
   res.send(result);
 };
 
-exports.login = async (req, res) => {};
+exports.login = async (req, res) => {
+  const { account } = req.body;
+  try {
+    const existedAcct = await User.find({
+      account,
+    });
+    if (existedAcct.length === 0) throw new Error('no user');
+    res.send({ user: existedAcct[0] });
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 exports.quit = async (req, res) => {};
+
 exports.editUserInfo = async (req, res) => {};
