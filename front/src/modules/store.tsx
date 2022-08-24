@@ -14,6 +14,7 @@ interface AppProps {
 // 각 리듀서 임포트. (기능별로 나눠놓은 features 에서)
 import counterReducer from '../features/counter/counterSlice';
 import userReducer from '../features/user/userSlice';
+import gnbReducer from '../features/_main/gnbSlice';
 
 const persistConfig = {
   key: 'user',
@@ -25,6 +26,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   counter: counterReducer,
   user: userReducer,
+  gnb: gnbReducer,
 });
 
 const reducer = persistReducer(persistConfig, rootReducer);
