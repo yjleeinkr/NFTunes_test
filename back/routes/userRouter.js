@@ -1,7 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../database/models/index');
+const { join, login, quit, editUserInfo } = require('../controllers/userController');
 
-router.post('/join', async (req, res) => {});
+router.post('/join', join);
+router.post('/login', login);
+router.delete('/quit/:account', quit);
+router.patch('/editUser/:account', editUserInfo);
 
 module.exports = router;

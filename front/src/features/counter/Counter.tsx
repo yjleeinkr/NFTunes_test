@@ -1,7 +1,6 @@
 import { useState } from 'react'
 
-// 커스텀 훅에
-import { useAppSelector, useAppDispatch } from '../../app/hooks'
+import { useAppSelector, useAppDispatch } from '../../hooks/exhook'
 import {
   decrement,
   increment,
@@ -20,7 +19,7 @@ function Counter() {
   const incrementValue = Number(incrementAmount) || 0
 
   return (
-    <div>
+    <div className="pt-20">
       <div className={styles.row}>
         <button
           className={styles.button}
