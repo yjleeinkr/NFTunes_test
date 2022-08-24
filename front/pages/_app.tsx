@@ -4,7 +4,7 @@ import type { AppProps } from 'next/app';
 import { useWheels } from '../src/hooks/useWheel';
 import Header from '../src/features/_main/Header';
 import Gnb from '../src/features/_main/Gnb';
-
+import './app.css';
 function MyApp({ Component, pageProps }: AppProps) {
   const { isWheel, eventWheel } = useWheels();
 

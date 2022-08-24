@@ -6,6 +6,8 @@ import styled from 'styled-components';
 import userImg from '../../public/images/user.png';
 import Image from 'next/image';
 
+// worker : gyuri
+// last work : 220824
 const OutBox = styled.div`
   background: black;
   width: 100%;
@@ -45,11 +47,12 @@ const ProfileInfo = styled.div`
     font-size: 26px;
     margin-left: 20px;
     color: #fff;
+    font-family: 'Fly';
   }
 `;
 
 const ContentsBox = styled.div`
-  background: red;
+  /* background: red; */
   width: 100%;
   height: 600px;
   margin-top: 100px;
@@ -72,6 +75,7 @@ const IndividualMenu = styled.li`
   font-size: 20px;
   color: white;
   line-height: 46px;
+  font-family: 'SemiBold';
 
   > a {
     display: block;
