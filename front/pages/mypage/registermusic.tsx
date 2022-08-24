@@ -80,6 +80,7 @@ const AlbumForm = styled.form`
     height: 40px;
     background: #fff;
     margin: 0 auto;
+    cursor: pointer;
   }
 `;
 
