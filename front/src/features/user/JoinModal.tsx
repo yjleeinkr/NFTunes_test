@@ -9,7 +9,7 @@ const JoinModal = () => {
 
   return(
     <div className={` flex absolute items-center justify-center w-full h-full ${display} `}>
-      <div className={ `w-1/2 md:max-w-md mx-auto rounded overflow-y-auto bg-gray-500 z-20 ${display} `}>
+      <div className={ `w-1/2 md:max-w-md mx-auto rounded overflow-y-auto bg-gray-500 z-30 ${display} `}>
         <div id="join-inner" className="flex justify-center">
           <Join />
         </div>
