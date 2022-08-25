@@ -86,11 +86,9 @@ const IndividualMenu = styled.li`
 `;
 
 const Mypage: NextPage = () => {
-  const { isWheel, eventWheel } = useWheels();
 
   return (
-    <div onWheel={(e) => eventWheel(e)}>
-      <Header eventProps={isWheel} />
+    <div>
       <OutBox>
         <MainBox>
           <ProfileBox>

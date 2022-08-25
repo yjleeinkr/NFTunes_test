@@ -12,13 +12,7 @@ const Header = ( props ) => {
 
   const [] = useState<string>('')
 
-  const { web3, account, networkId, getAccounts } =  useWeb3()
-  // console.log(web3)
-  // console.log('account: ',account)
-
-  const clickHandler = () => {
-    getAccounts().then()
-  }
+  const { web3, account, networkId } =  useWeb3()
 
   let checkAcc
   (()=>{
@@ -72,7 +66,7 @@ const Header = ( props ) => {
           <div id="h-btn" className="flex flex-nowrap justify-between w-64">
             <a onClick={ () => clickModalBtn('gnb') } className="mr-3 mt-3 hover:text-white cursor-pointer">Gnb</a>
             <a onClick={ () => clickModalBtn('join') } className="mr-3 mt-3 hover:text-white cursor-pointer">Join</a>
-            <a onClick={ () => clickHandler() } className="mr-3 mt-3 hover:text-white cursor-pointer" >Click to Connect wallet: MetaMask</a>
+            <a className="mr-3 mt-3 hover:text-white cursor-pointer" >Click to Connect wallet: MetaMask</a>
           </div>
         </div>
       </div>
