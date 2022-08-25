@@ -1,10 +1,8 @@
 import Link from 'next/link';
 
 const Top5Tab = (props) => {
-  console.log(props.cate)
   const tempArr = ['auction1','auction2','auction3','auction4','auction5']
   const tempArr2 = ['music1','music2','music3','music4','music5']
-
 
   const musicList = () => {
     return tempArr2.map((v)=>{

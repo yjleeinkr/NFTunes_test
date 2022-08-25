@@ -19,13 +19,6 @@ const useWeb3 = () => {
     else {
       (async ()=>{
         try {
-          if (!window.ethereum) throw new Error("Error : no metamask");
-          const accounts = await window.ethereum.request({
-            method: 'eth_requestAccounts'
-          })
-          if (accounts && Array.isArray(accounts)) {
-            setAccount(accounts[0])
-          }
           const networkId: number = await web3.eth.net.getId()
           // ... get contract 작성
           setNetworkId(networkId)
@@ -36,7 +29,16 @@ const useWeb3 = () => {
     }
   },[web3])
 
-  return { web3, account, networkId }
+  const getAccounts = async () => {
+    const accounts = await window.ethereum.request({
+      method: 'eth_requestAccounts'
+    })
+    if (accounts && Array.isArray(accounts)) {
+      setAccount(accounts[0])
+    }
+  }
+
+  return { web3, account, networkId, getAccounts }
 }
 
 export default useWeb3
