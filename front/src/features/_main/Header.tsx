@@ -2,24 +2,50 @@ import { useRouter } from 'next/router'
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../hooks/exhook';
-import { gnbCount, handleGnb } from './gnbSlice';
+import { handleGnb, handleJoin, handleScroll, scrollCount } from '../../modules/modalSlice';
+import useWeb3 from '../../hooks/useWeb3';
+import { batch } from 'react-redux';
 
-const Header = ( { eventProps } ) => {
+const Header = ( props ) => {
   let router = useRouter();
   const dispatch = useAppDispatch()
 
+  const [] = useState<string>('')
+
+  const { web3, account, networkId } =  useWeb3()
+
+  let checkAcc
+  (()=>{
+    if (!account) {
+      checkAcc = '메타로그인필요'
+    } else {
+      checkAcc = account
+    }
+  })();
+
   const moveHeader = () => {
     let temp
-    if (eventProps < 0) {
+    if (props.isWheel < 0) {
       temp = 'translate-y-0'
-    } else if (eventProps > 0) {
+    } else if (props.isWheel > 0) {
       temp = '-translate-y-full'
     }
     return (
       `
-      fixed ${temp} w-full h-20 bg-gradient-to-b from-teal-300/50 transition duration-500 ease
+      fixed ${temp} w-full h-20 bg-gradient-to-b from-teal-300/50 
       `
     )
+  }
+
+  const clickModalBtn = (v) => {
+    batch( ()=> {
+      if ( v === 'gnb') {
+        dispatch(handleGnb())
+      } else if ( v === 'join') {
+        dispatch(handleJoin())
+      }
+      dispatch(handleScroll())
+    })
   }
 
   return(
@@ -37,9 +63,10 @@ const Header = ( { eventProps } ) => {
           {
 
           }
-          <div id="h-btn" className="flex justify-between w-36">
-            <a onClick={() => dispatch(handleGnb())} className="hover:text-white cursor-pointer">Gnb</a>
-            <a className="text-lime-400">현재 페이지: {router.pathname}</a>
+          <div id="h-btn" className="flex flex-nowrap justify-between w-64">
+            <a onClick={ () => clickModalBtn('gnb') } className="mr-3 mt-3 hover:text-white cursor-pointer">Gnb</a>
+            <a onClick={ () => clickModalBtn('join') } className="mr-3 mt-3 hover:text-white cursor-pointer">Join</a>
+            <a className="mr-3 mt-3 hover:text-white cursor-pointer" >Click to Connect wallet: MetaMask</a>
           </div>
         </div>
       </div>

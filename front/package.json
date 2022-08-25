@@ -27,6 +27,7 @@
     "redux-persist": "^6.0.0",
     "styled-components": "^5.3.5",
     "tailwind-styled-components": "^2.1.8",
+    "tailwindcss-autofill": "^1.0.2",
     "typesafe-actions": "^5.1.0",
     "web3": "^1.7.5",
     "zksync": "^0.13.1"

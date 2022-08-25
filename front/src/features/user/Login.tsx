@@ -1,19 +1,19 @@
-import { useEffect } from 'react';
 import { useAppSelector, useAppDispatch } from '../../hooks/exhook';
+import useWeb3 from '../../hooks/useWeb3';
 import { userState, loginAsync, logout } from './userSlice';
 
 const Login = () => {
   const user = useAppSelector(userState);
   const dispatch = useAppDispatch();
+  const { account } = useWeb3();
   console.log(user);
 
   const loginUser = async () => {
-    if (!window.ethereum) throw new Error('Error : no metamask');
-    const [account]: string[] = await window.ethereum.request({
-      method: 'eth_requestAccounts',
-    });
+    console.log(account);
+
     dispatch(loginAsync(account));
-    if (user.isNew && !user.isLogin) {
+    console.log('dispatch');
+    if (user.isNew === true && user.isLogin === false) {
       alert('회원가입창으로 이동');
       window.location.href = '/user/join';
     }

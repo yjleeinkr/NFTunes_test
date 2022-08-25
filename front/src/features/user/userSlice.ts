@@ -14,6 +14,7 @@ export const loginAsync = createAsyncThunk('user/login', async (account: string)
 
 const initialState: UserState = {
   userInfo: {
+    _id: '',
     account: '',
     nickname: '',
     email: '',
@@ -29,6 +30,8 @@ export const userSlice = createSlice({
   reducers: {
     logout: (state) => {
       state.isLogin = false;
+      state.isNew = true;
+      state.userInfo._id = undefined;
       state.userInfo.account = '';
       state.userInfo.email = '';
       state.userInfo.nickname = '';
@@ -62,6 +65,8 @@ export const userSlice = createSlice({
       })
       .addCase(loginAsync.rejected, (state) => {
         state.isLoading = false;
+        state.isLogin = false;
+        state.isNew = true;
       });
   },
 });
