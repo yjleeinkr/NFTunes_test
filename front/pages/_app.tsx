@@ -1,7 +1,7 @@
 import '../src/modules/globals.css';
 import type { AppProps } from 'next/app';
 import { Provider } from 'react-redux';
-import { store,persistor } from '../src/modules/store';
+import { store, persistor } from '../src/modules/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import Header from '../src/features/_main/Header';
 import GnbModal from '../src/features/_main/GnbModal';

@@ -16,7 +16,7 @@ const GnbModal = () => {
   }
 
   return(
-    <div className={ `fixed w-full h-screen bg-black z-10 ${topProperty} `}>
+    <div className={ `fixed w-full h-screen bg-black z-20 ${topProperty} `}>
       <div id="gnb-inner" className="mx-auto flex justify-between max-w-7xl text-zinc-400 h-full left-0 right-auto bottom-auto">
         <div id="gnb-pageTab1" className="flex flex-col w-2/5 p-12">
           <Top5Tab cate = {'music'}/>
