@@ -1,4 +1,5 @@
 declare interface IUserInfo {
+  _id: string | undefined;
   account: string;
   nickname: string;
   email: string;
