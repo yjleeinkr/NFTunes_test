@@ -1,7 +1,6 @@
 import { useAppDispatch, useAppSelector } from '../../hooks/exhook';
 import { gnbCount, handleGnb, handleScroll } from '../../modules/modalSlice';
 import Top5Tab from './gnbTab/top5Tab';
-import Link from 'next/link';
 import { batch } from 'react-redux';
 
 /* -top 속성으로 화면 옮김 */

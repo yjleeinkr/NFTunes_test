@@ -2,27 +2,21 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 import { useWheels } from '../src/hooks/useWheel';
 import Header from '../src/features/_main/Header';
-import GnbModal from '../src/features/_main/GnbModal';
-import { useAppSelector } from '../src/hooks/exhook';
-import { userState } from '../src/features/user/userSlice';
-import JoinModal from '../src/features/user/JoinModal';
-import { scrollCount } from '../src/modules/modalSlice';
+import Gnb from '../src/features/_main/Gnb';
 
 // 'next/document' 의 `Head` 컴포넌트 를 사용함으로 SEO(Search Engine Optimization) 를 가능하게 만듬.
 const Main: NextPage = () => {
-  const control = useAppSelector(scrollCount)
+  const { isWheel, eventWheel } = useWheels();
 
-  const user = useAppSelector(userState);
-
-  console.log(user)
   return (
     <div className="h-full">
       <Head>
         <title>임시 인덱스</title>
         <meta name="description" content="임시 인덱스 페이지입니다." />
       </Head>
-      <div className="w-full h-full">
-
+      <div className="w-full h-full" onWheel={(e) => eventWheel(e)}>
+        <Header eventProps={isWheel} />
+        <Gnb />
         <div className="w-full h-screen bg-black">
           <div
             id="main-inner"

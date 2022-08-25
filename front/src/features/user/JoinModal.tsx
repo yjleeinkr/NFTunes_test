@@ -1,8 +1,7 @@
-import { useAppDispatch, useAppSelector } from '../../hooks/exhook';
-import { joinCount, handleJoin, handleGnb, handleScroll } from '../../modules/modalSlice';
-import Link from 'next/link';
+import { useAppSelector } from '../../hooks/exhook';
+import { joinCount } from '../../modules/modalSlice';
+
 import Join from './Join';
-import { batch } from 'react-redux';
 
 /* -top 속성으로 화면 옮김 */
 const JoinModal = () => {
