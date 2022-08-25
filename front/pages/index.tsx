@@ -11,11 +11,11 @@ import Cat3 from '../src/test/cat3';
 
 // 'next/document' 의 `Head` 컴포넌트 를 사용함으로 SEO(Search Engine Optimization) 를 가능하게 만듬.
 const Main: NextPage = () => {
-  const control = useAppSelector(scrollCount)
+  const control = useAppSelector(scrollCount);
 
   const user = useAppSelector(userState);
 
-  console.log(user)
+  console.log(user);
   return (
     <div className="h-full">
       <Head>
