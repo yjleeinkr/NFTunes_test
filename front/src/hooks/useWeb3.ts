@@ -1,44 +1,41 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 // const Web3 = require('web3/dist/web3.min')
-import Web3 from 'web3'
+import Web3 from 'web3';
 
 const useWeb3 = () => {
-  const [web3, setWeb3] = useState<Web3 | undefined>(undefined)
-  const [account, setAccount] = useState<string>('')
-  const [networkId, setNetworkId] = useState<number>(0)
+  const [web3, setWeb3] = useState<Web3 | undefined>(undefined);
+  const [account, setAccount] = useState<string>('');
+  const [networkId, setNetworkId] = useState<number>(0);
 
-  useEffect( ()=>{
+  useEffect(() => {
     if (!web3)
       try {
         if (window.ethereum) {
-          setWeb3(new Web3(window.ethereum as any))
+          setWeb3(new Web3(window.ethereum as any));
         }
       } catch (e) {
-        console.error(e)
+        console.error(e);
       }
     else {
-      (async ()=>{
+      (async () => {
         try {
-          const networkId: number = await web3.eth.net.getId()
+          const networkId: number = await web3.eth.net.getId();
           // ... get contract 작성
-          setNetworkId(networkId)
-        } catch(e) {
-          console.error(e)
+          setNetworkId(networkId);
+          const accounts = await window.ethereum.request({
+            method: 'eth_requestAccounts',
+          });
+          if (accounts && Array.isArray(accounts)) {
+            setAccount(accounts[0]);
+          }
+        } catch (e) {
+          console.error(e);
         }
       })();
     }
-  },[web3])
+  }, [web3]);
 
-  const getAccounts = async () => {
-    const accounts = await window.ethereum.request({
-      method: 'eth_requestAccounts'
-    })
-    if (accounts && Array.isArray(accounts)) {
-      setAccount(accounts[0])
-    }
-  }
+  return { web3, networkId, account };
+};
 
-  return { web3, account, networkId, getAccounts }
-}
-
-export default useWeb3
+export default useWeb3;
