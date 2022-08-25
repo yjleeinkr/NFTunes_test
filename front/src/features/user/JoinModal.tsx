@@ -1,7 +1,7 @@
 import { useAppSelector } from '../../hooks/exhook';
 import { joinCount } from '../../modules/modalSlice';
 
-import Join from './Join';
+import Join from './JoinForm';
 
 /* -top 속성으로 화면 옮김 */
 const JoinModal = () => {
