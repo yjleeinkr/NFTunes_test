@@ -1,6 +1,4 @@
 import { NextPage } from 'next';
-import Header from '../../src/features/_main/Header';
-import { useWheels } from '../../src/hooks/useWheel';
 import styled from 'styled-components';
 import Imgurl from '../../public/images/cover.jpg';
 import Image from 'next/image';
@@ -133,11 +131,8 @@ const MusicInfo = styled.div`
   }
 `;
 const Sellpage: NextPage = () => {
-  const { isWheel, eventWheel } = useWheels();
-
   return (
-    <div onWheel={(e) => eventWheel(e)}>
-      <Header eventProps={isWheel} />
+    <>
       <OutBox>
         <MainBox>
           <h1>Music Market</h1>
@@ -215,7 +210,7 @@ const Sellpage: NextPage = () => {
           </SellBox>
         </MainBox>
       </OutBox>
-    </div>
+    </>
   );
 };
 export default Sellpage;
