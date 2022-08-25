@@ -55,6 +55,12 @@
 						"internalType": "uint256",
 						"name": "auctionEnd",
 						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
 					}
 				],
 				"name": "AuctionEnded",
@@ -92,17 +98,29 @@
 				"type": "event"
 			},
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					}
+				],
 				"name": "AuctionCancel",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					}
+				],
 				"name": "AuctionEnd",
 				"outputs": [],
-				"stateMutability": "payable",
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -179,6 +197,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "TimeExtension",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "TokenOwner",
 				"outputs": [
@@ -207,6 +238,19 @@
 			{
 				"inputs": [],
 				"name": "auctionStart",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "date",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -311,11 +355,11 @@
 	},
 	"sources": {
 		"Auction.sol": {
-			"keccak256": "0xc7b77b6393f528adc946382e19f9d62fcac3a256d8c0d89aed28527554142a0b",
+			"keccak256": "0x7ee68142de3458ffe3c2d2ce0271c2df3253cb527900016b3a18bca3446a8cb7",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://e3b52db17c3c988513dc8eb8ff0ef50ed342a0ee012cfc74af82e82e2d498976",
-				"dweb:/ipfs/QmXbegped7agohuUex4hLaaZwBH7TzztG1qKcudsrnZr44"
+				"bzz-raw://fcd62a9a2f12af414f216c4fc45f174d2ccc354c1e90736621f1eca5abbf9245",
+				"dweb:/ipfs/QmPfqeEELxrwxE9efW7z6QE3RZyXQkLNJiKXUkLyFvsWZK"
 			]
 		},
 		"MintMusicToken.sol": {
