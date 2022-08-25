@@ -2,10 +2,15 @@
 
 pragma solidity ^0.8.15;
 
+
+// import "./Approve.sol";
 import "./node_modules/openzeppelin-solidity/contracts/access/Ownable.sol";
 
 
 contract Subscribe is Ownable{
+
+    // Approve public Sign;
+
     uint256 firstPayment;
     uint256 nextPayment;
     address marketOwner; //0x456F37fB5Ae3c15D98fd5deBa93121B5435f9A50
@@ -22,13 +27,28 @@ contract Subscribe is Ownable{
     function setUserState(address _owner, bool _state) public{
         subscribeState[_owner] = _state;
     }
+
+
+    function _transfer(
+        address from,
+        address to,
+        uint256 amount
+    ) internal virtual {
+        require(from != address(0), "transfer from the zero address");
+        require(to != address(0), "transfer to the zero address");
+
+        emit Transfer(from, to, amount);
+    }
+
     
     function transferFrom(
         address from,
         address to,
         uint256 amount
     ) public virtual returns (bool) {
-        _spendAllowance(from, approver, amount);
+
+        spendAllowance(from, approver, amount);
+
         _transfer(from,to,amount);
         return true;
     }
@@ -39,10 +59,13 @@ contract Subscribe is Ownable{
 
         setUserState(msg.sender,true);
       
-        require(msg.value == sub_price, "Please charge your wallet");
+
+        require(msg.value < sub_price, "Please charge your wallet");
         require(isApprovedForAll(msg.sender,approver));
         
-        payable(msg.sender).transfer(msg.value);
+        payable(_to).transfer(msg.value);
+
+        
 
         transferFrom(approver,marketOwner,sub_price);
 
@@ -60,6 +83,8 @@ contract Subscribe is Ownable{
         return nextPayment;
     }
 
+
+
     // //
     // function nextSubscribe(address payable _owner) public payable{
 
@@ -68,6 +93,7 @@ contract Subscribe is Ownable{
 
     //     _owner.transfer(msg.value);
     // }
+
 
  
     function cancelSubscribe(address payable _owner) public{
@@ -114,11 +140,14 @@ contract Subscribe is Ownable{
         return _allowances[owner][spender];
     }
 
-    function _spendAllowance(
+
+    function spendAllowance(
         address owner,
         address spender,
         uint256 amount
-    ) internal virtual {
+    ) public virtual {
+
+   
         uint256 currentAllowance = allowance(owner, spender);
         if (currentAllowance != type(uint256).max) {
             require(currentAllowance >= amount, "ERC20: insufficient allowance");
@@ -128,16 +157,14 @@ contract Subscribe is Ownable{
         }
     }
 
-    function _transfer(
-        address from,
-        address to,
-        uint256 amount
-    ) internal virtual {
-        require(from != address(0), "transfer from the zero address");
-        require(to != address(0), "transfer to the zero address");
 
-        emit Transfer(from, to, amount);
 
-    }
+
+  
+
+
+
+    
 
 }
+
