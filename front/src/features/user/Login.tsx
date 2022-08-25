@@ -13,6 +13,10 @@ const Login = () => {
       method: 'eth_requestAccounts',
     });
     dispatch(loginAsync(account));
+    if (user.isNew && !user.isLogin) {
+      alert('회원가입창으로 이동');
+      window.location.href = '/user/join';
+    }
   };
 
   const logoutUser = async () => {
