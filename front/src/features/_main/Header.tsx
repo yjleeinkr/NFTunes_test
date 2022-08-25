@@ -32,7 +32,7 @@ const Header = ( props ) => {
     }
     return (
       `
-      fixed ${temp} w-full h-20 bg-gradient-to-b from-teal-300/50 
+      fixed translate-y-0 w-full h-20 bg-gradient-to-b from-teal-300/50 z-10
       `
     )
   }
