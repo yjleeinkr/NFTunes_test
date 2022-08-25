@@ -10,11 +10,11 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <Store>
-      <div className="w-full h-full" onWheel={(e) => eventWheel(e)}>
+      <Component {...pageProps} />
+      {/* <div className="w-full h-full" onWheel={(e) => eventWheel(e)}>
         <Header eventProps={isWheel} />
         <Gnb />
-        <Component {...pageProps} />
-      </div>
+      </div> */}
     </Store>
   );
 }

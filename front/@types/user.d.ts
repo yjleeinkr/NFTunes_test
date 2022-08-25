@@ -7,4 +7,6 @@ declare interface IUserInfo {
 declare interface UserState {
   userInfo: IUserInfo;
   isNew: boolean;
+  isLogin: boolean;
+  isLoading: boolean;
 }
