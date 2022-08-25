@@ -2,15 +2,16 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const router = require('./routes/index');
-const mongodb = require('mongodb');
+// const mongodb = require('mongodb');
+const mongoose = require('mongoose');
 
 require('dotenv').config();
 const PORT = process.env.PORT || 4000;
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/nftMarket';
 const MONGODB_PW = process.env.MONGODB_PW;
 
-const MongoClient = mongodb.MongoClient;
-const mongoUrl = `mongodb+srv://team1:${MONGODB_PW}@nftmarket.skj99nw.mongodb.net/nftMarket?retryWrites=true&w=majority`;
+// const MongoClient = mongodb.MongoClient;
+const mongoAtlasUrl = `mongodb+srv://team1:${MONGODB_PW}@nftmarket.skj99nw.mongodb.net/nftMarket?retryWrites=true&w=majority`;
 
 app.use(
   cors({
@@ -22,7 +23,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/api', router);
 
-MongoClient.connect(mongoUrl)
+mongoose
+  .connect(mongoAtlasUrl)
   .then((client) => {
     console.log('mongo connected');
     console.log(client);
