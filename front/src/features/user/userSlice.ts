@@ -9,6 +9,7 @@ export const joinAsync = createAsyncThunk('user/join', async (userInfo: IUserInf
 
 export const loginAsync = createAsyncThunk('user/login', async (account: string) => {
   const response: AxiosResponse = await axios.post('/api/user/login', { account });
+  console.log('리스폰스 데이터', response.data);
   return response.data;
 });
 
@@ -19,7 +20,7 @@ const initialState: UserState = {
     nickname: '',
     email: '',
   },
-  isNew: true,
+  isNew: 'untracked',
   isLogin: false,
   isLoading: false,
 };
@@ -30,7 +31,7 @@ export const userSlice = createSlice({
   reducers: {
     logout: (state) => {
       state.isLogin = false;
-      state.isNew = true;
+      state.isNew = 'untracked';
       state.userInfo._id = undefined;
       state.userInfo.account = '';
       state.userInfo.email = '';
@@ -40,25 +41,21 @@ export const userSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(joinAsync.fulfilled, (state, action) => {
-        if (action.payload.isNew) {
-          state.isNew = true;
+        if (action.payload.isNew === 'true') {
+          state.isNew = 'false';
           state.isLogin = true;
           state.userInfo = action.payload.user;
         } else {
-          state.isNew = false;
+          state.isNew = 'untracked';
           state.isLogin = true;
           state.userInfo = action.payload.user;
         }
       })
       .addCase(loginAsync.fulfilled, (state, action) => {
-        if (action.payload) {
-          state.isNew = false;
-          state.isLogin = true;
-          state.userInfo = action.payload.user;
-          state.isLoading = false;
-        } else {
-          state.isLoading = false;
-        }
+        state.isNew = 'false';
+        state.isLogin = true;
+        state.userInfo = action.payload.user;
+        state.isLoading = false;
       })
       .addCase(loginAsync.pending, (state) => {
         state.isLoading = true;
@@ -66,7 +63,11 @@ export const userSlice = createSlice({
       .addCase(loginAsync.rejected, (state) => {
         state.isLoading = false;
         state.isLogin = false;
-        state.isNew = true;
+        state.isNew = 'true';
+        state.userInfo._id = undefined;
+        state.userInfo.account = '';
+        state.userInfo.email = '';
+        state.userInfo.nickname = '';
       });
   },
 });

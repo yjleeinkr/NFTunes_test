@@ -7,11 +7,11 @@ import Login from '../src/features/user/Login';
 
 // 'next/document' 의 `Head` 컴포넌트 를 사용함으로 SEO(Search Engine Optimization) 를 가능하게 만듬.
 const Main: NextPage = () => {
-  const control = useAppSelector(scrollCount)
+  const control = useAppSelector(scrollCount);
 
   const user = useAppSelector(userState);
 
-  console.log(user)
+  console.log(user);
   return (
     <div className="h-full">
       <Head>
@@ -19,7 +19,6 @@ const Main: NextPage = () => {
         <meta name="description" content="임시 인덱스 페이지입니다." />
       </Head>
       <div className="w-full h-full">
-
         <div className="w-full h-screen bg-black">
           <div
             id="main-inner"
