@@ -22,7 +22,11 @@ const Join = () => {
     setEmail('');
   };
 
-  useEffect(() => {}, [user]);
+  useEffect(() => {
+    if (user.userInfo.account !== '') {
+      window.location.href = '/';
+    }
+  }, [user]);
 
   return (
     <div>

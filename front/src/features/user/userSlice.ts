@@ -9,8 +9,6 @@ export const joinAsync = createAsyncThunk('user/join', async (userInfo: IUserInf
 
 export const loginAsync = createAsyncThunk('user/login', async (account: string) => {
   const response: AxiosResponse = await axios.post('/api/user/login', { account });
-  console.log(response, '데이터');
-  if (response.data.name === 'AxiosError') return;
   return response.data;
 });
 
@@ -28,30 +26,46 @@ const initialState: UserState = {
 export const userSlice = createSlice({
   name: 'user',
   initialState,
-  reducers: {},
+  reducers: {
+    logout: (state) => {
+      state.isLogin = false;
+      state.userInfo.account = '';
+      state.userInfo.email = '';
+      state.userInfo.nickname = '';
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(joinAsync.fulfilled, (state, action) => {
         if (action.payload.isNew) {
           state.isNew = true;
+          state.isLogin = true;
           state.userInfo = action.payload.user;
         } else {
           state.isNew = false;
+          state.isLogin = true;
           state.userInfo = action.payload.user;
         }
       })
       .addCase(loginAsync.fulfilled, (state, action) => {
         if (action.payload) {
-          console.log(action.payload);
+          state.isNew = false;
+          state.isLogin = true;
+          state.userInfo = action.payload.user;
+          state.isLoading = false;
         } else {
           state.isLoading = false;
         }
       })
       .addCase(loginAsync.pending, (state) => {
         state.isLoading = true;
+      })
+      .addCase(loginAsync.rejected, (state) => {
+        state.isLoading = false;
       });
   },
 });
 
+export const { logout } = userSlice.actions;
 export const userState = (state: AppState) => state.user;
 export default userSlice.reducer;
