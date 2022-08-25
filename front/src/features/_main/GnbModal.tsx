@@ -1,12 +1,20 @@
 import { useAppDispatch, useAppSelector } from '../../hooks/exhook';
-import { gnbCount, handleGnb } from './gnbSlice';
+import { gnbCount, handleGnb, handleScroll } from '../../modules/modalSlice';
 import Top5Tab from './gnbTab/top5Tab';
 import Link from 'next/link';
+import { batch } from 'react-redux';
 
 /* -top 속성으로 화면 옮김 */
-const Gnb = () => {
+const GnbModal = () => {
   const dispatch = useAppDispatch()
   const topProperty = useAppSelector(gnbCount)
+
+  const clickModal = () => {
+    batch( ()=> {
+      dispatch(handleGnb())
+      dispatch(handleScroll())
+    })
+  }
 
   return(
     <div className={ `fixed w-full h-screen bg-black z-10 ${topProperty} `}>
@@ -18,11 +26,11 @@ const Gnb = () => {
           <Top5Tab cate = {'auction'}/>
         </div>
         <div id="gnb-userTab" className=" w-1/5 p-12">
-          <a onClick={() => dispatch(handleGnb())}>gnbTest</a>
+          <a onClick={ () => {clickModal()} }>gnbTest</a>
         </div>
       </div>
     </div>
   )
 }
 
-export default Gnb
+export default GnbModal

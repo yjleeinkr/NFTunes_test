@@ -1,4 +1,4 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
+import { configureStore, ThunkAction, Action, createStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import { FC, ReactNode } from 'react';
 import { persistStore } from 'redux-persist';
@@ -14,7 +14,7 @@ interface AppProps {
 // 각 리듀서 임포트. (기능별로 나눠놓은 features 에서)
 import counterReducer from '../features/counter/counterSlice';
 import userReducer from '../features/user/userSlice';
-import gnbReducer from '../features/_main/gnbSlice';
+import modalReducer from './modalSlice';
 
 const persistConfig = {
   key: 'user',
@@ -26,25 +26,17 @@ const persistConfig = {
 const rootReducer = combineReducers({
   counter: counterReducer,
   user: userReducer,
-  gnb: gnbReducer,
+  modal: modalReducer,
 });
 
 const reducer = persistReducer(persistConfig, rootReducer);
 
 // 가져온 리듀서를 createStore() 해줌.
-const store = configureStore({
+export const store = configureStore({
   reducer,
 });
 
-const persistor = persistStore(store);
-
-const Store: FC<AppProps> = ({ children }) => {
-  return (
-    <Provider store={store}>
-      <PersistGate persistor={persistor}>{children}</PersistGate>
-    </Provider>
-  );
-};
+export const persistor = persistStore(store);
 
 export type AppState = ReturnType<typeof store.getState>;
 
@@ -52,4 +44,3 @@ export type AppDispatch = typeof store.dispatch;
 
 export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, AppState, unknown, Action<string>>;
 
-export default Store;
