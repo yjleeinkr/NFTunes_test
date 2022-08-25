@@ -17,7 +17,9 @@ const Wrap = (props) => {
     })
   )
   return (
-    <div onWheel={ (e)=>{eventWheel(e)}}>
+    <div
+      className="w-full h-full bg-black snap-y snap-mandatory overflow-y-scroll"
+    >
       {<InnerChildren />}
     </div>
   )
