@@ -1,8 +1,8 @@
-import Join from '../../src/features/user/Join';
+import JoinForm from '../../src/features/user/JoinForm';
 const join = () => {
   return (
     <>
-      <Join />
+      <JoinForm />
     </>
   );
 };

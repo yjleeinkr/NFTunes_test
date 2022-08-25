@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
     "@metamask/providers": "^9.1.0",
     "@reduxjs/toolkit": "^1.8.4",
     "axios": "^0.27.2",
@@ -18,9 +20,12 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-redux": "^8.0.2",
+    "react-use-scroll-snap": "^0.0.4",
     "redux-persist": "^6.0.0",
     "styled-components": "^5.3.5",
     "tailwind-styled-components": "^2.1.8",
+    "tailwindcss-autofill": "^1.0.2",
+    "tweezer.js": "^1.5.0",
     "typesafe-actions": "^5.1.0",
     "web3": "^1.7.5",
     "zksync": "^0.13.1"

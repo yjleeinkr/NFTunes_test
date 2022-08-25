@@ -1,6 +1,9 @@
 import Minting from '../../src/features/mypage/Minting';
 import styled from 'styled-components';
 import Image from 'next/image';
+
+// worker : gyuri
+// last work : 220824
 const OutBox = styled.div`
   background: black;
   width: 100%;
@@ -20,6 +23,8 @@ const MainBox = styled.div`
     width: 80%;
     margin: 0 auto;
     border-bottom: 0.5px solid #646464;
+    font-family: 'Regular';
+    font-size: 20px;
   }
 `;
 
@@ -33,6 +38,8 @@ const UploadContainer = styled.div`
     margin-top: 60px;
     text-align: center;
     color: #efefef;
+    font-family: 'Light';
+    font-size: 20px;
   }
 `;
 const AlbumBox = styled.div`
@@ -65,21 +72,49 @@ const AlbumInfo = styled.div`
   background: skyblue;
   width: 50%;
   height: 400px;
+  > h1 {
+    padding: 20px;
+    font-family: 'Fly';
+    color: #efefef;
+  }
 `;
 
 const AlbumForm = styled.form`
   background: red;
   width: 90%;
-  height: 400px;
+  height: 300px;
   margin: 0 auto;
-  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Fly';
+  justify-content: space-between;
 
   #submit {
+    box-shadow: inset 0px 0px 29px -20px #ffffff;
+    background: linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+    background-color: #ededed;
+    border: 1px solid #dcdcdc;
     display: block;
-    width: 100px;
-    height: 40px;
-    background: #fff;
+    cursor: pointer;
+    color: #575757;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 35px;
+    font-family: 'Regular';
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #ffffff;
     margin: 0 auto;
+  }
+
+  #submit:hover {
+    background: linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+    background-color: #dfdfdf;
+  }
+
+  #submit:active {
+    position: relative;
+    top: 1px;
   }
 `;
 
@@ -95,12 +130,12 @@ const MintingMusicToken = () => {
               <MusicUpload />
             </AlbumCoverBox>
             <AlbumInfo>
+              <h1>앨범 소개</h1>
               <AlbumForm>
-                <h1>앨범 소개</h1>
                 <input type="text" placeholder="작사가" />
                 <input type="text" placeholder="작곡가" />
-                <textarea cols={60} rows={10}></textarea>
-                <input type="submit" id="submit" value="등록하기" />
+                <textarea cols={60} rows={8} placeholder="곡 소개"></textarea>
+                <input type="submit" id="submit" value="Upload" />
               </AlbumForm>
             </AlbumInfo>
           </AlbumBox>

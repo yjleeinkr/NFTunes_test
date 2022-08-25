@@ -1,21 +1,26 @@
-import Store from '../src/modules/store';
 import '../src/modules/globals.css';
 import type { AppProps } from 'next/app';
-import { useWheels } from '../src/hooks/useWheel';
+import { Provider } from 'react-redux';
+import { store, persistor } from '../src/modules/store';
+import { PersistGate } from 'redux-persist/integration/react';
 import Header from '../src/features/_main/Header';
-import Gnb from '../src/features/_main/Gnb';
+import GnbModal from '../src/features/_main/GnbModal';
+import JoinModal from '../src/features/user/JoinModal';
+import Wrap from '../src/features/_main/Wrap';
+import './app.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const { isWheel, eventWheel } = useWheels();
-
   return (
-    <Store>
-      <div className="w-full h-full" onWheel={(e) => eventWheel(e)}>
-        <Header eventProps={isWheel} />
-        <Gnb />
-        <Component {...pageProps} />
-      </div>
-    </Store>
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <Wrap>
+          <Header />
+          <GnbModal />
+          <JoinModal />
+          <Component {...pageProps} />
+        </Wrap>
+      </PersistGate>
+    </Provider>
   );
 }
 
