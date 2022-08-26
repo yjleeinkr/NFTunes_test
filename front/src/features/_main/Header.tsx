@@ -9,14 +9,14 @@ const Header = (props) => {
   let router = useRouter();
   const dispatch = useAppDispatch();
 
-  let checkAcc;
-  (() => {
-    if (!account) {
-      checkAcc = '메타로그인필요';
-    } else {
-      checkAcc = account;
-    }
-  })();
+  // let checkAcc;
+  // (() => {
+  //   if (!account) {
+  //     checkAcc = '메타로그인필요';
+  //   } else {
+  //     checkAcc = account;
+  //   }
+  // })();
 
   const clickModalBtn = (v) => {
     batch(() => {
@@ -31,10 +31,15 @@ const Header = (props) => {
 
   return (
     <div className="w-full h-full">
-      <div className={`
+      <div
+        className={`
       fixed ${props.isWheel} w-full h-20 bg-gradient-to-b from-teal-300/50 z-10
-      `}>
-        <div id="inner" className="flex justify-between text-zinc-400 items-center max-w-7xl h-full py-3.5 pr-9 pl-9 box-border mr-auto ml-auto">
+      `}
+      >
+        <div
+          id="inner"
+          className="flex justify-between text-zinc-400 items-center max-w-7xl h-full py-3.5 pr-9 pl-9 box-border mr-auto ml-auto"
+        >
           <a id="logo" className="w-36">
             <Link href="/">
               <span className="hover:text-white cursor-pointer">Logo</span>
