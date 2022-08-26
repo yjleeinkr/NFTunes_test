@@ -41,3 +41,19 @@ exports.login = async (req, res) => {
 exports.quit = async (req, res) => {};
 
 exports.editUserInfo = async (req, res) => {};
+
+exports.checkJoinForm = async (req, res) => {
+  const { nickname } = req.body;
+  try {
+    const existedNick = await User.find({
+      nickname,
+    });
+    if (existedNick.length > 0) {
+      res.send({ isOkToUse: false });
+    } else {
+      res.send({ isOkToUse: true });
+    }
+  } catch (err) {
+    console.log(err);
+  }
+};

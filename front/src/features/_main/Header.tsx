@@ -4,10 +4,12 @@ import { useAppDispatch, useAppSelector } from '../../hooks/exhook';
 import { handleGnb, handleJoin, handleScroll, scrollCount } from '../../modules/modalSlice';
 import useWeb3 from '../../hooks/useWeb3';
 import { batch } from 'react-redux';
+import { userState } from '../user/userSlice';
 
 const Header = (props) => {
   let router = useRouter();
   const dispatch = useAppDispatch();
+  const user = useAppSelector(userState);
 
   // let checkAcc;
   // (() => {
@@ -64,7 +66,12 @@ const Header = (props) => {
             <a onClick={() => clickModalBtn('join')} className="mr-3 mt-3 hover:text-white cursor-pointer">
               Join
             </a>
-            <a className="mr-3 mt-3 hover:text-white cursor-pointer">Click to Connect wallet: MetaMask</a>
+            {/* <a className="mr-3 mt-3 hover:text-white cursor-pointer">Click to Connect wallet: MetaMask</a> */}
+            {user.isLogin ? (
+              <span>{user.userInfo.nickname}님 안녕하세요</span>
+            ) : (
+              <span>{user.userInfo.nickname}login해주세요</span>
+            )}
           </div>
         </div>
       </div>
