@@ -1,6 +1,5 @@
 import { useAppSelector, useAppDispatch } from '../../hooks/exhook';
 import useWeb3 from '../../hooks/useWeb3';
-import { useEffect, useState } from 'react';
 import { userState, loginAsync, logout } from './userSlice';
 
 const Login = () => {
@@ -13,7 +12,10 @@ const Login = () => {
       window.location.href = '/user/join';
     }
     if (user.isNew === 'untracked') {
-      dispatch(loginAsync(account));
+      const result = await dispatch(loginAsync(account));
+      if (result.type === 'user/login/rejected') {
+        window.location.href = '/user/join';
+      }
     }
     if (!user.isLogin && user.isNew === 'false') {
       dispatch(loginAsync(account));
@@ -25,12 +27,6 @@ const Login = () => {
     localStorage.removeItem('user');
     alert('로그아웃 완료');
   };
-
-  // useEffect(() => {
-  //   if (!isFirst) {
-  //     window.location.href = '/user/join';
-  //   }
-  // }, [isFirst]);
 
   return (
     <div className="pt-5 mt-5 mb-10 snap-start flex-shrink-0">
