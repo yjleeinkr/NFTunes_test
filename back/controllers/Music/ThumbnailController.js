@@ -24,10 +24,11 @@ const thumbnail = async (req, res) => {
     };
 
     try {
+      //주소 변동
       let readableStreamForFile = fs.createReadStream(result.path);
       const result2 = await pinata.pinFileToIPFS(readableStreamForFile, options);
       console.log('파일어드레스?', result2);
-      //   const pinata_result = await pinata.pinFromFS('public/upload', options);
+      //   const pinata_result = await pinata.pinFromFS('public/upload', options); //주소 고정
       //   console.log(pinata_result);
       console.log('됐다는 거니?');
     } catch (e) {
