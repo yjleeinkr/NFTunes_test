@@ -1,12 +1,13 @@
 import Link from 'next/link';
-import { useAppDispatch } from '../../hooks/exhook';
+import { useAppDispatch, useAppSelector } from '../../hooks/exhook';
 import { handleGnb, handleJoin, handleScroll } from '../../modules/modalSlice';
 import useWeb3 from '../../hooks/useWeb3';
 import { batch } from 'react-redux';
+import { userState } from '../user/userSlice';
 
 const Header = ( props ) => {
   const dispatch = useAppDispatch()
-
+  const user = useAppSelector(userState)
   const { web3, account, networkId } =  useWeb3()
 
   let checkAcc
@@ -50,6 +51,11 @@ const Header = ( props ) => {
             <a onClick={ () => clickModalBtn('gnb') } className="mr-3 mt-3 hover:text-white cursor-pointer">Gnb</a>
             <a onClick={ () => clickModalBtn('join') } className="mr-3 mt-3 hover:text-white cursor-pointer">Join</a>
             <a className="mr-3 mt-3 hover:text-white cursor-pointer" >Click to Connect wallet: MetaMask</a>
+            {user.isLogin ? (
+              <span>{user.userInfo.nickname}님 안녕하세요</span>
+            ) : (
+              <span>login해주세요</span>
+            )}
           </div>
         </div>
       </div>
