@@ -55,7 +55,7 @@ contract Subscribe is Ownable{
         setUserState(msg.sender,true);
       
         require(msg.value < sub_price, "Please charge your wallet");
-        require(isApprovedForAll(msg.sender,approver));
+    require(isApprovedForAll(msg.sender,approver));    
         
         payable(_to).transfer(msg.value);
 
