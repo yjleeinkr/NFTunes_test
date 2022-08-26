@@ -1,6 +1,7 @@
 import Minting from '../../src/features/mypage/Minting';
 import styled from 'styled-components';
 import Image from 'next/image';
+import axios from 'axios';
 
 // worker : gyuri
 // last work : 220824
@@ -119,6 +120,24 @@ const AlbumForm = styled.form`
 `;
 
 const MintingMusicToken = () => {
+  const uploadFile = async (file) => {
+    try {
+      const { data } = await axios.post('http://localhost:4000/api/register/thumbnail', file);
+      return data;
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  const upload = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append('file', e.target.file.files[0]);
+    for (let value of formData.values()) {
+      console.log(value);
+    }
+    await uploadFile(formData);
+  };
+
   return (
     <OutBox>
       <MainBox>
@@ -126,7 +145,12 @@ const MintingMusicToken = () => {
         <UploadContainer>
           <AlbumBox>
             <AlbumCoverBox>
-              <AlbumImg />
+              <AlbumImg>
+                <form encType="multipart/form-data" onSubmit={upload}>
+                  <input type="file" name="file" />
+                  <button type="submit">업로드</button>
+                </form>
+              </AlbumImg>
               <MusicUpload />
             </AlbumCoverBox>
             <AlbumInfo>
