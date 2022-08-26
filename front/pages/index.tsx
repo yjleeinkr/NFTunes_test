@@ -20,7 +20,7 @@ const Main: NextPage = () => {
         <title>임시 인덱스</title>
         <meta name="description" content="임시 인덱스 페이지입니다." />
       </Head>
-      <section id="main" className=" mx-auto h-screen max-w-7xl">
+      <section id="main" className=" overflow-hidden mx-auto h-full max-w-7xl">
         <div className="pt-20 text-white">
           <Login />
         </div>

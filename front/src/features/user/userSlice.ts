@@ -40,6 +40,7 @@ export const userSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(joinAsync.fulfilled, (state, action) => {
+        console.log(action.payload);
         if (action.payload.isNew === 'true') {
           state.isNew = 'false';
           state.isLogin = true;
