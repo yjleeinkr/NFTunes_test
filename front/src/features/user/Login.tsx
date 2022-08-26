@@ -1,19 +1,22 @@
-import { useEffect, useState } from 'react';
 import { useAppSelector, useAppDispatch } from '../../hooks/exhook';
 import useWeb3 from '../../hooks/useWeb3';
+import { useEffect, useState } from 'react';
 import { userState, loginAsync, logout } from './userSlice';
 
 const Login = () => {
   const user = useAppSelector(userState);
   const dispatch = useAppDispatch();
   const { account } = useWeb3();
-  const [acct, setAcct] = useState(account);
-  console.log(account);
 
   const loginUser = async () => {
-    dispatch(loginAsync(account));
     if (user.isNew === 'true') {
       window.location.href = '/user/join';
+    }
+    if (user.isNew === 'untracked') {
+      dispatch(loginAsync(account));
+    }
+    if (!user.isLogin && user.isNew === 'false') {
+      dispatch(loginAsync(account));
     }
   };
 
@@ -23,12 +26,11 @@ const Login = () => {
     alert('로그아웃 완료');
   };
 
-  useEffect(() => {
-    window.ethereum?.on('accountsChanged', (accounts) => {
-      dispatch(loginAsync(accounts[0]));
-      setAcct(accounts[0]);
-    });
-  }, [acct]);
+  // useEffect(() => {
+  //   if (!isFirst) {
+  //     window.location.href = '/user/join';
+  //   }
+  // }, [isFirst]);
 
   return (
     <div className="pt-5 mt-5 mb-10 snap-start flex-shrink-0">
