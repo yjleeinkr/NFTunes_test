@@ -28,7 +28,7 @@ function Counter() {
         >
           -
         </button>
-        <span className={styles.value}>{count}</span>
+        <span className="text-white text-5xl">{count}</span>
         <button
           className={styles.button}
           aria-label="Increment value"

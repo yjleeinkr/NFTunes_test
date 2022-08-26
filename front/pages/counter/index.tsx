@@ -12,7 +12,7 @@ const IndexPage: NextPage = () => {
         <title>Redux Toolkit</title>
         <link rel="icon" href="/front/public/favicon.ico" />
       </Head>
-      <header className={styles.header}>
+      <header className="w-screen h-screen">
         <Counter />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.

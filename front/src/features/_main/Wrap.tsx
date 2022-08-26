@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 const Wrap = (props) => {
 
   const [isWheel,setIsWheel] = useState<string>('translate-y-0')
@@ -20,13 +21,15 @@ const Wrap = (props) => {
       })
     })
   )
+
   return (
-    <div
-      className="w-full h-full bg-black overflow-y-scroll"
-      onWheel={(e)=>{eventWheel(e)}}
-    >
-      {<InnerChildren />}
-    </div>
+      <div id="wrap"
+        className="w-full h-full bg-black overflow-y-scroll"
+        onWheel={(e)=>{eventWheel(e)}}
+      >
+
+        {<InnerChildren />}
+      </div>
   )
 }
 

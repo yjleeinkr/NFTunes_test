@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { useAppDispatch, useAppSelector } from '../../hooks/exhook';
-import { handleGnb, handleJoin, handleScroll, scrollCount } from '../../modules/modalSlice';
+import { useAppDispatch } from '../../hooks/exhook';
+import { handleGnb, handleJoin, handleScroll } from '../../modules/modalSlice';
 import useWeb3 from '../../hooks/useWeb3';
 import { batch } from 'react-redux';
 
@@ -30,7 +30,7 @@ const Header = ( props ) => {
   }
 
   return(
-    <div className="w-full h-full">
+    <>
       <div className={`
       fixed ${props.isWheel} w-full h-20 bg-gradient-to-b from-teal-300/50 z-10
       `}>
@@ -53,7 +53,7 @@ const Header = ( props ) => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 

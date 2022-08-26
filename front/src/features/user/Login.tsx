@@ -31,7 +31,7 @@ const Login = () => {
   }, [acct]);
 
   return (
-    <div className="pt-20 m-36 snap-start flex-shrink-0">
+    <div className="pt-5 mt-5 mb-10 snap-start flex-shrink-0">
       {user.isLogin ? (
         <>
           <p>

@@ -10,6 +10,7 @@ import Wrap from '../src/features/_main/Wrap';
 import './app.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
+
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor}>
