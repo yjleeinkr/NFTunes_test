@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../hooks/exhook';
 import { handleGnb, handleJoin, handleScroll, scrollCount } from '../../modules/modalSlice';
 import useWeb3 from '../../hooks/useWeb3';
@@ -9,9 +8,6 @@ import { batch } from 'react-redux';
 const Header = (props) => {
   let router = useRouter();
   const dispatch = useAppDispatch();
-  const [] = useState<string>('');
-
-  const { web3, account, networkId } = useWeb3();
 
   let checkAcc;
   (() => {
@@ -21,18 +17,6 @@ const Header = (props) => {
       checkAcc = account;
     }
   })();
-
-  const moveHeader = () => {
-    let temp;
-    if (props.isWheel < 0) {
-      temp = 'translate-y-0';
-    } else if (props.isWheel > 0) {
-      temp = '-translate-y-full';
-    }
-    return `
-      fixed translate-y-0 w-full h-20 bg-gradient-to-b from-teal-300/50 z-10
-      `;
-  };
 
   const clickModalBtn = (v) => {
     batch(() => {
@@ -47,11 +31,10 @@ const Header = (props) => {
 
   return (
     <div className="w-full h-full">
-      <div className={moveHeader()}>
-        <div
-          id="inner"
-          className="flex justify-between text-zinc-400 items-center max-w-7xl h-full py-3.5 pr-9 pl-9 box-border mr-auto ml-auto"
-        >
+      <div className={`
+      fixed ${props.isWheel} w-full h-20 bg-gradient-to-b from-teal-300/50 z-10
+      `}>
+        <div id="inner" className="flex justify-between text-zinc-400 items-center max-w-7xl h-full py-3.5 pr-9 pl-9 box-border mr-auto ml-auto">
           <a id="logo" className="w-36">
             <Link href="/">
               <span className="hover:text-white cursor-pointer">Logo</span>
