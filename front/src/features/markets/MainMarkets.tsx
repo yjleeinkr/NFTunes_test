@@ -11,7 +11,7 @@ interface IMarketData {
 export function MarketItem({ data }: IMarketData) {
   return (
     <Link href = {`/markets/[market]`} as = {`/markets/${data.market}`}>
-      <Container>
+      <Container className="text-zinc-400 text-3xl">
         <p>{data.market}</p>
         <p>{data.korean_name}</p>
       </Container>

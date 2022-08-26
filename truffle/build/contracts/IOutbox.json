@@ -188,7 +188,11 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: Apache-2.0\n// OpenZeppelin Contracts (last updated v4.6.0) (vendor/arbitrum/IOutbox.sol)\n\n/*\n * Copyright 2021, Offchain Labs, Inc.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *    http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npragma solidity ^0.8.0;\n\ninterface IOutbox {\n    event OutboxEntryCreated(\n        uint256 indexed batchNum,\n        uint256 outboxEntryIndex,\n        bytes32 outputRoot,\n        uint256 numInBatch\n    );\n    event OutBoxTransactionExecuted(\n        address indexed destAddr,\n        address indexed l2Sender,\n        uint256 indexed outboxEntryIndex,\n        uint256 transactionIndex\n    );\n\n    function l2ToL1Sender() external view returns (address);\n\n    function l2ToL1Block() external view returns (uint256);\n\n    function l2ToL1EthBlock() external view returns (uint256);\n\n    function l2ToL1Timestamp() external view returns (uint256);\n\n    function l2ToL1BatchNum() external view returns (uint256);\n\n    function l2ToL1OutputId() external view returns (bytes32);\n\n    function processOutgoingMessages(bytes calldata sendsData, uint256[] calldata sendLengths) external;\n\n    function outboxEntryExists(uint256 batchNum) external view returns (bool);\n}\n",
+<<<<<<< HEAD
   "sourcePath": "/Users/oo_ha/workspace/project/meta/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/vendor/arbitrum/IOutbox.sol",
+=======
+  "sourcePath": "/home/gyuri/project/last/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/vendor/arbitrum/IOutbox.sol",
+>>>>>>> origin/main
   "ast": {
     "absolutePath": "project:/contracts/node_modules/openzeppelin-solidity/contracts/vendor/arbitrum/IOutbox.sol",
     "exportedSymbols": {
@@ -1003,7 +1007,11 @@
   },
   "networks": {},
   "schemaVersion": "3.4.8",
+<<<<<<< HEAD
   "updatedAt": "2022-08-24T05:52:12.846Z",
+=======
+  "updatedAt": "2022-08-24T05:34:44.074Z",
+>>>>>>> origin/main
   "devdoc": {
     "kind": "dev",
     "methods": {},

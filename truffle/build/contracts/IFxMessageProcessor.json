@@ -34,7 +34,11 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts (last updated v4.6.0) (vendor/polygon/IFxMessageProcessor.sol)\npragma solidity ^0.8.0;\n\ninterface IFxMessageProcessor {\n    function processMessageFromRoot(\n        uint256 stateId,\n        address rootMessageSender,\n        bytes calldata data\n    ) external;\n}\n",
+<<<<<<< HEAD
   "sourcePath": "/Users/oo_ha/workspace/project/meta/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/vendor/polygon/IFxMessageProcessor.sol",
+=======
+  "sourcePath": "/home/gyuri/project/last/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/vendor/polygon/IFxMessageProcessor.sol",
+>>>>>>> origin/main
   "ast": {
     "absolutePath": "project:/contracts/node_modules/openzeppelin-solidity/contracts/vendor/polygon/IFxMessageProcessor.sol",
     "exportedSymbols": {
@@ -196,7 +200,11 @@
   },
   "networks": {},
   "schemaVersion": "3.4.8",
+<<<<<<< HEAD
   "updatedAt": "2022-08-24T05:52:12.850Z",
+=======
+  "updatedAt": "2022-08-24T05:34:44.076Z",
+>>>>>>> origin/main
   "devdoc": {
     "kind": "dev",
     "methods": {},

@@ -10,11 +10,16 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts (last updated v4.6.0) (crosschain/arbitrum/CrossChainEnabledArbitrumL2.sol)\n\npragma solidity ^0.8.4;\n\nimport \"../CrossChainEnabled.sol\";\nimport \"./LibArbitrumL2.sol\";\n\n/**\n * @dev [Arbitrum](https://arbitrum.io/) specialization or the\n * {CrossChainEnabled} abstraction the L2 side (arbitrum).\n *\n * This version should only be deployed on L2 to process cross-chain messages\n * originating from L1. For the other side, use {CrossChainEnabledArbitrumL1}.\n *\n * Arbitrum L2 includes the `ArbSys` contract at a fixed address. Therefore,\n * this specialization of {CrossChainEnabled} does not include a constructor.\n *\n * _Available since v4.6._\n */\nabstract contract CrossChainEnabledArbitrumL2 is CrossChainEnabled {\n    /**\n     * @dev see {CrossChainEnabled-_isCrossChain}\n     */\n    function _isCrossChain() internal view virtual override returns (bool) {\n        return LibArbitrumL2.isCrossChain(LibArbitrumL2.ARBSYS);\n    }\n\n    /**\n     * @dev see {CrossChainEnabled-_crossChainSender}\n     */\n    function _crossChainSender() internal view virtual override onlyCrossChain returns (address) {\n        return LibArbitrumL2.crossChainSender(LibArbitrumL2.ARBSYS);\n    }\n}\n",
+<<<<<<< HEAD
   "sourcePath": "/Users/oo_ha/workspace/project/meta/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/crosschain/arbitrum/CrossChainEnabledArbitrumL2.sol",
+=======
+  "sourcePath": "/home/gyuri/project/last/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/crosschain/arbitrum/CrossChainEnabledArbitrumL2.sol",
+>>>>>>> origin/main
   "ast": {
     "absolutePath": "project:/contracts/node_modules/openzeppelin-solidity/contracts/crosschain/arbitrum/CrossChainEnabledArbitrumL2.sol",
     "exportedSymbols": {
       "ArbitrumL2_Bridge": [
+<<<<<<< HEAD
         3522
       ],
       "CrossChainEnabled": [
@@ -34,11 +39,36 @@
       ]
     },
     "id": 1402,
+=======
+        5723
+      ],
+      "CrossChainEnabled": [
+        1776
+      ],
+      "CrossChainEnabledArbitrumL2": [
+        1958
+      ],
+      "InvalidCrossChainSender": [
+        2090
+      ],
+      "LibArbitrumL2": [
+        2080
+      ],
+      "NotCrossChainCall": [
+        2084
+      ]
+    },
+    "id": 1959,
+>>>>>>> origin/main
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
+<<<<<<< HEAD
         "id": 1365,
+=======
+        "id": 1922,
+>>>>>>> origin/main
         "literals": [
           "solidity",
           "^",
@@ -46,29 +76,51 @@
           ".4"
         ],
         "nodeType": "PragmaDirective",
+<<<<<<< HEAD
         "src": "135:23:24"
+=======
+        "src": "135:23:12"
+>>>>>>> origin/main
       },
       {
         "absolutePath": "project:/contracts/node_modules/openzeppelin-solidity/contracts/crosschain/CrossChainEnabled.sol",
         "file": "../CrossChainEnabled.sol",
+<<<<<<< HEAD
         "id": 1366,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
         "scope": 1402,
         "sourceUnit": 1220,
         "src": "160:34:24",
+=======
+        "id": 1923,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 1959,
+        "sourceUnit": 1777,
+        "src": "160:34:12",
+>>>>>>> origin/main
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
         "absolutePath": "project:/contracts/node_modules/openzeppelin-solidity/contracts/crosschain/arbitrum/LibArbitrumL2.sol",
         "file": "./LibArbitrumL2.sol",
+<<<<<<< HEAD
         "id": 1367,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
         "scope": 1402,
         "sourceUnit": 1524,
         "src": "195:29:24",
+=======
+        "id": 1924,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 1959,
+        "sourceUnit": 2081,
+        "src": "195:29:12",
+>>>>>>> origin/main
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -77,6 +129,7 @@
         "baseContracts": [
           {
             "baseName": {
+<<<<<<< HEAD
               "id": 1369,
               "name": "CrossChainEnabled",
               "nodeType": "IdentifierPath",
@@ -86,12 +139,24 @@
             "id": 1370,
             "nodeType": "InheritanceSpecifier",
             "src": "753:17:24"
+=======
+              "id": 1926,
+              "name": "CrossChainEnabled",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 1776,
+              "src": "753:17:12"
+            },
+            "id": 1927,
+            "nodeType": "InheritanceSpecifier",
+            "src": "753:17:12"
+>>>>>>> origin/main
           }
         ],
         "canonicalName": "CrossChainEnabledArbitrumL2",
         "contractDependencies": [],
         "contractKind": "contract",
         "documentation": {
+<<<<<<< HEAD
           "id": 1368,
           "nodeType": "StructuredDocumentation",
           "src": "226:477:24",
@@ -105,22 +170,47 @@
         ],
         "name": "CrossChainEnabledArbitrumL2",
         "nameLocation": "722:27:24",
+=======
+          "id": 1925,
+          "nodeType": "StructuredDocumentation",
+          "src": "226:477:12",
+          "text": " @dev [Arbitrum](https://arbitrum.io/) specialization or the\n {CrossChainEnabled} abstraction the L2 side (arbitrum).\n This version should only be deployed on L2 to process cross-chain messages\n originating from L1. For the other side, use {CrossChainEnabledArbitrumL1}.\n Arbitrum L2 includes the `ArbSys` contract at a fixed address. Therefore,\n this specialization of {CrossChainEnabled} does not include a constructor.\n _Available since v4.6._"
+        },
+        "fullyImplemented": true,
+        "id": 1958,
+        "linearizedBaseContracts": [
+          1958,
+          1776
+        ],
+        "name": "CrossChainEnabledArbitrumL2",
+        "nameLocation": "722:27:12",
+>>>>>>> origin/main
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "baseFunctions": [
+<<<<<<< HEAD
               1212
             ],
             "body": {
               "id": 1383,
               "nodeType": "Block",
               "src": "914:72:24",
+=======
+              1769
+            ],
+            "body": {
+              "id": 1940,
+              "nodeType": "Block",
+              "src": "914:72:12",
+>>>>>>> origin/main
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
                         "expression": {
+<<<<<<< HEAD
                           "id": 1379,
                           "name": "LibArbitrumL2",
                           "nodeType": "Identifier",
@@ -133,14 +223,33 @@
                           }
                         },
                         "id": 1380,
+=======
+                          "id": 1936,
+                          "name": "LibArbitrumL2",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 2080,
+                          "src": "958:13:12",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_LibArbitrumL2_$2080_$",
+                            "typeString": "type(library LibArbitrumL2)"
+                          }
+                        },
+                        "id": 1937,
+>>>>>>> origin/main
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "ARBSYS",
                         "nodeType": "MemberAccess",
+<<<<<<< HEAD
                         "referencedDeclaration": 1477,
                         "src": "958:20:24",
+=======
+                        "referencedDeclaration": 2034,
+                        "src": "958:20:12",
+>>>>>>> origin/main
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -155,6 +264,7 @@
                         }
                       ],
                       "expression": {
+<<<<<<< HEAD
                         "id": 1377,
                         "name": "LibArbitrumL2",
                         "nodeType": "Identifier",
@@ -167,20 +277,43 @@
                         }
                       },
                       "id": 1378,
+=======
+                        "id": 1934,
+                        "name": "LibArbitrumL2",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2080,
+                        "src": "931:13:12",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_LibArbitrumL2_$2080_$",
+                          "typeString": "type(library LibArbitrumL2)"
+                        }
+                      },
+                      "id": 1935,
+>>>>>>> origin/main
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "isCrossChain",
                       "nodeType": "MemberAccess",
+<<<<<<< HEAD
                       "referencedDeclaration": 1491,
                       "src": "931:26:24",
+=======
+                      "referencedDeclaration": 2048,
+                      "src": "931:26:12",
+>>>>>>> origin/main
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$",
                         "typeString": "function (address) view returns (bool)"
                       }
                     },
+<<<<<<< HEAD
                     "id": 1381,
+=======
+                    "id": 1938,
+>>>>>>> origin/main
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -188,31 +321,52 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
+<<<<<<< HEAD
                     "src": "931:48:24",
+=======
+                    "src": "931:48:12",
+>>>>>>> origin/main
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
+<<<<<<< HEAD
                   "functionReturnParameters": 1376,
                   "id": 1382,
                   "nodeType": "Return",
                   "src": "924:55:24"
+=======
+                  "functionReturnParameters": 1933,
+                  "id": 1939,
+                  "nodeType": "Return",
+                  "src": "924:55:12"
+>>>>>>> origin/main
                 }
               ]
             },
             "documentation": {
+<<<<<<< HEAD
               "id": 1371,
               "nodeType": "StructuredDocumentation",
               "src": "777:61:24",
               "text": " @dev see {CrossChainEnabled-_isCrossChain}"
             },
             "id": 1384,
+=======
+              "id": 1928,
+              "nodeType": "StructuredDocumentation",
+              "src": "777:61:12",
+              "text": " @dev see {CrossChainEnabled-_isCrossChain}"
+            },
+            "id": 1941,
+>>>>>>> origin/main
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "_isCrossChain",
+<<<<<<< HEAD
             "nameLocation": "852:13:24",
             "nodeType": "FunctionDefinition",
             "overrides": {
@@ -229,17 +383,44 @@
             },
             "returnParameters": {
               "id": 1376,
+=======
+            "nameLocation": "852:13:12",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 1930,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "890:8:12"
+            },
+            "parameters": {
+              "id": 1929,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "865:2:12"
+            },
+            "returnParameters": {
+              "id": 1933,
+>>>>>>> origin/main
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
+<<<<<<< HEAD
                   "id": 1375,
+=======
+                  "id": 1932,
+>>>>>>> origin/main
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
+<<<<<<< HEAD
                   "scope": 1384,
                   "src": "908:4:24",
+=======
+                  "scope": 1941,
+                  "src": "908:4:12",
+>>>>>>> origin/main
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -247,10 +428,17 @@
                     "typeString": "bool"
                   },
                   "typeName": {
+<<<<<<< HEAD
                     "id": 1374,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "908:4:24",
+=======
+                    "id": 1931,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "908:4:12",
+>>>>>>> origin/main
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -259,28 +447,45 @@
                   "visibility": "internal"
                 }
               ],
+<<<<<<< HEAD
               "src": "907:6:24"
             },
             "scope": 1401,
             "src": "843:143:24",
+=======
+              "src": "907:6:12"
+            },
+            "scope": 1958,
+            "src": "843:143:12",
+>>>>>>> origin/main
             "stateMutability": "view",
             "virtual": true,
             "visibility": "internal"
           },
           {
             "baseFunctions": [
+<<<<<<< HEAD
               1218
             ],
             "body": {
               "id": 1399,
               "nodeType": "Block",
               "src": "1155:76:24",
+=======
+              1775
+            ],
+            "body": {
+              "id": 1956,
+              "nodeType": "Block",
+              "src": "1155:76:12",
+>>>>>>> origin/main
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
                         "expression": {
+<<<<<<< HEAD
                           "id": 1395,
                           "name": "LibArbitrumL2",
                           "nodeType": "Identifier",
@@ -293,14 +498,33 @@
                           }
                         },
                         "id": 1396,
+=======
+                          "id": 1952,
+                          "name": "LibArbitrumL2",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 2080,
+                          "src": "1203:13:12",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_LibArbitrumL2_$2080_$",
+                            "typeString": "type(library LibArbitrumL2)"
+                          }
+                        },
+                        "id": 1953,
+>>>>>>> origin/main
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "ARBSYS",
                         "nodeType": "MemberAccess",
+<<<<<<< HEAD
                         "referencedDeclaration": 1477,
                         "src": "1203:20:24",
+=======
+                        "referencedDeclaration": 2034,
+                        "src": "1203:20:12",
+>>>>>>> origin/main
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -315,6 +539,7 @@
                         }
                       ],
                       "expression": {
+<<<<<<< HEAD
                         "id": 1393,
                         "name": "LibArbitrumL2",
                         "nodeType": "Identifier",
@@ -327,20 +552,43 @@
                         }
                       },
                       "id": 1394,
+=======
+                        "id": 1950,
+                        "name": "LibArbitrumL2",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2080,
+                        "src": "1172:13:12",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_LibArbitrumL2_$2080_$",
+                          "typeString": "type(library LibArbitrumL2)"
+                        }
+                      },
+                      "id": 1951,
+>>>>>>> origin/main
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "crossChainSender",
                       "nodeType": "MemberAccess",
+<<<<<<< HEAD
                       "referencedDeclaration": 1522,
                       "src": "1172:30:24",
+=======
+                      "referencedDeclaration": 2079,
+                      "src": "1172:30:12",
+>>>>>>> origin/main
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_address_$",
                         "typeString": "function (address) view returns (address)"
                       }
                     },
+<<<<<<< HEAD
                     "id": 1397,
+=======
+                    "id": 1954,
+>>>>>>> origin/main
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -348,31 +596,52 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
+<<<<<<< HEAD
                     "src": "1172:52:24",
+=======
+                    "src": "1172:52:12",
+>>>>>>> origin/main
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
+<<<<<<< HEAD
                   "functionReturnParameters": 1392,
                   "id": 1398,
                   "nodeType": "Return",
                   "src": "1165:59:24"
+=======
+                  "functionReturnParameters": 1949,
+                  "id": 1955,
+                  "nodeType": "Return",
+                  "src": "1165:59:12"
+>>>>>>> origin/main
                 }
               ]
             },
             "documentation": {
+<<<<<<< HEAD
               "id": 1385,
               "nodeType": "StructuredDocumentation",
               "src": "992:65:24",
               "text": " @dev see {CrossChainEnabled-_crossChainSender}"
             },
             "id": 1400,
+=======
+              "id": 1942,
+              "nodeType": "StructuredDocumentation",
+              "src": "992:65:12",
+              "text": " @dev see {CrossChainEnabled-_crossChainSender}"
+            },
+            "id": 1957,
+>>>>>>> origin/main
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
+<<<<<<< HEAD
                 "id": 1389,
                 "kind": "modifierInvocation",
                 "modifierName": {
@@ -403,17 +672,58 @@
             },
             "returnParameters": {
               "id": 1392,
+=======
+                "id": 1946,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 1945,
+                  "name": "onlyCrossChain",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 1742,
+                  "src": "1122:14:12"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1122:14:12"
+              }
+            ],
+            "name": "_crossChainSender",
+            "nameLocation": "1071:17:12",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 1944,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "1113:8:12"
+            },
+            "parameters": {
+              "id": 1943,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1088:2:12"
+            },
+            "returnParameters": {
+              "id": 1949,
+>>>>>>> origin/main
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
+<<<<<<< HEAD
                   "id": 1391,
+=======
+                  "id": 1948,
+>>>>>>> origin/main
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
+<<<<<<< HEAD
                   "scope": 1400,
                   "src": "1146:7:24",
+=======
+                  "scope": 1957,
+                  "src": "1146:7:12",
+>>>>>>> origin/main
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -421,10 +731,17 @@
                     "typeString": "address"
                   },
                   "typeName": {
+<<<<<<< HEAD
                     "id": 1390,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1146:7:24",
+=======
+                    "id": 1947,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1146:7:12",
+>>>>>>> origin/main
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -434,21 +751,37 @@
                   "visibility": "internal"
                 }
               ],
+<<<<<<< HEAD
               "src": "1145:9:24"
             },
             "scope": 1401,
             "src": "1062:169:24",
+=======
+              "src": "1145:9:12"
+            },
+            "scope": 1958,
+            "src": "1062:169:12",
+>>>>>>> origin/main
             "stateMutability": "view",
             "virtual": true,
             "visibility": "internal"
           }
         ],
+<<<<<<< HEAD
         "scope": 1402,
         "src": "704:529:24",
         "usedErrors": []
       }
     ],
     "src": "135:1099:24"
+=======
+        "scope": 1959,
+        "src": "704:529:12",
+        "usedErrors": []
+      }
+    ],
+    "src": "135:1099:12"
+>>>>>>> origin/main
   },
   "compiler": {
     "name": "solc",
@@ -456,7 +789,11 @@
   },
   "networks": {},
   "schemaVersion": "3.4.8",
+<<<<<<< HEAD
   "updatedAt": "2022-08-25T00:44:56.222Z",
+=======
+  "updatedAt": "2022-08-24T06:06:27.163Z",
+>>>>>>> origin/main
   "devdoc": {
     "details": "[Arbitrum](https://arbitrum.io/) specialization or the {CrossChainEnabled} abstraction the L2 side (arbitrum). This version should only be deployed on L2 to process cross-chain messages originating from L1. For the other side, use {CrossChainEnabledArbitrumL1}. Arbitrum L2 includes the `ArbSys` contract at a fixed address. Therefore, this specialization of {CrossChainEnabled} does not include a constructor. _Available since v4.6._",
     "kind": "dev",
