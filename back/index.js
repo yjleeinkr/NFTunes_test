@@ -6,7 +6,6 @@ const mongoose = require('mongoose');
 
 require('dotenv').config();
 const PORT = process.env.PORT || 4000;
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/nftMarket';
 const MONGODB_PW = process.env.MONGODB_PW;
 
 const mongoAtlasUrl = `mongodb+srv://team1:${MONGODB_PW}@nftmarket.skj99nw.mongodb.net/nftMarket?retryWrites=true&w=majority`;
@@ -24,12 +23,11 @@ app.use('/api', router);
 mongoose
   .connect(mongoAtlasUrl)
   .then((client) => {
-    console.log('mongo connected');
-    console.log(client);
+    console.log(` connected to mongo atlas db : ${client.connections[0].name} `);
   })
   .then(
     app.listen(PORT, () => {
-      console.log(`connected to mongoDB, server's running on ${PORT} 🚀`);
+      console.log(`server's running on ${PORT} 🚀`);
     }),
   )
   .catch((err) => console.log(err));
