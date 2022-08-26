@@ -4,3 +4,5 @@ node_modules
 
 # docker volumes
 mongodb-data
+public/upload/*.jpg
+public/upload/*png
