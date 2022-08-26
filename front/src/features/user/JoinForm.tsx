@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
 import useWeb3 from '../../hooks/useWeb3';
-import { useAppSelector, useAppDispatch } from '../../hooks/exhook';
+import { useAppDispatch } from '../../hooks/exhook';
 import { joinAsync, userState } from './userSlice';
 import { batch } from 'react-redux';
 import { handleJoin, handleScroll } from '../../modules/modalSlice';
 import styled from 'styled-components';
 
-const JoinForm = (props) => {
+const JoinForm = () => {
   const dispatch = useAppDispatch();
-  const user = useAppSelector(userState);
   const [nickname, setNickname] = useState('');
   const [email, setEmail] = useState('');
-  const { web3, account, networkId } = useWeb3();
+  const [joinStatus, setJoinStatus] = useState(false);
+  const { account } = useWeb3();
 
   const submitUserInfo = () => {
     const userInfo: IUserInfo = {
@@ -20,24 +20,25 @@ const JoinForm = (props) => {
       nickname,
       email,
     };
-    console.log(userInfo);
+    console.log('유저인포', userInfo);
     dispatch(joinAsync(userInfo));
     setNickname('');
     setEmail('');
+    setJoinStatus(true);
   };
 
-  const clickModal = () => {
-    batch(() => {
-      dispatch(handleJoin());
-      dispatch(handleScroll());
-    });
-  };
+  // const clickModal = () => {
+  //   batch(() => {
+  //     dispatch(handleJoin());
+  //     dispatch(handleScroll());
+  //   });
+  // };
 
-  // useEffect(() => {
-  //   if (user.userInfo.account !== '') {
-  //     window.location.href = '/';
-  //   }
-  // }, [user]);
+  useEffect(() => {
+    if (joinStatus) {
+      window.location.href = '/';
+    }
+  }, [joinStatus]);
 
   return (
     <div className="pr-10 pl-10 pt-20 mt-5 pb-5 mb-5 ">
@@ -62,8 +63,13 @@ const JoinForm = (props) => {
             />
           </div>
         </div>
-        <button onClick={submitUserInfo}>join</button>
-        <button onClick={clickModal}>close</button>
+        <button
+          className="text-zinc-200 border-slate-300 shadow-sm focus:outline-none bg-gray-500"
+          onClick={submitUserInfo}
+        >
+          join
+        </button>
+        {/* <button onClick={clickModal}>close</button> */}
       </div>
     </div>
   );
