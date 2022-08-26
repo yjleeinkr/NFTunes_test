@@ -1,12 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 import useWeb3 from '../../hooks/useWeb3';
-import { useAppDispatch } from '../../hooks/exhook';
+import { useAppDispatch, useAppSelector } from '../../hooks/exhook';
 import { joinAsync, userState } from './userSlice';
 import { batch } from 'react-redux';
 import { handleJoin, handleScroll } from '../../modules/modalSlice';
 import styled from 'styled-components';
 
 const JoinForm = () => {
+  const user = useAppSelector(userState);
   const dispatch = useAppDispatch();
   const [nickname, setNickname] = useState('');
   const [email, setEmail] = useState('');
@@ -24,7 +25,6 @@ const JoinForm = () => {
     dispatch(joinAsync(userInfo));
     setNickname('');
     setEmail('');
-    setJoinStatus(true);
   };
 
   // const clickModal = () => {
@@ -39,6 +39,12 @@ const JoinForm = () => {
       window.location.href = '/';
     }
   }, [joinStatus]);
+
+  useEffect(() => {
+    if (user.isLogin && user.isNew === 'false') {
+      setJoinStatus(true);
+    }
+  }, [user]);
 
   return (
     <div className="pr-10 pl-10 pt-20 mt-5 pb-5 mb-5 ">
