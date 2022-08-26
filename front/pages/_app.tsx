@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Wrap>
           <Header />
           <GnbModal />
-          <JoinModal />
+          {/* <JoinModal /> */}
           <Component {...pageProps} />
         </Wrap>
       </PersistGate>

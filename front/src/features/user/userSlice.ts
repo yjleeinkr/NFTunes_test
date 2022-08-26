@@ -3,13 +3,12 @@ import { AppState } from '../../modules/store';
 import axios, { AxiosResponse } from 'axios';
 
 export const joinAsync = createAsyncThunk('user/join', async (userInfo: IUserInfo) => {
-  const response: AxiosResponse = await axios.post('/api/user/join', { userInfo });
+  const response: AxiosResponse = await axios.post('http://localhost:4000/api/user/join', { userInfo });
   return response.data;
 });
 
 export const loginAsync = createAsyncThunk('user/login', async (account: string) => {
-  const response: AxiosResponse = await axios.post('/api/user/login', { account });
-  console.log('리스폰스 데이터', response.data);
+  const response: AxiosResponse = await axios.post('http://localhost:4000/api/user/login', { account });
   return response.data;
 });
 
@@ -44,12 +43,16 @@ export const userSlice = createSlice({
         if (action.payload.isNew === 'true') {
           state.isNew = 'false';
           state.isLogin = true;
-          state.userInfo = action.payload.user;
+          state.userInfo = action.payload.userInfo;
+          state.isLoading = false;
         } else {
-          state.isNew = 'untracked';
           state.isLogin = true;
-          state.userInfo = action.payload.user;
+          state.userInfo = action.payload.userInfo;
+          state.isLoading = false;
         }
+      })
+      .addCase(joinAsync.pending, (state) => {
+        state.isLoading = true;
       })
       .addCase(loginAsync.fulfilled, (state, action) => {
         state.isNew = 'false';
