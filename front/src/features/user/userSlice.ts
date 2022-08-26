@@ -12,6 +12,12 @@ export const loginAsync = createAsyncThunk('user/login', async (account: string)
   return response.data;
 });
 
+export const checkNickAsync = createAsyncThunk('form/check', async (nickname: string) => {
+  const response: AxiosResponse = await axios.get('http://localhost:4000/api/user/getAllUserInfo');
+  const isValidNick = response.data.every((existedNick: string) => existedNick !== nickname);
+  return isValidNick;
+});
+
 const initialState: UserState = {
   userInfo: {
     _id: '',
