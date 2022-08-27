@@ -68,7 +68,7 @@ contract Subscribe is Ownable{
         
 
         transferFrom(approver,marketOwner,sub_price);
-
+    
         firstPayment = block.timestamp;    
         nextPayment = firstPayment + 1 minutes;
     }
@@ -167,4 +167,3 @@ contract Subscribe is Ownable{
     
 
 }
-
