@@ -1,30 +1,40 @@
-import { useRouter } from 'next/router'
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../hooks/exhook';
-import { gnbCount, handleGnb } from './gnbSlice';
+import { handleGnb, handleJoin, handleScroll } from '../../modules/modalSlice';
+import useWeb3 from '../../hooks/useWeb3';
+import { batch } from 'react-redux';
+import { userState } from '../user/userSlice';
 
-const Header = ( { eventProps } ) => {
-  let router = useRouter();
+const Header = ( props ) => {
   const dispatch = useAppDispatch()
+  const user = useAppSelector(userState)
+  const { web3, account, networkId } =  useWeb3()
 
-  const moveHeader = () => {
-    let temp
-    if (eventProps < 0) {
-      temp = 'translate-y-0'
-    } else if (eventProps > 0) {
-      temp = '-translate-y-full'
+  let checkAcc
+  (()=>{
+    if (!account) {
+      checkAcc = '메타로그인필요'
+    } else {
+      checkAcc = account
     }
-    return (
-      `
-      fixed ${temp} w-full h-20 bg-gradient-to-b from-teal-300/50 transition duration-500 ease
-      `
-    )
+  })();
+
+  const clickModalBtn = (v) => {
+    batch( ()=> {
+      if ( v === 'gnb') {
+        dispatch(handleGnb())
+      } else if ( v === 'join') {
+        dispatch(handleJoin())
+      }
+      dispatch(handleScroll())
+    })
   }
 
   return(
-    <div className="w-full h-full">
-      <div className={moveHeader()}>
+    <>
+      <div className={`
+      fixed ${props.isWheel} w-full h-20 bg-gradient-to-b from-teal-300/50 z-10
+      `}>
         <div id="inner" className="flex justify-between text-zinc-400 items-center max-w-7xl h-full py-3.5 pr-9 pl-9 box-border mr-auto ml-auto">
           <a id="logo" className="w-36">
             <Link href="/"><span className="hover:text-white cursor-pointer">Logo</span></Link>
@@ -37,13 +47,19 @@ const Header = ( { eventProps } ) => {
           {
 
           }
-          <div id="h-btn" className="flex justify-between w-36">
-            <a onClick={() => dispatch(handleGnb())} className="hover:text-white cursor-pointer">Gnb</a>
-            <a className="text-lime-400">현재 페이지: {router.pathname}</a>
+          <div id="h-btn" className="flex flex-nowrap justify-between w-64">
+            <a onClick={ () => clickModalBtn('gnb') } className="mr-3 mt-3 hover:text-white cursor-pointer">Gnb</a>
+            <a onClick={ () => clickModalBtn('join') } className="mr-3 mt-3 hover:text-white cursor-pointer">Join</a>
+            <a className="mr-3 mt-3 hover:text-white cursor-pointer" >Click to Connect wallet: MetaMask</a>
+            {user.isLogin ? (
+              <span>{user.userInfo.nickname}님 안녕하세요</span>
+            ) : (
+              <span>login해주세요</span>
+            )}
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 

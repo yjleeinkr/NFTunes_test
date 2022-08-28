@@ -2,6 +2,7 @@
 
 pragma solidity ^0.8.15;
 
+
 // import "./Approve.sol";
 import "./node_modules/openzeppelin-solidity/contracts/access/Ownable.sol";
 
@@ -27,6 +28,7 @@ contract Subscribe is Ownable{
         subscribeState[_owner] = _state;
     }
 
+
     function _transfer(
         address from,
         address to,
@@ -37,13 +39,16 @@ contract Subscribe is Ownable{
 
         emit Transfer(from, to, amount);
     }
+
     
     function transferFrom(
         address from,
         address to,
         uint256 amount
     ) public virtual returns (bool) {
+
         spendAllowance(from, approver, amount);
+
         _transfer(from,to,amount);
         return true;
     }
@@ -54,13 +59,16 @@ contract Subscribe is Ownable{
 
         setUserState(msg.sender,true);
       
+
         require(msg.value < sub_price, "Please charge your wallet");
     require(isApprovedForAll(msg.sender,approver));    
         
         payable(_to).transfer(msg.value);
 
-        transferFrom(approver,marketOwner,sub_price);
+        
 
+        transferFrom(approver,marketOwner,sub_price);
+    
         firstPayment = block.timestamp;    
         nextPayment = firstPayment + 1 minutes;
     }
@@ -74,6 +82,19 @@ contract Subscribe is Ownable{
         require(subscribeState[_owner] != false, "Subscribe Our Service");
         return nextPayment;
     }
+
+
+
+    // //
+    // function nextSubscribe(address payable _owner) public payable{
+
+    //     require(block.timestamp == nextPayment);
+    //     require(_owner == msg.sender);
+
+    //     _owner.transfer(msg.value);
+    // }
+
+
  
     function cancelSubscribe(address payable _owner) public{
         if(block.timestamp < nextPayment){
@@ -119,11 +140,14 @@ contract Subscribe is Ownable{
         return _allowances[owner][spender];
     }
 
+
     function spendAllowance(
         address owner,
         address spender,
         uint256 amount
     ) public virtual {
+
+   
         uint256 currentAllowance = allowance(owner, spender);
         if (currentAllowance != type(uint256).max) {
             require(currentAllowance >= amount, "ERC20: insufficient allowance");
@@ -132,6 +156,7 @@ contract Subscribe is Ownable{
             }
         }
     }
+
 
 
 
