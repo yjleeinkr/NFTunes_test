@@ -3,6 +3,7 @@ declare interface IUserInfo {
   account: string;
   nickname: string;
   email: string;
+  avatar: string;
 }
 
 declare interface UserState {
