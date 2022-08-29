@@ -22,6 +22,7 @@ const JoinForm = () => {
       account,
       nickname,
       email,
+      avatar: '',
     };
     dispatch(joinAsync(userInfo));
     setNickname('');

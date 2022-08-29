@@ -13,7 +13,7 @@ export const loginAsync = createAsyncThunk('user/login', async (account: string)
 });
 
 export const checkNickAsync = createAsyncThunk('form/check', async (nickname: string) => {
-  const response: AxiosResponse = await axios.get('http://localhost:4000/api/user/getAllUserInfo');
+  const response: AxiosResponse = await axios.get('http://localhost:4000/api/user/getAllUserNick');
   const isValidNick = response.data.every((existedNick: string) => existedNick !== nickname);
   return isValidNick;
 });
@@ -24,6 +24,7 @@ const initialState: UserState = {
     account: '',
     nickname: '',
     email: '',
+    avatar: '',
   },
   isNew: 'untracked',
   isLogin: false,
@@ -41,6 +42,7 @@ export const userSlice = createSlice({
       state.userInfo.account = '';
       state.userInfo.email = '';
       state.userInfo.nickname = '';
+      state.userInfo.avatar = '';
     },
   },
   extraReducers: (builder) => {
@@ -78,6 +80,7 @@ export const userSlice = createSlice({
         state.userInfo.account = '';
         state.userInfo.email = '';
         state.userInfo.nickname = '';
+        state.userInfo.avatar = '';
       });
   },
 });

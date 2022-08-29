@@ -1,9 +1,8 @@
 import { NextPage } from 'next';
-import Header from '../../src/features/_main/Header';
-import { useWheels } from '../../src/hooks/useWheel';
-import Minting from '../../src/features/mypage/Minting';
+// import Header from '../../src/features/_main/Header';
+// import { useWheels } from '../../src/hooks/useWheel';
+// import Minting from '../../src/features/mypage/Minting';
 import styled from 'styled-components';
-import userImg from '../../public/images/user.png';
 import Image from 'next/image';
 
 // worker : gyuri
@@ -85,18 +84,17 @@ const IndividualMenu = styled.li`
   }
 `;
 
-const Mypage: NextPage = () => {
-
+const Mypage: React.FC<{ userInfo: IUserInfo }> = ({ userInfo }) => {
   return (
     <div>
       <OutBox>
         <MainBox>
           <ProfileBox>
-            <Image src={userImg} width={240} height={240} style={imgStyle} />
+            <Image src={userInfo.avatar} width={240} height={240} style={imgStyle} />
             <ProfileInfo>
-              <h1>닉네임</h1>
-              <h1>이메일</h1>
-              <h1>지갑 주소</h1>
+              <h1>{userInfo.nickname}</h1>
+              <h1>{userInfo.email}</h1>
+              <h1>{userInfo.account}</h1>
             </ProfileInfo>
           </ProfileBox>
           <ContentsBox>
