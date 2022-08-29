@@ -18,6 +18,10 @@ export const checkNickAsync = createAsyncThunk('form/check', async (nickname: st
   return isValidNick;
 });
 
+export const modifyProfile = createAsyncThunk('form/modify', async (account: string) => {
+  // const response: AxiosResponse
+});
+
 const initialState: UserState = {
   userInfo: {
     _id: '',

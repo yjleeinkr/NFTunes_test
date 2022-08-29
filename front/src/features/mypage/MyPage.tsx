@@ -4,11 +4,12 @@ import { NextPage } from 'next';
 // import Minting from '../../src/features/mypage/Minting';
 import styled from 'styled-components';
 import Image from 'next/image';
+import ScaleFadeEx from './ScaleFade';
 
 // worker : gyuri
 // last work : 220824
 const OutBox = styled.div`
-  background: black;
+  /* background: black; */
   width: 100%;
   height: 1200px;
   padding-top: 100px;
@@ -31,7 +32,7 @@ const ProfileBox = styled.div`
 `;
 
 const imgStyle = {
-  borderRadius: '50%',
+  borderRadius: '60%',
 };
 
 const ProfileInfo = styled.div`
@@ -43,10 +44,10 @@ const ProfileInfo = styled.div`
   justify-content: space-evenly;
 
   > h1 {
-    font-size: 26px;
-    margin-left: 20px;
+    font-size: 22px;
+    margin-left: 30px;
     color: #fff;
-    font-family: 'Fly';
+    font-family: 'Light';
   }
 `;
 
@@ -85,6 +86,7 @@ const IndividualMenu = styled.li`
 `;
 
 const Mypage: React.FC<{ userInfo: IUserInfo }> = ({ userInfo }) => {
+  const modifyProfile = (account) => {};
   return (
     <div>
       <OutBox>
@@ -97,6 +99,7 @@ const Mypage: React.FC<{ userInfo: IUserInfo }> = ({ userInfo }) => {
               <h1>{userInfo.account}</h1>
             </ProfileInfo>
           </ProfileBox>
+          <ScaleFadeEx />
           <ContentsBox>
             <MusicMenu>
               <IndividualMenu>
