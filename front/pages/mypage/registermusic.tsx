@@ -47,8 +47,11 @@ const AlbumBox = styled.div`
   background: blue;
   width: 100%;
   height: 450px;
-  display: flex;
-  justify-content: space-around;
+
+  > form {
+    display: flex;
+    justify-content: space-around;
+  }
 `;
 
 const AlbumCoverBox = styled.div`
@@ -61,6 +64,18 @@ const AlbumImg = styled.div`
   background: pink;
   width: 100%;
   height: 70%;
+  > img {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+  }
+
+  > input {
+    display: block;
+    width: 50%;
+    height: 50px;
+    margin: 0 auto;
+  }
 `;
 
 const MusicUpload = styled.div`
@@ -81,15 +96,6 @@ const AlbumInfo = styled.div`
 `;
 
 const AlbumForm = styled.form`
-  background: red;
-  width: 90%;
-  height: 300px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  font-family: 'Fly';
-  justify-content: space-between;
-
   #submit {
     box-shadow: inset 0px 0px 29px -20px #ffffff;
     background: linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
@@ -119,6 +125,16 @@ const AlbumForm = styled.form`
   }
 `;
 
+const readURL = (e) => {
+  if (e.target.files && e.target.files[0]) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      document.querySelector('#preview').src = e.target.result;
+    };
+    reader.readAsDataURL(e.target.files[0]);
+  }
+};
+
 const MintingMusicToken = () => {
   const uploadFile = async (file) => {
     try {
@@ -137,31 +153,39 @@ const MintingMusicToken = () => {
     }
     await uploadFile(formData);
   };
-
   return (
     <OutBox>
       <MainBox>
         <h1>Music Uploads</h1>
         <UploadContainer>
           <AlbumBox>
-            <AlbumCoverBox>
-              <AlbumImg>
-                <form encType="multipart/form-data" onSubmit={upload}>
-                  <input type="file" name="file" />
-                  <button type="submit">업로드</button>
-                </form>
-              </AlbumImg>
-              <MusicUpload />
-            </AlbumCoverBox>
-            <AlbumInfo>
-              <h1>앨범 소개</h1>
-              <AlbumForm>
-                <input type="text" placeholder="작사가" />
-                <input type="text" placeholder="작곡가" />
-                <textarea cols={60} rows={8} placeholder="곡 소개"></textarea>
-                <input type="submit" id="submit" value="Upload" />
-              </AlbumForm>
-            </AlbumInfo>
+            <form encType="multipart/form-data" onSubmit={upload}>
+              <AlbumCoverBox>
+                <AlbumImg>
+                  <img id="preview" />
+                  <input
+                    type="file"
+                    name="file"
+                    accept="image/*"
+                    onChange={readURL}
+                    id="album_cover"
+                    src="https://dummyimage.com/300x100/ffffff/000000.png"
+                  />
+                </AlbumImg>
+                <MusicUpload>음악 업로드</MusicUpload>
+              </AlbumCoverBox>
+              <AlbumInfo>
+                <h1>앨범 소개</h1>
+                <AlbumForm>
+                  <input type="text" placeholder="작사가" />
+                  <input type="text" placeholder="작곡가" />
+                  <textarea cols={50} rows={8} placeholder="곡 소개"></textarea>
+                  <button type="submit" id="submit">
+                    업로드
+                  </button>
+                </AlbumForm>
+              </AlbumInfo>
+            </form>
           </AlbumBox>
           <h1>Provide FLAC, WAV, ALAC, or AIFF for highest audio quality.</h1>
         </UploadContainer>
