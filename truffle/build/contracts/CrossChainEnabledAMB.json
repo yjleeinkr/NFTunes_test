@@ -21,54 +21,22 @@
     {
       "ast": {
         "nodeType": "YulBlock",
-<<<<<<< HEAD
-<<<<<<< HEAD
-        "src": "0:1199:81",
-=======
-        "src": "0:1199:73",
->>>>>>> origin/main
-=======
-        "src": "0:1199:84",
->>>>>>> subscribe
+        "src": "0:1199:184",
         "statements": [
           {
             "body": {
               "nodeType": "YulBlock",
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "src": "47:35:81",
+              "src": "47:35:184",
               "statements": [
                 {
                   "nodeType": "YulAssignment",
-                  "src": "57:19:81",
-=======
-              "src": "47:35:73",
-              "statements": [
-                {
-                  "nodeType": "YulAssignment",
-                  "src": "57:19:73",
->>>>>>> origin/main
-=======
-              "src": "47:35:84",
-              "statements": [
-                {
-                  "nodeType": "YulAssignment",
-                  "src": "57:19:84",
->>>>>>> subscribe
+                  "src": "57:19:184",
                   "value": {
                     "arguments": [
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        "src": "73:2:81",
-=======
-                        "src": "73:2:73",
->>>>>>> origin/main
-=======
-                        "src": "73:2:84",
->>>>>>> subscribe
+                        "src": "73:2:184",
                         "type": "",
                         "value": "64"
                       }
@@ -76,38 +44,16 @@
                     "functionName": {
                       "name": "mload",
                       "nodeType": "YulIdentifier",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      "src": "67:5:81"
+                      "src": "67:5:184"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "67:9:81"
-=======
-                      "src": "67:5:73"
-                    },
-                    "nodeType": "YulFunctionCall",
-                    "src": "67:9:73"
->>>>>>> origin/main
-=======
-                      "src": "67:5:84"
-                    },
-                    "nodeType": "YulFunctionCall",
-                    "src": "67:9:84"
->>>>>>> subscribe
+                    "src": "67:9:184"
                   },
                   "variableNames": [
                     {
                       "name": "memPtr",
                       "nodeType": "YulIdentifier",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      "src": "57:6:81"
-=======
-                      "src": "57:6:73"
->>>>>>> origin/main
-=======
-                      "src": "57:6:84"
->>>>>>> subscribe
+                      "src": "57:6:184"
                     }
                   ]
                 }
@@ -119,40 +65,16 @@
               {
                 "name": "memPtr",
                 "nodeType": "YulTypedName",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                "src": "40:6:81",
+                "src": "40:6:184",
                 "type": ""
               }
             ],
-            "src": "7:75:81"
-=======
-                "src": "40:6:73",
-                "type": ""
-              }
-            ],
-            "src": "7:75:73"
->>>>>>> origin/main
-=======
-                "src": "40:6:84",
-                "type": ""
-              }
-            ],
-            "src": "7:75:84"
->>>>>>> subscribe
+            "src": "7:75:184"
           },
           {
             "body": {
               "nodeType": "YulBlock",
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "src": "177:28:81",
-=======
-              "src": "177:28:73",
->>>>>>> origin/main
-=======
-              "src": "177:28:84",
->>>>>>> subscribe
+              "src": "177:28:184",
               "statements": [
                 {
                   "expression": {
@@ -160,30 +82,14 @@
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        "src": "194:1:81",
-=======
-                        "src": "194:1:73",
->>>>>>> origin/main
-=======
-                        "src": "194:1:84",
->>>>>>> subscribe
+                        "src": "194:1:184",
                         "type": "",
                         "value": "0"
                       },
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        "src": "197:1:81",
-=======
-                        "src": "197:1:73",
->>>>>>> origin/main
-=======
-                        "src": "197:1:84",
->>>>>>> subscribe
+                        "src": "197:1:184",
                         "type": "",
                         "value": "0"
                       }
@@ -191,58 +97,24 @@
                     "functionName": {
                       "name": "revert",
                       "nodeType": "YulIdentifier",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      "src": "187:6:81"
-=======
-                      "src": "187:6:84"
->>>>>>> subscribe
+                      "src": "187:6:184"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "187:12:84"
+                    "src": "187:12:184"
                   },
                   "nodeType": "YulExpressionStatement",
-<<<<<<< HEAD
-                  "src": "187:12:81"
-=======
-                      "src": "187:6:73"
-                    },
-                    "nodeType": "YulFunctionCall",
-                    "src": "187:12:73"
-                  },
-                  "nodeType": "YulExpressionStatement",
-                  "src": "187:12:73"
->>>>>>> origin/main
-=======
-                  "src": "187:12:84"
->>>>>>> subscribe
+                  "src": "187:12:184"
                 }
               ]
             },
             "name": "revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b",
             "nodeType": "YulFunctionDefinition",
-<<<<<<< HEAD
-<<<<<<< HEAD
-            "src": "88:117:81"
-=======
-            "src": "88:117:73"
->>>>>>> origin/main
-=======
-            "src": "88:117:84"
->>>>>>> subscribe
+            "src": "88:117:184"
           },
           {
             "body": {
               "nodeType": "YulBlock",
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "src": "300:28:81",
-=======
-              "src": "300:28:73",
->>>>>>> origin/main
-=======
-              "src": "300:28:84",
->>>>>>> subscribe
+              "src": "300:28:184",
               "statements": [
                 {
                   "expression": {
@@ -250,30 +122,14 @@
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        "src": "317:1:81",
-=======
-                        "src": "317:1:73",
->>>>>>> origin/main
-=======
-                        "src": "317:1:84",
->>>>>>> subscribe
+                        "src": "317:1:184",
                         "type": "",
                         "value": "0"
                       },
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        "src": "320:1:81",
-=======
-                        "src": "320:1:73",
->>>>>>> origin/main
-=======
-                        "src": "320:1:84",
->>>>>>> subscribe
+                        "src": "320:1:184",
                         "type": "",
                         "value": "0"
                       }
@@ -281,97 +137,39 @@
                     "functionName": {
                       "name": "revert",
                       "nodeType": "YulIdentifier",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      "src": "310:6:81"
-=======
-                      "src": "310:6:84"
->>>>>>> subscribe
+                      "src": "310:6:184"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "310:12:84"
+                    "src": "310:12:184"
                   },
                   "nodeType": "YulExpressionStatement",
-<<<<<<< HEAD
-                  "src": "310:12:81"
-=======
-                      "src": "310:6:73"
-                    },
-                    "nodeType": "YulFunctionCall",
-                    "src": "310:12:73"
-                  },
-                  "nodeType": "YulExpressionStatement",
-                  "src": "310:12:73"
->>>>>>> origin/main
-=======
-                  "src": "310:12:84"
->>>>>>> subscribe
+                  "src": "310:12:184"
                 }
               ]
             },
             "name": "revert_error_c1322bf8034eace5e0b5c7295db60986aa89aae5e0ea0873e4689e076861a5db",
             "nodeType": "YulFunctionDefinition",
-<<<<<<< HEAD
-<<<<<<< HEAD
-            "src": "211:117:81"
-=======
-            "src": "211:117:73"
->>>>>>> origin/main
-=======
-            "src": "211:117:84"
->>>>>>> subscribe
+            "src": "211:117:184"
           },
           {
             "body": {
               "nodeType": "YulBlock",
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "src": "379:81:81",
+              "src": "379:81:184",
               "statements": [
                 {
                   "nodeType": "YulAssignment",
-                  "src": "389:65:81",
-=======
-              "src": "379:81:73",
-              "statements": [
-                {
-                  "nodeType": "YulAssignment",
-                  "src": "389:65:73",
->>>>>>> origin/main
-=======
-              "src": "379:81:84",
-              "statements": [
-                {
-                  "nodeType": "YulAssignment",
-                  "src": "389:65:84",
->>>>>>> subscribe
+                  "src": "389:65:184",
                   "value": {
                     "arguments": [
                       {
                         "name": "value",
                         "nodeType": "YulIdentifier",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        "src": "404:5:81"
-=======
-                        "src": "404:5:73"
->>>>>>> origin/main
-=======
-                        "src": "404:5:84"
->>>>>>> subscribe
+                        "src": "404:5:184"
                       },
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        "src": "411:42:81",
-=======
-                        "src": "411:42:73",
->>>>>>> origin/main
-=======
-                        "src": "411:42:84",
->>>>>>> subscribe
+                        "src": "411:42:184",
                         "type": "",
                         "value": "0xffffffffffffffffffffffffffffffffffffffff"
                       }
@@ -379,38 +177,16 @@
                     "functionName": {
                       "name": "and",
                       "nodeType": "YulIdentifier",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      "src": "400:3:81"
+                      "src": "400:3:184"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "400:54:81"
-=======
-                      "src": "400:3:73"
-                    },
-                    "nodeType": "YulFunctionCall",
-                    "src": "400:54:73"
->>>>>>> origin/main
-=======
-                      "src": "400:3:84"
-                    },
-                    "nodeType": "YulFunctionCall",
-                    "src": "400:54:84"
->>>>>>> subscribe
+                    "src": "400:54:184"
                   },
                   "variableNames": [
                     {
                       "name": "cleaned",
                       "nodeType": "YulIdentifier",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      "src": "389:7:81"
-=======
-                      "src": "389:7:73"
->>>>>>> origin/main
-=======
-                      "src": "389:7:84"
->>>>>>> subscribe
+                      "src": "389:7:184"
                     }
                   ]
                 }
@@ -422,15 +198,7 @@
               {
                 "name": "value",
                 "nodeType": "YulTypedName",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                "src": "361:5:81",
-=======
-                "src": "361:5:73",
->>>>>>> origin/main
-=======
-                "src": "361:5:84",
->>>>>>> subscribe
+                "src": "361:5:184",
                 "type": ""
               }
             ],
@@ -438,103 +206,41 @@
               {
                 "name": "cleaned",
                 "nodeType": "YulTypedName",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                "src": "371:7:81",
+                "src": "371:7:184",
                 "type": ""
               }
             ],
-            "src": "334:126:81"
-=======
-                "src": "371:7:73",
-                "type": ""
-              }
-            ],
-            "src": "334:126:73"
->>>>>>> origin/main
-=======
-                "src": "371:7:84",
-                "type": ""
-              }
-            ],
-            "src": "334:126:84"
->>>>>>> subscribe
+            "src": "334:126:184"
           },
           {
             "body": {
               "nodeType": "YulBlock",
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "src": "511:51:81",
+              "src": "511:51:184",
               "statements": [
                 {
                   "nodeType": "YulAssignment",
-                  "src": "521:35:81",
-=======
-              "src": "511:51:73",
-              "statements": [
-                {
-                  "nodeType": "YulAssignment",
-                  "src": "521:35:73",
->>>>>>> origin/main
-=======
-              "src": "511:51:84",
-              "statements": [
-                {
-                  "nodeType": "YulAssignment",
-                  "src": "521:35:84",
->>>>>>> subscribe
+                  "src": "521:35:184",
                   "value": {
                     "arguments": [
                       {
                         "name": "value",
                         "nodeType": "YulIdentifier",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        "src": "550:5:81"
-=======
-                        "src": "550:5:73"
->>>>>>> origin/main
-=======
-                        "src": "550:5:84"
->>>>>>> subscribe
+                        "src": "550:5:184"
                       }
                     ],
                     "functionName": {
                       "name": "cleanup_t_uint160",
                       "nodeType": "YulIdentifier",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      "src": "532:17:81"
+                      "src": "532:17:184"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "532:24:81"
-=======
-                      "src": "532:17:73"
-                    },
-                    "nodeType": "YulFunctionCall",
-                    "src": "532:24:73"
->>>>>>> origin/main
-=======
-                      "src": "532:17:84"
-                    },
-                    "nodeType": "YulFunctionCall",
-                    "src": "532:24:84"
->>>>>>> subscribe
+                    "src": "532:24:184"
                   },
                   "variableNames": [
                     {
                       "name": "cleaned",
                       "nodeType": "YulIdentifier",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      "src": "521:7:81"
-=======
-                      "src": "521:7:73"
->>>>>>> origin/main
-=======
-                      "src": "521:7:84"
->>>>>>> subscribe
+                      "src": "521:7:184"
                     }
                   ]
                 }
@@ -546,15 +252,7 @@
               {
                 "name": "value",
                 "nodeType": "YulTypedName",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                "src": "493:5:81",
-=======
-                "src": "493:5:73",
->>>>>>> origin/main
-=======
-                "src": "493:5:84",
->>>>>>> subscribe
+                "src": "493:5:184",
                 "type": ""
               }
             ],
@@ -562,53 +260,21 @@
               {
                 "name": "cleaned",
                 "nodeType": "YulTypedName",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                "src": "503:7:81",
+                "src": "503:7:184",
                 "type": ""
               }
             ],
-            "src": "466:96:81"
-=======
-                "src": "503:7:73",
-                "type": ""
-              }
-            ],
-            "src": "466:96:73"
->>>>>>> origin/main
-=======
-                "src": "503:7:84",
-                "type": ""
-              }
-            ],
-            "src": "466:96:84"
->>>>>>> subscribe
+            "src": "466:96:184"
           },
           {
             "body": {
               "nodeType": "YulBlock",
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "src": "611:79:81",
-=======
-              "src": "611:79:73",
->>>>>>> origin/main
-=======
-              "src": "611:79:84",
->>>>>>> subscribe
+              "src": "611:79:184",
               "statements": [
                 {
                   "body": {
                     "nodeType": "YulBlock",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    "src": "668:16:81",
-=======
-                    "src": "668:16:73",
->>>>>>> origin/main
-=======
-                    "src": "668:16:84",
->>>>>>> subscribe
+                    "src": "668:16:184",
                     "statements": [
                       {
                         "expression": {
@@ -616,30 +282,14 @@
                             {
                               "kind": "number",
                               "nodeType": "YulLiteral",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                              "src": "677:1:81",
-=======
-                              "src": "677:1:73",
->>>>>>> origin/main
-=======
-                              "src": "677:1:84",
->>>>>>> subscribe
+                              "src": "677:1:184",
                               "type": "",
                               "value": "0"
                             },
                             {
                               "kind": "number",
                               "nodeType": "YulLiteral",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                              "src": "680:1:81",
-=======
-                              "src": "680:1:73",
->>>>>>> origin/main
-=======
-                              "src": "680:1:84",
->>>>>>> subscribe
+                              "src": "680:1:184",
                               "type": "",
                               "value": "0"
                             }
@@ -647,31 +297,13 @@
                           "functionName": {
                             "name": "revert",
                             "nodeType": "YulIdentifier",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                            "src": "670:6:81"
-=======
-                            "src": "670:6:84"
->>>>>>> subscribe
+                            "src": "670:6:184"
                           },
                           "nodeType": "YulFunctionCall",
-                          "src": "670:12:84"
+                          "src": "670:12:184"
                         },
                         "nodeType": "YulExpressionStatement",
-<<<<<<< HEAD
-                        "src": "670:12:81"
-=======
-                            "src": "670:6:73"
-                          },
-                          "nodeType": "YulFunctionCall",
-                          "src": "670:12:73"
-                        },
-                        "nodeType": "YulExpressionStatement",
-                        "src": "670:12:73"
->>>>>>> origin/main
-=======
-                        "src": "670:12:84"
->>>>>>> subscribe
+                        "src": "670:12:184"
                       }
                     ]
                   },
@@ -682,106 +314,44 @@
                           {
                             "name": "value",
                             "nodeType": "YulIdentifier",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                            "src": "634:5:81"
-=======
-                            "src": "634:5:73"
->>>>>>> origin/main
-=======
-                            "src": "634:5:84"
->>>>>>> subscribe
+                            "src": "634:5:184"
                           },
                           {
                             "arguments": [
                               {
                                 "name": "value",
                                 "nodeType": "YulIdentifier",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                "src": "659:5:81"
-=======
-                                "src": "659:5:73"
->>>>>>> origin/main
-=======
-                                "src": "659:5:84"
->>>>>>> subscribe
+                                "src": "659:5:184"
                               }
                             ],
                             "functionName": {
                               "name": "cleanup_t_address",
                               "nodeType": "YulIdentifier",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                              "src": "641:17:81"
+                              "src": "641:17:184"
                             },
                             "nodeType": "YulFunctionCall",
-                            "src": "641:24:81"
-=======
-                              "src": "641:17:73"
-                            },
-                            "nodeType": "YulFunctionCall",
-                            "src": "641:24:73"
->>>>>>> origin/main
-=======
-                              "src": "641:17:84"
-                            },
-                            "nodeType": "YulFunctionCall",
-                            "src": "641:24:84"
->>>>>>> subscribe
+                            "src": "641:24:184"
                           }
                         ],
                         "functionName": {
                           "name": "eq",
                           "nodeType": "YulIdentifier",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                          "src": "631:2:81"
+                          "src": "631:2:184"
                         },
                         "nodeType": "YulFunctionCall",
-                        "src": "631:35:81"
-=======
-                          "src": "631:2:73"
-                        },
-                        "nodeType": "YulFunctionCall",
-                        "src": "631:35:73"
->>>>>>> origin/main
-=======
-                          "src": "631:2:84"
-                        },
-                        "nodeType": "YulFunctionCall",
-                        "src": "631:35:84"
->>>>>>> subscribe
+                        "src": "631:35:184"
                       }
                     ],
                     "functionName": {
                       "name": "iszero",
                       "nodeType": "YulIdentifier",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      "src": "624:6:81"
-=======
-                      "src": "624:6:84"
->>>>>>> subscribe
+                      "src": "624:6:184"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "624:43:84"
+                    "src": "624:43:184"
                   },
                   "nodeType": "YulIf",
-<<<<<<< HEAD
-                  "src": "621:63:81"
-=======
-                      "src": "624:6:73"
-                    },
-                    "nodeType": "YulFunctionCall",
-                    "src": "624:43:73"
-                  },
-                  "nodeType": "YulIf",
-                  "src": "621:63:73"
->>>>>>> origin/main
-=======
-                  "src": "621:63:84"
->>>>>>> subscribe
+                  "src": "621:63:184"
                 }
               ]
             },
@@ -791,103 +361,41 @@
               {
                 "name": "value",
                 "nodeType": "YulTypedName",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                "src": "604:5:81",
+                "src": "604:5:184",
                 "type": ""
               }
             ],
-            "src": "568:122:81"
-=======
-                "src": "604:5:73",
-                "type": ""
-              }
-            ],
-            "src": "568:122:73"
->>>>>>> origin/main
-=======
-                "src": "604:5:84",
-                "type": ""
-              }
-            ],
-            "src": "568:122:84"
->>>>>>> subscribe
+            "src": "568:122:184"
           },
           {
             "body": {
               "nodeType": "YulBlock",
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "src": "759:80:81",
+              "src": "759:80:184",
               "statements": [
                 {
                   "nodeType": "YulAssignment",
-                  "src": "769:22:81",
-=======
-              "src": "759:80:73",
-              "statements": [
-                {
-                  "nodeType": "YulAssignment",
-                  "src": "769:22:73",
->>>>>>> origin/main
-=======
-              "src": "759:80:84",
-              "statements": [
-                {
-                  "nodeType": "YulAssignment",
-                  "src": "769:22:84",
->>>>>>> subscribe
+                  "src": "769:22:184",
                   "value": {
                     "arguments": [
                       {
                         "name": "offset",
                         "nodeType": "YulIdentifier",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        "src": "784:6:81"
-=======
-                        "src": "784:6:73"
->>>>>>> origin/main
-=======
-                        "src": "784:6:84"
->>>>>>> subscribe
+                        "src": "784:6:184"
                       }
                     ],
                     "functionName": {
                       "name": "mload",
                       "nodeType": "YulIdentifier",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      "src": "778:5:81"
+                      "src": "778:5:184"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "778:13:81"
-=======
-                      "src": "778:5:73"
-                    },
-                    "nodeType": "YulFunctionCall",
-                    "src": "778:13:73"
->>>>>>> origin/main
-=======
-                      "src": "778:5:84"
-                    },
-                    "nodeType": "YulFunctionCall",
-                    "src": "778:13:84"
->>>>>>> subscribe
+                    "src": "778:13:184"
                   },
                   "variableNames": [
                     {
                       "name": "value",
                       "nodeType": "YulIdentifier",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      "src": "769:5:81"
-=======
-                      "src": "769:5:73"
->>>>>>> origin/main
-=======
-                      "src": "769:5:84"
->>>>>>> subscribe
+                      "src": "769:5:184"
                     }
                   ]
                 },
@@ -897,45 +405,19 @@
                       {
                         "name": "value",
                         "nodeType": "YulIdentifier",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        "src": "827:5:81"
-=======
-                        "src": "827:5:73"
->>>>>>> origin/main
-=======
-                        "src": "827:5:84"
->>>>>>> subscribe
+                        "src": "827:5:184"
                       }
                     ],
                     "functionName": {
                       "name": "validator_revert_t_address",
                       "nodeType": "YulIdentifier",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      "src": "800:26:81"
-=======
-                      "src": "800:26:84"
->>>>>>> subscribe
+                      "src": "800:26:184"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "800:33:84"
+                    "src": "800:33:184"
                   },
                   "nodeType": "YulExpressionStatement",
-<<<<<<< HEAD
-                  "src": "800:33:81"
-=======
-                      "src": "800:26:73"
-                    },
-                    "nodeType": "YulFunctionCall",
-                    "src": "800:33:73"
-                  },
-                  "nodeType": "YulExpressionStatement",
-                  "src": "800:33:73"
->>>>>>> origin/main
-=======
-                  "src": "800:33:84"
->>>>>>> subscribe
+                  "src": "800:33:184"
                 }
               ]
             },
@@ -945,29 +427,13 @@
               {
                 "name": "offset",
                 "nodeType": "YulTypedName",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                "src": "737:6:81",
-=======
-                "src": "737:6:73",
->>>>>>> origin/main
-=======
-                "src": "737:6:84",
->>>>>>> subscribe
+                "src": "737:6:184",
                 "type": ""
               },
               {
                 "name": "end",
                 "nodeType": "YulTypedName",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                "src": "745:3:81",
-=======
-                "src": "745:3:73",
->>>>>>> origin/main
-=======
-                "src": "745:3:84",
->>>>>>> subscribe
+                "src": "745:3:184",
                 "type": ""
               }
             ],
@@ -975,53 +441,21 @@
               {
                 "name": "value",
                 "nodeType": "YulTypedName",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                "src": "753:5:81",
+                "src": "753:5:184",
                 "type": ""
               }
             ],
-            "src": "696:143:81"
-=======
-                "src": "753:5:73",
-                "type": ""
-              }
-            ],
-            "src": "696:143:73"
->>>>>>> origin/main
-=======
-                "src": "753:5:84",
-                "type": ""
-              }
-            ],
-            "src": "696:143:84"
->>>>>>> subscribe
+            "src": "696:143:184"
           },
           {
             "body": {
               "nodeType": "YulBlock",
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "src": "922:274:81",
-=======
-              "src": "922:274:73",
->>>>>>> origin/main
-=======
-              "src": "922:274:84",
->>>>>>> subscribe
+              "src": "922:274:184",
               "statements": [
                 {
                   "body": {
                     "nodeType": "YulBlock",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    "src": "968:83:81",
-=======
-                    "src": "968:83:73",
->>>>>>> origin/main
-=======
-                    "src": "968:83:84",
->>>>>>> subscribe
+                    "src": "968:83:184",
                     "statements": [
                       {
                         "expression": {
@@ -1029,31 +463,13 @@
                           "functionName": {
                             "name": "revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b",
                             "nodeType": "YulIdentifier",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                            "src": "970:77:81"
-=======
-                            "src": "970:77:84"
->>>>>>> subscribe
+                            "src": "970:77:184"
                           },
                           "nodeType": "YulFunctionCall",
-                          "src": "970:79:84"
+                          "src": "970:79:184"
                         },
                         "nodeType": "YulExpressionStatement",
-<<<<<<< HEAD
-                        "src": "970:79:81"
-=======
-                            "src": "970:77:73"
-                          },
-                          "nodeType": "YulFunctionCall",
-                          "src": "970:79:73"
-                        },
-                        "nodeType": "YulExpressionStatement",
-                        "src": "970:79:73"
->>>>>>> origin/main
-=======
-                        "src": "970:79:84"
->>>>>>> subscribe
+                        "src": "970:79:184"
                       }
                     ]
                   },
@@ -1064,64 +480,26 @@
                           {
                             "name": "dataEnd",
                             "nodeType": "YulIdentifier",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                            "src": "943:7:81"
-=======
-                            "src": "943:7:73"
->>>>>>> origin/main
-=======
-                            "src": "943:7:84"
->>>>>>> subscribe
+                            "src": "943:7:184"
                           },
                           {
                             "name": "headStart",
                             "nodeType": "YulIdentifier",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                            "src": "952:9:81"
-=======
-                            "src": "952:9:73"
->>>>>>> origin/main
-=======
-                            "src": "952:9:84"
->>>>>>> subscribe
+                            "src": "952:9:184"
                           }
                         ],
                         "functionName": {
                           "name": "sub",
                           "nodeType": "YulIdentifier",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                          "src": "939:3:81"
+                          "src": "939:3:184"
                         },
                         "nodeType": "YulFunctionCall",
-                        "src": "939:23:81"
-=======
-                          "src": "939:3:73"
-                        },
-                        "nodeType": "YulFunctionCall",
-                        "src": "939:23:73"
->>>>>>> origin/main
-=======
-                          "src": "939:3:84"
-                        },
-                        "nodeType": "YulFunctionCall",
-                        "src": "939:23:84"
->>>>>>> subscribe
+                        "src": "939:23:184"
                       },
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        "src": "964:2:81",
-=======
-                        "src": "964:2:73",
->>>>>>> origin/main
-=======
-                        "src": "964:2:84",
->>>>>>> subscribe
+                        "src": "964:2:184",
                         "type": "",
                         "value": "32"
                       }
@@ -1129,55 +507,25 @@
                     "functionName": {
                       "name": "slt",
                       "nodeType": "YulIdentifier",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      "src": "935:3:81"
-=======
-                      "src": "935:3:84"
->>>>>>> subscribe
+                      "src": "935:3:184"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "935:32:84"
+                    "src": "935:32:184"
                   },
                   "nodeType": "YulIf",
-                  "src": "932:119:84"
+                  "src": "932:119:184"
                 },
                 {
                   "nodeType": "YulBlock",
-                  "src": "1061:128:84",
+                  "src": "1061:128:184",
                   "statements": [
                     {
                       "nodeType": "YulVariableDeclaration",
-                      "src": "1076:15:84",
+                      "src": "1076:15:184",
                       "value": {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-<<<<<<< HEAD
-                        "src": "1090:1:81",
-=======
-                      "src": "935:3:73"
-                    },
-                    "nodeType": "YulFunctionCall",
-                    "src": "935:32:73"
-                  },
-                  "nodeType": "YulIf",
-                  "src": "932:119:73"
-                },
-                {
-                  "nodeType": "YulBlock",
-                  "src": "1061:128:73",
-                  "statements": [
-                    {
-                      "nodeType": "YulVariableDeclaration",
-                      "src": "1076:15:73",
-                      "value": {
-                        "kind": "number",
-                        "nodeType": "YulLiteral",
-                        "src": "1090:1:73",
->>>>>>> origin/main
-=======
-                        "src": "1090:1:84",
->>>>>>> subscribe
+                        "src": "1090:1:184",
                         "type": "",
                         "value": "0"
                       },
@@ -1185,30 +533,14 @@
                         {
                           "name": "offset",
                           "nodeType": "YulTypedName",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                          "src": "1080:6:81",
-=======
-                          "src": "1080:6:73",
->>>>>>> origin/main
-=======
-                          "src": "1080:6:84",
->>>>>>> subscribe
+                          "src": "1080:6:184",
                           "type": ""
                         }
                       ]
                     },
                     {
                       "nodeType": "YulAssignment",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      "src": "1105:74:81",
-=======
-                      "src": "1105:74:73",
->>>>>>> origin/main
-=======
-                      "src": "1105:74:84",
->>>>>>> subscribe
+                      "src": "1105:74:184",
                       "value": {
                         "arguments": [
                           {
@@ -1216,101 +548,41 @@
                               {
                                 "name": "headStart",
                                 "nodeType": "YulIdentifier",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                "src": "1151:9:81"
-=======
-                                "src": "1151:9:73"
->>>>>>> origin/main
-=======
-                                "src": "1151:9:84"
->>>>>>> subscribe
+                                "src": "1151:9:184"
                               },
                               {
                                 "name": "offset",
                                 "nodeType": "YulIdentifier",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                "src": "1162:6:81"
-=======
-                                "src": "1162:6:73"
->>>>>>> origin/main
-=======
-                                "src": "1162:6:84"
->>>>>>> subscribe
+                                "src": "1162:6:184"
                               }
                             ],
                             "functionName": {
                               "name": "add",
                               "nodeType": "YulIdentifier",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                              "src": "1147:3:81"
+                              "src": "1147:3:184"
                             },
                             "nodeType": "YulFunctionCall",
-                            "src": "1147:22:81"
-=======
-                              "src": "1147:3:73"
-                            },
-                            "nodeType": "YulFunctionCall",
-                            "src": "1147:22:73"
->>>>>>> origin/main
-=======
-                              "src": "1147:3:84"
-                            },
-                            "nodeType": "YulFunctionCall",
-                            "src": "1147:22:84"
->>>>>>> subscribe
+                            "src": "1147:22:184"
                           },
                           {
                             "name": "dataEnd",
                             "nodeType": "YulIdentifier",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                            "src": "1171:7:81"
-=======
-                            "src": "1171:7:73"
->>>>>>> origin/main
-=======
-                            "src": "1171:7:84"
->>>>>>> subscribe
+                            "src": "1171:7:184"
                           }
                         ],
                         "functionName": {
                           "name": "abi_decode_t_address_fromMemory",
                           "nodeType": "YulIdentifier",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                          "src": "1115:31:81"
+                          "src": "1115:31:184"
                         },
                         "nodeType": "YulFunctionCall",
-                        "src": "1115:64:81"
-=======
-                          "src": "1115:31:73"
-                        },
-                        "nodeType": "YulFunctionCall",
-                        "src": "1115:64:73"
->>>>>>> origin/main
-=======
-                          "src": "1115:31:84"
-                        },
-                        "nodeType": "YulFunctionCall",
-                        "src": "1115:64:84"
->>>>>>> subscribe
+                        "src": "1115:64:184"
                       },
                       "variableNames": [
                         {
                           "name": "value0",
                           "nodeType": "YulIdentifier",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                          "src": "1105:6:81"
-=======
-                          "src": "1105:6:73"
->>>>>>> origin/main
-=======
-                          "src": "1105:6:84"
->>>>>>> subscribe
+                          "src": "1105:6:184"
                         }
                       ]
                     }
@@ -1324,29 +596,13 @@
               {
                 "name": "headStart",
                 "nodeType": "YulTypedName",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                "src": "892:9:81",
-=======
-                "src": "892:9:73",
->>>>>>> origin/main
-=======
-                "src": "892:9:84",
->>>>>>> subscribe
+                "src": "892:9:184",
                 "type": ""
               },
               {
                 "name": "dataEnd",
                 "nodeType": "YulTypedName",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                "src": "903:7:81",
-=======
-                "src": "903:7:73",
->>>>>>> origin/main
-=======
-                "src": "903:7:84",
->>>>>>> subscribe
+                "src": "903:7:184",
                 "type": ""
               }
             ],
@@ -1354,129 +610,53 @@
               {
                 "name": "value0",
                 "nodeType": "YulTypedName",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                "src": "915:6:81",
+                "src": "915:6:184",
                 "type": ""
               }
             ],
-            "src": "845:351:81"
-=======
-                "src": "915:6:73",
-                "type": ""
-              }
-            ],
-            "src": "845:351:73"
->>>>>>> origin/main
-=======
-                "src": "915:6:84",
-                "type": ""
-              }
-            ],
-            "src": "845:351:84"
->>>>>>> subscribe
+            "src": "845:351:184"
           }
         ]
       },
       "contents": "{\n\n    function allocate_unbounded() -> memPtr {\n        memPtr := mload(64)\n    }\n\n    function revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() {\n        revert(0, 0)\n    }\n\n    function revert_error_c1322bf8034eace5e0b5c7295db60986aa89aae5e0ea0873e4689e076861a5db() {\n        revert(0, 0)\n    }\n\n    function cleanup_t_uint160(value) -> cleaned {\n        cleaned := and(value, 0xffffffffffffffffffffffffffffffffffffffff)\n    }\n\n    function cleanup_t_address(value) -> cleaned {\n        cleaned := cleanup_t_uint160(value)\n    }\n\n    function validator_revert_t_address(value) {\n        if iszero(eq(value, cleanup_t_address(value))) { revert(0, 0) }\n    }\n\n    function abi_decode_t_address_fromMemory(offset, end) -> value {\n        value := mload(offset)\n        validator_revert_t_address(value)\n    }\n\n    function abi_decode_tuple_t_address_fromMemory(headStart, dataEnd) -> value0 {\n        if slt(sub(dataEnd, headStart), 32) { revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() }\n\n        {\n\n            let offset := 0\n\n            value0 := abi_decode_t_address_fromMemory(add(headStart, offset), dataEnd)\n        }\n\n    }\n\n}\n",
-<<<<<<< HEAD
-<<<<<<< HEAD
-      "id": 81,
-=======
-      "id": 73,
->>>>>>> origin/main
-=======
-      "id": 84,
->>>>>>> subscribe
+      "id": 184,
       "language": "Yul",
       "name": "#utility.yul"
     }
   ],
   "deployedGeneratedSources": [],
-<<<<<<< HEAD
-<<<<<<< HEAD
-  "sourceMap": "1273:699:21:-:0;;;1489:61;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;1537:6;1527:16;;;;;;;;;;1489:61;1273:699;;88:117:81;197:1;194;187:12;334:126;371:7;411:42;404:5;400:54;389:65;;334:126;;;:::o;466:96::-;503:7;532:24;550:5;532:24;:::i;:::-;521:35;;466:96;;;:::o;568:122::-;641:24;659:5;641:24;:::i;:::-;634:5;631:35;621:63;;680:1;677;670:12;621:63;568:122;:::o;696:143::-;753:5;784:6;778:13;769:22;;800:33;827:5;800:33;:::i;:::-;696:143;;;;:::o;845:351::-;915:6;964:2;952:9;943:7;939:23;935:32;932:119;;;970:79;;:::i;:::-;932:119;1090:1;1115:64;1171:7;1162:6;1151:9;1147:22;1115:64;:::i;:::-;1105:74;;1061:128;845:351;;;;:::o;1273:699:21:-;;;;;;;;;;;;",
+  "sourceMap": "1273:699:21:-:0;;;1489:61;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;1537:6;1527:16;;;;;;;;;;1489:61;1273:699;;88:117:184;197:1;194;187:12;334:126;371:7;411:42;404:5;400:54;389:65;;334:126;;;:::o;466:96::-;503:7;532:24;550:5;532:24;:::i;:::-;521:35;;466:96;;;:::o;568:122::-;641:24;659:5;641:24;:::i;:::-;634:5;631:35;621:63;;680:1;677;670:12;621:63;568:122;:::o;696:143::-;753:5;784:6;778:13;769:22;;800:33;827:5;800:33;:::i;:::-;696:143;;;;:::o;845:351::-;915:6;964:2;952:9;943:7;939:23;935:32;932:119;;;970:79;;:::i;:::-;932:119;1090:1;1115:64;1171:7;1162:6;1151:9;1147:22;1115:64;:::i;:::-;1105:74;;1061:128;845:351;;;;:::o;1273:699:21:-;;;;;;;;;;;;",
   "deployedSourceMap": "1273:699:21:-:0;;;;;",
   "source": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts (last updated v4.6.0) (crosschain/amb/CrossChainEnabledAMB.sol)\n\npragma solidity ^0.8.4;\n\nimport \"../CrossChainEnabled.sol\";\nimport \"./LibAMB.sol\";\n\n/**\n * @dev [AMB](https://docs.tokenbridge.net/amb-bridge/about-amb-bridge)\n * specialization or the {CrossChainEnabled} abstraction.\n *\n * As of february 2020, AMB bridges are available between the following chains:\n * - [ETH <> xDai](https://docs.tokenbridge.net/eth-xdai-amb-bridge/about-the-eth-xdai-amb)\n * - [ETH <> qDai](https://docs.tokenbridge.net/eth-qdai-bridge/about-the-eth-qdai-amb)\n * - [ETH <> ETC](https://docs.tokenbridge.net/eth-etc-amb-bridge/about-the-eth-etc-amb)\n * - [ETH <> BSC](https://docs.tokenbridge.net/eth-bsc-amb/about-the-eth-bsc-amb)\n * - [ETH <> POA](https://docs.tokenbridge.net/eth-poa-amb-bridge/about-the-eth-poa-amb)\n * - [BSC <> xDai](https://docs.tokenbridge.net/bsc-xdai-amb/about-the-bsc-xdai-amb)\n * - [POA <> xDai](https://docs.tokenbridge.net/poa-xdai-amb/about-the-poa-xdai-amb)\n * - [Rinkeby <> xDai](https://docs.tokenbridge.net/rinkeby-xdai-amb-bridge/about-the-rinkeby-xdai-amb)\n * - [Kovan <> Sokol](https://docs.tokenbridge.net/kovan-sokol-amb-bridge/about-the-kovan-sokol-amb)\n *\n * _Available since v4.6._\n */\ncontract CrossChainEnabledAMB is CrossChainEnabled {\n    /// @custom:oz-upgrades-unsafe-allow state-variable-immutable\n    address private immutable _bridge;\n\n    /// @custom:oz-upgrades-unsafe-allow constructor\n    constructor(address bridge) {\n        _bridge = bridge;\n    }\n\n    /**\n     * @dev see {CrossChainEnabled-_isCrossChain}\n     */\n    function _isCrossChain() internal view virtual override returns (bool) {\n        return LibAMB.isCrossChain(_bridge);\n    }\n\n    /**\n     * @dev see {CrossChainEnabled-_crossChainSender}\n     */\n    function _crossChainSender() internal view virtual override onlyCrossChain returns (address) {\n        return LibAMB.crossChainSender(_bridge);\n    }\n}\n",
   "sourcePath": "/Users/oo_ha/workspace/project/meta/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/crosschain/amb/CrossChainEnabledAMB.sol",
-=======
-  "sourceMap": "1273:699:9:-:0;;;1489:61;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;1537:6;1527:16;;;;;;;;;;1489:61;1273:699;;88:117:73;197:1;194;187:12;334:126;371:7;411:42;404:5;400:54;389:65;;334:126;;;:::o;466:96::-;503:7;532:24;550:5;532:24;:::i;:::-;521:35;;466:96;;;:::o;568:122::-;641:24;659:5;641:24;:::i;:::-;634:5;631:35;621:63;;680:1;677;670:12;621:63;568:122;:::o;696:143::-;753:5;784:6;778:13;769:22;;800:33;827:5;800:33;:::i;:::-;696:143;;;;:::o;845:351::-;915:6;964:2;952:9;943:7;939:23;935:32;932:119;;;970:79;;:::i;:::-;932:119;1090:1;1115:64;1171:7;1162:6;1151:9;1147:22;1115:64;:::i;:::-;1105:74;;1061:128;845:351;;;;:::o;1273:699:9:-;;;;;;;;;;;;",
-  "deployedSourceMap": "1273:699:9:-:0;;;;;",
-  "source": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts (last updated v4.6.0) (crosschain/amb/CrossChainEnabledAMB.sol)\n\npragma solidity ^0.8.4;\n\nimport \"../CrossChainEnabled.sol\";\nimport \"./LibAMB.sol\";\n\n/**\n * @dev [AMB](https://docs.tokenbridge.net/amb-bridge/about-amb-bridge)\n * specialization or the {CrossChainEnabled} abstraction.\n *\n * As of february 2020, AMB bridges are available between the following chains:\n * - [ETH <> xDai](https://docs.tokenbridge.net/eth-xdai-amb-bridge/about-the-eth-xdai-amb)\n * - [ETH <> qDai](https://docs.tokenbridge.net/eth-qdai-bridge/about-the-eth-qdai-amb)\n * - [ETH <> ETC](https://docs.tokenbridge.net/eth-etc-amb-bridge/about-the-eth-etc-amb)\n * - [ETH <> BSC](https://docs.tokenbridge.net/eth-bsc-amb/about-the-eth-bsc-amb)\n * - [ETH <> POA](https://docs.tokenbridge.net/eth-poa-amb-bridge/about-the-eth-poa-amb)\n * - [BSC <> xDai](https://docs.tokenbridge.net/bsc-xdai-amb/about-the-bsc-xdai-amb)\n * - [POA <> xDai](https://docs.tokenbridge.net/poa-xdai-amb/about-the-poa-xdai-amb)\n * - [Rinkeby <> xDai](https://docs.tokenbridge.net/rinkeby-xdai-amb-bridge/about-the-rinkeby-xdai-amb)\n * - [Kovan <> Sokol](https://docs.tokenbridge.net/kovan-sokol-amb-bridge/about-the-kovan-sokol-amb)\n *\n * _Available since v4.6._\n */\ncontract CrossChainEnabledAMB is CrossChainEnabled {\n    /// @custom:oz-upgrades-unsafe-allow state-variable-immutable\n    address private immutable _bridge;\n\n    /// @custom:oz-upgrades-unsafe-allow constructor\n    constructor(address bridge) {\n        _bridge = bridge;\n    }\n\n    /**\n     * @dev see {CrossChainEnabled-_isCrossChain}\n     */\n    function _isCrossChain() internal view virtual override returns (bool) {\n        return LibAMB.isCrossChain(_bridge);\n    }\n\n    /**\n     * @dev see {CrossChainEnabled-_crossChainSender}\n     */\n    function _crossChainSender() internal view virtual override onlyCrossChain returns (address) {\n        return LibAMB.crossChainSender(_bridge);\n    }\n}\n",
-  "sourcePath": "/home/gyuri/project/last/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/crosschain/amb/CrossChainEnabledAMB.sol",
->>>>>>> origin/main
-=======
-  "sourceMap": "1273:699:20:-:0;;;1489:61;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;1537:6;1527:16;;;;;;;;;;1489:61;1273:699;;88:117:84;197:1;194;187:12;334:126;371:7;411:42;404:5;400:54;389:65;;334:126;;;:::o;466:96::-;503:7;532:24;550:5;532:24;:::i;:::-;521:35;;466:96;;;:::o;568:122::-;641:24;659:5;641:24;:::i;:::-;634:5;631:35;621:63;;680:1;677;670:12;621:63;568:122;:::o;696:143::-;753:5;784:6;778:13;769:22;;800:33;827:5;800:33;:::i;:::-;696:143;;;;:::o;845:351::-;915:6;964:2;952:9;943:7;939:23;935:32;932:119;;;970:79;;:::i;:::-;932:119;1090:1;1115:64;1171:7;1162:6;1151:9;1147:22;1115:64;:::i;:::-;1105:74;;1061:128;845:351;;;;:::o;1273:699:20:-;;;;;;;;;;;;",
-  "deployedSourceMap": "1273:699:20:-:0;;;;;",
-  "source": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts (last updated v4.6.0) (crosschain/amb/CrossChainEnabledAMB.sol)\n\npragma solidity ^0.8.4;\n\nimport \"../CrossChainEnabled.sol\";\nimport \"./LibAMB.sol\";\n\n/**\n * @dev [AMB](https://docs.tokenbridge.net/amb-bridge/about-amb-bridge)\n * specialization or the {CrossChainEnabled} abstraction.\n *\n * As of february 2020, AMB bridges are available between the following chains:\n * - [ETH <> xDai](https://docs.tokenbridge.net/eth-xdai-amb-bridge/about-the-eth-xdai-amb)\n * - [ETH <> qDai](https://docs.tokenbridge.net/eth-qdai-bridge/about-the-eth-qdai-amb)\n * - [ETH <> ETC](https://docs.tokenbridge.net/eth-etc-amb-bridge/about-the-eth-etc-amb)\n * - [ETH <> BSC](https://docs.tokenbridge.net/eth-bsc-amb/about-the-eth-bsc-amb)\n * - [ETH <> POA](https://docs.tokenbridge.net/eth-poa-amb-bridge/about-the-eth-poa-amb)\n * - [BSC <> xDai](https://docs.tokenbridge.net/bsc-xdai-amb/about-the-bsc-xdai-amb)\n * - [POA <> xDai](https://docs.tokenbridge.net/poa-xdai-amb/about-the-poa-xdai-amb)\n * - [Rinkeby <> xDai](https://docs.tokenbridge.net/rinkeby-xdai-amb-bridge/about-the-rinkeby-xdai-amb)\n * - [Kovan <> Sokol](https://docs.tokenbridge.net/kovan-sokol-amb-bridge/about-the-kovan-sokol-amb)\n *\n * _Available since v4.6._\n */\ncontract CrossChainEnabledAMB is CrossChainEnabled {\n    /// @custom:oz-upgrades-unsafe-allow state-variable-immutable\n    address private immutable _bridge;\n\n    /// @custom:oz-upgrades-unsafe-allow constructor\n    constructor(address bridge) {\n        _bridge = bridge;\n    }\n\n    /**\n     * @dev see {CrossChainEnabled-_isCrossChain}\n     */\n    function _isCrossChain() internal view virtual override returns (bool) {\n        return LibAMB.isCrossChain(_bridge);\n    }\n\n    /**\n     * @dev see {CrossChainEnabled-_crossChainSender}\n     */\n    function _crossChainSender() internal view virtual override onlyCrossChain returns (address) {\n        return LibAMB.crossChainSender(_bridge);\n    }\n}\n",
-  "sourcePath": "/Users/oo_ha/workspace/project/meta/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/crosschain/amb/CrossChainEnabledAMB.sol",
->>>>>>> subscribe
   "ast": {
     "absolutePath": "project:/contracts/node_modules/openzeppelin-solidity/contracts/crosschain/amb/CrossChainEnabledAMB.sol",
     "exportedSymbols": {
       "AMB_Bridge": [
-<<<<<<< HEAD
-<<<<<<< HEAD
-        3409
-=======
-        6408
->>>>>>> subscribe
+        25329
       ],
       "CrossChainEnabled": [
-        2574
+        2356
       ],
       "CrossChainEnabledAMB": [
-        2624
+        2406
       ],
       "InvalidCrossChainSender": [
-        2888
+        2670
       ],
       "LibAMB": [
-        2668
+        2450
       ],
       "NotCrossChainCall": [
-        2882
+        2664
       ]
     },
-<<<<<<< HEAD
-    "id": 1270,
-=======
-        5610
-      ],
-      "CrossChainEnabled": [
-        1776
-      ],
-      "CrossChainEnabledAMB": [
-        1826
-      ],
-      "InvalidCrossChainSender": [
-        2090
-      ],
-      "LibAMB": [
-        1870
-      ],
-      "NotCrossChainCall": [
-        2084
-      ]
-    },
-    "id": 1827,
->>>>>>> origin/main
-=======
-    "id": 2625,
->>>>>>> subscribe
+    "id": 2407,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        "id": 1221,
-=======
-        "id": 1778,
->>>>>>> origin/main
-=======
-        "id": 2576,
->>>>>>> subscribe
+        "id": 2358,
         "literals": [
           "solidity",
           "^",
@@ -1484,73 +664,29 @@
           ".4"
         ],
         "nodeType": "PragmaDirective",
-<<<<<<< HEAD
-<<<<<<< HEAD
         "src": "123:23:21"
-=======
-        "src": "123:23:9"
->>>>>>> origin/main
-=======
-        "src": "123:23:20"
->>>>>>> subscribe
       },
       {
         "absolutePath": "project:/contracts/node_modules/openzeppelin-solidity/contracts/crosschain/CrossChainEnabled.sol",
         "file": "../CrossChainEnabled.sol",
-<<<<<<< HEAD
-<<<<<<< HEAD
-        "id": 1222,
+        "id": 2359,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 1270,
-        "sourceUnit": 1220,
+        "scope": 2407,
+        "sourceUnit": 2357,
         "src": "148:34:21",
-=======
-        "id": 1779,
-        "nameLocation": "-1:-1:-1",
-        "nodeType": "ImportDirective",
-        "scope": 1827,
-        "sourceUnit": 1777,
-        "src": "148:34:9",
->>>>>>> origin/main
-=======
-        "id": 2577,
-        "nameLocation": "-1:-1:-1",
-        "nodeType": "ImportDirective",
-        "scope": 2625,
-        "sourceUnit": 2575,
-        "src": "148:34:20",
->>>>>>> subscribe
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
         "absolutePath": "project:/contracts/node_modules/openzeppelin-solidity/contracts/crosschain/amb/LibAMB.sol",
         "file": "./LibAMB.sol",
-<<<<<<< HEAD
-<<<<<<< HEAD
-        "id": 1223,
+        "id": 2360,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 1270,
-        "sourceUnit": 1314,
+        "scope": 2407,
+        "sourceUnit": 2451,
         "src": "183:22:21",
-=======
-        "id": 1780,
-        "nameLocation": "-1:-1:-1",
-        "nodeType": "ImportDirective",
-        "scope": 1827,
-        "sourceUnit": 1871,
-        "src": "183:22:9",
->>>>>>> origin/main
-=======
-        "id": 2578,
-        "nameLocation": "-1:-1:-1",
-        "nodeType": "ImportDirective",
-        "scope": 2625,
-        "sourceUnit": 2669,
-        "src": "183:22:20",
->>>>>>> subscribe
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -1559,119 +695,51 @@
         "baseContracts": [
           {
             "baseName": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "id": 1225,
-=======
-              "id": 2580,
->>>>>>> subscribe
+              "id": 2362,
               "name": "CrossChainEnabled",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 2574,
-              "src": "1306:17:20"
+              "referencedDeclaration": 2356,
+              "src": "1306:17:21"
             },
-            "id": 2581,
+            "id": 2363,
             "nodeType": "InheritanceSpecifier",
-<<<<<<< HEAD
             "src": "1306:17:21"
-=======
-              "id": 1782,
-              "name": "CrossChainEnabled",
-              "nodeType": "IdentifierPath",
-              "referencedDeclaration": 1776,
-              "src": "1306:17:9"
-            },
-            "id": 1783,
-            "nodeType": "InheritanceSpecifier",
-            "src": "1306:17:9"
->>>>>>> origin/main
-=======
-            "src": "1306:17:20"
->>>>>>> subscribe
           }
         ],
         "canonicalName": "CrossChainEnabledAMB",
         "contractDependencies": [],
         "contractKind": "contract",
         "documentation": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-          "id": 1224,
-=======
-          "id": 2579,
->>>>>>> subscribe
+          "id": 2361,
           "nodeType": "StructuredDocumentation",
-          "src": "207:1065:20",
+          "src": "207:1065:21",
           "text": " @dev [AMB](https://docs.tokenbridge.net/amb-bridge/about-amb-bridge)\n specialization or the {CrossChainEnabled} abstraction.\n As of february 2020, AMB bridges are available between the following chains:\n - [ETH <> xDai](https://docs.tokenbridge.net/eth-xdai-amb-bridge/about-the-eth-xdai-amb)\n - [ETH <> qDai](https://docs.tokenbridge.net/eth-qdai-bridge/about-the-eth-qdai-amb)\n - [ETH <> ETC](https://docs.tokenbridge.net/eth-etc-amb-bridge/about-the-eth-etc-amb)\n - [ETH <> BSC](https://docs.tokenbridge.net/eth-bsc-amb/about-the-eth-bsc-amb)\n - [ETH <> POA](https://docs.tokenbridge.net/eth-poa-amb-bridge/about-the-eth-poa-amb)\n - [BSC <> xDai](https://docs.tokenbridge.net/bsc-xdai-amb/about-the-bsc-xdai-amb)\n - [POA <> xDai](https://docs.tokenbridge.net/poa-xdai-amb/about-the-poa-xdai-amb)\n - [Rinkeby <> xDai](https://docs.tokenbridge.net/rinkeby-xdai-amb-bridge/about-the-rinkeby-xdai-amb)\n - [Kovan <> Sokol](https://docs.tokenbridge.net/kovan-sokol-amb-bridge/about-the-kovan-sokol-amb)\n _Available since v4.6._"
         },
         "fullyImplemented": true,
-        "id": 2624,
+        "id": 2406,
         "linearizedBaseContracts": [
-          2624,
-          2574
+          2406,
+          2356
         ],
         "name": "CrossChainEnabledAMB",
-<<<<<<< HEAD
         "nameLocation": "1282:20:21",
-=======
-          "id": 1781,
-          "nodeType": "StructuredDocumentation",
-          "src": "207:1065:9",
-          "text": " @dev [AMB](https://docs.tokenbridge.net/amb-bridge/about-amb-bridge)\n specialization or the {CrossChainEnabled} abstraction.\n As of february 2020, AMB bridges are available between the following chains:\n - [ETH <> xDai](https://docs.tokenbridge.net/eth-xdai-amb-bridge/about-the-eth-xdai-amb)\n - [ETH <> qDai](https://docs.tokenbridge.net/eth-qdai-bridge/about-the-eth-qdai-amb)\n - [ETH <> ETC](https://docs.tokenbridge.net/eth-etc-amb-bridge/about-the-eth-etc-amb)\n - [ETH <> BSC](https://docs.tokenbridge.net/eth-bsc-amb/about-the-eth-bsc-amb)\n - [ETH <> POA](https://docs.tokenbridge.net/eth-poa-amb-bridge/about-the-eth-poa-amb)\n - [BSC <> xDai](https://docs.tokenbridge.net/bsc-xdai-amb/about-the-bsc-xdai-amb)\n - [POA <> xDai](https://docs.tokenbridge.net/poa-xdai-amb/about-the-poa-xdai-amb)\n - [Rinkeby <> xDai](https://docs.tokenbridge.net/rinkeby-xdai-amb-bridge/about-the-rinkeby-xdai-amb)\n - [Kovan <> Sokol](https://docs.tokenbridge.net/kovan-sokol-amb-bridge/about-the-kovan-sokol-amb)\n _Available since v4.6._"
-        },
-        "fullyImplemented": true,
-        "id": 1826,
-        "linearizedBaseContracts": [
-          1826,
-          1776
-        ],
-        "name": "CrossChainEnabledAMB",
-        "nameLocation": "1282:20:9",
->>>>>>> origin/main
-=======
-        "nameLocation": "1282:20:20",
->>>>>>> subscribe
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
             "documentation": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "id": 1227,
-=======
-              "id": 2582,
->>>>>>> subscribe
+              "id": 2364,
               "nodeType": "StructuredDocumentation",
-              "src": "1330:61:20",
+              "src": "1330:61:21",
               "text": "@custom:oz-upgrades-unsafe-allow state-variable-immutable"
             },
-            "id": 2584,
+            "id": 2366,
             "mutability": "immutable",
             "name": "_bridge",
-            "nameLocation": "1422:7:20",
+            "nameLocation": "1422:7:21",
             "nodeType": "VariableDeclaration",
-<<<<<<< HEAD
-            "scope": 1269,
+            "scope": 2406,
             "src": "1396:33:21",
-=======
-              "id": 1784,
-              "nodeType": "StructuredDocumentation",
-              "src": "1330:61:9",
-              "text": "@custom:oz-upgrades-unsafe-allow state-variable-immutable"
-            },
-            "id": 1786,
-            "mutability": "immutable",
-            "name": "_bridge",
-            "nameLocation": "1422:7:9",
-            "nodeType": "VariableDeclaration",
-            "scope": 1826,
-            "src": "1396:33:9",
->>>>>>> origin/main
-=======
-            "scope": 2624,
-            "src": "1396:33:20",
->>>>>>> subscribe
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1679,24 +747,10 @@
               "typeString": "address"
             },
             "typeName": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "id": 1228,
+              "id": 2365,
               "name": "address",
               "nodeType": "ElementaryTypeName",
               "src": "1396:7:21",
-=======
-              "id": 1785,
-              "name": "address",
-              "nodeType": "ElementaryTypeName",
-              "src": "1396:7:9",
->>>>>>> origin/main
-=======
-              "id": 2583,
-              "name": "address",
-              "nodeType": "ElementaryTypeName",
-              "src": "1396:7:20",
->>>>>>> subscribe
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -1707,60 +761,24 @@
           },
           {
             "body": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "id": 1239,
-=======
-              "id": 2594,
->>>>>>> subscribe
+              "id": 2376,
               "nodeType": "Block",
-              "src": "1517:33:20",
+              "src": "1517:33:21",
               "statements": [
                 {
                   "expression": {
-<<<<<<< HEAD
-                    "id": 1237,
-=======
-              "id": 1796,
-              "nodeType": "Block",
-              "src": "1517:33:9",
-              "statements": [
-                {
-                  "expression": {
-                    "id": 1794,
->>>>>>> origin/main
-=======
-                    "id": 2592,
->>>>>>> subscribe
+                    "id": 2374,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      "id": 1235,
+                      "id": 2372,
                       "name": "_bridge",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1229,
+                      "referencedDeclaration": 2366,
                       "src": "1527:7:21",
-=======
-                      "id": 1792,
-                      "name": "_bridge",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 1786,
-                      "src": "1527:7:9",
->>>>>>> origin/main
-=======
-                      "id": 2590,
-                      "name": "_bridge",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 2584,
-                      "src": "1527:7:20",
->>>>>>> subscribe
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -1769,91 +787,36 @@
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      "id": 1236,
+                      "id": 2373,
                       "name": "bridge",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1232,
+                      "referencedDeclaration": 2369,
                       "src": "1537:6:21",
-=======
-                      "id": 1793,
-                      "name": "bridge",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 1789,
-                      "src": "1537:6:9",
->>>>>>> origin/main
-=======
-                      "id": 2591,
-                      "name": "bridge",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 2587,
-                      "src": "1537:6:20",
->>>>>>> subscribe
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-<<<<<<< HEAD
-<<<<<<< HEAD
                     "src": "1527:16:21",
-=======
-                    "src": "1527:16:9",
->>>>>>> origin/main
-=======
-                    "src": "1527:16:20",
->>>>>>> subscribe
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "id": 1238,
+                  "id": 2375,
                   "nodeType": "ExpressionStatement",
                   "src": "1527:16:21"
-=======
-                  "id": 1795,
-                  "nodeType": "ExpressionStatement",
-                  "src": "1527:16:9"
->>>>>>> origin/main
-=======
-                  "id": 2593,
-                  "nodeType": "ExpressionStatement",
-                  "src": "1527:16:20"
->>>>>>> subscribe
                 }
               ]
             },
             "documentation": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "id": 1230,
-=======
-              "id": 2585,
->>>>>>> subscribe
+              "id": 2367,
               "nodeType": "StructuredDocumentation",
-              "src": "1436:48:20",
+              "src": "1436:48:21",
               "text": "@custom:oz-upgrades-unsafe-allow constructor"
             },
-<<<<<<< HEAD
-            "id": 1240,
-=======
-              "id": 1787,
-              "nodeType": "StructuredDocumentation",
-              "src": "1436:48:9",
-              "text": "@custom:oz-upgrades-unsafe-allow constructor"
-            },
-            "id": 1797,
->>>>>>> origin/main
-=======
-            "id": 2595,
->>>>>>> subscribe
+            "id": 2377,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
@@ -1861,45 +824,18 @@
             "nameLocation": "-1:-1:-1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "id": 1233,
-=======
-              "id": 1790,
->>>>>>> origin/main
-=======
-              "id": 2588,
->>>>>>> subscribe
+              "id": 2370,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "id": 1232,
-=======
-                  "id": 2587,
->>>>>>> subscribe
+                  "id": 2369,
                   "mutability": "mutable",
                   "name": "bridge",
-                  "nameLocation": "1509:6:20",
+                  "nameLocation": "1509:6:21",
                   "nodeType": "VariableDeclaration",
-<<<<<<< HEAD
-                  "scope": 1240,
+                  "scope": 2377,
                   "src": "1501:14:21",
-=======
-                  "id": 1789,
-                  "mutability": "mutable",
-                  "name": "bridge",
-                  "nameLocation": "1509:6:9",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 1797,
-                  "src": "1501:14:9",
->>>>>>> origin/main
-=======
-                  "scope": 2595,
-                  "src": "1501:14:20",
->>>>>>> subscribe
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1907,24 +843,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    "id": 1231,
+                    "id": 2368,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1501:7:21",
-=======
-                    "id": 1788,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "1501:7:9",
->>>>>>> origin/main
-=======
-                    "id": 2586,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "1501:7:20",
->>>>>>> subscribe
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1934,96 +856,39 @@
                   "visibility": "internal"
                 }
               ],
-<<<<<<< HEAD
-<<<<<<< HEAD
               "src": "1500:16:21"
-=======
-              "src": "1500:16:20"
->>>>>>> subscribe
             },
             "returnParameters": {
-              "id": 2589,
+              "id": 2371,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1517:0:20"
+              "src": "1517:0:21"
             },
-<<<<<<< HEAD
-            "scope": 1269,
+            "scope": 2406,
             "src": "1489:61:21",
-=======
-              "src": "1500:16:9"
-            },
-            "returnParameters": {
-              "id": 1791,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "1517:0:9"
-            },
-            "scope": 1826,
-            "src": "1489:61:9",
->>>>>>> origin/main
-=======
-            "scope": 2624,
-            "src": "1489:61:20",
->>>>>>> subscribe
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           },
           {
             "baseFunctions": [
-<<<<<<< HEAD
-<<<<<<< HEAD
-              1212
-=======
-              2567
->>>>>>> subscribe
+              2349
             ],
             "body": {
-              "id": 2607,
+              "id": 2389,
               "nodeType": "Block",
-<<<<<<< HEAD
               "src": "1693:52:21",
-=======
-              1769
-            ],
-            "body": {
-              "id": 1809,
-              "nodeType": "Block",
-              "src": "1693:52:9",
->>>>>>> origin/main
-=======
-              "src": "1693:52:20",
->>>>>>> subscribe
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        "id": 1249,
+                        "id": 2386,
                         "name": "_bridge",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1229,
+                        "referencedDeclaration": 2366,
                         "src": "1730:7:21",
-=======
-                        "id": 1806,
-                        "name": "_bridge",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 1786,
-                        "src": "1730:7:9",
->>>>>>> origin/main
-=======
-                        "id": 2604,
-                        "name": "_bridge",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 2584,
-                        "src": "1730:7:20",
->>>>>>> subscribe
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -2038,73 +903,32 @@
                         }
                       ],
                       "expression": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        "id": 1247,
-=======
-                        "id": 2602,
->>>>>>> subscribe
+                        "id": 2384,
                         "name": "LibAMB",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2668,
-                        "src": "1710:6:20",
+                        "referencedDeclaration": 2450,
+                        "src": "1710:6:21",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_LibAMB_$2668_$",
+                          "typeIdentifier": "t_type$_t_contract$_LibAMB_$2450_$",
                           "typeString": "type(library LibAMB)"
                         }
                       },
-<<<<<<< HEAD
-                      "id": 1248,
-=======
-                        "id": 1804,
-                        "name": "LibAMB",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 1870,
-                        "src": "1710:6:9",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_LibAMB_$1870_$",
-                          "typeString": "type(library LibAMB)"
-                        }
-                      },
-                      "id": 1805,
->>>>>>> origin/main
-=======
-                      "id": 2603,
->>>>>>> subscribe
+                      "id": 2385,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "isCrossChain",
                       "nodeType": "MemberAccess",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      "referencedDeclaration": 1289,
+                      "referencedDeclaration": 2426,
                       "src": "1710:19:21",
-=======
-                      "referencedDeclaration": 1846,
-                      "src": "1710:19:9",
->>>>>>> origin/main
-=======
-                      "referencedDeclaration": 2644,
-                      "src": "1710:19:20",
->>>>>>> subscribe
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$",
                         "typeString": "function (address) view returns (bool)"
                       }
                     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    "id": 1250,
-=======
-                    "id": 1807,
->>>>>>> origin/main
-=======
-                    "id": 2605,
->>>>>>> subscribe
+                    "id": 2387,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2112,142 +936,58 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-<<<<<<< HEAD
-<<<<<<< HEAD
                     "src": "1710:28:21",
-=======
-                    "src": "1710:28:9",
->>>>>>> origin/main
-=======
-                    "src": "1710:28:20",
->>>>>>> subscribe
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "functionReturnParameters": 1246,
-                  "id": 1251,
+                  "functionReturnParameters": 2383,
+                  "id": 2388,
                   "nodeType": "Return",
                   "src": "1703:35:21"
-=======
-                  "functionReturnParameters": 1803,
-                  "id": 1808,
-                  "nodeType": "Return",
-                  "src": "1703:35:9"
->>>>>>> origin/main
-=======
-                  "functionReturnParameters": 2601,
-                  "id": 2606,
-                  "nodeType": "Return",
-                  "src": "1703:35:20"
->>>>>>> subscribe
                 }
               ]
             },
             "documentation": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "id": 1241,
-=======
-              "id": 2596,
->>>>>>> subscribe
+              "id": 2378,
               "nodeType": "StructuredDocumentation",
-              "src": "1556:61:20",
+              "src": "1556:61:21",
               "text": " @dev see {CrossChainEnabled-_isCrossChain}"
             },
-<<<<<<< HEAD
-            "id": 1253,
-=======
-              "id": 1798,
-              "nodeType": "StructuredDocumentation",
-              "src": "1556:61:9",
-              "text": " @dev see {CrossChainEnabled-_isCrossChain}"
-            },
-            "id": 1810,
->>>>>>> origin/main
-=======
-            "id": 2608,
->>>>>>> subscribe
+            "id": 2390,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "_isCrossChain",
-<<<<<<< HEAD
-<<<<<<< HEAD
             "nameLocation": "1631:13:21",
-=======
-            "nameLocation": "1631:13:20",
->>>>>>> subscribe
             "nodeType": "FunctionDefinition",
             "overrides": {
-              "id": 2598,
+              "id": 2380,
               "nodeType": "OverrideSpecifier",
               "overrides": [],
-              "src": "1669:8:20"
+              "src": "1669:8:21"
             },
             "parameters": {
-              "id": 2597,
+              "id": 2379,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1644:2:20"
+              "src": "1644:2:21"
             },
             "returnParameters": {
-<<<<<<< HEAD
-              "id": 1246,
-=======
-            "nameLocation": "1631:13:9",
-            "nodeType": "FunctionDefinition",
-            "overrides": {
-              "id": 1800,
-              "nodeType": "OverrideSpecifier",
-              "overrides": [],
-              "src": "1669:8:9"
-            },
-            "parameters": {
-              "id": 1799,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "1644:2:9"
-            },
-            "returnParameters": {
-              "id": 1803,
->>>>>>> origin/main
-=======
-              "id": 2601,
->>>>>>> subscribe
+              "id": 2383,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "id": 1245,
-=======
-                  "id": 1802,
->>>>>>> origin/main
-=======
-                  "id": 2600,
->>>>>>> subscribe
+                  "id": 2382,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "scope": 1253,
+                  "scope": 2390,
                   "src": "1687:4:21",
-=======
-                  "scope": 1810,
-                  "src": "1687:4:9",
->>>>>>> origin/main
-=======
-                  "scope": 2608,
-                  "src": "1687:4:20",
->>>>>>> subscribe
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2255,24 +995,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    "id": 1244,
+                    "id": 2381,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1687:4:21",
-=======
-                    "id": 1801,
-                    "name": "bool",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "1687:4:9",
->>>>>>> origin/main
-=======
-                    "id": 2599,
-                    "name": "bool",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "1687:4:20",
->>>>>>> subscribe
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -2281,82 +1007,33 @@
                   "visibility": "internal"
                 }
               ],
-<<<<<<< HEAD
-<<<<<<< HEAD
               "src": "1686:6:21"
             },
-            "scope": 1269,
+            "scope": 2406,
             "src": "1622:123:21",
-=======
-              "src": "1686:6:9"
-            },
-            "scope": 1826,
-            "src": "1622:123:9",
->>>>>>> origin/main
-=======
-              "src": "1686:6:20"
-            },
-            "scope": 2624,
-            "src": "1622:123:20",
->>>>>>> subscribe
             "stateMutability": "view",
             "virtual": true,
             "visibility": "internal"
           },
           {
             "baseFunctions": [
-<<<<<<< HEAD
-<<<<<<< HEAD
-              1218
-=======
-              2573
->>>>>>> subscribe
+              2355
             ],
             "body": {
-              "id": 2622,
+              "id": 2404,
               "nodeType": "Block",
-<<<<<<< HEAD
               "src": "1914:56:21",
-=======
-              1775
-            ],
-            "body": {
-              "id": 1824,
-              "nodeType": "Block",
-              "src": "1914:56:9",
->>>>>>> origin/main
-=======
-              "src": "1914:56:20",
->>>>>>> subscribe
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        "id": 1264,
+                        "id": 2401,
                         "name": "_bridge",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1229,
+                        "referencedDeclaration": 2366,
                         "src": "1955:7:21",
-=======
-                        "id": 1821,
-                        "name": "_bridge",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 1786,
-                        "src": "1955:7:9",
->>>>>>> origin/main
-=======
-                        "id": 2619,
-                        "name": "_bridge",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 2584,
-                        "src": "1955:7:20",
->>>>>>> subscribe
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -2371,73 +1048,32 @@
                         }
                       ],
                       "expression": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        "id": 1262,
-=======
-                        "id": 2617,
->>>>>>> subscribe
+                        "id": 2399,
                         "name": "LibAMB",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2668,
-                        "src": "1931:6:20",
+                        "referencedDeclaration": 2450,
+                        "src": "1931:6:21",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_LibAMB_$2668_$",
+                          "typeIdentifier": "t_type$_t_contract$_LibAMB_$2450_$",
                           "typeString": "type(library LibAMB)"
                         }
                       },
-<<<<<<< HEAD
-                      "id": 1263,
-=======
-                        "id": 1819,
-                        "name": "LibAMB",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 1870,
-                        "src": "1931:6:9",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_LibAMB_$1870_$",
-                          "typeString": "type(library LibAMB)"
-                        }
-                      },
-                      "id": 1820,
->>>>>>> origin/main
-=======
-                      "id": 2618,
->>>>>>> subscribe
+                      "id": 2400,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "crossChainSender",
                       "nodeType": "MemberAccess",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      "referencedDeclaration": 1312,
+                      "referencedDeclaration": 2449,
                       "src": "1931:23:21",
-=======
-                      "referencedDeclaration": 1869,
-                      "src": "1931:23:9",
->>>>>>> origin/main
-=======
-                      "referencedDeclaration": 2667,
-                      "src": "1931:23:20",
->>>>>>> subscribe
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_address_$",
                         "typeString": "function (address) view returns (address)"
                       }
                     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    "id": 1265,
-=======
-                    "id": 1822,
->>>>>>> origin/main
-=======
-                    "id": 2620,
->>>>>>> subscribe
+                    "id": 2402,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2445,170 +1081,72 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-<<<<<<< HEAD
-<<<<<<< HEAD
                     "src": "1931:32:21",
-=======
-                    "src": "1931:32:9",
->>>>>>> origin/main
-=======
-                    "src": "1931:32:20",
->>>>>>> subscribe
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "functionReturnParameters": 1261,
-                  "id": 1266,
+                  "functionReturnParameters": 2398,
+                  "id": 2403,
                   "nodeType": "Return",
                   "src": "1924:39:21"
-=======
-                  "functionReturnParameters": 1818,
-                  "id": 1823,
-                  "nodeType": "Return",
-                  "src": "1924:39:9"
->>>>>>> origin/main
-=======
-                  "functionReturnParameters": 2616,
-                  "id": 2621,
-                  "nodeType": "Return",
-                  "src": "1924:39:20"
->>>>>>> subscribe
                 }
               ]
             },
             "documentation": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "id": 1254,
-=======
-              "id": 2609,
->>>>>>> subscribe
+              "id": 2391,
               "nodeType": "StructuredDocumentation",
-              "src": "1751:65:20",
+              "src": "1751:65:21",
               "text": " @dev see {CrossChainEnabled-_crossChainSender}"
             },
-<<<<<<< HEAD
-            "id": 1268,
-=======
-              "id": 1811,
-              "nodeType": "StructuredDocumentation",
-              "src": "1751:65:9",
-              "text": " @dev see {CrossChainEnabled-_crossChainSender}"
-            },
-            "id": 1825,
->>>>>>> origin/main
-=======
-            "id": 2623,
->>>>>>> subscribe
+            "id": 2405,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                "id": 1258,
-=======
-                "id": 2613,
->>>>>>> subscribe
+                "id": 2395,
                 "kind": "modifierInvocation",
                 "modifierName": {
-                  "id": 2612,
+                  "id": 2394,
                   "name": "onlyCrossChain",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 2540,
-                  "src": "1881:14:20"
+                  "referencedDeclaration": 2322,
+                  "src": "1881:14:21"
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "1881:14:20"
+                "src": "1881:14:21"
               }
             ],
             "name": "_crossChainSender",
-            "nameLocation": "1830:17:20",
+            "nameLocation": "1830:17:21",
             "nodeType": "FunctionDefinition",
             "overrides": {
-              "id": 2611,
+              "id": 2393,
               "nodeType": "OverrideSpecifier",
               "overrides": [],
-              "src": "1872:8:20"
+              "src": "1872:8:21"
             },
             "parameters": {
-              "id": 2610,
+              "id": 2392,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1847:2:20"
+              "src": "1847:2:21"
             },
             "returnParameters": {
-<<<<<<< HEAD
-              "id": 1261,
-=======
-                "id": 1815,
-                "kind": "modifierInvocation",
-                "modifierName": {
-                  "id": 1814,
-                  "name": "onlyCrossChain",
-                  "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 1742,
-                  "src": "1881:14:9"
-                },
-                "nodeType": "ModifierInvocation",
-                "src": "1881:14:9"
-              }
-            ],
-            "name": "_crossChainSender",
-            "nameLocation": "1830:17:9",
-            "nodeType": "FunctionDefinition",
-            "overrides": {
-              "id": 1813,
-              "nodeType": "OverrideSpecifier",
-              "overrides": [],
-              "src": "1872:8:9"
-            },
-            "parameters": {
-              "id": 1812,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "1847:2:9"
-            },
-            "returnParameters": {
-              "id": 1818,
->>>>>>> origin/main
-=======
-              "id": 2616,
->>>>>>> subscribe
+              "id": 2398,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "id": 1260,
-=======
-                  "id": 1817,
->>>>>>> origin/main
-=======
-                  "id": 2615,
->>>>>>> subscribe
+                  "id": 2397,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "scope": 1268,
+                  "scope": 2405,
                   "src": "1905:7:21",
-=======
-                  "scope": 1825,
-                  "src": "1905:7:9",
->>>>>>> origin/main
-=======
-                  "scope": 2623,
-                  "src": "1905:7:20",
->>>>>>> subscribe
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2616,24 +1154,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    "id": 1259,
+                    "id": 2396,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1905:7:21",
-=======
-                    "id": 1816,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "1905:7:9",
->>>>>>> origin/main
-=======
-                    "id": 2614,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "1905:7:20",
->>>>>>> subscribe
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -2643,53 +1167,21 @@
                   "visibility": "internal"
                 }
               ],
-<<<<<<< HEAD
-<<<<<<< HEAD
               "src": "1904:9:21"
             },
-            "scope": 1269,
+            "scope": 2406,
             "src": "1821:149:21",
-=======
-              "src": "1904:9:9"
-            },
-            "scope": 1826,
-            "src": "1821:149:9",
->>>>>>> origin/main
-=======
-              "src": "1904:9:20"
-            },
-            "scope": 2624,
-            "src": "1821:149:20",
->>>>>>> subscribe
             "stateMutability": "view",
             "virtual": true,
             "visibility": "internal"
           }
         ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-        "scope": 1270,
+        "scope": 2407,
         "src": "1273:699:21",
         "usedErrors": []
       }
     ],
     "src": "123:1850:21"
-=======
-        "scope": 1827,
-        "src": "1273:699:9",
-        "usedErrors": []
-      }
-    ],
-    "src": "123:1850:9"
->>>>>>> origin/main
-=======
-        "scope": 2625,
-        "src": "1273:699:20",
-        "usedErrors": []
-      }
-    ],
-    "src": "123:1850:20"
->>>>>>> subscribe
   },
   "compiler": {
     "name": "solc",
@@ -2697,15 +1189,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.8",
-<<<<<<< HEAD
-<<<<<<< HEAD
-  "updatedAt": "2022-08-25T00:44:56.220Z",
-=======
-  "updatedAt": "2022-08-24T06:06:27.160Z",
->>>>>>> origin/main
-=======
-  "updatedAt": "2022-08-30T01:20:21.419Z",
->>>>>>> subscribe
+  "updatedAt": "2022-08-30T07:51:48.786Z",
   "devdoc": {
     "details": "[AMB](https://docs.tokenbridge.net/amb-bridge/about-amb-bridge) specialization or the {CrossChainEnabled} abstraction. As of february 2020, AMB bridges are available between the following chains: - [ETH <> xDai](https://docs.tokenbridge.net/eth-xdai-amb-bridge/about-the-eth-xdai-amb) - [ETH <> qDai](https://docs.tokenbridge.net/eth-qdai-bridge/about-the-eth-qdai-amb) - [ETH <> ETC](https://docs.tokenbridge.net/eth-etc-amb-bridge/about-the-eth-etc-amb) - [ETH <> BSC](https://docs.tokenbridge.net/eth-bsc-amb/about-the-eth-bsc-amb) - [ETH <> POA](https://docs.tokenbridge.net/eth-poa-amb-bridge/about-the-eth-poa-amb) - [BSC <> xDai](https://docs.tokenbridge.net/bsc-xdai-amb/about-the-bsc-xdai-amb) - [POA <> xDai](https://docs.tokenbridge.net/poa-xdai-amb/about-the-poa-xdai-amb) - [Rinkeby <> xDai](https://docs.tokenbridge.net/rinkeby-xdai-amb-bridge/about-the-rinkeby-xdai-amb) - [Kovan <> Sokol](https://docs.tokenbridge.net/kovan-sokol-amb-bridge/about-the-kovan-sokol-amb) _Available since v4.6._",
     "kind": "dev",

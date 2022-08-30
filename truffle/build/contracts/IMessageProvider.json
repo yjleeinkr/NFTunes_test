@@ -43,28 +43,20 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: Apache-2.0\n// OpenZeppelin Contracts (last updated v4.6.0) (vendor/arbitrum/IMessageProvider.sol)\n\n/*\n * Copyright 2021, Offchain Labs, Inc.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *    http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npragma solidity ^0.8.0;\n\ninterface IMessageProvider {\n    event InboxMessageDelivered(uint256 indexed messageNum, bytes data);\n\n    event InboxMessageDeliveredFromOrigin(uint256 indexed messageNum);\n}\n",
-<<<<<<< HEAD
-<<<<<<< HEAD
   "sourcePath": "/Users/oo_ha/workspace/project/meta/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/vendor/arbitrum/IMessageProvider.sol",
-=======
-  "sourcePath": "/home/gyuri/project/last/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/vendor/arbitrum/IMessageProvider.sol",
->>>>>>> origin/main
-=======
-  "sourcePath": "/Users/oo_ha/workspace/project/meta/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/vendor/arbitrum/IMessageProvider.sol",
->>>>>>> subscribe
   "ast": {
     "absolutePath": "project:/contracts/node_modules/openzeppelin-solidity/contracts/vendor/arbitrum/IMessageProvider.sol",
     "exportedSymbols": {
       "IMessageProvider": [
-        24848
+        25702
       ]
     },
-    "id": 24849,
+    "id": 25703,
     "license": "Apache-2.0",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 24837,
+        "id": 25691,
         "literals": [
           "solidity",
           "^",
@@ -72,7 +64,7 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "731:23:165"
+        "src": "731:23:176"
       },
       {
         "abstract": false,
@@ -81,35 +73,35 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": true,
-        "id": 24848,
+        "id": 25702,
         "linearizedBaseContracts": [
-          24848
+          25702
         ],
         "name": "IMessageProvider",
-        "nameLocation": "766:16:165",
+        "nameLocation": "766:16:176",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "anonymous": false,
             "eventSelector": "ff64905f73a67fb594e0f940a8075a860db489ad991e032f48c81123eb52d60b",
-            "id": 24843,
+            "id": 25697,
             "name": "InboxMessageDelivered",
-            "nameLocation": "795:21:165",
+            "nameLocation": "795:21:176",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 24842,
+              "id": 25696,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 24839,
+                  "id": 25693,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "messageNum",
-                  "nameLocation": "833:10:165",
+                  "nameLocation": "833:10:176",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24843,
-                  "src": "817:26:165",
+                  "scope": 25697,
+                  "src": "817:26:176",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -117,10 +109,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 24838,
+                    "id": 25692,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "817:7:165",
+                    "src": "817:7:176",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -130,14 +122,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 24841,
+                  "id": 25695,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "data",
-                  "nameLocation": "851:4:165",
+                  "nameLocation": "851:4:176",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24843,
-                  "src": "845:10:165",
+                  "scope": 25697,
+                  "src": "845:10:176",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -145,10 +137,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 24840,
+                    "id": 25694,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "845:5:165",
+                    "src": "845:5:176",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -157,31 +149,31 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "816:40:165"
+              "src": "816:40:176"
             },
-            "src": "789:68:165"
+            "src": "789:68:176"
           },
           {
             "anonymous": false,
             "eventSelector": "ab532385be8f1005a4b6ba8fa20a2245facb346134ac739fe9a5198dc1580b9c",
-            "id": 24847,
+            "id": 25701,
             "name": "InboxMessageDeliveredFromOrigin",
-            "nameLocation": "869:31:165",
+            "nameLocation": "869:31:176",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 24846,
+              "id": 25700,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 24845,
+                  "id": 25699,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "messageNum",
-                  "nameLocation": "917:10:165",
+                  "nameLocation": "917:10:176",
                   "nodeType": "VariableDeclaration",
-                  "scope": 24847,
-                  "src": "901:26:165",
+                  "scope": 25701,
+                  "src": "901:26:176",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -189,10 +181,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 24844,
+                    "id": 25698,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "901:7:165",
+                    "src": "901:7:176",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -201,17 +193,17 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "900:28:165"
+              "src": "900:28:176"
             },
-            "src": "863:66:165"
+            "src": "863:66:176"
           }
         ],
-        "scope": 24849,
-        "src": "756:175:165",
+        "scope": 25703,
+        "src": "756:175:176",
         "usedErrors": []
       }
     ],
-    "src": "731:201:165"
+    "src": "731:201:176"
   },
   "compiler": {
     "name": "solc",
@@ -219,15 +211,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.8",
-<<<<<<< HEAD
-<<<<<<< HEAD
-  "updatedAt": "2022-08-24T05:52:12.845Z",
-=======
-  "updatedAt": "2022-08-24T05:34:44.073Z",
->>>>>>> origin/main
-=======
-  "updatedAt": "2022-08-24T05:52:12.845Z",
->>>>>>> subscribe
+  "updatedAt": "2022-08-30T07:51:49.082Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

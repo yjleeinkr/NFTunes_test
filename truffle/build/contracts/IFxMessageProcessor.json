@@ -34,28 +34,20 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts (last updated v4.6.0) (vendor/polygon/IFxMessageProcessor.sol)\npragma solidity ^0.8.0;\n\ninterface IFxMessageProcessor {\n    function processMessageFromRoot(\n        uint256 stateId,\n        address rootMessageSender,\n        bytes calldata data\n    ) external;\n}\n",
-<<<<<<< HEAD
-<<<<<<< HEAD
   "sourcePath": "/Users/oo_ha/workspace/project/meta/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/vendor/polygon/IFxMessageProcessor.sol",
-=======
-  "sourcePath": "/home/gyuri/project/last/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/vendor/polygon/IFxMessageProcessor.sol",
->>>>>>> origin/main
-=======
-  "sourcePath": "/Users/oo_ha/workspace/project/meta/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/vendor/polygon/IFxMessageProcessor.sol",
->>>>>>> subscribe
   "ast": {
     "absolutePath": "project:/contracts/node_modules/openzeppelin-solidity/contracts/vendor/polygon/IFxMessageProcessor.sol",
     "exportedSymbols": {
       "IFxMessageProcessor": [
-        25121
+        25975
       ]
     },
-    "id": 25122,
+    "id": 25976,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 25111,
+        "id": 25965,
         "literals": [
           "solidity",
           "^",
@@ -63,7 +55,7 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "121:23:169"
+        "src": "121:23:180"
       },
       {
         "abstract": false,
@@ -72,36 +64,36 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": false,
-        "id": 25121,
+        "id": 25975,
         "linearizedBaseContracts": [
-          25121
+          25975
         ],
         "name": "IFxMessageProcessor",
-        "nameLocation": "156:19:169",
+        "nameLocation": "156:19:180",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "functionSelector": "9a7c4b71",
-            "id": 25120,
+            "id": 25974,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "processMessageFromRoot",
-            "nameLocation": "191:22:169",
+            "nameLocation": "191:22:180",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 25118,
+              "id": 25972,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25113,
+                  "id": 25967,
                   "mutability": "mutable",
                   "name": "stateId",
-                  "nameLocation": "231:7:169",
+                  "nameLocation": "231:7:180",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25120,
-                  "src": "223:15:169",
+                  "scope": 25974,
+                  "src": "223:15:180",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -109,10 +101,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 25112,
+                    "id": 25966,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "223:7:169",
+                    "src": "223:7:180",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -122,13 +114,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 25115,
+                  "id": 25969,
                   "mutability": "mutable",
                   "name": "rootMessageSender",
-                  "nameLocation": "256:17:169",
+                  "nameLocation": "256:17:180",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25120,
-                  "src": "248:25:169",
+                  "scope": 25974,
+                  "src": "248:25:180",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -136,10 +128,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 25114,
+                    "id": 25968,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "248:7:169",
+                    "src": "248:7:180",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -150,13 +142,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 25117,
+                  "id": 25971,
                   "mutability": "mutable",
                   "name": "data",
-                  "nameLocation": "298:4:169",
+                  "nameLocation": "298:4:180",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25120,
-                  "src": "283:19:169",
+                  "scope": 25974,
+                  "src": "283:19:180",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -164,10 +156,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 25116,
+                    "id": 25970,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "283:5:169",
+                    "src": "283:5:180",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -176,27 +168,27 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "213:95:169"
+              "src": "213:95:180"
             },
             "returnParameters": {
-              "id": 25119,
+              "id": 25973,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "317:0:169"
+              "src": "317:0:180"
             },
-            "scope": 25121,
-            "src": "182:136:169",
+            "scope": 25975,
+            "src": "182:136:180",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 25122,
-        "src": "146:174:169",
+        "scope": 25976,
+        "src": "146:174:180",
         "usedErrors": []
       }
     ],
-    "src": "121:200:169"
+    "src": "121:200:180"
   },
   "compiler": {
     "name": "solc",
@@ -204,15 +196,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.8",
-<<<<<<< HEAD
-<<<<<<< HEAD
-  "updatedAt": "2022-08-24T05:52:12.850Z",
-=======
-  "updatedAt": "2022-08-24T05:34:44.076Z",
->>>>>>> origin/main
-=======
-  "updatedAt": "2022-08-24T05:52:12.850Z",
->>>>>>> subscribe
+  "updatedAt": "2022-08-30T07:51:49.084Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

@@ -2,7 +2,7 @@
 
 pragma solidity ^0.8.15;
 
-contract Subscribe_yj{
+contract Subscribe{
     uint256 public sub_price = 1 ether;
     // uint256 public sub_price3 = 2.5 ether;
     // uint256 public sub_price6 = 5 ether;

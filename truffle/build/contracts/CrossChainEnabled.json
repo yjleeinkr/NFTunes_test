@@ -10,63 +10,26 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts (last updated v4.6.0) (crosschain/CrossChainEnabled.sol)\n\npragma solidity ^0.8.4;\n\nimport \"./errors.sol\";\n\n/**\n * @dev Provides information for building cross-chain aware contracts. This\n * abstract contract provides accessors and modifiers to control the execution\n * flow when receiving cross-chain messages.\n *\n * Actual implementations of cross-chain aware contracts, which are based on\n * this abstraction, will  have to inherit from a bridge-specific\n * specialization. Such specializations are provided under\n * `crosschain/<chain>/CrossChainEnabled<chain>.sol`.\n *\n * _Available since v4.6._\n */\nabstract contract CrossChainEnabled {\n    /**\n     * @dev Throws if the current function call is not the result of a\n     * cross-chain execution.\n     */\n    modifier onlyCrossChain() {\n        if (!_isCrossChain()) revert NotCrossChainCall();\n        _;\n    }\n\n    /**\n     * @dev Throws if the current function call is not the result of a\n     * cross-chain execution initiated by `account`.\n     */\n    modifier onlyCrossChainSender(address expected) {\n        address actual = _crossChainSender();\n        if (expected != actual) revert InvalidCrossChainSender(actual, expected);\n        _;\n    }\n\n    /**\n     * @dev Returns whether the current function call is the result of a\n     * cross-chain message.\n     */\n    function _isCrossChain() internal view virtual returns (bool);\n\n    /**\n     * @dev Returns the address of the sender of the cross-chain message that\n     * triggered the current function call.\n     *\n     * IMPORTANT: Should revert with `NotCrossChainCall` if the current function\n     * call is not the result of a cross-chain message.\n     */\n    function _crossChainSender() internal view virtual returns (address);\n}\n",
-<<<<<<< HEAD
-<<<<<<< HEAD
   "sourcePath": "/Users/oo_ha/workspace/project/meta/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/crosschain/CrossChainEnabled.sol",
-=======
-  "sourcePath": "/home/gyuri/project/last/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/crosschain/CrossChainEnabled.sol",
->>>>>>> origin/main
-=======
-  "sourcePath": "/Users/oo_ha/workspace/project/meta/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/crosschain/CrossChainEnabled.sol",
->>>>>>> subscribe
   "ast": {
     "absolutePath": "project:/contracts/node_modules/openzeppelin-solidity/contracts/crosschain/CrossChainEnabled.sol",
     "exportedSymbols": {
       "CrossChainEnabled": [
-<<<<<<< HEAD
-<<<<<<< HEAD
-        1219
-=======
-        2574
->>>>>>> subscribe
+        2356
       ],
       "InvalidCrossChainSender": [
-        2888
+        2670
       ],
       "NotCrossChainCall": [
-        2882
+        2664
       ]
     },
-<<<<<<< HEAD
-    "id": 1220,
-=======
-        1776
-      ],
-      "InvalidCrossChainSender": [
-        2090
-      ],
-      "NotCrossChainCall": [
-        2084
-      ]
-    },
-    "id": 1777,
->>>>>>> origin/main
-=======
-    "id": 2575,
->>>>>>> subscribe
+    "id": 2357,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        "id": 1171,
-=======
-        "id": 1728,
->>>>>>> origin/main
-=======
-        "id": 2526,
->>>>>>> subscribe
+        "id": 2308,
         "literals": [
           "solidity",
           "^",
@@ -74,43 +37,17 @@
           ".4"
         ],
         "nodeType": "PragmaDirective",
-<<<<<<< HEAD
-<<<<<<< HEAD
         "src": "116:23:20"
-=======
-        "src": "116:23:8"
->>>>>>> origin/main
-=======
-        "src": "116:23:19"
->>>>>>> subscribe
       },
       {
         "absolutePath": "project:/contracts/node_modules/openzeppelin-solidity/contracts/crosschain/errors.sol",
         "file": "./errors.sol",
-<<<<<<< HEAD
-<<<<<<< HEAD
-        "id": 1172,
+        "id": 2309,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 1220,
-        "sourceUnit": 1534,
+        "scope": 2357,
+        "sourceUnit": 2671,
         "src": "141:22:20",
-=======
-        "id": 1729,
-        "nameLocation": "-1:-1:-1",
-        "nodeType": "ImportDirective",
-        "scope": 1777,
-        "sourceUnit": 2091,
-        "src": "141:22:8",
->>>>>>> origin/main
-=======
-        "id": 2527,
-        "nameLocation": "-1:-1:-1",
-        "nodeType": "ImportDirective",
-        "scope": 2575,
-        "sourceUnit": 2889,
-        "src": "141:22:19",
->>>>>>> subscribe
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -121,70 +58,29 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "documentation": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-          "id": 1173,
-=======
-          "id": 2528,
->>>>>>> subscribe
+          "id": 2310,
           "nodeType": "StructuredDocumentation",
-          "src": "165:496:19",
+          "src": "165:496:20",
           "text": " @dev Provides information for building cross-chain aware contracts. This\n abstract contract provides accessors and modifiers to control the execution\n flow when receiving cross-chain messages.\n Actual implementations of cross-chain aware contracts, which are based on\n this abstraction, will  have to inherit from a bridge-specific\n specialization. Such specializations are provided under\n `crosschain/<chain>/CrossChainEnabled<chain>.sol`.\n _Available since v4.6._"
         },
         "fullyImplemented": false,
-        "id": 2574,
+        "id": 2356,
         "linearizedBaseContracts": [
-          2574
+          2356
         ],
         "name": "CrossChainEnabled",
-<<<<<<< HEAD
         "nameLocation": "680:17:20",
-=======
-          "id": 1730,
-          "nodeType": "StructuredDocumentation",
-          "src": "165:496:8",
-          "text": " @dev Provides information for building cross-chain aware contracts. This\n abstract contract provides accessors and modifiers to control the execution\n flow when receiving cross-chain messages.\n Actual implementations of cross-chain aware contracts, which are based on\n this abstraction, will  have to inherit from a bridge-specific\n specialization. Such specializations are provided under\n `crosschain/<chain>/CrossChainEnabled<chain>.sol`.\n _Available since v4.6._"
-        },
-        "fullyImplemented": false,
-        "id": 1776,
-        "linearizedBaseContracts": [
-          1776
-        ],
-        "name": "CrossChainEnabled",
-        "nameLocation": "680:17:8",
->>>>>>> origin/main
-=======
-        "nameLocation": "680:17:19",
->>>>>>> subscribe
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "id": 1184,
-=======
-              "id": 2539,
->>>>>>> subscribe
+              "id": 2321,
               "nodeType": "Block",
-              "src": "847:76:19",
+              "src": "847:76:20",
               "statements": [
                 {
                   "condition": {
-<<<<<<< HEAD
-                    "id": 1178,
-=======
-              "id": 1741,
-              "nodeType": "Block",
-              "src": "847:76:8",
-              "statements": [
-                {
-                  "condition": {
-                    "id": 1735,
->>>>>>> origin/main
-=======
-                    "id": 2533,
->>>>>>> subscribe
+                    "id": 2315,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -192,57 +88,23 @@
                     "nodeType": "UnaryOperation",
                     "operator": "!",
                     "prefix": true,
-<<<<<<< HEAD
-<<<<<<< HEAD
                     "src": "861:16:20",
-=======
-                    "src": "861:16:8",
->>>>>>> origin/main
-=======
-                    "src": "861:16:19",
->>>>>>> subscribe
                     "subExpression": {
                       "arguments": [],
                       "expression": {
                         "argumentTypes": [],
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        "id": 1176,
+                        "id": 2313,
                         "name": "_isCrossChain",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1212,
+                        "referencedDeclaration": 2349,
                         "src": "862:13:20",
-=======
-                        "id": 1733,
-                        "name": "_isCrossChain",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 1769,
-                        "src": "862:13:8",
->>>>>>> origin/main
-=======
-                        "id": 2531,
-                        "name": "_isCrossChain",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 2567,
-                        "src": "862:13:19",
->>>>>>> subscribe
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_view$__$returns$_t_bool_$",
                           "typeString": "function () view returns (bool)"
                         }
                       },
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      "id": 1177,
-=======
-                      "id": 1734,
->>>>>>> origin/main
-=======
-                      "id": 2532,
->>>>>>> subscribe
+                      "id": 2314,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -250,15 +112,7 @@
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-<<<<<<< HEAD
-<<<<<<< HEAD
                       "src": "862:15:20",
-=======
-                      "src": "862:15:8",
->>>>>>> origin/main
-=======
-                      "src": "862:15:19",
->>>>>>> subscribe
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -270,64 +124,26 @@
                       "typeString": "bool"
                     }
                   },
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "id": 1182,
+                  "id": 2319,
                   "nodeType": "IfStatement",
                   "src": "857:48:20",
-=======
-                  "id": 1739,
-                  "nodeType": "IfStatement",
-                  "src": "857:48:8",
->>>>>>> origin/main
-=======
-                  "id": 2537,
-                  "nodeType": "IfStatement",
-                  "src": "857:48:19",
->>>>>>> subscribe
                   "trueBody": {
                     "errorCall": {
                       "arguments": [],
                       "expression": {
                         "argumentTypes": [],
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        "id": 1179,
+                        "id": 2316,
                         "name": "NotCrossChainCall",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1527,
+                        "referencedDeclaration": 2664,
                         "src": "886:17:20",
-=======
-                        "id": 1736,
-                        "name": "NotCrossChainCall",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 2084,
-                        "src": "886:17:8",
->>>>>>> origin/main
-=======
-                        "id": 2534,
-                        "name": "NotCrossChainCall",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 2882,
-                        "src": "886:17:19",
->>>>>>> subscribe
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_error_pure$__$returns$__$",
                           "typeString": "function () pure"
                         }
                       },
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      "id": 1180,
-=======
-                      "id": 1737,
->>>>>>> origin/main
-=======
-                      "id": 2535,
->>>>>>> subscribe
+                      "id": 2317,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -335,157 +151,65 @@
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-<<<<<<< HEAD
-<<<<<<< HEAD
                       "src": "886:19:20",
-=======
-                      "src": "886:19:8",
->>>>>>> origin/main
-=======
-                      "src": "886:19:19",
->>>>>>> subscribe
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_tuple$__$",
                         "typeString": "tuple()"
                       }
                     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    "id": 1181,
-=======
-                    "id": 2536,
->>>>>>> subscribe
+                    "id": 2318,
                     "nodeType": "RevertStatement",
-                    "src": "879:26:19"
+                    "src": "879:26:20"
                   }
                 },
                 {
-                  "id": 2538,
+                  "id": 2320,
                   "nodeType": "PlaceholderStatement",
-<<<<<<< HEAD
                   "src": "915:1:20"
-=======
-                    "id": 1738,
-                    "nodeType": "RevertStatement",
-                    "src": "879:26:8"
-                  }
-                },
-                {
-                  "id": 1740,
-                  "nodeType": "PlaceholderStatement",
-                  "src": "915:1:8"
->>>>>>> origin/main
-=======
-                  "src": "915:1:19"
->>>>>>> subscribe
                 }
               ]
             },
             "documentation": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "id": 1174,
-=======
-              "id": 2529,
->>>>>>> subscribe
+              "id": 2311,
               "nodeType": "StructuredDocumentation",
-              "src": "704:112:19",
+              "src": "704:112:20",
               "text": " @dev Throws if the current function call is not the result of a\n cross-chain execution."
             },
-            "id": 2540,
+            "id": 2322,
             "name": "onlyCrossChain",
-            "nameLocation": "830:14:19",
+            "nameLocation": "830:14:20",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 2530,
+              "id": 2312,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "844:2:19"
+              "src": "844:2:20"
             },
-<<<<<<< HEAD
             "src": "821:102:20",
-=======
-              "id": 1731,
-              "nodeType": "StructuredDocumentation",
-              "src": "704:112:8",
-              "text": " @dev Throws if the current function call is not the result of a\n cross-chain execution."
-            },
-            "id": 1742,
-            "name": "onlyCrossChain",
-            "nameLocation": "830:14:8",
-            "nodeType": "ModifierDefinition",
-            "parameters": {
-              "id": 1732,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "844:2:8"
-            },
-            "src": "821:102:8",
->>>>>>> origin/main
-=======
-            "src": "821:102:19",
->>>>>>> subscribe
             "virtual": false,
             "visibility": "internal"
           },
           {
             "body": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "id": 1205,
-=======
-              "id": 2560,
->>>>>>> subscribe
+              "id": 2342,
               "nodeType": "Block",
-              "src": "1117:146:19",
+              "src": "1117:146:20",
               "statements": [
                 {
                   "assignments": [
-<<<<<<< HEAD
-                    1191
-=======
-              "id": 1762,
-              "nodeType": "Block",
-              "src": "1117:146:8",
-              "statements": [
-                {
-                  "assignments": [
-                    1748
->>>>>>> origin/main
-=======
-                    2546
->>>>>>> subscribe
+                    2328
                   ],
                   "declarations": [
                     {
                       "constant": false,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      "id": 1191,
-=======
-                      "id": 2546,
->>>>>>> subscribe
+                      "id": 2328,
                       "mutability": "mutable",
                       "name": "actual",
-                      "nameLocation": "1135:6:19",
+                      "nameLocation": "1135:6:20",
                       "nodeType": "VariableDeclaration",
-<<<<<<< HEAD
-                      "scope": 1205,
+                      "scope": 2342,
                       "src": "1127:14:20",
-=======
-                      "id": 1748,
-                      "mutability": "mutable",
-                      "name": "actual",
-                      "nameLocation": "1135:6:8",
-                      "nodeType": "VariableDeclaration",
-                      "scope": 1762,
-                      "src": "1127:14:8",
->>>>>>> origin/main
-=======
-                      "scope": 2560,
-                      "src": "1127:14:19",
->>>>>>> subscribe
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -493,24 +217,10 @@
                         "typeString": "address"
                       },
                       "typeName": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        "id": 1190,
+                        "id": 2327,
                         "name": "address",
                         "nodeType": "ElementaryTypeName",
                         "src": "1127:7:20",
-=======
-                        "id": 1747,
-                        "name": "address",
-                        "nodeType": "ElementaryTypeName",
-                        "src": "1127:7:8",
->>>>>>> origin/main
-=======
-                        "id": 2545,
-                        "name": "address",
-                        "nodeType": "ElementaryTypeName",
-                        "src": "1127:7:19",
->>>>>>> subscribe
                         "stateMutability": "nonpayable",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -520,57 +230,23 @@
                       "visibility": "internal"
                     }
                   ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "id": 1194,
-=======
-                  "id": 1751,
->>>>>>> origin/main
-=======
-                  "id": 2549,
->>>>>>> subscribe
+                  "id": 2331,
                   "initialValue": {
                     "arguments": [],
                     "expression": {
                       "argumentTypes": [],
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      "id": 1192,
+                      "id": 2329,
                       "name": "_crossChainSender",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1218,
+                      "referencedDeclaration": 2355,
                       "src": "1144:17:20",
-=======
-                      "id": 1749,
-                      "name": "_crossChainSender",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 1775,
-                      "src": "1144:17:8",
->>>>>>> origin/main
-=======
-                      "id": 2547,
-                      "name": "_crossChainSender",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 2573,
-                      "src": "1144:17:19",
->>>>>>> subscribe
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
                         "typeString": "function () view returns (address)"
                       }
                     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    "id": 1193,
-=======
-                    "id": 1750,
->>>>>>> origin/main
-=======
-                    "id": 2548,
->>>>>>> subscribe
+                    "id": 2330,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -578,15 +254,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-<<<<<<< HEAD
-<<<<<<< HEAD
                     "src": "1144:19:20",
-=======
-                    "src": "1144:19:8",
->>>>>>> origin/main
-=======
-                    "src": "1144:19:19",
->>>>>>> subscribe
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -594,15 +262,7 @@
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-<<<<<<< HEAD
-<<<<<<< HEAD
                   "src": "1127:36:20"
-=======
-                  "src": "1127:36:8"
->>>>>>> origin/main
-=======
-                  "src": "1127:36:19"
->>>>>>> subscribe
                 },
                 {
                   "condition": {
@@ -610,44 +270,18 @@
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    "id": 1197,
-=======
-                    "id": 1754,
->>>>>>> origin/main
-=======
-                    "id": 2552,
->>>>>>> subscribe
+                    "id": 2334,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      "id": 1195,
+                      "id": 2332,
                       "name": "expected",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1188,
+                      "referencedDeclaration": 2325,
                       "src": "1177:8:20",
-=======
-                      "id": 1752,
-                      "name": "expected",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 1745,
-                      "src": "1177:8:8",
->>>>>>> origin/main
-=======
-                      "id": 2550,
-                      "name": "expected",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 2543,
-                      "src": "1177:8:19",
->>>>>>> subscribe
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -656,122 +290,48 @@
                     "nodeType": "BinaryOperation",
                     "operator": "!=",
                     "rightExpression": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      "id": 1196,
+                      "id": 2333,
                       "name": "actual",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1191,
+                      "referencedDeclaration": 2328,
                       "src": "1189:6:20",
-=======
-                      "id": 1753,
-                      "name": "actual",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 1748,
-                      "src": "1189:6:8",
->>>>>>> origin/main
-=======
-                      "id": 2551,
-                      "name": "actual",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 2546,
-                      "src": "1189:6:19",
->>>>>>> subscribe
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-<<<<<<< HEAD
-<<<<<<< HEAD
                     "src": "1177:18:20",
-=======
-                    "src": "1177:18:8",
->>>>>>> origin/main
-=======
-                    "src": "1177:18:19",
->>>>>>> subscribe
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "id": 1203,
+                  "id": 2340,
                   "nodeType": "IfStatement",
                   "src": "1173:72:20",
-=======
-                  "id": 1760,
-                  "nodeType": "IfStatement",
-                  "src": "1173:72:8",
->>>>>>> origin/main
-=======
-                  "id": 2558,
-                  "nodeType": "IfStatement",
-                  "src": "1173:72:19",
->>>>>>> subscribe
                   "trueBody": {
                     "errorCall": {
                       "arguments": [
                         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                          "id": 1199,
+                          "id": 2336,
                           "name": "actual",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1191,
+                          "referencedDeclaration": 2328,
                           "src": "1228:6:20",
-=======
-                          "id": 1756,
-                          "name": "actual",
-                          "nodeType": "Identifier",
-                          "overloadedDeclarations": [],
-                          "referencedDeclaration": 1748,
-                          "src": "1228:6:8",
->>>>>>> origin/main
-=======
-                          "id": 2554,
-                          "name": "actual",
-                          "nodeType": "Identifier",
-                          "overloadedDeclarations": [],
-                          "referencedDeclaration": 2546,
-                          "src": "1228:6:19",
->>>>>>> subscribe
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
                           }
                         },
                         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                          "id": 1200,
+                          "id": 2337,
                           "name": "expected",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1188,
+                          "referencedDeclaration": 2325,
                           "src": "1236:8:20",
-=======
-                          "id": 1757,
-                          "name": "expected",
-                          "nodeType": "Identifier",
-                          "overloadedDeclarations": [],
-                          "referencedDeclaration": 1745,
-                          "src": "1236:8:8",
->>>>>>> origin/main
-=======
-                          "id": 2555,
-                          "name": "expected",
-                          "nodeType": "Identifier",
-                          "overloadedDeclarations": [],
-                          "referencedDeclaration": 2543,
-                          "src": "1236:8:19",
->>>>>>> subscribe
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -789,44 +349,18 @@
                             "typeString": "address"
                           }
                         ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        "id": 1198,
+                        "id": 2335,
                         "name": "InvalidCrossChainSender",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1533,
+                        "referencedDeclaration": 2670,
                         "src": "1204:23:20",
-=======
-                        "id": 1755,
-                        "name": "InvalidCrossChainSender",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 2090,
-                        "src": "1204:23:8",
->>>>>>> origin/main
-=======
-                        "id": 2553,
-                        "name": "InvalidCrossChainSender",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 2888,
-                        "src": "1204:23:19",
->>>>>>> subscribe
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_error_pure$_t_address_$_t_address_$returns$__$",
                           "typeString": "function (address,address) pure"
                         }
                       },
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      "id": 1201,
-=======
-                      "id": 1758,
->>>>>>> origin/main
-=======
-                      "id": 2556,
->>>>>>> subscribe
+                      "id": 2338,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -834,117 +368,48 @@
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-<<<<<<< HEAD
-<<<<<<< HEAD
                       "src": "1204:41:20",
-=======
-                      "src": "1204:41:8",
->>>>>>> origin/main
-=======
-                      "src": "1204:41:19",
->>>>>>> subscribe
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_tuple$__$",
                         "typeString": "tuple()"
                       }
                     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    "id": 1202,
-=======
-                    "id": 2557,
->>>>>>> subscribe
+                    "id": 2339,
                     "nodeType": "RevertStatement",
-                    "src": "1197:48:19"
+                    "src": "1197:48:20"
                   }
                 },
                 {
-                  "id": 2559,
+                  "id": 2341,
                   "nodeType": "PlaceholderStatement",
-<<<<<<< HEAD
                   "src": "1255:1:20"
-=======
-                    "id": 1759,
-                    "nodeType": "RevertStatement",
-                    "src": "1197:48:8"
-                  }
-                },
-                {
-                  "id": 1761,
-                  "nodeType": "PlaceholderStatement",
-                  "src": "1255:1:8"
->>>>>>> origin/main
-=======
-                  "src": "1255:1:19"
->>>>>>> subscribe
                 }
               ]
             },
             "documentation": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "id": 1186,
-=======
-              "id": 2541,
->>>>>>> subscribe
+              "id": 2323,
               "nodeType": "StructuredDocumentation",
-              "src": "929:135:19",
+              "src": "929:135:20",
               "text": " @dev Throws if the current function call is not the result of a\n cross-chain execution initiated by `account`."
             },
-            "id": 2561,
+            "id": 2343,
             "name": "onlyCrossChainSender",
-            "nameLocation": "1078:20:19",
+            "nameLocation": "1078:20:20",
             "nodeType": "ModifierDefinition",
             "parameters": {
-<<<<<<< HEAD
-              "id": 1189,
-=======
-              "id": 1743,
-              "nodeType": "StructuredDocumentation",
-              "src": "929:135:8",
-              "text": " @dev Throws if the current function call is not the result of a\n cross-chain execution initiated by `account`."
-            },
-            "id": 1763,
-            "name": "onlyCrossChainSender",
-            "nameLocation": "1078:20:8",
-            "nodeType": "ModifierDefinition",
-            "parameters": {
-              "id": 1746,
->>>>>>> origin/main
-=======
-              "id": 2544,
->>>>>>> subscribe
+              "id": 2326,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "id": 1188,
-=======
-                  "id": 2543,
->>>>>>> subscribe
+                  "id": 2325,
                   "mutability": "mutable",
                   "name": "expected",
-                  "nameLocation": "1107:8:19",
+                  "nameLocation": "1107:8:20",
                   "nodeType": "VariableDeclaration",
-<<<<<<< HEAD
-                  "scope": 1206,
+                  "scope": 2343,
                   "src": "1099:16:20",
-=======
-                  "id": 1745,
-                  "mutability": "mutable",
-                  "name": "expected",
-                  "nameLocation": "1107:8:8",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 1763,
-                  "src": "1099:16:8",
->>>>>>> origin/main
-=======
-                  "scope": 2561,
-                  "src": "1099:16:19",
->>>>>>> subscribe
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -952,24 +417,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    "id": 1187,
+                    "id": 2324,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1099:7:20",
-=======
-                    "id": 1744,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "1099:7:8",
->>>>>>> origin/main
-=======
-                    "id": 2542,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "1099:7:19",
->>>>>>> subscribe
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -979,113 +430,45 @@
                   "visibility": "internal"
                 }
               ],
-<<<<<<< HEAD
-<<<<<<< HEAD
               "src": "1098:18:20"
             },
             "src": "1069:194:20",
-=======
-              "src": "1098:18:8"
-            },
-            "src": "1069:194:8",
->>>>>>> origin/main
-=======
-              "src": "1098:18:19"
-            },
-            "src": "1069:194:19",
->>>>>>> subscribe
             "virtual": false,
             "visibility": "internal"
           },
           {
             "documentation": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "id": 1207,
-=======
-              "id": 2562,
->>>>>>> subscribe
+              "id": 2344,
               "nodeType": "StructuredDocumentation",
-              "src": "1269:112:19",
+              "src": "1269:112:20",
               "text": " @dev Returns whether the current function call is the result of a\n cross-chain message."
             },
-<<<<<<< HEAD
-            "id": 1212,
-=======
-              "id": 1764,
-              "nodeType": "StructuredDocumentation",
-              "src": "1269:112:8",
-              "text": " @dev Returns whether the current function call is the result of a\n cross-chain message."
-            },
-            "id": 1769,
->>>>>>> origin/main
-=======
-            "id": 2567,
->>>>>>> subscribe
+            "id": 2349,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "_isCrossChain",
-<<<<<<< HEAD
-<<<<<<< HEAD
             "nameLocation": "1395:13:20",
-=======
-            "nameLocation": "1395:13:19",
->>>>>>> subscribe
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2563,
+              "id": 2345,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1408:2:19"
+              "src": "1408:2:20"
             },
             "returnParameters": {
-<<<<<<< HEAD
-              "id": 1211,
-=======
-            "nameLocation": "1395:13:8",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 1765,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "1408:2:8"
-            },
-            "returnParameters": {
-              "id": 1768,
->>>>>>> origin/main
-=======
-              "id": 2566,
->>>>>>> subscribe
+              "id": 2348,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "id": 1210,
-=======
-                  "id": 1767,
->>>>>>> origin/main
-=======
-                  "id": 2565,
->>>>>>> subscribe
+                  "id": 2347,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "scope": 1212,
+                  "scope": 2349,
                   "src": "1442:4:20",
-=======
-                  "scope": 1769,
-                  "src": "1442:4:8",
->>>>>>> origin/main
-=======
-                  "scope": 2567,
-                  "src": "1442:4:19",
->>>>>>> subscribe
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1093,24 +476,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    "id": 1209,
+                    "id": 2346,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1442:4:20",
-=======
-                    "id": 1766,
-                    "name": "bool",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "1442:4:8",
->>>>>>> origin/main
-=======
-                    "id": 2564,
-                    "name": "bool",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "1442:4:19",
->>>>>>> subscribe
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -1119,117 +488,47 @@
                   "visibility": "internal"
                 }
               ],
-<<<<<<< HEAD
-<<<<<<< HEAD
               "src": "1441:6:20"
             },
-            "scope": 1219,
+            "scope": 2356,
             "src": "1386:62:20",
-=======
-              "src": "1441:6:8"
-            },
-            "scope": 1776,
-            "src": "1386:62:8",
->>>>>>> origin/main
-=======
-              "src": "1441:6:19"
-            },
-            "scope": 2574,
-            "src": "1386:62:19",
->>>>>>> subscribe
             "stateMutability": "view",
             "virtual": true,
             "visibility": "internal"
           },
           {
             "documentation": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "id": 1213,
-=======
-              "id": 2568,
->>>>>>> subscribe
+              "id": 2350,
               "nodeType": "StructuredDocumentation",
-              "src": "1454:277:19",
+              "src": "1454:277:20",
               "text": " @dev Returns the address of the sender of the cross-chain message that\n triggered the current function call.\n IMPORTANT: Should revert with `NotCrossChainCall` if the current function\n call is not the result of a cross-chain message."
             },
-<<<<<<< HEAD
-            "id": 1218,
-=======
-              "id": 1770,
-              "nodeType": "StructuredDocumentation",
-              "src": "1454:277:8",
-              "text": " @dev Returns the address of the sender of the cross-chain message that\n triggered the current function call.\n IMPORTANT: Should revert with `NotCrossChainCall` if the current function\n call is not the result of a cross-chain message."
-            },
-            "id": 1775,
->>>>>>> origin/main
-=======
-            "id": 2573,
->>>>>>> subscribe
+            "id": 2355,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "_crossChainSender",
-<<<<<<< HEAD
-<<<<<<< HEAD
             "nameLocation": "1745:17:20",
-=======
-            "nameLocation": "1745:17:19",
->>>>>>> subscribe
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2569,
+              "id": 2351,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1762:2:19"
+              "src": "1762:2:20"
             },
             "returnParameters": {
-<<<<<<< HEAD
-              "id": 1217,
-=======
-            "nameLocation": "1745:17:8",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 1771,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "1762:2:8"
-            },
-            "returnParameters": {
-              "id": 1774,
->>>>>>> origin/main
-=======
-              "id": 2572,
->>>>>>> subscribe
+              "id": 2354,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "id": 1216,
-=======
-                  "id": 1773,
->>>>>>> origin/main
-=======
-                  "id": 2571,
->>>>>>> subscribe
+                  "id": 2353,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "scope": 1218,
+                  "scope": 2355,
                   "src": "1796:7:20",
-=======
-                  "scope": 1775,
-                  "src": "1796:7:8",
->>>>>>> origin/main
-=======
-                  "scope": 2573,
-                  "src": "1796:7:19",
->>>>>>> subscribe
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1237,24 +536,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    "id": 1215,
+                    "id": 2352,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1796:7:20",
-=======
-                    "id": 1772,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "1796:7:8",
->>>>>>> origin/main
-=======
-                    "id": 2570,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "1796:7:19",
->>>>>>> subscribe
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1264,53 +549,21 @@
                   "visibility": "internal"
                 }
               ],
-<<<<<<< HEAD
-<<<<<<< HEAD
               "src": "1795:9:20"
             },
-            "scope": 1219,
+            "scope": 2356,
             "src": "1736:69:20",
-=======
-              "src": "1795:9:8"
-            },
-            "scope": 1776,
-            "src": "1736:69:8",
->>>>>>> origin/main
-=======
-              "src": "1795:9:19"
-            },
-            "scope": 2574,
-            "src": "1736:69:19",
->>>>>>> subscribe
             "stateMutability": "view",
             "virtual": true,
             "visibility": "internal"
           }
         ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-        "scope": 1220,
+        "scope": 2357,
         "src": "662:1145:20",
         "usedErrors": []
       }
     ],
     "src": "116:1692:20"
-=======
-        "scope": 1777,
-        "src": "662:1145:8",
-        "usedErrors": []
-      }
-    ],
-    "src": "116:1692:8"
->>>>>>> origin/main
-=======
-        "scope": 2575,
-        "src": "662:1145:19",
-        "usedErrors": []
-      }
-    ],
-    "src": "116:1692:19"
->>>>>>> subscribe
   },
   "compiler": {
     "name": "solc",
@@ -1318,15 +571,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.8",
-<<<<<<< HEAD
-<<<<<<< HEAD
-  "updatedAt": "2022-08-25T00:44:56.219Z",
-=======
-  "updatedAt": "2022-08-24T06:06:27.159Z",
->>>>>>> origin/main
-=======
-  "updatedAt": "2022-08-30T01:20:21.418Z",
->>>>>>> subscribe
+  "updatedAt": "2022-08-30T07:51:48.786Z",
   "devdoc": {
     "details": "Provides information for building cross-chain aware contracts. This abstract contract provides accessors and modifiers to control the execution flow when receiving cross-chain messages. Actual implementations of cross-chain aware contracts, which are based on this abstraction, will  have to inherit from a bridge-specific specialization. Such specializations are provided under `crosschain/<chain>/CrossChainEnabled<chain>.sol`. _Available since v4.6._",
     "kind": "dev",
