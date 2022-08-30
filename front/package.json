@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@chakra-ui/react": "^2.3.0",
+    "@chakra-ui/react": "^2.3.1",
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
     "@metamask/providers": "^9.1.0",
@@ -29,8 +29,7 @@
     "tailwindcss-autofill": "^1.0.2",
     "tweezer.js": "^1.5.0",
     "typesafe-actions": "^5.1.0",
-    "web3": "^1.7.5",
-    "zksync": "^0.13.1"
+    "web3": "^1.7.5"
   },
   "devDependencies": {
     "@types/node": "18.7.1",
