@@ -25,10 +25,14 @@
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts v4.4.1 (proxy/beacon/IBeacon.sol)\n\npragma solidity ^0.8.0;\n\n/**\n * @dev This is the interface that {BeaconProxy} expects of its beacon.\n */\ninterface IBeacon {\n    /**\n     * @dev Must return an address that can be used as a delegate call target.\n     *\n     * {BeaconProxy} will check that this address is a contract.\n     */\n    function implementation() external view returns (address);\n}\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
   "sourcePath": "/Users/oo_ha/workspace/project/meta/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/proxy/beacon/IBeacon.sol",
 =======
   "sourcePath": "/home/gyuri/project/last/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/proxy/beacon/IBeacon.sol",
 >>>>>>> origin/main
+=======
+  "sourcePath": "/Users/oo_ha/workspace/project/meta/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/proxy/beacon/IBeacon.sol",
+>>>>>>> subscribe
   "ast": {
     "absolutePath": "project:/contracts/node_modules/openzeppelin-solidity/contracts/proxy/beacon/IBeacon.sol",
     "exportedSymbols": {
@@ -149,10 +153,14 @@
   "networks": {},
   "schemaVersion": "3.4.8",
 <<<<<<< HEAD
+<<<<<<< HEAD
   "updatedAt": "2022-08-24T05:52:12.493Z",
 =======
   "updatedAt": "2022-08-24T05:34:43.852Z",
 >>>>>>> origin/main
+=======
+  "updatedAt": "2022-08-24T05:52:12.493Z",
+>>>>>>> subscribe
   "devdoc": {
     "details": "This is the interface that {BeaconProxy} expects of its beacon.",
     "kind": "dev",

@@ -41,10 +41,14 @@
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts v4.4.1 (interfaces/IERC1363Spender.sol)\n\npragma solidity ^0.8.0;\n\ninterface IERC1363Spender {\n    /*\n     * Note: the ERC-165 identifier for this interface is 0x7b04a2d0.\n     * 0x7b04a2d0 === bytes4(keccak256(\"onApprovalReceived(address,uint256,bytes)\"))\n     */\n\n    /**\n     * @notice Handle the approval of ERC1363 tokens\n     * @dev Any ERC1363 smart contract calls this function on the recipient\n     * after an `approve`. This function MAY throw to revert and reject the\n     * approval. Return of other than the magic value MUST result in the\n     * transaction being reverted.\n     * Note: the token contract address is always the message sender.\n     * @param owner address The address which called `approveAndCall` function\n     * @param value uint256 The amount of tokens to be spent\n     * @param data bytes Additional data with no specified format\n     * @return `bytes4(keccak256(\"onApprovalReceived(address,uint256,bytes)\"))`\n     *  unless throwing\n     */\n    function onApprovalReceived(\n        address owner,\n        uint256 value,\n        bytes memory data\n    ) external returns (bytes4);\n}\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
   "sourcePath": "/Users/oo_ha/workspace/project/meta/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/interfaces/IERC1363Spender.sol",
 =======
   "sourcePath": "/home/gyuri/project/last/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/interfaces/IERC1363Spender.sol",
 >>>>>>> origin/main
+=======
+  "sourcePath": "/Users/oo_ha/workspace/project/meta/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/interfaces/IERC1363Spender.sol",
+>>>>>>> subscribe
   "ast": {
     "absolutePath": "project:/contracts/node_modules/openzeppelin-solidity/contracts/interfaces/IERC1363Spender.sol",
     "exportedSymbols": {
@@ -241,10 +245,14 @@
   "networks": {},
   "schemaVersion": "3.4.8",
 <<<<<<< HEAD
+<<<<<<< HEAD
   "updatedAt": "2022-08-24T05:52:12.461Z",
 =======
   "updatedAt": "2022-08-24T05:34:43.833Z",
 >>>>>>> origin/main
+=======
+  "updatedAt": "2022-08-24T05:52:12.461Z",
+>>>>>>> subscribe
   "devdoc": {
     "kind": "dev",
     "methods": {

@@ -42,17 +42,32 @@ exports.quit = async (req, res) => {};
 
 exports.editUserInfo = async (req, res) => {};
 
-exports.checkJoinForm = async (req, res) => {
-  const { nickname } = req.body;
+exports.getAllUserNick = async (_, res) => {
   try {
-    const existedNick = await User.find({
-      nickname,
+    const existedUser = await User.find({});
+    const existedNick = [];
+    existedUser.map((userInfo) => existedNick.push(userInfo.nickname));
+    res.send(existedNick);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+exports.getAllUserInfo = async (req, res) => {
+  try {
+    const existedUser = await User.find({});
+    res.send(existedUser);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+exports.userDetails = async (req, res) => {
+  try {
+    const [details] = await User.find({
+      account: req.params.acct,
     });
-    if (existedNick.length > 0) {
-      res.send({ isOkToUse: false });
-    } else {
-      res.send({ isOkToUse: true });
-    }
+    res.send({ details });
   } catch (err) {
     console.log(err);
   }

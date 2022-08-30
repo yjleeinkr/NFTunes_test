@@ -111,10 +111,14 @@
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts (last updated v4.6.0) (vendor/optimism/ICrossDomainMessenger.sol)\npragma solidity >0.5.0 <0.9.0;\n\n/**\n * @title ICrossDomainMessenger\n */\ninterface ICrossDomainMessenger {\n    /**********\n     * Events *\n     **********/\n\n    event SentMessage(address indexed target, address sender, bytes message, uint256 messageNonce, uint256 gasLimit);\n    event RelayedMessage(bytes32 indexed msgHash);\n    event FailedRelayedMessage(bytes32 indexed msgHash);\n\n    /*************\n     * Variables *\n     *************/\n\n    function xDomainMessageSender() external view returns (address);\n\n    /********************\n     * Public Functions *\n     ********************/\n\n    /**\n     * Sends a cross domain message to the target messenger.\n     * @param _target Target contract address.\n     * @param _message Message to send to the target.\n     * @param _gasLimit Gas limit for the provided message.\n     */\n    function sendMessage(\n        address _target,\n        bytes calldata _message,\n        uint32 _gasLimit\n    ) external;\n}\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
   "sourcePath": "/Users/oo_ha/workspace/project/meta/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/vendor/optimism/ICrossDomainMessenger.sol",
 =======
   "sourcePath": "/home/gyuri/project/last/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/vendor/optimism/ICrossDomainMessenger.sol",
 >>>>>>> origin/main
+=======
+  "sourcePath": "/Users/oo_ha/workspace/project/meta/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/vendor/optimism/ICrossDomainMessenger.sol",
+>>>>>>> subscribe
   "ast": {
     "absolutePath": "project:/contracts/node_modules/openzeppelin-solidity/contracts/vendor/optimism/ICrossDomainMessenger.sol",
     "exportedSymbols": {
@@ -594,10 +598,14 @@
   "networks": {},
   "schemaVersion": "3.4.8",
 <<<<<<< HEAD
+<<<<<<< HEAD
   "updatedAt": "2022-08-24T05:52:12.849Z",
 =======
   "updatedAt": "2022-08-24T05:34:44.075Z",
 >>>>>>> origin/main
+=======
+  "updatedAt": "2022-08-24T05:52:12.849Z",
+>>>>>>> subscribe
   "devdoc": {
     "kind": "dev",
     "methods": {

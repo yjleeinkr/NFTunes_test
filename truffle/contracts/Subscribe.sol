@@ -2,57 +2,39 @@
 
 pragma solidity ^0.8.15;
 
-
-// import "./Approve.sol";
-import "./node_modules/openzeppelin-solidity/contracts/access/Ownable.sol";
-
-
-contract Subscribe is Ownable{
-
-    // Approve public Sign;
-
-    uint256 firstPayment;
-    uint256 nextPayment;
-    address marketOwner; //0x456F37fB5Ae3c15D98fd5deBa93121B5435f9A50
-    address public approver;
+contract Subscribe_yj{
     uint256 public sub_price = 1 ether;
+    // uint256 public sub_price3 = 2.5 ether;
+    // uint256 public sub_price6 = 5 ether;
 
-    mapping(address => bool) public subscribeState;
-    mapping(address => mapping(address => uint256)) private _allowances;
-    mapping(address => mapping(address => bool)) private _operatorApprovals;
+    mapping(address => uint) public subscribeTime;
 
-    event Approval(address indexed owner, address indexed spender, uint256 value);
     event Transfer(address indexed from, address indexed to, uint256 value);
+    event Subscribed(address indexed user, uint startTime, bool state);
 
-    function setUserState(address _owner, bool _state) public{
-        subscribeState[_owner] = _state;
+    function setSubscribe(address _user, uint _time) internal {
+        subscribeTime[_user] = _time;
     }
 
-
-    function _transfer(
-        address from,
-        address to,
-        uint256 amount
-    ) internal virtual {
-        require(from != address(0), "transfer from the zero address");
-        require(to != address(0), "transfer to the zero address");
-
-        emit Transfer(from, to, amount);
+//구독
+    function subscribe() public payable{
+        require(msg.value >= sub_price, "lack of balance, need to charge");
+        // require(subscribeState[msg.sender] != false , "already subscribed");
+        payable(address(this)).transfer(msg.value);
+        setSubscribe(msg.sender, block.timestamp);
+        emit Subscribed(msg.sender, block.timestamp, true);
     }
 
-    
-    function transferFrom(
-        address from,
-        address to,
-        uint256 amount
-    ) public virtual returns (bool) {
-
-        spendAllowance(from, approver, amount);
-
-        _transfer(from,to,amount);
-        return true;
+//재구독.
+    function reSubscribe() public payable {
+        require(block.timestamp > subscribeTime[msg.sender]+30 days, "You already subscribed." );
+        require(msg.value >= sub_price, "lack of balance, need to charge");
+        payable(address(this)).transfer(msg.value);
+        setSubscribe(msg.sender, block.timestamp);
+        emit Subscribed(msg.sender, block.timestamp, true);
     }
 
+<<<<<<< HEAD
     function subscribe(address payable _to) public payable{
         marketOwner = _to;
         approver = address(this);
@@ -147,24 +129,23 @@ contract Subscribe is Ownable{
         uint256 amount
     ) public virtual {
 
+=======
+>>>>>>> subscribe
    
-        uint256 currentAllowance = allowance(owner, spender);
-        if (currentAllowance != type(uint256).max) {
-            require(currentAllowance >= amount, "ERC20: insufficient allowance");
-            unchecked {
-                _approve(owner, spender, currentAllowance - amount);
-            }
-        }
+//구독취소
+    function cancelSubscribe() public payable{
+        require(subscribeTime[msg.sender] + 7 days >= block.timestamp , "not required to cancel");
+        // require(block.timestamp > subscribeTime[msg.sender], "")
+        payable(msg.sender).transfer(sub_price);
+        emit Subscribed(msg.sender,block.timestamp, false);
     }
-
-
-
-
-  
-
-
 
     
 
+    function getSubsribeState(address _user) public view returns(uint){
+        return subscribeTime[_user];
+    }
+ 
+    receive() external payable{
+    }
 }
-

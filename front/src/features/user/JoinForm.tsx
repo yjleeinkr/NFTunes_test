@@ -1,11 +1,10 @@
 import { useEffect, useReducer, useState } from 'react';
 import useWeb3 from '../../hooks/useWeb3';
 import { useAppDispatch, useAppSelector } from '../../hooks/exhook';
-import { joinAsync, userState } from './userSlice';
+import { joinAsync, userState, checkNickAsync } from './userSlice';
 import { batch } from 'react-redux';
 import { handleJoin, handleScroll } from '../../modules/modalSlice';
 import styled from 'styled-components';
-import axios from 'axios';
 
 const JoinForm = () => {
   const user = useAppSelector(userState);
@@ -23,6 +22,7 @@ const JoinForm = () => {
       account,
       nickname,
       email,
+      avatar: '',
     };
     dispatch(joinAsync(userInfo));
     setNickname('');
@@ -38,9 +38,8 @@ const JoinForm = () => {
 
   const checkNickForm = async (e: React.ChangeEvent<HTMLInputElement>) => {
     setNickname(e.target.value);
-    const response = await axios.post('http://localhost:4000/api/user/checkJoinForm', { nickname: e.target.value });
-    const { isOkToUse } = response.data;
-    if (!isOkToUse || e.target.value === '') {
+    const isValidNick = await dispatch(checkNickAsync(e.target.value));
+    if (!isValidNick.payload || e.target.value === '') {
       setNickForm(false);
     } else {
       setNickForm(true);
@@ -84,7 +83,13 @@ const JoinForm = () => {
               onChange={checkNickForm}
               className="text-zinc-200 bg-gray-500"
             />
-            {nickForm ? <p className="text-white">닉네임 ok</p> : <p className="text-white">중복된 닉네임입니다.</p>}
+            {nickForm ? (
+              <p className="text-white">닉네임 ok</p>
+            ) : nickname === '' ? (
+              <p className="text-white">닉네임은 필수값입니다.</p>
+            ) : (
+              <p className="text-white">중복된 닉네임입니다.</p>
+            )}
           </div>
           <div id="join-input-box" className="pb-1 pl-0.5 pt-3 pr-3 border-b-2">
             <input

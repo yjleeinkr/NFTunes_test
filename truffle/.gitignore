@@ -1,3 +1,4 @@
 package-lock.json
-build/contracts
 node_modules
+# build/contracts/*.json
+# contracts/artifacts/build-info/*.json

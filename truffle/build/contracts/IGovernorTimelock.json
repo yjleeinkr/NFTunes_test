@@ -778,10 +778,14 @@
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts v4.4.1 (governance/extensions/IGovernorTimelock.sol)\n\npragma solidity ^0.8.0;\n\nimport \"../IGovernor.sol\";\n\n/**\n * @dev Extension of the {IGovernor} for timelock supporting modules.\n *\n * _Available since v4.3._\n */\nabstract contract IGovernorTimelock is IGovernor {\n    event ProposalQueued(uint256 proposalId, uint256 eta);\n\n    function timelock() public view virtual returns (address);\n\n    function proposalEta(uint256 proposalId) public view virtual returns (uint256);\n\n    function queue(\n        address[] memory targets,\n        uint256[] memory values,\n        bytes[] memory calldatas,\n        bytes32 descriptionHash\n    ) public virtual returns (uint256 proposalId);\n}\n",
 <<<<<<< HEAD
+<<<<<<< HEAD
   "sourcePath": "/Users/oo_ha/workspace/project/meta/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/governance/extensions/IGovernorTimelock.sol",
 =======
   "sourcePath": "/home/gyuri/project/last/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/governance/extensions/IGovernorTimelock.sol",
 >>>>>>> origin/main
+=======
+  "sourcePath": "/Users/oo_ha/workspace/project/meta/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/governance/extensions/IGovernorTimelock.sol",
+>>>>>>> subscribe
   "ast": {
     "absolutePath": "project:/contracts/node_modules/openzeppelin-solidity/contracts/governance/extensions/IGovernorTimelock.sol",
     "exportedSymbols": {
@@ -1279,10 +1283,14 @@
   "networks": {},
   "schemaVersion": "3.4.8",
 <<<<<<< HEAD
+<<<<<<< HEAD
   "updatedAt": "2022-08-24T05:52:12.451Z",
 =======
   "updatedAt": "2022-08-24T05:34:43.827Z",
 >>>>>>> origin/main
+=======
+  "updatedAt": "2022-08-24T05:52:12.451Z",
+>>>>>>> subscribe
   "devdoc": {
     "details": "Extension of the {IGovernor} for timelock supporting modules. _Available since v4.3._",
     "kind": "dev",
