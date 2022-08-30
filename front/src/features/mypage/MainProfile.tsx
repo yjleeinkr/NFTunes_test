@@ -11,31 +11,48 @@ import {
   PopoverCloseButton,
   PopoverBody,
   PopoverFooter,
+  Box,
+  Flex,
 } from '@chakra-ui/react';
+import Link from 'next/link';
 
 const MainProfile = () => {
   const user = useAppSelector(userState);
   return (
-    <Popover>
+    <Popover placement="bottom-start">
       <PopoverTrigger>
-        <Button>
+        <Flex w="70px" cursor="pointer" justify="space-between" align="center">
           <img
             className="w-10 h-10 rounded-full flex"
             src={user.userInfo.avatar === '' ? 'http://localhost:4000/upload/user.png' : user.userInfo.avatar}
-            alt="Rounded avatar"
           />
-          <span>{user.userInfo.nickname}</span>
-        </Button>
+        </Flex>
       </PopoverTrigger>
       <Portal>
-        <PopoverContent>
+        <PopoverContent
+          w="200px"
+          bgColor="rgb( 10 10 10 / 0.8)"
+          color="white"
+          borderColor="white"
+          ringColor="black"
+          overflow="hidden"
+        >
           <PopoverArrow />
-          <PopoverHeader>Header</PopoverHeader>
+          <PopoverHeader className="font-bold">
+            {user.userInfo.nickname === '' ? 'Guest' : user.userInfo.nickname}
+          </PopoverHeader>
           <PopoverCloseButton />
-          <PopoverBody>
-            <Button colorScheme="blue">Button</Button>
+          <PopoverBody className="hover:bg-emerald-900">
+            <Link href={`/mypage/${user.userInfo.account}`}>
+              <span className="cursor-pointer">Dash board</span>
+            </Link>
           </PopoverBody>
-          <PopoverFooter>This is the footer</PopoverFooter>
+          <PopoverBody className="hover:bg-emerald-900">
+            <Link href={`/mypage/registermusic`}>
+              <span className="cursor-pointer">Upload Music</span>
+            </Link>
+          </PopoverBody>
+          {/* <PopoverFooter>This is the footer</PopoverFooter> */}
         </PopoverContent>
       </Portal>
     </Popover>
