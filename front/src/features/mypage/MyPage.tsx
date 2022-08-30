@@ -4,7 +4,6 @@ import { NextPage } from 'next';
 // import Minting from '../../src/features/mypage/Minting';
 import styled from 'styled-components';
 import Image from 'next/image';
-import ScaleFadeEx from './ScaleFade';
 
 // worker : gyuri
 // last work : 220824
@@ -99,7 +98,6 @@ const Mypage: React.FC<{ userInfo: IUserInfo }> = ({ userInfo }) => {
               <h1>{userInfo.account}</h1>
             </ProfileInfo>
           </ProfileBox>
-          <ScaleFadeEx />
           <ContentsBox>
             <MusicMenu>
               <IndividualMenu>

@@ -9,13 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.3.1",
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
     "@metamask/providers": "^9.1.0",
     "@reduxjs/toolkit": "^1.8.4",
     "axios": "^0.27.2",
     "babel-plugin-styled-components": "^2.0.7",
     "ethers": "^5.6.9",
-    "flowbite": "^1.5.2",
-    "flowbite-react": "^0.1.10",
     "framer-motion": "^7.2.1",
     "next": "12.2.4",
     "react": "18.2.0",

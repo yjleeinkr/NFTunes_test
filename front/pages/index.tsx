@@ -21,10 +21,8 @@ const Main: NextPage = () => {
         <meta name="description" content="임시 인덱스 페이지입니다." />
       </Head>
       <section id="main" className=" overflow-hidden mx-auto h-full max-w-7xl">
-        <div className="pt-20 text-white">
-          <Login />
-        </div>
-        <SlideList />
+        {/* <div className="pt-20 text-white"></div> */}
+        {/* <SlideList /> */}
         <TestScroll />
       </section>
     </div>
