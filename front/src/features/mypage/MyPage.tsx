@@ -1,15 +1,15 @@
 import { NextPage } from 'next';
-import Header from '../../src/features/_main/Header';
-import { useWheels } from '../../src/hooks/useWheel';
-import Minting from '../../src/features/mypage/Minting';
+// import Header from '../../src/features/_main/Header';
+// import { useWheels } from '../../src/hooks/useWheel';
+// import Minting from '../../src/features/mypage/Minting';
 import styled from 'styled-components';
-import userImg from '../../public/images/user.png';
 import Image from 'next/image';
+import ScaleFadeEx from './ScaleFade';
 
 // worker : gyuri
 // last work : 220824
 const OutBox = styled.div`
-  background: black;
+  /* background: black; */
   width: 100%;
   height: 1200px;
   padding-top: 100px;
@@ -32,7 +32,7 @@ const ProfileBox = styled.div`
 `;
 
 const imgStyle = {
-  borderRadius: '50%',
+  borderRadius: '60%',
 };
 
 const ProfileInfo = styled.div`
@@ -44,10 +44,10 @@ const ProfileInfo = styled.div`
   justify-content: space-evenly;
 
   > h1 {
-    font-size: 26px;
-    margin-left: 20px;
+    font-size: 22px;
+    margin-left: 30px;
     color: #fff;
-    font-family: 'Fly';
+    font-family: 'Light';
   }
 `;
 
@@ -85,20 +85,21 @@ const IndividualMenu = styled.li`
   }
 `;
 
-const Mypage: NextPage = () => {
-
+const Mypage: React.FC<{ userInfo: IUserInfo }> = ({ userInfo }) => {
+  const modifyProfile = (account) => {};
   return (
     <div>
       <OutBox>
         <MainBox>
           <ProfileBox>
-            <Image src={userImg} width={240} height={240} style={imgStyle} />
+            <Image src={userInfo.avatar} width={240} height={240} style={imgStyle} />
             <ProfileInfo>
-              <h1>닉네임</h1>
-              <h1>이메일</h1>
-              <h1>지갑 주소</h1>
+              <h1>{userInfo.nickname}</h1>
+              <h1>{userInfo.email}</h1>
+              <h1>{userInfo.account}</h1>
             </ProfileInfo>
           </ProfileBox>
+          <ScaleFadeEx />
           <ContentsBox>
             <MusicMenu>
               <IndividualMenu>
