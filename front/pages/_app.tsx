@@ -8,18 +8,20 @@ import GnbModal from '../src/features/_main/GnbModal';
 import JoinModal from '../src/features/user/JoinModal';
 import Wrap from '../src/features/_main/Wrap';
 import './app.css';
+import { ChakraProvider } from '@chakra-ui/react';
 
 function MyApp({ Component, pageProps }: AppProps) {
-
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor}>
-        <Wrap>
-          <Header />
-          <GnbModal />
-          {/* <JoinModal /> */}
-          <Component {...pageProps} />
-        </Wrap>
+        <ChakraProvider>
+          <Wrap>
+            <Header />
+            <GnbModal />
+            {/* <JoinModal /> */}
+            <Component {...pageProps} />
+          </Wrap>
+        </ChakraProvider>
       </PersistGate>
     </Provider>
   );
