@@ -1,59 +1,28 @@
-import i1 from '../../../public/images/i1.jpg'
-import i2 from '../../../public/images/i2.jpg'
-import i3 from '../../../public/images/i3.jpg'
-import i4 from '../../../public/images/i4.jpg'
+import i1 from '../../../public/images/i1.jpg';
+import i2 from '../../../public/images/i2.jpg';
+import i3 from '../../../public/images/i3.jpg';
+import i4 from '../../../public/images/i4.jpg';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import React, { FunctionComponent, useEffect, useState } from 'react';
 
 const SlideList = () => {
 
   const tempArr = [i1,i4,i2,i3,i1,i2]
-
   const [imgWidth,setImgWidth] = useState<number>(0)
-  const [imgTranslateX,setImgTranslateX] = useState<number>(0)
-  const [valueX,setValueX] = useState<number>(0)
-  const [slideImg, setSlideImg] = useState<string>('translate-x-[320rem]')
-
-  const slideHandler = (d) => {
-    let valueX
-    switch(d) {
-      case 'right':
-        valueX = imgTranslateX + imgWidth
-        setImgTranslateX(valueX)
-        setValueX(parseInt(String(valueX / 16)))
-        console.log('오른밸류',parseInt(String(valueX / 16)),'rem')
-        break;
-      case 'left':
-        valueX = imgTranslateX - imgWidth
-        setImgTranslateX(valueX)
-        setValueX(parseInt(String(valueX / 16)))
-        console.log('왼밸류',parseInt(String(valueX / 16)),'rem')
-        break;
-    }
-  }
-  useEffect(() =>{
-    let renderedWidth
-
-    setImgWidth(
-      window.onload = () => {
-      // imgWidth = document.querySelector('#slideBox').clientWidth;
-      renderedWidth = document.querySelector('#slideBox').clientWidth
-      return renderedWidth
-    })
-  },[])
+  const [slide,setSlide] = useState<number>(0)
 
   useEffect(()=>{
-    console.log("useEffect_imgTranslate",imgWidth)
-    if (valueX >= 0) {
-      console.log('오른')
-      setSlideImg(`translate-x-[${imgTranslateX}rem]`)
-      console.log(slideImg)
-    } else if (valueX < 0 ) {
-      console.log('왼')
-      setSlideImg(`-translate-x-[${imgTranslateX}rem]`)
-      console.log(slideImg)
-    }
-  },[imgTranslateX])
+    setSlide(imgWidth)
+  },[imgWidth])
+
+  const slideHandler = (direction) => {
+    const temp = document.querySelector('#slideBox0').clientWidth
+
+    if (direction === 'left') {
+      setImgWidth(imgWidth+temp)
+    } else if (direction === 'right')
+      setImgWidth(imgWidth-temp)
+  }
 
   return (
     <>
@@ -71,13 +40,14 @@ const SlideList = () => {
           </span>
         </div>
       </div>
-      <div id='test' className={` relative border h-[32rem] p-5 flex ${slideImg}`}>
-      {/*<div id='test' className={` relative border h-[32rem] p-5 flex translate-x-[400rem]`}>*/}
+      <div id='test'
+        style={ {position:'relative', border:'1px', height:'32rem', padding:'1.25rem', display:'flex', transform:`translateX(${slide}px)`, transition: 'transform 0.5s ease'
+        } }
+      >
         {
-          tempArr.map(v=>{
+          tempArr.map((v,i)=>{
             return (
-              <div id="slideBox" className={ ` relative w-1/3 h-full shrink-0 mr-10 ` }>
-              {/*<div id="slideBox" className={ ` relative w-1/3 h-full shrink-0 mr-10 translate-x-[12rem]` }>*/}
+              <div id={`slideBox${i}`} className={ ` relative w-1/3 h-full shrink-0 mr-10 ` }>
                 <Image src={v} layout='fill' className="" ></Image>
               </div>
             )
