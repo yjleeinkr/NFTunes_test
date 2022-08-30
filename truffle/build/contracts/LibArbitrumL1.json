@@ -1,0 +1,1976 @@
+{
+  "contractName": "LibArbitrumL1",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"details\":\"Primitives for cross-chain aware contracts for [Arbitrum](https://arbitrum.io/). This version should only be used on L1 to process cross-chain messages originating from L2. For the other side, use {LibArbitrumL2}.\",\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/node_modules/openzeppelin-solidity/contracts/crosschain/arbitrum/LibArbitrumL1.sol\":\"LibArbitrumL1\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/node_modules/openzeppelin-solidity/contracts/crosschain/arbitrum/LibArbitrumL1.sol\":{\"keccak256\":\"0x30e5cbf050a264e0ade16bafb3e3ed1171d025aa72bb52003bf659900da77d96\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c0729e5df82658074de74e1065802ab7f4eea0afa3deee8a9585198206149255\",\"dweb:/ipfs/QmbkZE89sw7haspQooFu3y1pXb1MdPmWC551B23rt4Wrqa\"]},\"project:/contracts/node_modules/openzeppelin-solidity/contracts/crosschain/errors.sol\":{\"keccak256\":\"0xa1e9b651a2427925598b49ef35da5930abc07859cfac5b9dfb1912f063a024b3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c514518c36a3fb1c5f1a99d88857e93160c72ea1fd728c443406ad1acb43ae9a\",\"dweb:/ipfs/Qmc3oXjBNhdeM5cfWpsvewXZAhH34Scgna2W3MvLaiiapQ\"]},\"project:/contracts/node_modules/openzeppelin-solidity/contracts/vendor/arbitrum/IBridge.sol\":{\"keccak256\":\"0x98e23fd2e0f3f7dd012d11f4b51a940d2b4b0a4526b948631ca78a909e134639\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://0ae5cfba579c73a303e138e294cd99b0047b497773720359e521149e5b73e850\",\"dweb:/ipfs/Qmd5S4dVZupRmfqrtuSeP1n8eeruViUMbEUdzsn5Dr7wWa\"]},\"project:/contracts/node_modules/openzeppelin-solidity/contracts/vendor/arbitrum/IInbox.sol\":{\"keccak256\":\"0x17cc873fcf37a9da600abfda6efad5f237f89e749b9974b00c2fbd9b3a21deb3\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://2792ba9eba987431b1c83424bd434085a1ce8bcbfbf03f502c3b5d3a3a937eb4\",\"dweb:/ipfs/QmQSBXBjPeo6ZZMYZ5f1MRcB2NYPdk8nJy3ZR1cpw4heVG\"]},\"project:/contracts/node_modules/openzeppelin-solidity/contracts/vendor/arbitrum/IMessageProvider.sol\":{\"keccak256\":\"0x313f5c576f539a5fa5b0827680f2faf30714f3b5e8cfd3fd01045869c790ca43\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://df59e59fad0c0bb2c82210a14b4ee6addc606fee300edcf3614261732226d514\",\"dweb:/ipfs/QmZh48V1KNYSdGqcVWhLxWStLu6uB45njnqKHmsFeERqjT\"]},\"project:/contracts/node_modules/openzeppelin-solidity/contracts/vendor/arbitrum/IOutbox.sol\":{\"keccak256\":\"0x9ec23c9f986bf3240450c1096236dd9c195f99e1037c41051d5fd01680d31da5\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://4770fa6940b40759c7e1fecdb52e83a701cfc70195bfbe5b22f4785425d53950\",\"dweb:/ipfs/QmQzRhAiH6mdqWZE3te8pULbVd2GqRBcMGAZAnX1XJvJ2q\"]}},\"version\":1}",
+  "bytecode": "0x60566050600b82828239805160001a6073146043577f4e487b7100000000000000000000000000000000000000000000000000000000600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212203697b92e64a85473b4116e62419e0392bf0a978f866ccae56e6e8e840765f9e164736f6c634300080f0033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212203697b92e64a85473b4116e62419e0392bf0a978f866ccae56e6e8e840765f9e164736f6c634300080f0033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+<<<<<<< HEAD
+<<<<<<< HEAD
+  "sourceMap": "650:1004:25:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "650:1004:25:-:0;;;;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts (last updated v4.6.0) (crosschain/arbitrum/LibArbitrumL1.sol)\n\npragma solidity ^0.8.4;\n\nimport {IBridge as ArbitrumL1_Bridge} from \"../../vendor/arbitrum/IBridge.sol\";\nimport {IInbox as ArbitrumL1_Inbox} from \"../../vendor/arbitrum/IInbox.sol\";\nimport {IOutbox as ArbitrumL1_Outbox} from \"../../vendor/arbitrum/IOutbox.sol\";\nimport \"../errors.sol\";\n\n/**\n * @dev Primitives for cross-chain aware contracts for\n * [Arbitrum](https://arbitrum.io/).\n *\n * This version should only be used on L1 to process cross-chain messages\n * originating from L2. For the other side, use {LibArbitrumL2}.\n */\nlibrary LibArbitrumL1 {\n    /**\n     * @dev Returns whether the current function call is the result of a\n     * cross-chain message relayed by the `bridge`.\n     */\n    function isCrossChain(address bridge) internal view returns (bool) {\n        return msg.sender == bridge;\n    }\n\n    /**\n     * @dev Returns the address of the sender that triggered the current\n     * cross-chain message through the `bridge`.\n     *\n     * NOTE: {isCrossChain} should be checked before trying to recover the\n     * sender, as it will revert with `NotCrossChainCall` if the current\n     * function call is not the result of a cross-chain message.\n     */\n    function crossChainSender(address bridge) internal view returns (address) {\n        if (!isCrossChain(bridge)) revert NotCrossChainCall();\n\n        address sender = ArbitrumL1_Outbox(ArbitrumL1_Bridge(bridge).activeOutbox()).l2ToL1Sender();\n        require(sender != address(0), \"LibArbitrumL1: system messages without sender\");\n\n        return sender;\n    }\n}\n",
+  "sourcePath": "/Users/oo_ha/workspace/project/meta/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/crosschain/arbitrum/LibArbitrumL1.sol",
+=======
+  "sourceMap": "650:1004:13:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "650:1004:13:-:0;;;;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts (last updated v4.6.0) (crosschain/arbitrum/LibArbitrumL1.sol)\n\npragma solidity ^0.8.4;\n\nimport {IBridge as ArbitrumL1_Bridge} from \"../../vendor/arbitrum/IBridge.sol\";\nimport {IInbox as ArbitrumL1_Inbox} from \"../../vendor/arbitrum/IInbox.sol\";\nimport {IOutbox as ArbitrumL1_Outbox} from \"../../vendor/arbitrum/IOutbox.sol\";\nimport \"../errors.sol\";\n\n/**\n * @dev Primitives for cross-chain aware contracts for\n * [Arbitrum](https://arbitrum.io/).\n *\n * This version should only be used on L1 to process cross-chain messages\n * originating from L2. For the other side, use {LibArbitrumL2}.\n */\nlibrary LibArbitrumL1 {\n    /**\n     * @dev Returns whether the current function call is the result of a\n     * cross-chain message relayed by the `bridge`.\n     */\n    function isCrossChain(address bridge) internal view returns (bool) {\n        return msg.sender == bridge;\n    }\n\n    /**\n     * @dev Returns the address of the sender that triggered the current\n     * cross-chain message through the `bridge`.\n     *\n     * NOTE: {isCrossChain} should be checked before trying to recover the\n     * sender, as it will revert with `NotCrossChainCall` if the current\n     * function call is not the result of a cross-chain message.\n     */\n    function crossChainSender(address bridge) internal view returns (address) {\n        if (!isCrossChain(bridge)) revert NotCrossChainCall();\n\n        address sender = ArbitrumL1_Outbox(ArbitrumL1_Bridge(bridge).activeOutbox()).l2ToL1Sender();\n        require(sender != address(0), \"LibArbitrumL1: system messages without sender\");\n\n        return sender;\n    }\n}\n",
+  "sourcePath": "/home/gyuri/project/last/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/crosschain/arbitrum/LibArbitrumL1.sol",
+>>>>>>> origin/main
+=======
+  "sourceMap": "650:1004:24:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "650:1004:24:-:0;;;;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts (last updated v4.6.0) (crosschain/arbitrum/LibArbitrumL1.sol)\n\npragma solidity ^0.8.4;\n\nimport {IBridge as ArbitrumL1_Bridge} from \"../../vendor/arbitrum/IBridge.sol\";\nimport {IInbox as ArbitrumL1_Inbox} from \"../../vendor/arbitrum/IInbox.sol\";\nimport {IOutbox as ArbitrumL1_Outbox} from \"../../vendor/arbitrum/IOutbox.sol\";\nimport \"../errors.sol\";\n\n/**\n * @dev Primitives for cross-chain aware contracts for\n * [Arbitrum](https://arbitrum.io/).\n *\n * This version should only be used on L1 to process cross-chain messages\n * originating from L2. For the other side, use {LibArbitrumL2}.\n */\nlibrary LibArbitrumL1 {\n    /**\n     * @dev Returns whether the current function call is the result of a\n     * cross-chain message relayed by the `bridge`.\n     */\n    function isCrossChain(address bridge) internal view returns (bool) {\n        return msg.sender == bridge;\n    }\n\n    /**\n     * @dev Returns the address of the sender that triggered the current\n     * cross-chain message through the `bridge`.\n     *\n     * NOTE: {isCrossChain} should be checked before trying to recover the\n     * sender, as it will revert with `NotCrossChainCall` if the current\n     * function call is not the result of a cross-chain message.\n     */\n    function crossChainSender(address bridge) internal view returns (address) {\n        if (!isCrossChain(bridge)) revert NotCrossChainCall();\n\n        address sender = ArbitrumL1_Outbox(ArbitrumL1_Bridge(bridge).activeOutbox()).l2ToL1Sender();\n        require(sender != address(0), \"LibArbitrumL1: system messages without sender\");\n\n        return sender;\n    }\n}\n",
+  "sourcePath": "/Users/oo_ha/workspace/project/meta/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/crosschain/arbitrum/LibArbitrumL1.sol",
+>>>>>>> subscribe
+  "ast": {
+    "absolutePath": "project:/contracts/node_modules/openzeppelin-solidity/contracts/crosschain/arbitrum/LibArbitrumL1.sol",
+    "exportedSymbols": {
+      "ArbitrumL1_Bridge": [
+<<<<<<< HEAD
+<<<<<<< HEAD
+        3630
+=======
+        6629
+>>>>>>> subscribe
+      ],
+      "ArbitrumL1_Inbox": [
+        6768
+      ],
+      "ArbitrumL1_Outbox": [
+        6849
+      ],
+      "InvalidCrossChainSender": [
+        2888
+      ],
+      "LibArbitrumL1": [
+        2822
+      ],
+      "NotCrossChainCall": [
+        2882
+      ]
+    },
+<<<<<<< HEAD
+    "id": 1468,
+=======
+        5831
+      ],
+      "ArbitrumL1_Inbox": [
+        5970
+      ],
+      "ArbitrumL1_Outbox": [
+        6051
+      ],
+      "InvalidCrossChainSender": [
+        2090
+      ],
+      "LibArbitrumL1": [
+        2024
+      ],
+      "NotCrossChainCall": [
+        2084
+      ]
+    },
+    "id": 2025,
+>>>>>>> origin/main
+=======
+    "id": 2823,
+>>>>>>> subscribe
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+<<<<<<< HEAD
+<<<<<<< HEAD
+        "id": 1403,
+=======
+        "id": 1960,
+>>>>>>> origin/main
+=======
+        "id": 2758,
+>>>>>>> subscribe
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".4"
+        ],
+        "nodeType": "PragmaDirective",
+<<<<<<< HEAD
+<<<<<<< HEAD
+        "src": "121:23:25"
+=======
+        "src": "121:23:13"
+>>>>>>> origin/main
+=======
+        "src": "121:23:24"
+>>>>>>> subscribe
+      },
+      {
+        "absolutePath": "project:/contracts/node_modules/openzeppelin-solidity/contracts/vendor/arbitrum/IBridge.sol",
+        "file": "../../vendor/arbitrum/IBridge.sol",
+<<<<<<< HEAD
+<<<<<<< HEAD
+        "id": 1405,
+=======
+        "id": 2760,
+>>>>>>> subscribe
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2823,
+        "sourceUnit": 6630,
+        "src": "146:79:24",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 2759,
+              "name": "IBridge",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+<<<<<<< HEAD
+              "referencedDeclaration": 3630,
+              "src": "154:7:25",
+=======
+        "id": 1962,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2025,
+        "sourceUnit": 5832,
+        "src": "146:79:13",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 1961,
+              "name": "IBridge",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 5831,
+              "src": "154:7:13",
+>>>>>>> origin/main
+=======
+              "referencedDeclaration": 6629,
+              "src": "154:7:24",
+>>>>>>> subscribe
+              "typeDescriptions": {}
+            },
+            "local": "ArbitrumL1_Bridge",
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/node_modules/openzeppelin-solidity/contracts/vendor/arbitrum/IInbox.sol",
+        "file": "../../vendor/arbitrum/IInbox.sol",
+<<<<<<< HEAD
+<<<<<<< HEAD
+        "id": 1407,
+=======
+        "id": 2762,
+>>>>>>> subscribe
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2823,
+        "sourceUnit": 6769,
+        "src": "226:76:24",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 2761,
+              "name": "IInbox",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+<<<<<<< HEAD
+              "referencedDeclaration": 3769,
+              "src": "234:6:25",
+=======
+        "id": 1964,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2025,
+        "sourceUnit": 5971,
+        "src": "226:76:13",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 1963,
+              "name": "IInbox",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 5970,
+              "src": "234:6:13",
+>>>>>>> origin/main
+=======
+              "referencedDeclaration": 6768,
+              "src": "234:6:24",
+>>>>>>> subscribe
+              "typeDescriptions": {}
+            },
+            "local": "ArbitrumL1_Inbox",
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/node_modules/openzeppelin-solidity/contracts/vendor/arbitrum/IOutbox.sol",
+        "file": "../../vendor/arbitrum/IOutbox.sol",
+<<<<<<< HEAD
+<<<<<<< HEAD
+        "id": 1409,
+=======
+        "id": 2764,
+>>>>>>> subscribe
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2823,
+        "sourceUnit": 6850,
+        "src": "303:79:24",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 2763,
+              "name": "IOutbox",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+<<<<<<< HEAD
+              "referencedDeclaration": 3850,
+              "src": "311:7:25",
+=======
+        "id": 1966,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2025,
+        "sourceUnit": 6052,
+        "src": "303:79:13",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 1965,
+              "name": "IOutbox",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 6051,
+              "src": "311:7:13",
+>>>>>>> origin/main
+=======
+              "referencedDeclaration": 6849,
+              "src": "311:7:24",
+>>>>>>> subscribe
+              "typeDescriptions": {}
+            },
+            "local": "ArbitrumL1_Outbox",
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/node_modules/openzeppelin-solidity/contracts/crosschain/errors.sol",
+        "file": "../errors.sol",
+<<<<<<< HEAD
+<<<<<<< HEAD
+        "id": 1410,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 1468,
+        "sourceUnit": 1534,
+        "src": "383:23:25",
+=======
+        "id": 1967,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2025,
+        "sourceUnit": 2091,
+        "src": "383:23:13",
+>>>>>>> origin/main
+=======
+        "id": 2765,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2823,
+        "sourceUnit": 2889,
+        "src": "383:23:24",
+>>>>>>> subscribe
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "LibArbitrumL1",
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+          "id": 1411,
+=======
+          "id": 2766,
+>>>>>>> subscribe
+          "nodeType": "StructuredDocumentation",
+          "src": "408:241:24",
+          "text": " @dev Primitives for cross-chain aware contracts for\n [Arbitrum](https://arbitrum.io/).\n This version should only be used on L1 to process cross-chain messages\n originating from L2. For the other side, use {LibArbitrumL2}."
+        },
+        "fullyImplemented": true,
+        "id": 2822,
+        "linearizedBaseContracts": [
+          2822
+        ],
+        "name": "LibArbitrumL1",
+<<<<<<< HEAD
+        "nameLocation": "658:13:25",
+=======
+          "id": 1968,
+          "nodeType": "StructuredDocumentation",
+          "src": "408:241:13",
+          "text": " @dev Primitives for cross-chain aware contracts for\n [Arbitrum](https://arbitrum.io/).\n This version should only be used on L1 to process cross-chain messages\n originating from L2. For the other side, use {LibArbitrumL2}."
+        },
+        "fullyImplemented": true,
+        "id": 2024,
+        "linearizedBaseContracts": [
+          2024
+        ],
+        "name": "LibArbitrumL1",
+        "nameLocation": "658:13:13",
+>>>>>>> origin/main
+=======
+        "nameLocation": "658:13:24",
+>>>>>>> subscribe
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+              "id": 1424,
+              "nodeType": "Block",
+              "src": "886:44:25",
+=======
+              "id": 1981,
+              "nodeType": "Block",
+              "src": "886:44:13",
+>>>>>>> origin/main
+=======
+              "id": 2779,
+              "nodeType": "Block",
+              "src": "886:44:24",
+>>>>>>> subscribe
+              "statements": [
+                {
+                  "expression": {
+                    "commonType": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    },
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    "id": 1422,
+=======
+                    "id": 1979,
+>>>>>>> origin/main
+=======
+                    "id": 2777,
+>>>>>>> subscribe
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "expression": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+                        "id": 1419,
+=======
+                        "id": 1976,
+>>>>>>> origin/main
+=======
+                        "id": 2774,
+>>>>>>> subscribe
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4294967281,
+<<<<<<< HEAD
+<<<<<<< HEAD
+                        "src": "903:3:25",
+=======
+                        "src": "903:3:13",
+>>>>>>> origin/main
+=======
+                        "src": "903:3:24",
+>>>>>>> subscribe
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+<<<<<<< HEAD
+<<<<<<< HEAD
+                      "id": 1420,
+=======
+                      "id": 1977,
+>>>>>>> origin/main
+=======
+                      "id": 2775,
+>>>>>>> subscribe
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+<<<<<<< HEAD
+<<<<<<< HEAD
+                      "src": "903:10:25",
+=======
+                      "src": "903:10:13",
+>>>>>>> origin/main
+=======
+                      "src": "903:10:24",
+>>>>>>> subscribe
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+                      "id": 1421,
+                      "name": "bridge",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1414,
+                      "src": "917:6:25",
+=======
+                      "id": 1978,
+                      "name": "bridge",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1971,
+                      "src": "917:6:13",
+>>>>>>> origin/main
+=======
+                      "id": 2776,
+                      "name": "bridge",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2769,
+                      "src": "917:6:24",
+>>>>>>> subscribe
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    "src": "903:20:25",
+=======
+                    "src": "903:20:13",
+>>>>>>> origin/main
+=======
+                    "src": "903:20:24",
+>>>>>>> subscribe
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+<<<<<<< HEAD
+<<<<<<< HEAD
+                  "functionReturnParameters": 1418,
+                  "id": 1423,
+                  "nodeType": "Return",
+                  "src": "896:27:25"
+=======
+                  "functionReturnParameters": 1975,
+                  "id": 1980,
+                  "nodeType": "Return",
+                  "src": "896:27:13"
+>>>>>>> origin/main
+=======
+                  "functionReturnParameters": 2773,
+                  "id": 2778,
+                  "nodeType": "Return",
+                  "src": "896:27:24"
+>>>>>>> subscribe
+                }
+              ]
+            },
+            "documentation": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+              "id": 1412,
+=======
+              "id": 2767,
+>>>>>>> subscribe
+              "nodeType": "StructuredDocumentation",
+              "src": "678:136:24",
+              "text": " @dev Returns whether the current function call is the result of a\n cross-chain message relayed by the `bridge`."
+            },
+<<<<<<< HEAD
+            "id": 1425,
+=======
+              "id": 1969,
+              "nodeType": "StructuredDocumentation",
+              "src": "678:136:13",
+              "text": " @dev Returns whether the current function call is the result of a\n cross-chain message relayed by the `bridge`."
+            },
+            "id": 1982,
+>>>>>>> origin/main
+=======
+            "id": 2780,
+>>>>>>> subscribe
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isCrossChain",
+<<<<<<< HEAD
+<<<<<<< HEAD
+            "nameLocation": "828:12:25",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1415,
+=======
+            "nameLocation": "828:12:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1972,
+>>>>>>> origin/main
+=======
+            "nameLocation": "828:12:24",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2770,
+>>>>>>> subscribe
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+<<<<<<< HEAD
+<<<<<<< HEAD
+                  "id": 1414,
+=======
+                  "id": 2769,
+>>>>>>> subscribe
+                  "mutability": "mutable",
+                  "name": "bridge",
+                  "nameLocation": "849:6:24",
+                  "nodeType": "VariableDeclaration",
+<<<<<<< HEAD
+                  "scope": 1425,
+                  "src": "841:14:25",
+=======
+                  "id": 1971,
+                  "mutability": "mutable",
+                  "name": "bridge",
+                  "nameLocation": "849:6:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1982,
+                  "src": "841:14:13",
+>>>>>>> origin/main
+=======
+                  "scope": 2780,
+                  "src": "841:14:24",
+>>>>>>> subscribe
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    "id": 1413,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "841:7:25",
+=======
+                    "id": 1970,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "841:7:13",
+>>>>>>> origin/main
+=======
+                    "id": 2768,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "841:7:24",
+>>>>>>> subscribe
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+              "src": "840:16:25"
+            },
+            "returnParameters": {
+              "id": 1418,
+=======
+              "src": "840:16:13"
+            },
+            "returnParameters": {
+              "id": 1975,
+>>>>>>> origin/main
+=======
+              "src": "840:16:24"
+            },
+            "returnParameters": {
+              "id": 2773,
+>>>>>>> subscribe
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+<<<<<<< HEAD
+<<<<<<< HEAD
+                  "id": 1417,
+=======
+                  "id": 1974,
+>>>>>>> origin/main
+=======
+                  "id": 2772,
+>>>>>>> subscribe
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+<<<<<<< HEAD
+<<<<<<< HEAD
+                  "scope": 1425,
+                  "src": "880:4:25",
+=======
+                  "scope": 1982,
+                  "src": "880:4:13",
+>>>>>>> origin/main
+=======
+                  "scope": 2780,
+                  "src": "880:4:24",
+>>>>>>> subscribe
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    "id": 1416,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "880:4:25",
+=======
+                    "id": 1973,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "880:4:13",
+>>>>>>> origin/main
+=======
+                    "id": 2771,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "880:4:24",
+>>>>>>> subscribe
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+              "src": "879:6:25"
+            },
+            "scope": 1467,
+            "src": "819:111:25",
+=======
+              "src": "879:6:13"
+            },
+            "scope": 2024,
+            "src": "819:111:13",
+>>>>>>> origin/main
+=======
+              "src": "879:6:24"
+            },
+            "scope": 2822,
+            "src": "819:111:24",
+>>>>>>> subscribe
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+              "id": 1465,
+=======
+              "id": 2820,
+>>>>>>> subscribe
+              "nodeType": "Block",
+              "src": "1368:284:24",
+              "statements": [
+                {
+                  "condition": {
+<<<<<<< HEAD
+                    "id": 1436,
+=======
+              "id": 2022,
+              "nodeType": "Block",
+              "src": "1368:284:13",
+              "statements": [
+                {
+                  "condition": {
+                    "id": 1993,
+>>>>>>> origin/main
+=======
+                    "id": 2791,
+>>>>>>> subscribe
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "!",
+                    "prefix": true,
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    "src": "1382:21:25",
+=======
+                    "src": "1382:21:24",
+>>>>>>> subscribe
+                    "subExpression": {
+                      "arguments": [
+                        {
+                          "id": 2789,
+                          "name": "bridge",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+<<<<<<< HEAD
+                          "referencedDeclaration": 1428,
+                          "src": "1396:6:25",
+=======
+                    "src": "1382:21:13",
+                    "subExpression": {
+                      "arguments": [
+                        {
+                          "id": 1991,
+                          "name": "bridge",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1985,
+                          "src": "1396:6:13",
+>>>>>>> origin/main
+=======
+                          "referencedDeclaration": 2783,
+                          "src": "1396:6:24",
+>>>>>>> subscribe
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+                        "id": 1433,
+                        "name": "isCrossChain",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1425,
+                        "src": "1383:12:25",
+=======
+                        "id": 1990,
+                        "name": "isCrossChain",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1982,
+                        "src": "1383:12:13",
+>>>>>>> origin/main
+=======
+                        "id": 2788,
+                        "name": "isCrossChain",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2780,
+                        "src": "1383:12:24",
+>>>>>>> subscribe
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$",
+                          "typeString": "function (address) view returns (bool)"
+                        }
+                      },
+<<<<<<< HEAD
+<<<<<<< HEAD
+                      "id": 1435,
+=======
+                      "id": 1992,
+>>>>>>> origin/main
+=======
+                      "id": 2790,
+>>>>>>> subscribe
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+<<<<<<< HEAD
+<<<<<<< HEAD
+                      "src": "1383:20:25",
+=======
+                      "src": "1383:20:13",
+>>>>>>> origin/main
+=======
+                      "src": "1383:20:24",
+>>>>>>> subscribe
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+<<<<<<< HEAD
+<<<<<<< HEAD
+                  "id": 1440,
+                  "nodeType": "IfStatement",
+                  "src": "1378:53:25",
+=======
+                  "id": 1997,
+                  "nodeType": "IfStatement",
+                  "src": "1378:53:13",
+>>>>>>> origin/main
+=======
+                  "id": 2795,
+                  "nodeType": "IfStatement",
+                  "src": "1378:53:24",
+>>>>>>> subscribe
+                  "trueBody": {
+                    "errorCall": {
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+<<<<<<< HEAD
+<<<<<<< HEAD
+                        "id": 1437,
+                        "name": "NotCrossChainCall",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1527,
+                        "src": "1412:17:25",
+=======
+                        "id": 1994,
+                        "name": "NotCrossChainCall",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2084,
+                        "src": "1412:17:13",
+>>>>>>> origin/main
+=======
+                        "id": 2792,
+                        "name": "NotCrossChainCall",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2882,
+                        "src": "1412:17:24",
+>>>>>>> subscribe
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_error_pure$__$returns$__$",
+                          "typeString": "function () pure"
+                        }
+                      },
+<<<<<<< HEAD
+<<<<<<< HEAD
+                      "id": 1438,
+=======
+                      "id": 1995,
+>>>>>>> origin/main
+=======
+                      "id": 2793,
+>>>>>>> subscribe
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+<<<<<<< HEAD
+<<<<<<< HEAD
+                      "src": "1412:19:25",
+=======
+                      "src": "1412:19:13",
+>>>>>>> origin/main
+=======
+                      "src": "1412:19:24",
+>>>>>>> subscribe
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_tuple$__$",
+                        "typeString": "tuple()"
+                      }
+                    },
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    "id": 1439,
+                    "nodeType": "RevertStatement",
+                    "src": "1405:26:25"
+=======
+                    "id": 1996,
+                    "nodeType": "RevertStatement",
+                    "src": "1405:26:13"
+>>>>>>> origin/main
+=======
+                    "id": 2794,
+                    "nodeType": "RevertStatement",
+                    "src": "1405:26:24"
+>>>>>>> subscribe
+                  }
+                },
+                {
+                  "assignments": [
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    1442
+=======
+                    1999
+>>>>>>> origin/main
+=======
+                    2797
+>>>>>>> subscribe
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+<<<<<<< HEAD
+<<<<<<< HEAD
+                      "id": 1442,
+=======
+                      "id": 2797,
+>>>>>>> subscribe
+                      "mutability": "mutable",
+                      "name": "sender",
+                      "nameLocation": "1450:6:24",
+                      "nodeType": "VariableDeclaration",
+<<<<<<< HEAD
+                      "scope": 1465,
+                      "src": "1442:14:25",
+=======
+                      "id": 1999,
+                      "mutability": "mutable",
+                      "name": "sender",
+                      "nameLocation": "1450:6:13",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 2022,
+                      "src": "1442:14:13",
+>>>>>>> origin/main
+=======
+                      "scope": 2820,
+                      "src": "1442:14:24",
+>>>>>>> subscribe
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      },
+                      "typeName": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+                        "id": 1441,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1442:7:25",
+=======
+                        "id": 1998,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1442:7:13",
+>>>>>>> origin/main
+=======
+                        "id": 2796,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1442:7:24",
+>>>>>>> subscribe
+                        "stateMutability": "nonpayable",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+                  "id": 1452,
+=======
+                  "id": 2009,
+>>>>>>> origin/main
+=======
+                  "id": 2807,
+>>>>>>> subscribe
+                  "initialValue": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "arguments": [
+                          {
+                            "arguments": [],
+                            "expression": {
+                              "argumentTypes": [],
+                              "expression": {
+                                "arguments": [
+                                  {
+<<<<<<< HEAD
+<<<<<<< HEAD
+                                    "id": 1445,
+                                    "name": "bridge",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 1428,
+                                    "src": "1495:6:25",
+=======
+                                    "id": 2002,
+                                    "name": "bridge",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 1985,
+                                    "src": "1495:6:13",
+>>>>>>> origin/main
+=======
+                                    "id": 2800,
+                                    "name": "bridge",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 2783,
+                                    "src": "1495:6:24",
+>>>>>>> subscribe
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_address",
+                                      "typeString": "address"
+                                    }
+                                  }
+                                ],
+                                "expression": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_address",
+                                      "typeString": "address"
+                                    }
+                                  ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+                                  "id": 1444,
+=======
+                                  "id": 2799,
+>>>>>>> subscribe
+                                  "name": "ArbitrumL1_Bridge",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 6629,
+                                  "src": "1477:17:24",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_type$_t_contract$_IBridge_$6629_$",
+                                    "typeString": "type(contract IBridge)"
+                                  }
+                                },
+<<<<<<< HEAD
+                                "id": 1446,
+=======
+                                  "id": 2001,
+                                  "name": "ArbitrumL1_Bridge",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 5831,
+                                  "src": "1477:17:13",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_type$_t_contract$_IBridge_$5831_$",
+                                    "typeString": "type(contract IBridge)"
+                                  }
+                                },
+                                "id": 2003,
+>>>>>>> origin/main
+=======
+                                "id": 2801,
+>>>>>>> subscribe
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "kind": "typeConversion",
+                                "lValueRequested": false,
+                                "names": [],
+                                "nodeType": "FunctionCall",
+<<<<<<< HEAD
+<<<<<<< HEAD
+                                "src": "1477:25:25",
+=======
+                                "src": "1477:25:24",
+>>>>>>> subscribe
+                                "tryCall": false,
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_contract$_IBridge_$6629",
+                                  "typeString": "contract IBridge"
+                                }
+                              },
+<<<<<<< HEAD
+                              "id": 1447,
+=======
+                                "src": "1477:25:13",
+                                "tryCall": false,
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_contract$_IBridge_$5831",
+                                  "typeString": "contract IBridge"
+                                }
+                              },
+                              "id": 2004,
+>>>>>>> origin/main
+=======
+                              "id": 2802,
+>>>>>>> subscribe
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "activeOutbox",
+                              "nodeType": "MemberAccess",
+<<<<<<< HEAD
+<<<<<<< HEAD
+                              "referencedDeclaration": 3603,
+                              "src": "1477:38:25",
+=======
+                              "referencedDeclaration": 5804,
+                              "src": "1477:38:13",
+>>>>>>> origin/main
+=======
+                              "referencedDeclaration": 6602,
+                              "src": "1477:38:24",
+>>>>>>> subscribe
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_external_view$__$returns$_t_address_$",
+                                "typeString": "function () view external returns (address)"
+                              }
+                            },
+<<<<<<< HEAD
+<<<<<<< HEAD
+                            "id": 1448,
+=======
+                            "id": 2005,
+>>>>>>> origin/main
+=======
+                            "id": 2803,
+>>>>>>> subscribe
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+<<<<<<< HEAD
+<<<<<<< HEAD
+                            "src": "1477:40:25",
+=======
+                            "src": "1477:40:13",
+>>>>>>> origin/main
+=======
+                            "src": "1477:40:24",
+>>>>>>> subscribe
+                            "tryCall": false,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+                          "id": 1443,
+=======
+                          "id": 2798,
+>>>>>>> subscribe
+                          "name": "ArbitrumL1_Outbox",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 6849,
+                          "src": "1459:17:24",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_IOutbox_$6849_$",
+                            "typeString": "type(contract IOutbox)"
+                          }
+                        },
+<<<<<<< HEAD
+                        "id": 1449,
+=======
+                          "id": 2000,
+                          "name": "ArbitrumL1_Outbox",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 6051,
+                          "src": "1459:17:13",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_IOutbox_$6051_$",
+                            "typeString": "type(contract IOutbox)"
+                          }
+                        },
+                        "id": 2006,
+>>>>>>> origin/main
+=======
+                        "id": 2804,
+>>>>>>> subscribe
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+<<<<<<< HEAD
+<<<<<<< HEAD
+                        "src": "1459:59:25",
+=======
+                        "src": "1459:59:24",
+>>>>>>> subscribe
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IOutbox_$6849",
+                          "typeString": "contract IOutbox"
+                        }
+                      },
+<<<<<<< HEAD
+                      "id": 1450,
+=======
+                        "src": "1459:59:13",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IOutbox_$6051",
+                          "typeString": "contract IOutbox"
+                        }
+                      },
+                      "id": 2007,
+>>>>>>> origin/main
+=======
+                      "id": 2805,
+>>>>>>> subscribe
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "l2ToL1Sender",
+                      "nodeType": "MemberAccess",
+<<<<<<< HEAD
+<<<<<<< HEAD
+                      "referencedDeclaration": 3809,
+                      "src": "1459:72:25",
+=======
+                      "referencedDeclaration": 6010,
+                      "src": "1459:72:13",
+>>>>>>> origin/main
+=======
+                      "referencedDeclaration": 6808,
+                      "src": "1459:72:24",
+>>>>>>> subscribe
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$__$returns$_t_address_$",
+                        "typeString": "function () view external returns (address)"
+                      }
+                    },
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    "id": 1451,
+=======
+                    "id": 2008,
+>>>>>>> origin/main
+=======
+                    "id": 2806,
+>>>>>>> subscribe
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    "src": "1459:74:25",
+=======
+                    "src": "1459:74:13",
+>>>>>>> origin/main
+=======
+                    "src": "1459:74:24",
+>>>>>>> subscribe
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+<<<<<<< HEAD
+<<<<<<< HEAD
+                  "src": "1442:91:25"
+=======
+                  "src": "1442:91:13"
+>>>>>>> origin/main
+=======
+                  "src": "1442:91:24"
+>>>>>>> subscribe
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+<<<<<<< HEAD
+<<<<<<< HEAD
+                        "id": 1459,
+=======
+                        "id": 2016,
+>>>>>>> origin/main
+=======
+                        "id": 2814,
+>>>>>>> subscribe
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+                          "id": 1454,
+                          "name": "sender",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1442,
+                          "src": "1551:6:25",
+=======
+                          "id": 2011,
+                          "name": "sender",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1999,
+                          "src": "1551:6:13",
+>>>>>>> origin/main
+=======
+                          "id": 2809,
+                          "name": "sender",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 2797,
+                          "src": "1551:6:24",
+>>>>>>> subscribe
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "!=",
+                        "rightExpression": {
+                          "arguments": [
+                            {
+                              "hexValue": "30",
+<<<<<<< HEAD
+<<<<<<< HEAD
+                              "id": 1457,
+=======
+                              "id": 2014,
+>>>>>>> origin/main
+=======
+                              "id": 2812,
+>>>>>>> subscribe
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+<<<<<<< HEAD
+<<<<<<< HEAD
+                              "src": "1569:1:25",
+=======
+                              "src": "1569:1:13",
+>>>>>>> origin/main
+=======
+                              "src": "1569:1:24",
+>>>>>>> subscribe
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              },
+                              "value": "0"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              }
+                            ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+                            "id": 1456,
+=======
+                            "id": 2013,
+>>>>>>> origin/main
+=======
+                            "id": 2811,
+>>>>>>> subscribe
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+<<<<<<< HEAD
+<<<<<<< HEAD
+                            "src": "1561:7:25",
+=======
+                            "src": "1561:7:13",
+>>>>>>> origin/main
+=======
+                            "src": "1561:7:24",
+>>>>>>> subscribe
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+                              "id": 1455,
+=======
+                              "id": 2810,
+>>>>>>> subscribe
+                              "name": "address",
+                              "nodeType": "ElementaryTypeName",
+                              "src": "1561:7:24",
+                              "typeDescriptions": {}
+                            }
+                          },
+<<<<<<< HEAD
+                          "id": 1458,
+=======
+                              "id": 2012,
+                              "name": "address",
+                              "nodeType": "ElementaryTypeName",
+                              "src": "1561:7:13",
+                              "typeDescriptions": {}
+                            }
+                          },
+                          "id": 2015,
+>>>>>>> origin/main
+=======
+                          "id": 2813,
+>>>>>>> subscribe
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+<<<<<<< HEAD
+<<<<<<< HEAD
+                          "src": "1561:10:25",
+=======
+                          "src": "1561:10:13",
+>>>>>>> origin/main
+=======
+                          "src": "1561:10:24",
+>>>>>>> subscribe
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+<<<<<<< HEAD
+<<<<<<< HEAD
+                        "src": "1551:20:25",
+=======
+                        "src": "1551:20:13",
+>>>>>>> origin/main
+=======
+                        "src": "1551:20:24",
+>>>>>>> subscribe
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "4c6962417262697472756d4c313a2073797374656d206d6573736167657320776974686f75742073656e646572",
+<<<<<<< HEAD
+<<<<<<< HEAD
+                        "id": 1460,
+=======
+                        "id": 2017,
+>>>>>>> origin/main
+=======
+                        "id": 2815,
+>>>>>>> subscribe
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+<<<<<<< HEAD
+<<<<<<< HEAD
+                        "src": "1573:47:25",
+=======
+                        "src": "1573:47:13",
+>>>>>>> origin/main
+=======
+                        "src": "1573:47:24",
+>>>>>>> subscribe
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_d658411d0561b99f9fb199be39e8001e28574097edaed4471e2c7d7066c63b9a",
+                          "typeString": "literal_string \"LibArbitrumL1: system messages without sender\""
+                        },
+                        "value": "LibArbitrumL1: system messages without sender"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_d658411d0561b99f9fb199be39e8001e28574097edaed4471e2c7d7066c63b9a",
+                          "typeString": "literal_string \"LibArbitrumL1: system messages without sender\""
+                        }
+                      ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+                      "id": 1453,
+=======
+                      "id": 2010,
+>>>>>>> origin/main
+=======
+                      "id": 2808,
+>>>>>>> subscribe
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+<<<<<<< HEAD
+<<<<<<< HEAD
+                      "src": "1543:7:25",
+=======
+                      "src": "1543:7:13",
+>>>>>>> origin/main
+=======
+                      "src": "1543:7:24",
+>>>>>>> subscribe
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    "id": 1461,
+=======
+                    "id": 2018,
+>>>>>>> origin/main
+=======
+                    "id": 2816,
+>>>>>>> subscribe
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    "src": "1543:78:25",
+=======
+                    "src": "1543:78:13",
+>>>>>>> origin/main
+=======
+                    "src": "1543:78:24",
+>>>>>>> subscribe
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+<<<<<<< HEAD
+<<<<<<< HEAD
+                  "id": 1462,
+=======
+                  "id": 2817,
+>>>>>>> subscribe
+                  "nodeType": "ExpressionStatement",
+                  "src": "1543:78:24"
+                },
+                {
+                  "expression": {
+                    "id": 2818,
+                    "name": "sender",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+<<<<<<< HEAD
+                    "referencedDeclaration": 1442,
+                    "src": "1639:6:25",
+=======
+                  "id": 2019,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1543:78:13"
+                },
+                {
+                  "expression": {
+                    "id": 2020,
+                    "name": "sender",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 1999,
+                    "src": "1639:6:13",
+>>>>>>> origin/main
+=======
+                    "referencedDeclaration": 2797,
+                    "src": "1639:6:24",
+>>>>>>> subscribe
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+<<<<<<< HEAD
+<<<<<<< HEAD
+                  "functionReturnParameters": 1432,
+                  "id": 1464,
+                  "nodeType": "Return",
+                  "src": "1632:13:25"
+=======
+                  "functionReturnParameters": 1989,
+                  "id": 2021,
+                  "nodeType": "Return",
+                  "src": "1632:13:13"
+>>>>>>> origin/main
+=======
+                  "functionReturnParameters": 2787,
+                  "id": 2819,
+                  "nodeType": "Return",
+                  "src": "1632:13:24"
+>>>>>>> subscribe
+                }
+              ]
+            },
+            "documentation": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+              "id": 1426,
+=======
+              "id": 2781,
+>>>>>>> subscribe
+              "nodeType": "StructuredDocumentation",
+              "src": "936:353:24",
+              "text": " @dev Returns the address of the sender that triggered the current\n cross-chain message through the `bridge`.\n NOTE: {isCrossChain} should be checked before trying to recover the\n sender, as it will revert with `NotCrossChainCall` if the current\n function call is not the result of a cross-chain message."
+            },
+<<<<<<< HEAD
+            "id": 1466,
+=======
+              "id": 1983,
+              "nodeType": "StructuredDocumentation",
+              "src": "936:353:13",
+              "text": " @dev Returns the address of the sender that triggered the current\n cross-chain message through the `bridge`.\n NOTE: {isCrossChain} should be checked before trying to recover the\n sender, as it will revert with `NotCrossChainCall` if the current\n function call is not the result of a cross-chain message."
+            },
+            "id": 2023,
+>>>>>>> origin/main
+=======
+            "id": 2821,
+>>>>>>> subscribe
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "crossChainSender",
+<<<<<<< HEAD
+<<<<<<< HEAD
+            "nameLocation": "1303:16:25",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1429,
+=======
+            "nameLocation": "1303:16:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1986,
+>>>>>>> origin/main
+=======
+            "nameLocation": "1303:16:24",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2784,
+>>>>>>> subscribe
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+<<<<<<< HEAD
+<<<<<<< HEAD
+                  "id": 1428,
+=======
+                  "id": 2783,
+>>>>>>> subscribe
+                  "mutability": "mutable",
+                  "name": "bridge",
+                  "nameLocation": "1328:6:24",
+                  "nodeType": "VariableDeclaration",
+<<<<<<< HEAD
+                  "scope": 1466,
+                  "src": "1320:14:25",
+=======
+                  "id": 1985,
+                  "mutability": "mutable",
+                  "name": "bridge",
+                  "nameLocation": "1328:6:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2023,
+                  "src": "1320:14:13",
+>>>>>>> origin/main
+=======
+                  "scope": 2821,
+                  "src": "1320:14:24",
+>>>>>>> subscribe
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    "id": 1427,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1320:7:25",
+=======
+                    "id": 1984,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1320:7:13",
+>>>>>>> origin/main
+=======
+                    "id": 2782,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1320:7:24",
+>>>>>>> subscribe
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+              "src": "1319:16:25"
+            },
+            "returnParameters": {
+              "id": 1432,
+=======
+              "src": "1319:16:13"
+            },
+            "returnParameters": {
+              "id": 1989,
+>>>>>>> origin/main
+=======
+              "src": "1319:16:24"
+            },
+            "returnParameters": {
+              "id": 2787,
+>>>>>>> subscribe
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+<<<<<<< HEAD
+<<<<<<< HEAD
+                  "id": 1431,
+=======
+                  "id": 1988,
+>>>>>>> origin/main
+=======
+                  "id": 2786,
+>>>>>>> subscribe
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+<<<<<<< HEAD
+<<<<<<< HEAD
+                  "scope": 1466,
+                  "src": "1359:7:25",
+=======
+                  "scope": 2023,
+                  "src": "1359:7:13",
+>>>>>>> origin/main
+=======
+                  "scope": 2821,
+                  "src": "1359:7:24",
+>>>>>>> subscribe
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    "id": 1430,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1359:7:25",
+=======
+                    "id": 1987,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1359:7:13",
+>>>>>>> origin/main
+=======
+                    "id": 2785,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1359:7:24",
+>>>>>>> subscribe
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+              "src": "1358:9:25"
+            },
+            "scope": 1467,
+            "src": "1294:358:25",
+=======
+              "src": "1358:9:13"
+            },
+            "scope": 2024,
+            "src": "1294:358:13",
+>>>>>>> origin/main
+=======
+              "src": "1358:9:24"
+            },
+            "scope": 2822,
+            "src": "1294:358:24",
+>>>>>>> subscribe
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+        "scope": 1468,
+        "src": "650:1004:25",
+        "usedErrors": []
+      }
+    ],
+    "src": "121:1534:25"
+=======
+        "scope": 2025,
+        "src": "650:1004:13",
+        "usedErrors": []
+      }
+    ],
+    "src": "121:1534:13"
+>>>>>>> origin/main
+=======
+        "scope": 2823,
+        "src": "650:1004:24",
+        "usedErrors": []
+      }
+    ],
+    "src": "121:1534:24"
+>>>>>>> subscribe
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.15+commit.e14f2714.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.8",
+<<<<<<< HEAD
+<<<<<<< HEAD
+  "updatedAt": "2022-08-25T00:44:56.223Z",
+=======
+  "updatedAt": "2022-08-24T06:06:27.164Z",
+>>>>>>> origin/main
+=======
+  "updatedAt": "2022-08-30T01:20:21.423Z",
+>>>>>>> subscribe
+  "devdoc": {
+    "details": "Primitives for cross-chain aware contracts for [Arbitrum](https://arbitrum.io/). This version should only be used on L1 to process cross-chain messages originating from L2. For the other side, use {LibArbitrumL2}.",
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

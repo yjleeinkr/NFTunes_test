@@ -23,9 +23,13 @@ contract('Subscribe', ([deployer, acct1, acct2]) => {
     });
 
     it('subscribe', async () => {
-      await deployedCont.subscribe({ from: acct1, value: toWei('1') });
-      // const status = await deployedCont.subscribe({ from: acct1, value: toWei('1') });
-      // console.log(status);
+      // await deployedCont.subscribe({ from: acct1, value: toWei('1') });
+      const status = await deployedCont.subscribe({ from: acct1, value: toWei('1') });
+      console.log(status);
+      const balance = await web3.eth.getBalance(CA);
+      console.log('CA 밸런스', balance);
+      const balance_subscriber = await web3.eth.getBalance(acct1);
+      console.log('acct1 밸런스', balance_subscriber);
     });
 
     it('status after subscribe', async () => {
@@ -34,6 +38,16 @@ contract('Subscribe', ([deployer, acct1, acct2]) => {
     });
 
     it('eth_balance after sub', async () => {
+      const balance = await web3.eth.getBalance(CA);
+      console.log('CA 밸런스', balance);
+      const balance_subscriber = await web3.eth.getBalance(acct1);
+      console.log('acct1 밸런스', balance_subscriber);
+    });
+
+    it('reSubscribe', async () => {
+      const status = await deployedCont.reSubscribe({ from: acct1, value: toWei('1') });
+      console.log(status);
+      await deployedCont.reSubscribe({ from: acct1 });
       const balance = await web3.eth.getBalance(CA);
       console.log('CA 밸런스', balance);
       const balance_subscriber = await web3.eth.getBalance(acct1);
