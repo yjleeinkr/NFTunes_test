@@ -17592,12 +17592,12 @@
     "7979": {
       "events": {},
       "links": {},
-      "address": "0x0dF414FB2462a6aAcEa66ea5cc64924CB001303b",
-      "transactionHash": "0xead92e08c61e994a73c0855d6cf4a48fb6b5606400ce16431ce8d7b8da6df230"
+      "address": "0x9620D4A6Fe65Fe7dd75f1A5A5F24deD16565A142",
+      "transactionHash": "0xe0a5ee98e8f9d04133b1432052397c18337fcd75929c98c6903de2f8460d5ac5"
     }
   },
   "schemaVersion": "3.4.8",
-  "updatedAt": "2022-08-25T00:45:16.495Z",
+  "updatedAt": "2022-08-30T01:20:39.884Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

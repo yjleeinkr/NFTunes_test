@@ -1,9 +1,4 @@
 package-lock.json
-<<<<<<< HEAD
-build/contracts
 node_modules
-=======
-node_modules
-build/contracts/*.json
-contracts/artifacts/build-info/*.json
->>>>>>> origin/main
+# build/contracts/*.json
+# contracts/artifacts/build-info/*.json
