@@ -7,78 +7,32 @@
   "immutableReferences": {},
   "generatedSources": [],
   "deployedGeneratedSources": [],
-<<<<<<< HEAD
-<<<<<<< HEAD
   "sourceMap": "525:865:29:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "525:865:29:-:0;;;;;;;;",
   "source": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts (last updated v4.6.0) (crosschain/optimism/LibOptimism.sol)\n\npragma solidity ^0.8.4;\n\nimport {ICrossDomainMessenger as Optimism_Bridge} from \"../../vendor/optimism/ICrossDomainMessenger.sol\";\nimport \"../errors.sol\";\n\n/**\n * @dev Primitives for cross-chain aware contracts for [Optimism](https://www.optimism.io/).\n * See the [documentation](https://community.optimism.io/docs/developers/bridge/messaging/#accessing-msg-sender)\n * for the functionality used here.\n */\nlibrary LibOptimism {\n    /**\n     * @dev Returns whether the current function call is the result of a\n     * cross-chain message relayed by `messenger`.\n     */\n    function isCrossChain(address messenger) internal view returns (bool) {\n        return msg.sender == messenger;\n    }\n\n    /**\n     * @dev Returns the address of the sender that triggered the current\n     * cross-chain message through `messenger`.\n     *\n     * NOTE: {isCrossChain} should be checked before trying to recover the\n     * sender, as it will revert with `NotCrossChainCall` if the current\n     * function call is not the result of a cross-chain message.\n     */\n    function crossChainSender(address messenger) internal view returns (address) {\n        if (!isCrossChain(messenger)) revert NotCrossChainCall();\n\n        return Optimism_Bridge(messenger).xDomainMessageSender();\n    }\n}\n",
   "sourcePath": "/Users/oo_ha/workspace/project/meta/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/crosschain/optimism/LibOptimism.sol",
-=======
-  "sourceMap": "525:865:17:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "525:865:17:-:0;;;;;;;;",
-  "source": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts (last updated v4.6.0) (crosschain/optimism/LibOptimism.sol)\n\npragma solidity ^0.8.4;\n\nimport {ICrossDomainMessenger as Optimism_Bridge} from \"../../vendor/optimism/ICrossDomainMessenger.sol\";\nimport \"../errors.sol\";\n\n/**\n * @dev Primitives for cross-chain aware contracts for [Optimism](https://www.optimism.io/).\n * See the [documentation](https://community.optimism.io/docs/developers/bridge/messaging/#accessing-msg-sender)\n * for the functionality used here.\n */\nlibrary LibOptimism {\n    /**\n     * @dev Returns whether the current function call is the result of a\n     * cross-chain message relayed by `messenger`.\n     */\n    function isCrossChain(address messenger) internal view returns (bool) {\n        return msg.sender == messenger;\n    }\n\n    /**\n     * @dev Returns the address of the sender that triggered the current\n     * cross-chain message through `messenger`.\n     *\n     * NOTE: {isCrossChain} should be checked before trying to recover the\n     * sender, as it will revert with `NotCrossChainCall` if the current\n     * function call is not the result of a cross-chain message.\n     */\n    function crossChainSender(address messenger) internal view returns (address) {\n        if (!isCrossChain(messenger)) revert NotCrossChainCall();\n\n        return Optimism_Bridge(messenger).xDomainMessageSender();\n    }\n}\n",
-  "sourcePath": "/home/gyuri/project/last/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/crosschain/optimism/LibOptimism.sol",
->>>>>>> origin/main
-=======
-  "sourceMap": "525:865:28:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "525:865:28:-:0;;;;;;;;",
-  "source": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts (last updated v4.6.0) (crosschain/optimism/LibOptimism.sol)\n\npragma solidity ^0.8.4;\n\nimport {ICrossDomainMessenger as Optimism_Bridge} from \"../../vendor/optimism/ICrossDomainMessenger.sol\";\nimport \"../errors.sol\";\n\n/**\n * @dev Primitives for cross-chain aware contracts for [Optimism](https://www.optimism.io/).\n * See the [documentation](https://community.optimism.io/docs/developers/bridge/messaging/#accessing-msg-sender)\n * for the functionality used here.\n */\nlibrary LibOptimism {\n    /**\n     * @dev Returns whether the current function call is the result of a\n     * cross-chain message relayed by `messenger`.\n     */\n    function isCrossChain(address messenger) internal view returns (bool) {\n        return msg.sender == messenger;\n    }\n\n    /**\n     * @dev Returns the address of the sender that triggered the current\n     * cross-chain message through `messenger`.\n     *\n     * NOTE: {isCrossChain} should be checked before trying to recover the\n     * sender, as it will revert with `NotCrossChainCall` if the current\n     * function call is not the result of a cross-chain message.\n     */\n    function crossChainSender(address messenger) internal view returns (address) {\n        if (!isCrossChain(messenger)) revert NotCrossChainCall();\n\n        return Optimism_Bridge(messenger).xDomainMessageSender();\n    }\n}\n",
-  "sourcePath": "/Users/oo_ha/workspace/project/meta/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/crosschain/optimism/LibOptimism.sol",
->>>>>>> subscribe
   "ast": {
     "absolutePath": "project:/contracts/node_modules/openzeppelin-solidity/contracts/crosschain/optimism/LibOptimism.sol",
     "exportedSymbols": {
       "InvalidCrossChainSender": [
-<<<<<<< HEAD
-<<<<<<< HEAD
-        1533
-=======
-        2888
->>>>>>> subscribe
+        2670
       ],
       "LibOptimism": [
-        2982
+        2764
       ],
       "NotCrossChainCall": [
-        2882
+        2664
       ],
       "Optimism_Bridge": [
-        6888
+        25963
       ]
     },
-<<<<<<< HEAD
-    "id": 1628,
-=======
-        2090
-      ],
-      "LibOptimism": [
-        2184
-      ],
-      "NotCrossChainCall": [
-        2084
-      ],
-      "Optimism_Bridge": [
-        6090
-      ]
-    },
-    "id": 2185,
->>>>>>> origin/main
-=======
-    "id": 2983,
->>>>>>> subscribe
+    "id": 2765,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        "id": 1585,
-=======
-        "id": 2142,
->>>>>>> origin/main
-=======
-        "id": 2940,
->>>>>>> subscribe
+        "id": 2722,
         "literals": [
           "solidity",
           "^",
@@ -86,61 +40,26 @@
           ".4"
         ],
         "nodeType": "PragmaDirective",
-<<<<<<< HEAD
-<<<<<<< HEAD
         "src": "119:23:29"
-=======
-        "src": "119:23:17"
->>>>>>> origin/main
-=======
-        "src": "119:23:28"
->>>>>>> subscribe
       },
       {
         "absolutePath": "project:/contracts/node_modules/openzeppelin-solidity/contracts/vendor/optimism/ICrossDomainMessenger.sol",
         "file": "../../vendor/optimism/ICrossDomainMessenger.sol",
-<<<<<<< HEAD
-<<<<<<< HEAD
-        "id": 1587,
-=======
-        "id": 2942,
->>>>>>> subscribe
+        "id": 2724,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 2983,
-        "sourceUnit": 6889,
-        "src": "144:105:28",
+        "scope": 2765,
+        "sourceUnit": 25964,
+        "src": "144:105:29",
         "symbolAliases": [
           {
             "foreign": {
-              "id": 2941,
+              "id": 2723,
               "name": "ICrossDomainMessenger",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-<<<<<<< HEAD
-              "referencedDeclaration": 3889,
+              "referencedDeclaration": 25963,
               "src": "152:21:29",
-=======
-        "id": 2144,
-        "nameLocation": "-1:-1:-1",
-        "nodeType": "ImportDirective",
-        "scope": 2185,
-        "sourceUnit": 6091,
-        "src": "144:105:17",
-        "symbolAliases": [
-          {
-            "foreign": {
-              "id": 2143,
-              "name": "ICrossDomainMessenger",
-              "nodeType": "Identifier",
-              "overloadedDeclarations": [],
-              "referencedDeclaration": 6090,
-              "src": "152:21:17",
->>>>>>> origin/main
-=======
-              "referencedDeclaration": 6888,
-              "src": "152:21:28",
->>>>>>> subscribe
               "typeDescriptions": {}
             },
             "local": "Optimism_Bridge",
@@ -152,30 +71,12 @@
       {
         "absolutePath": "project:/contracts/node_modules/openzeppelin-solidity/contracts/crosschain/errors.sol",
         "file": "../errors.sol",
-<<<<<<< HEAD
-<<<<<<< HEAD
-        "id": 1588,
+        "id": 2725,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 1628,
-        "sourceUnit": 1534,
+        "scope": 2765,
+        "sourceUnit": 2671,
         "src": "250:23:29",
-=======
-        "id": 2145,
-        "nameLocation": "-1:-1:-1",
-        "nodeType": "ImportDirective",
-        "scope": 2185,
-        "sourceUnit": 2091,
-        "src": "250:23:17",
->>>>>>> origin/main
-=======
-        "id": 2943,
-        "nameLocation": "-1:-1:-1",
-        "nodeType": "ImportDirective",
-        "scope": 2983,
-        "sourceUnit": 2889,
-        "src": "250:23:28",
->>>>>>> subscribe
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -186,60 +87,25 @@
         "contractDependencies": [],
         "contractKind": "library",
         "documentation": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-          "id": 1589,
-=======
-          "id": 2944,
->>>>>>> subscribe
+          "id": 2726,
           "nodeType": "StructuredDocumentation",
-          "src": "275:249:28",
+          "src": "275:249:29",
           "text": " @dev Primitives for cross-chain aware contracts for [Optimism](https://www.optimism.io/).\n See the [documentation](https://community.optimism.io/docs/developers/bridge/messaging/#accessing-msg-sender)\n for the functionality used here."
         },
         "fullyImplemented": true,
-        "id": 2982,
+        "id": 2764,
         "linearizedBaseContracts": [
-          2982
+          2764
         ],
         "name": "LibOptimism",
-<<<<<<< HEAD
         "nameLocation": "533:11:29",
-=======
-          "id": 2146,
-          "nodeType": "StructuredDocumentation",
-          "src": "275:249:17",
-          "text": " @dev Primitives for cross-chain aware contracts for [Optimism](https://www.optimism.io/).\n See the [documentation](https://community.optimism.io/docs/developers/bridge/messaging/#accessing-msg-sender)\n for the functionality used here."
-        },
-        "fullyImplemented": true,
-        "id": 2184,
-        "linearizedBaseContracts": [
-          2184
-        ],
-        "name": "LibOptimism",
-        "nameLocation": "533:11:17",
->>>>>>> origin/main
-=======
-        "nameLocation": "533:11:28",
->>>>>>> subscribe
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "id": 1602,
+              "id": 2739,
               "nodeType": "Block",
               "src": "761:47:29",
-=======
-              "id": 2159,
-              "nodeType": "Block",
-              "src": "761:47:17",
->>>>>>> origin/main
-=======
-              "id": 2957,
-              "nodeType": "Block",
-              "src": "761:47:28",
->>>>>>> subscribe
               "statements": [
                 {
                   "expression": {
@@ -247,72 +113,32 @@
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    "id": 1600,
-=======
-                    "id": 2157,
->>>>>>> origin/main
-=======
-                    "id": 2955,
->>>>>>> subscribe
+                    "id": 2737,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
                       "expression": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        "id": 1597,
-=======
-                        "id": 2154,
->>>>>>> origin/main
-=======
-                        "id": 2952,
->>>>>>> subscribe
+                        "id": 2734,
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 4294967281,
-<<<<<<< HEAD
-<<<<<<< HEAD
                         "src": "778:3:29",
-=======
-                        "src": "778:3:17",
->>>>>>> origin/main
-=======
-                        "src": "778:3:28",
->>>>>>> subscribe
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
                           "typeString": "msg"
                         }
                       },
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      "id": 1598,
-=======
-                      "id": 2155,
->>>>>>> origin/main
-=======
-                      "id": 2953,
->>>>>>> subscribe
+                      "id": 2735,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "sender",
                       "nodeType": "MemberAccess",
-<<<<<<< HEAD
-<<<<<<< HEAD
                       "src": "778:10:29",
-=======
-                      "src": "778:10:17",
->>>>>>> origin/main
-=======
-                      "src": "778:10:28",
->>>>>>> subscribe
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -321,146 +147,56 @@
                     "nodeType": "BinaryOperation",
                     "operator": "==",
                     "rightExpression": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      "id": 1599,
+                      "id": 2736,
                       "name": "messenger",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1592,
+                      "referencedDeclaration": 2729,
                       "src": "792:9:29",
-=======
-                      "id": 2156,
-                      "name": "messenger",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 2149,
-                      "src": "792:9:17",
->>>>>>> origin/main
-=======
-                      "id": 2954,
-                      "name": "messenger",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 2947,
-                      "src": "792:9:28",
->>>>>>> subscribe
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-<<<<<<< HEAD
-<<<<<<< HEAD
                     "src": "778:23:29",
-=======
-                    "src": "778:23:17",
->>>>>>> origin/main
-=======
-                    "src": "778:23:28",
->>>>>>> subscribe
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "functionReturnParameters": 1596,
-                  "id": 1601,
+                  "functionReturnParameters": 2733,
+                  "id": 2738,
                   "nodeType": "Return",
                   "src": "771:30:29"
-=======
-                  "functionReturnParameters": 2153,
-                  "id": 2158,
-                  "nodeType": "Return",
-                  "src": "771:30:17"
->>>>>>> origin/main
-=======
-                  "functionReturnParameters": 2951,
-                  "id": 2956,
-                  "nodeType": "Return",
-                  "src": "771:30:28"
->>>>>>> subscribe
                 }
               ]
             },
             "documentation": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "id": 1590,
-=======
-              "id": 2945,
->>>>>>> subscribe
+              "id": 2727,
               "nodeType": "StructuredDocumentation",
-              "src": "551:135:28",
+              "src": "551:135:29",
               "text": " @dev Returns whether the current function call is the result of a\n cross-chain message relayed by `messenger`."
             },
-<<<<<<< HEAD
-            "id": 1603,
-=======
-              "id": 2147,
-              "nodeType": "StructuredDocumentation",
-              "src": "551:135:17",
-              "text": " @dev Returns whether the current function call is the result of a\n cross-chain message relayed by `messenger`."
-            },
-            "id": 2160,
->>>>>>> origin/main
-=======
-            "id": 2958,
->>>>>>> subscribe
+            "id": 2740,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "isCrossChain",
-<<<<<<< HEAD
-<<<<<<< HEAD
             "nameLocation": "700:12:29",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1593,
-=======
-            "nameLocation": "700:12:17",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 2150,
->>>>>>> origin/main
-=======
-            "nameLocation": "700:12:28",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 2948,
->>>>>>> subscribe
+              "id": 2730,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "id": 1592,
-=======
-                  "id": 2947,
->>>>>>> subscribe
+                  "id": 2729,
                   "mutability": "mutable",
                   "name": "messenger",
-                  "nameLocation": "721:9:28",
+                  "nameLocation": "721:9:29",
                   "nodeType": "VariableDeclaration",
-<<<<<<< HEAD
-                  "scope": 1603,
+                  "scope": 2740,
                   "src": "713:17:29",
-=======
-                  "id": 2149,
-                  "mutability": "mutable",
-                  "name": "messenger",
-                  "nameLocation": "721:9:17",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 2160,
-                  "src": "713:17:17",
->>>>>>> origin/main
-=======
-                  "scope": 2958,
-                  "src": "713:17:28",
->>>>>>> subscribe
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -468,24 +204,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    "id": 1591,
+                    "id": 2728,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "713:7:29",
-=======
-                    "id": 2148,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "713:7:17",
->>>>>>> origin/main
-=======
-                    "id": 2946,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "713:7:28",
->>>>>>> subscribe
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -495,53 +217,21 @@
                   "visibility": "internal"
                 }
               ],
-<<<<<<< HEAD
-<<<<<<< HEAD
               "src": "712:19:29"
             },
             "returnParameters": {
-              "id": 1596,
-=======
-              "src": "712:19:17"
-            },
-            "returnParameters": {
-              "id": 2153,
->>>>>>> origin/main
-=======
-              "src": "712:19:28"
-            },
-            "returnParameters": {
-              "id": 2951,
->>>>>>> subscribe
+              "id": 2733,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "id": 1595,
-=======
-                  "id": 2152,
->>>>>>> origin/main
-=======
-                  "id": 2950,
->>>>>>> subscribe
+                  "id": 2732,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "scope": 1603,
+                  "scope": 2740,
                   "src": "755:4:29",
-=======
-                  "scope": 2160,
-                  "src": "755:4:17",
->>>>>>> origin/main
-=======
-                  "scope": 2958,
-                  "src": "755:4:28",
->>>>>>> subscribe
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -549,24 +239,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    "id": 1594,
+                    "id": 2731,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "755:4:29",
-=======
-                    "id": 2151,
-                    "name": "bool",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "755:4:17",
->>>>>>> origin/main
-=======
-                    "id": 2949,
-                    "name": "bool",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "755:4:28",
->>>>>>> subscribe
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -575,55 +251,23 @@
                   "visibility": "internal"
                 }
               ],
-<<<<<<< HEAD
-<<<<<<< HEAD
               "src": "754:6:29"
             },
-            "scope": 1627,
+            "scope": 2764,
             "src": "691:117:29",
-=======
-              "src": "754:6:17"
-            },
-            "scope": 2184,
-            "src": "691:117:17",
->>>>>>> origin/main
-=======
-              "src": "754:6:28"
-            },
-            "scope": 2982,
-            "src": "691:117:28",
->>>>>>> subscribe
             "stateMutability": "view",
             "virtual": false,
             "visibility": "internal"
           },
           {
             "body": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "id": 1625,
-=======
-              "id": 2980,
->>>>>>> subscribe
+              "id": 2762,
               "nodeType": "Block",
-              "src": "1248:140:28",
+              "src": "1248:140:29",
               "statements": [
                 {
                   "condition": {
-<<<<<<< HEAD
-                    "id": 1614,
-=======
-              "id": 2182,
-              "nodeType": "Block",
-              "src": "1248:140:17",
-              "statements": [
-                {
-                  "condition": {
-                    "id": 2171,
->>>>>>> origin/main
-=======
-                    "id": 2969,
->>>>>>> subscribe
+                    "id": 2751,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -631,38 +275,16 @@
                     "nodeType": "UnaryOperation",
                     "operator": "!",
                     "prefix": true,
-<<<<<<< HEAD
-<<<<<<< HEAD
                     "src": "1262:24:29",
-=======
-                    "src": "1262:24:28",
->>>>>>> subscribe
                     "subExpression": {
                       "arguments": [
                         {
-                          "id": 2967,
+                          "id": 2749,
                           "name": "messenger",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-<<<<<<< HEAD
-                          "referencedDeclaration": 1606,
+                          "referencedDeclaration": 2743,
                           "src": "1276:9:29",
-=======
-                    "src": "1262:24:17",
-                    "subExpression": {
-                      "arguments": [
-                        {
-                          "id": 2169,
-                          "name": "messenger",
-                          "nodeType": "Identifier",
-                          "overloadedDeclarations": [],
-                          "referencedDeclaration": 2163,
-                          "src": "1276:9:17",
->>>>>>> origin/main
-=======
-                          "referencedDeclaration": 2961,
-                          "src": "1276:9:28",
->>>>>>> subscribe
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -676,44 +298,18 @@
                             "typeString": "address"
                           }
                         ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        "id": 1611,
+                        "id": 2748,
                         "name": "isCrossChain",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1603,
+                        "referencedDeclaration": 2740,
                         "src": "1263:12:29",
-=======
-                        "id": 2168,
-                        "name": "isCrossChain",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 2160,
-                        "src": "1263:12:17",
->>>>>>> origin/main
-=======
-                        "id": 2966,
-                        "name": "isCrossChain",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 2958,
-                        "src": "1263:12:28",
->>>>>>> subscribe
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$",
                           "typeString": "function (address) view returns (bool)"
                         }
                       },
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      "id": 1613,
-=======
-                      "id": 2170,
->>>>>>> origin/main
-=======
-                      "id": 2968,
->>>>>>> subscribe
+                      "id": 2750,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -721,15 +317,7 @@
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-<<<<<<< HEAD
-<<<<<<< HEAD
                       "src": "1263:23:29",
-=======
-                      "src": "1263:23:17",
->>>>>>> origin/main
-=======
-                      "src": "1263:23:28",
->>>>>>> subscribe
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -741,64 +329,26 @@
                       "typeString": "bool"
                     }
                   },
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "id": 1618,
+                  "id": 2755,
                   "nodeType": "IfStatement",
                   "src": "1258:56:29",
-=======
-                  "id": 2175,
-                  "nodeType": "IfStatement",
-                  "src": "1258:56:17",
->>>>>>> origin/main
-=======
-                  "id": 2973,
-                  "nodeType": "IfStatement",
-                  "src": "1258:56:28",
->>>>>>> subscribe
                   "trueBody": {
                     "errorCall": {
                       "arguments": [],
                       "expression": {
                         "argumentTypes": [],
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        "id": 1615,
+                        "id": 2752,
                         "name": "NotCrossChainCall",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1527,
+                        "referencedDeclaration": 2664,
                         "src": "1295:17:29",
-=======
-                        "id": 2172,
-                        "name": "NotCrossChainCall",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 2084,
-                        "src": "1295:17:17",
->>>>>>> origin/main
-=======
-                        "id": 2970,
-                        "name": "NotCrossChainCall",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 2882,
-                        "src": "1295:17:28",
->>>>>>> subscribe
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_error_pure$__$returns$__$",
                           "typeString": "function () pure"
                         }
                       },
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      "id": 1616,
-=======
-                      "id": 2173,
->>>>>>> origin/main
-=======
-                      "id": 2971,
->>>>>>> subscribe
+                      "id": 2753,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -806,36 +356,16 @@
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-<<<<<<< HEAD
-<<<<<<< HEAD
                       "src": "1295:19:29",
-=======
-                      "src": "1295:19:17",
->>>>>>> origin/main
-=======
-                      "src": "1295:19:28",
->>>>>>> subscribe
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_tuple$__$",
                         "typeString": "tuple()"
                       }
                     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    "id": 1617,
+                    "id": 2754,
                     "nodeType": "RevertStatement",
                     "src": "1288:26:29"
-=======
-                    "id": 2174,
-                    "nodeType": "RevertStatement",
-                    "src": "1288:26:17"
->>>>>>> origin/main
-=======
-                    "id": 2972,
-                    "nodeType": "RevertStatement",
-                    "src": "1288:26:28"
->>>>>>> subscribe
                   }
                 },
                 {
@@ -846,30 +376,12 @@
                       "expression": {
                         "arguments": [
                           {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                            "id": 1620,
+                            "id": 2757,
                             "name": "messenger",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1606,
+                            "referencedDeclaration": 2743,
                             "src": "1348:9:29",
-=======
-                            "id": 2177,
-                            "name": "messenger",
-                            "nodeType": "Identifier",
-                            "overloadedDeclarations": [],
-                            "referencedDeclaration": 2163,
-                            "src": "1348:9:17",
->>>>>>> origin/main
-=======
-                            "id": 2975,
-                            "name": "messenger",
-                            "nodeType": "Identifier",
-                            "overloadedDeclarations": [],
-                            "referencedDeclaration": 2961,
-                            "src": "1348:9:28",
->>>>>>> subscribe
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -883,41 +395,18 @@
                               "typeString": "address"
                             }
                           ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-                          "id": 1619,
-=======
-                          "id": 2974,
->>>>>>> subscribe
+                          "id": 2756,
                           "name": "Optimism_Bridge",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6888,
-                          "src": "1332:15:28",
+                          "referencedDeclaration": 25963,
+                          "src": "1332:15:29",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_ICrossDomainMessenger_$6888_$",
+                            "typeIdentifier": "t_type$_t_contract$_ICrossDomainMessenger_$25963_$",
                             "typeString": "type(contract ICrossDomainMessenger)"
                           }
                         },
-<<<<<<< HEAD
-                        "id": 1621,
-=======
-                          "id": 2176,
-                          "name": "Optimism_Bridge",
-                          "nodeType": "Identifier",
-                          "overloadedDeclarations": [],
-                          "referencedDeclaration": 6090,
-                          "src": "1332:15:17",
-                          "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_ICrossDomainMessenger_$6090_$",
-                            "typeString": "type(contract ICrossDomainMessenger)"
-                          }
-                        },
-                        "id": 2178,
->>>>>>> origin/main
-=======
-                        "id": 2976,
->>>>>>> subscribe
+                        "id": 2758,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -925,65 +414,28 @@
                         "lValueRequested": false,
                         "names": [],
                         "nodeType": "FunctionCall",
-<<<<<<< HEAD
-<<<<<<< HEAD
                         "src": "1332:26:29",
-=======
-                        "src": "1332:26:28",
->>>>>>> subscribe
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ICrossDomainMessenger_$6888",
+                          "typeIdentifier": "t_contract$_ICrossDomainMessenger_$25963",
                           "typeString": "contract ICrossDomainMessenger"
                         }
                       },
-<<<<<<< HEAD
-                      "id": 1622,
-=======
-                        "src": "1332:26:17",
-                        "tryCall": false,
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ICrossDomainMessenger_$6090",
-                          "typeString": "contract ICrossDomainMessenger"
-                        }
-                      },
-                      "id": 2179,
->>>>>>> origin/main
-=======
-                      "id": 2977,
->>>>>>> subscribe
+                      "id": 2759,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "xDomainMessageSender",
                       "nodeType": "MemberAccess",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      "referencedDeclaration": 3878,
+                      "referencedDeclaration": 25952,
                       "src": "1332:47:29",
-=======
-                      "referencedDeclaration": 6079,
-                      "src": "1332:47:17",
->>>>>>> origin/main
-=======
-                      "referencedDeclaration": 6877,
-                      "src": "1332:47:28",
->>>>>>> subscribe
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$__$returns$_t_address_$",
                         "typeString": "function () view external returns (address)"
                       }
                     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    "id": 1623,
-=======
-                    "id": 2180,
->>>>>>> origin/main
-=======
-                    "id": 2978,
->>>>>>> subscribe
+                    "id": 2760,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -991,118 +443,46 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-<<<<<<< HEAD
-<<<<<<< HEAD
                     "src": "1332:49:29",
-=======
-                    "src": "1332:49:17",
->>>>>>> origin/main
-=======
-                    "src": "1332:49:28",
->>>>>>> subscribe
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "functionReturnParameters": 1610,
-                  "id": 1624,
+                  "functionReturnParameters": 2747,
+                  "id": 2761,
                   "nodeType": "Return",
                   "src": "1325:56:29"
-=======
-                  "functionReturnParameters": 2167,
-                  "id": 2181,
-                  "nodeType": "Return",
-                  "src": "1325:56:17"
->>>>>>> origin/main
-=======
-                  "functionReturnParameters": 2965,
-                  "id": 2979,
-                  "nodeType": "Return",
-                  "src": "1325:56:28"
->>>>>>> subscribe
                 }
               ]
             },
             "documentation": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "id": 1604,
-=======
-              "id": 2959,
->>>>>>> subscribe
+              "id": 2741,
               "nodeType": "StructuredDocumentation",
-              "src": "814:352:28",
+              "src": "814:352:29",
               "text": " @dev Returns the address of the sender that triggered the current\n cross-chain message through `messenger`.\n NOTE: {isCrossChain} should be checked before trying to recover the\n sender, as it will revert with `NotCrossChainCall` if the current\n function call is not the result of a cross-chain message."
             },
-<<<<<<< HEAD
-            "id": 1626,
-=======
-              "id": 2161,
-              "nodeType": "StructuredDocumentation",
-              "src": "814:352:17",
-              "text": " @dev Returns the address of the sender that triggered the current\n cross-chain message through `messenger`.\n NOTE: {isCrossChain} should be checked before trying to recover the\n sender, as it will revert with `NotCrossChainCall` if the current\n function call is not the result of a cross-chain message."
-            },
-            "id": 2183,
->>>>>>> origin/main
-=======
-            "id": 2981,
->>>>>>> subscribe
+            "id": 2763,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "crossChainSender",
-<<<<<<< HEAD
-<<<<<<< HEAD
             "nameLocation": "1180:16:29",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1607,
-=======
-            "nameLocation": "1180:16:17",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 2164,
->>>>>>> origin/main
-=======
-            "nameLocation": "1180:16:28",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 2962,
->>>>>>> subscribe
+              "id": 2744,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "id": 1606,
-=======
-                  "id": 2961,
->>>>>>> subscribe
+                  "id": 2743,
                   "mutability": "mutable",
                   "name": "messenger",
-                  "nameLocation": "1205:9:28",
+                  "nameLocation": "1205:9:29",
                   "nodeType": "VariableDeclaration",
-<<<<<<< HEAD
-                  "scope": 1626,
+                  "scope": 2763,
                   "src": "1197:17:29",
-=======
-                  "id": 2163,
-                  "mutability": "mutable",
-                  "name": "messenger",
-                  "nameLocation": "1205:9:17",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 2183,
-                  "src": "1197:17:17",
->>>>>>> origin/main
-=======
-                  "scope": 2981,
-                  "src": "1197:17:28",
->>>>>>> subscribe
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1110,24 +490,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    "id": 1605,
+                    "id": 2742,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1197:7:29",
-=======
-                    "id": 2162,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "1197:7:17",
->>>>>>> origin/main
-=======
-                    "id": 2960,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "1197:7:28",
->>>>>>> subscribe
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1137,53 +503,21 @@
                   "visibility": "internal"
                 }
               ],
-<<<<<<< HEAD
-<<<<<<< HEAD
               "src": "1196:19:29"
             },
             "returnParameters": {
-              "id": 1610,
-=======
-              "src": "1196:19:17"
-            },
-            "returnParameters": {
-              "id": 2167,
->>>>>>> origin/main
-=======
-              "src": "1196:19:28"
-            },
-            "returnParameters": {
-              "id": 2965,
->>>>>>> subscribe
+              "id": 2747,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "id": 1609,
-=======
-                  "id": 2166,
->>>>>>> origin/main
-=======
-                  "id": 2964,
->>>>>>> subscribe
+                  "id": 2746,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  "scope": 1626,
+                  "scope": 2763,
                   "src": "1239:7:29",
-=======
-                  "scope": 2183,
-                  "src": "1239:7:17",
->>>>>>> origin/main
-=======
-                  "scope": 2981,
-                  "src": "1239:7:28",
->>>>>>> subscribe
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1191,24 +525,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    "id": 1608,
+                    "id": 2745,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1239:7:29",
-=======
-                    "id": 2165,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "1239:7:17",
->>>>>>> origin/main
-=======
-                    "id": 2963,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "1239:7:28",
->>>>>>> subscribe
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1218,53 +538,21 @@
                   "visibility": "internal"
                 }
               ],
-<<<<<<< HEAD
-<<<<<<< HEAD
               "src": "1238:9:29"
             },
-            "scope": 1627,
+            "scope": 2764,
             "src": "1171:217:29",
-=======
-              "src": "1238:9:17"
-            },
-            "scope": 2184,
-            "src": "1171:217:17",
->>>>>>> origin/main
-=======
-              "src": "1238:9:28"
-            },
-            "scope": 2982,
-            "src": "1171:217:28",
->>>>>>> subscribe
             "stateMutability": "view",
             "virtual": false,
             "visibility": "internal"
           }
         ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-        "scope": 1628,
+        "scope": 2765,
         "src": "525:865:29",
         "usedErrors": []
       }
     ],
     "src": "119:1272:29"
-=======
-        "scope": 2185,
-        "src": "525:865:17",
-        "usedErrors": []
-      }
-    ],
-    "src": "119:1272:17"
->>>>>>> origin/main
-=======
-        "scope": 2983,
-        "src": "525:865:28",
-        "usedErrors": []
-      }
-    ],
-    "src": "119:1272:28"
->>>>>>> subscribe
   },
   "compiler": {
     "name": "solc",
@@ -1272,15 +560,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.8",
-<<<<<<< HEAD
-<<<<<<< HEAD
-  "updatedAt": "2022-08-25T00:44:56.227Z",
-=======
-  "updatedAt": "2022-08-24T06:06:27.167Z",
->>>>>>> origin/main
-=======
-  "updatedAt": "2022-08-30T01:20:21.427Z",
->>>>>>> subscribe
+  "updatedAt": "2022-08-30T07:51:48.791Z",
   "devdoc": {
     "details": "Primitives for cross-chain aware contracts for [Optimism](https://www.optimism.io/). See the [documentation](https://community.optimism.io/docs/developers/bridge/messaging/#accessing-msg-sender) for the functionality used here.",
     "kind": "dev",

@@ -888,73 +888,65 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts (last updated v4.6.0) (governance/extensions/GovernorVotes.sol)\n\npragma solidity ^0.8.0;\n\nimport \"../Governor.sol\";\nimport \"../utils/IVotes.sol\";\n\n/**\n * @dev Extension of {Governor} for voting weight extraction from an {ERC20Votes} token, or since v4.5 an {ERC721Votes} token.\n *\n * _Available since v4.3._\n */\nabstract contract GovernorVotes is Governor {\n    IVotes public immutable token;\n\n    constructor(IVotes tokenAddress) {\n        token = tokenAddress;\n    }\n\n    /**\n     * Read the voting weight from the token's built in snapshot mechanism (see {Governor-_getVotes}).\n     */\n    function _getVotes(\n        address account,\n        uint256 blockNumber,\n        bytes memory /*params*/\n    ) internal view virtual override returns (uint256) {\n        return token.getPastVotes(account, blockNumber);\n    }\n}\n",
-<<<<<<< HEAD
-<<<<<<< HEAD
   "sourcePath": "/Users/oo_ha/workspace/project/meta/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/governance/extensions/GovernorVotes.sol",
-=======
-  "sourcePath": "/home/gyuri/project/last/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/governance/extensions/GovernorVotes.sol",
->>>>>>> origin/main
-=======
-  "sourcePath": "/Users/oo_ha/workspace/project/meta/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/governance/extensions/GovernorVotes.sol",
->>>>>>> subscribe
   "ast": {
     "absolutePath": "project:/contracts/node_modules/openzeppelin-solidity/contracts/governance/extensions/GovernorVotes.sol",
     "exportedSymbols": {
       "Address": [
-        18985
+        19839
       ],
       "Context": [
-        19373
+        20227
       ],
       "DoubleEndedQueue": [
-        23027
+        23881
       ],
       "ECDSA": [
-        20497
+        21351
       ],
       "EIP712": [
-        20824
+        21678
       ],
       "ERC165": [
-        21158
+        22012
       ],
       "Governor": [
-        4040
+        4894
       ],
       "GovernorVotes": [
-        7693
+        8547
       ],
       "IERC1155Receiver": [
-        11741
+        12595
       ],
       "IERC165": [
-        21482
+        22336
       ],
       "IERC721Receiver": [
-        16261
+        17115
       ],
       "IGovernor": [
-        4337
+        5191
       ],
       "IVotes": [
-        7961
+        8815
       ],
       "SafeCast": [
-        22067
+        22921
       ],
       "Strings": [
-        19876
+        20730
       ],
       "Timers": [
-        20090
+        20944
       ]
     },
-    "id": 7694,
+    "id": 8548,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 7653,
+        "id": 8507,
         "literals": [
           "solidity",
           "^",
@@ -962,29 +954,29 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "123:23:33"
+        "src": "123:23:44"
       },
       {
         "absolutePath": "project:/contracts/node_modules/openzeppelin-solidity/contracts/governance/Governor.sol",
         "file": "../Governor.sol",
-        "id": 7654,
+        "id": 8508,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 7694,
-        "sourceUnit": 4041,
-        "src": "148:25:33",
+        "scope": 8548,
+        "sourceUnit": 4895,
+        "src": "148:25:44",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
         "absolutePath": "project:/contracts/node_modules/openzeppelin-solidity/contracts/governance/utils/IVotes.sol",
         "file": "../utils/IVotes.sol",
-        "id": 7655,
+        "id": 8509,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 7694,
-        "sourceUnit": 7962,
-        "src": "174:29:33",
+        "scope": 8548,
+        "sourceUnit": 8816,
+        "src": "174:29:44",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -993,73 +985,73 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 7657,
+              "id": 8511,
               "name": "Governor",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 4040,
-              "src": "405:8:33"
+              "referencedDeclaration": 4894,
+              "src": "405:8:44"
             },
-            "id": 7658,
+            "id": 8512,
             "nodeType": "InheritanceSpecifier",
-            "src": "405:8:33"
+            "src": "405:8:44"
           }
         ],
         "canonicalName": "GovernorVotes",
         "contractDependencies": [],
         "contractKind": "contract",
         "documentation": {
-          "id": 7656,
+          "id": 8510,
           "nodeType": "StructuredDocumentation",
-          "src": "205:164:33",
+          "src": "205:164:44",
           "text": " @dev Extension of {Governor} for voting weight extraction from an {ERC20Votes} token, or since v4.5 an {ERC721Votes} token.\n _Available since v4.3._"
         },
         "fullyImplemented": false,
-        "id": 7693,
+        "id": 8547,
         "linearizedBaseContracts": [
-          7693,
-          4040,
-          11741,
-          16261,
-          4337,
-          20824,
-          21158,
-          21482,
-          19373
+          8547,
+          4894,
+          12595,
+          17115,
+          5191,
+          21678,
+          22012,
+          22336,
+          20227
         ],
         "name": "GovernorVotes",
-        "nameLocation": "388:13:33",
+        "nameLocation": "388:13:44",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
             "functionSelector": "fc0c546a",
-            "id": 7661,
+            "id": 8515,
             "mutability": "immutable",
             "name": "token",
-            "nameLocation": "444:5:33",
+            "nameLocation": "444:5:44",
             "nodeType": "VariableDeclaration",
-            "scope": 7693,
-            "src": "420:29:33",
+            "scope": 8547,
+            "src": "420:29:44",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_IVotes_$7961",
+              "typeIdentifier": "t_contract$_IVotes_$8815",
               "typeString": "contract IVotes"
             },
             "typeName": {
-              "id": 7660,
+              "id": 8514,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 7659,
+                "id": 8513,
                 "name": "IVotes",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 7961,
-                "src": "420:6:33"
+                "referencedDeclaration": 8815,
+                "src": "420:6:44"
               },
-              "referencedDeclaration": 7961,
-              "src": "420:6:33",
+              "referencedDeclaration": 8815,
+              "src": "420:6:44",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IVotes_$7961",
+                "typeIdentifier": "t_contract$_IVotes_$8815",
                 "typeString": "contract IVotes"
               }
             },
@@ -1067,56 +1059,56 @@
           },
           {
             "body": {
-              "id": 7671,
+              "id": 8525,
               "nodeType": "Block",
-              "src": "489:37:33",
+              "src": "489:37:44",
               "statements": [
                 {
                   "expression": {
-                    "id": 7669,
+                    "id": 8523,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 7667,
+                      "id": 8521,
                       "name": "token",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 7661,
-                      "src": "499:5:33",
+                      "referencedDeclaration": 8515,
+                      "src": "499:5:44",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_IVotes_$7961",
+                        "typeIdentifier": "t_contract$_IVotes_$8815",
                         "typeString": "contract IVotes"
                       }
                     },
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 7668,
+                      "id": 8522,
                       "name": "tokenAddress",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 7664,
-                      "src": "507:12:33",
+                      "referencedDeclaration": 8518,
+                      "src": "507:12:44",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_IVotes_$7961",
+                        "typeIdentifier": "t_contract$_IVotes_$8815",
                         "typeString": "contract IVotes"
                       }
                     },
-                    "src": "499:20:33",
+                    "src": "499:20:44",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IVotes_$7961",
+                      "typeIdentifier": "t_contract$_IVotes_$8815",
                       "typeString": "contract IVotes"
                     }
                   },
-                  "id": 7670,
+                  "id": 8524,
                   "nodeType": "ExpressionStatement",
-                  "src": "499:20:33"
+                  "src": "499:20:44"
                 }
               ]
             },
-            "id": 7672,
+            "id": 8526,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
@@ -1124,89 +1116,89 @@
             "nameLocation": "-1:-1:-1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 7665,
+              "id": 8519,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 7664,
+                  "id": 8518,
                   "mutability": "mutable",
                   "name": "tokenAddress",
-                  "nameLocation": "475:12:33",
+                  "nameLocation": "475:12:44",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7672,
-                  "src": "468:19:33",
+                  "scope": 8526,
+                  "src": "468:19:44",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IVotes_$7961",
+                    "typeIdentifier": "t_contract$_IVotes_$8815",
                     "typeString": "contract IVotes"
                   },
                   "typeName": {
-                    "id": 7663,
+                    "id": 8517,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 7662,
+                      "id": 8516,
                       "name": "IVotes",
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 7961,
-                      "src": "468:6:33"
+                      "referencedDeclaration": 8815,
+                      "src": "468:6:44"
                     },
-                    "referencedDeclaration": 7961,
-                    "src": "468:6:33",
+                    "referencedDeclaration": 8815,
+                    "src": "468:6:44",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IVotes_$7961",
+                      "typeIdentifier": "t_contract$_IVotes_$8815",
                       "typeString": "contract IVotes"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "467:21:33"
+              "src": "467:21:44"
             },
             "returnParameters": {
-              "id": 7666,
+              "id": 8520,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "489:0:33"
+              "src": "489:0:44"
             },
-            "scope": 7693,
-            "src": "456:70:33",
+            "scope": 8547,
+            "src": "456:70:44",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
             "baseFunctions": [
-              3140
+              3994
             ],
             "body": {
-              "id": 7691,
+              "id": 8545,
               "nodeType": "Block",
-              "src": "812:64:33",
+              "src": "812:64:44",
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 7687,
+                        "id": 8541,
                         "name": "account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 7675,
-                        "src": "848:7:33",
+                        "referencedDeclaration": 8529,
+                        "src": "848:7:44",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
                       {
-                        "id": 7688,
+                        "id": 8542,
                         "name": "blockNumber",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 7677,
-                        "src": "857:11:33",
+                        "referencedDeclaration": 8531,
+                        "src": "857:11:44",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1225,32 +1217,32 @@
                         }
                       ],
                       "expression": {
-                        "id": 7685,
+                        "id": 8539,
                         "name": "token",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 7661,
-                        "src": "829:5:33",
+                        "referencedDeclaration": 8515,
+                        "src": "829:5:44",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_IVotes_$7961",
+                          "typeIdentifier": "t_contract$_IVotes_$8815",
                           "typeString": "contract IVotes"
                         }
                       },
-                      "id": 7686,
+                      "id": 8540,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "getPastVotes",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 7922,
-                      "src": "829:18:33",
+                      "referencedDeclaration": 8776,
+                      "src": "829:18:44",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$_t_address_$_t_uint256_$returns$_t_uint256_$",
                         "typeString": "function (address,uint256) view external returns (uint256)"
                       }
                     },
-                    "id": 7689,
+                    "id": 8543,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1258,52 +1250,52 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "829:40:33",
+                    "src": "829:40:44",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 7684,
-                  "id": 7690,
+                  "functionReturnParameters": 8538,
+                  "id": 8544,
                   "nodeType": "Return",
-                  "src": "822:47:33"
+                  "src": "822:47:44"
                 }
               ]
             },
             "documentation": {
-              "id": 7673,
+              "id": 8527,
               "nodeType": "StructuredDocumentation",
-              "src": "532:114:33",
+              "src": "532:114:44",
               "text": " Read the voting weight from the token's built in snapshot mechanism (see {Governor-_getVotes})."
             },
-            "id": 7692,
+            "id": 8546,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "_getVotes",
-            "nameLocation": "660:9:33",
+            "nameLocation": "660:9:44",
             "nodeType": "FunctionDefinition",
             "overrides": {
-              "id": 7681,
+              "id": 8535,
               "nodeType": "OverrideSpecifier",
               "overrides": [],
-              "src": "785:8:33"
+              "src": "785:8:44"
             },
             "parameters": {
-              "id": 7680,
+              "id": 8534,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 7675,
+                  "id": 8529,
                   "mutability": "mutable",
                   "name": "account",
-                  "nameLocation": "687:7:33",
+                  "nameLocation": "687:7:44",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7692,
-                  "src": "679:15:33",
+                  "scope": 8546,
+                  "src": "679:15:44",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1311,10 +1303,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 7674,
+                    "id": 8528,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "679:7:33",
+                    "src": "679:7:44",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1325,13 +1317,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 7677,
+                  "id": 8531,
                   "mutability": "mutable",
                   "name": "blockNumber",
-                  "nameLocation": "712:11:33",
+                  "nameLocation": "712:11:44",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7692,
-                  "src": "704:19:33",
+                  "scope": 8546,
+                  "src": "704:19:44",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1339,10 +1331,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 7676,
+                    "id": 8530,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "704:7:33",
+                    "src": "704:7:44",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1352,13 +1344,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 7679,
+                  "id": 8533,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7692,
-                  "src": "733:12:33",
+                  "scope": 8546,
+                  "src": "733:12:44",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1366,10 +1358,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 7678,
+                    "id": 8532,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "733:5:33",
+                    "src": "733:5:44",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -1378,21 +1370,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "669:93:33"
+              "src": "669:93:44"
             },
             "returnParameters": {
-              "id": 7684,
+              "id": 8538,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 7683,
+                  "id": 8537,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7692,
-                  "src": "803:7:33",
+                  "scope": 8546,
+                  "src": "803:7:44",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1400,10 +1392,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 7682,
+                    "id": 8536,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "803:7:33",
+                    "src": "803:7:44",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1412,23 +1404,23 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "802:9:33"
+              "src": "802:9:44"
             },
-            "scope": 7693,
-            "src": "651:225:33",
+            "scope": 8547,
+            "src": "651:225:44",
             "stateMutability": "view",
             "virtual": true,
             "visibility": "internal"
           }
         ],
-        "scope": 7694,
-        "src": "370:508:33",
+        "scope": 8548,
+        "src": "370:508:44",
         "usedErrors": [
-          22693
+          23547
         ]
       }
     ],
-    "src": "123:756:33"
+    "src": "123:756:44"
   },
   "compiler": {
     "name": "solc",
@@ -1436,15 +1428,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.8",
-<<<<<<< HEAD
-<<<<<<< HEAD
-  "updatedAt": "2022-08-24T05:52:12.442Z",
-=======
-  "updatedAt": "2022-08-24T05:34:43.823Z",
->>>>>>> origin/main
-=======
-  "updatedAt": "2022-08-24T05:52:12.442Z",
->>>>>>> subscribe
+  "updatedAt": "2022-08-30T07:51:48.850Z",
   "devdoc": {
     "details": "Extension of {Governor} for voting weight extraction from an {ERC20Votes} token, or since v4.5 an {ERC721Votes} token. _Available since v4.3._",
     "errors": {

@@ -35,6 +35,7 @@ contract('Subscribe', ([deployer, acct1, acct2]) => {
     it('status after subscribe', async () => {
       const sub_state = await deployedCont.getSubsribeState(acct1);
       console.log(sub_state);
+      console.log(sub_state.timestamp);
     });
 
     it('eth_balance after sub', async () => {

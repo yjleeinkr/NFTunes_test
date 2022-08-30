@@ -86,31 +86,23 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts v4.4.1 (interfaces/draft-IERC2612.sol)\n\npragma solidity ^0.8.0;\n\nimport \"../token/ERC20/extensions/draft-IERC20Permit.sol\";\n\ninterface IERC2612 is IERC20Permit {}\n",
-<<<<<<< HEAD
-<<<<<<< HEAD
   "sourcePath": "/Users/oo_ha/workspace/project/meta/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/interfaces/draft-IERC2612.sol",
-=======
-  "sourcePath": "/home/gyuri/project/last/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/interfaces/draft-IERC2612.sol",
->>>>>>> origin/main
-=======
-  "sourcePath": "/Users/oo_ha/workspace/project/meta/dApp_Store/truffle/contracts/node_modules/openzeppelin-solidity/contracts/interfaces/draft-IERC2612.sol",
->>>>>>> subscribe
   "ast": {
     "absolutePath": "project:/contracts/node_modules/openzeppelin-solidity/contracts/interfaces/draft-IERC2612.sol",
     "exportedSymbols": {
       "IERC20Permit": [
-        14756
+        15610
       ],
       "IERC2612": [
-        8682
+        9536
       ]
     },
-    "id": 8683,
+    "id": 9537,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 8678,
+        "id": 9532,
         "literals": [
           "solidity",
           "^",
@@ -118,17 +110,17 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "98:23:63"
+        "src": "98:23:74"
       },
       {
         "absolutePath": "project:/contracts/node_modules/openzeppelin-solidity/contracts/token/ERC20/extensions/draft-IERC20Permit.sol",
         "file": "../token/ERC20/extensions/draft-IERC20Permit.sol",
-        "id": 8679,
+        "id": 9533,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 8683,
-        "sourceUnit": 14757,
-        "src": "123:58:63",
+        "scope": 9537,
+        "sourceUnit": 15611,
+        "src": "123:58:74",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -137,36 +129,36 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 8680,
+              "id": 9534,
               "name": "IERC20Permit",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 14756,
-              "src": "205:12:63"
+              "referencedDeclaration": 15610,
+              "src": "205:12:74"
             },
-            "id": 8681,
+            "id": 9535,
             "nodeType": "InheritanceSpecifier",
-            "src": "205:12:63"
+            "src": "205:12:74"
           }
         ],
         "canonicalName": "IERC2612",
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": false,
-        "id": 8682,
+        "id": 9536,
         "linearizedBaseContracts": [
-          8682,
-          14756
+          9536,
+          15610
         ],
         "name": "IERC2612",
-        "nameLocation": "193:8:63",
+        "nameLocation": "193:8:74",
         "nodeType": "ContractDefinition",
         "nodes": [],
-        "scope": 8683,
-        "src": "183:37:63",
+        "scope": 9537,
+        "src": "183:37:74",
         "usedErrors": []
       }
     ],
-    "src": "98:123:63"
+    "src": "98:123:74"
   },
   "compiler": {
     "name": "solc",
@@ -174,15 +166,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.8",
-<<<<<<< HEAD
-<<<<<<< HEAD
-  "updatedAt": "2022-08-24T05:52:12.465Z",
-=======
-  "updatedAt": "2022-08-24T05:34:43.835Z",
->>>>>>> origin/main
-=======
-  "updatedAt": "2022-08-24T05:52:12.465Z",
->>>>>>> subscribe
+  "updatedAt": "2022-08-30T07:51:48.863Z",
   "devdoc": {
     "kind": "dev",
     "methods": {
