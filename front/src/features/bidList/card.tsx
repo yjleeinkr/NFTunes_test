@@ -2,11 +2,20 @@ import styled from 'styled-components';
 import Image from 'next/image';
 
 const CardWrap = styled.span`
+  width: 100px;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 5px;
+`;
+
+const SingleCard = styled.span`
   background-color: white;
   display: inline-block;
   width: 100px;
   height: 100px;
-  margin: 5px 5px;
   transform: skew(25rad) translateX(-5px);
   border-radius: 10px;
   overflow: hidden;
@@ -18,12 +27,25 @@ const CardWrap = styled.span`
   }
 `;
 
-const Card = ({ url, id }) => {
+const CardText = styled.span`
+  color: white;
+  width: 80px;
+  white-space: nowrap;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transform: skew(25rad) translateX(-5px);
+  z-index: 3;
+`;
+
+export const Card = ({ url, nickname }) => {
   return (
     <>
-      <CardWrap id={id}>
-        <Image src={url} width="100%" height="100%" objectFit="cover" />
-        <span className="text-white">hi</span>
+      <CardWrap>
+        <SingleCard>
+          <Image src={url} width="100%" height="100%" objectFit="cover" />
+        </SingleCard>
+        <CardText>{nickname}</CardText>
       </CardWrap>
     </>
   );
