@@ -14,7 +14,6 @@ interface AppProps {
 // 각 리듀서 임포트. (기능별로 나눠놓은 features 에서)
 import counterReducer from '../features/counter/counterSlice';
 import userReducer from '../features/user/userSlice';
-import subReducer from '../features/subscribe/subscribeSlice';
 import modalReducer from './modalSlice';
 
 const persistConfig = {
@@ -27,7 +26,6 @@ const persistConfig = {
 const rootReducer = combineReducers({
   counter: counterReducer,
   user: userReducer,
-  sub: subReducer,
   modal: modalReducer,
 });
 
