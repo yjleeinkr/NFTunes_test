@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 import Card from '../../src/features/bidList/card';
+import CardList from '../../src/features/bidList/cardList';
+import CardDetail from '../../src/features/bidList/CardDetail';
+
 import { NextPage } from 'next';
 
 const OutBox = styled.div`
@@ -7,67 +10,130 @@ const OutBox = styled.div`
   height: 1200px;
 `;
 
-const MainBox = styled.div`
-  background: black;
-  width: 80%;
-  height: 350px;
-  margin: 0 auto;
-  padding-top: 100px;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: space-around;
-`;
-
-const albumPicList = [
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
-  'http://localhost:4000/upload/user.png',
+const bidInfoList = [
+  {
+    coverUrl: 'http://localhost:4000/upload/user.png',
+    nickname: 'yjlee',
+    details: {
+      tokenId: 'dsadadasdadsad',
+      subject: '하하하',
+      ca: '0x102932913283218123',
+      owner: '이연정',
+      minBid: '10 ETH',
+    },
+  },
+  {
+    coverUrl: 'http://localhost:4000/upload/user.png',
+    nickname: 'yjlee',
+    details: {
+      tokenId: 'dsadadasdadsad',
+      subject: '하하하',
+      ca: '0x102932913283218123',
+      owner: '이연정',
+      minBid: '10 ETH',
+    },
+  },
+  {
+    coverUrl: 'http://localhost:4000/upload/user.png',
+    nickname: 'yjlee',
+    details: {
+      tokenId: 'dsadadasdadsad',
+      subject: '하하하',
+      ca: '0x102932913283218123',
+      owner: '이연정',
+      minBid: '10 ETH',
+    },
+  },
+  {
+    coverUrl: 'http://localhost:4000/upload/user.png',
+    nickname: 'yjlee',
+    details: {
+      tokenId: 'dsadadasdadsad',
+      subject: '하하하',
+      ca: '0x102932913283218123',
+      owner: '이연정',
+      minBid: '10 ETH',
+    },
+  },
+  {
+    coverUrl: 'http://localhost:4000/upload/user.png',
+    nickname: 'yjlee',
+    details: {
+      tokenId: 'dsadadasdadsad',
+      subject: '하하하',
+      ca: '0x102932913283218123',
+      owner: '이연정',
+      minBid: '10 ETH',
+    },
+  },
+  {
+    coverUrl: 'http://localhost:4000/upload/user.png',
+    nickname: 'yjlee',
+    details: {
+      tokenId: 'dsadadasdadsad',
+      subject: '하하하',
+      ca: '0x102932913283218123',
+      owner: '이연정',
+      minBid: '10 ETH',
+    },
+  },
+  {
+    coverUrl: 'http://localhost:4000/upload/user.png',
+    nickname: 'yjlee',
+    details: {
+      tokenId: 'dsadadasdadsad',
+      subject: '하하하',
+      ca: '0x102932913283218123',
+      owner: '이연정',
+      minBid: '10 ETH',
+    },
+  },
+  {
+    coverUrl: 'http://localhost:4000/upload/user.png',
+    nickname: 'yjlee',
+    details: {
+      tokenId: 'dsadadasdadsad',
+      subject: '하하하',
+      ca: '0x102932913283218123',
+      owner: '이연정',
+      minBid: '10 ETH',
+    },
+  },
+  {
+    coverUrl: 'http://localhost:4000/upload/user.png',
+    nickname: 'yjlee',
+    details: {
+      tokenId: 'dsadadasdadsad',
+      subject: '하하하',
+      ca: '0x102932913283218123',
+      owner: '이연정',
+      minBid: '10 ETH',
+    },
+  },
+  {
+    coverUrl: 'http://localhost:4000/upload/user.png',
+    nickname: 'yjlee',
+    details: {
+      tokenId: 'dsadadasdadsad',
+      subject: '하하하',
+      ca: '0x102932913283218123',
+      owner: '이연정',
+      minBid: '10 ETH',
+    },
+  },
 ];
 
 const bidList: NextPage = () => {
   return (
     <OutBox>
-      <MainBox />
-      <MainBox>
-        {albumPicList.map((v, i) => (
-          <Card url={v} id={i} />
+      {bidInfoList.map((v, i) => (
+        <CardDetail url={v.coverUrl} key={i} details={v.details} />
+      ))}
+      <CardList>
+        {bidInfoList.map((v, i) => (
+          <Card url={v.coverUrl} key={i} nickname={v.nickname} />
         ))}
-      </MainBox>
+      </CardList>
     </OutBox>
   );
 };

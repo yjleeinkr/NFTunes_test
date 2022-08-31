@@ -22,7 +22,7 @@ const Main: NextPage = () => {
       </Head>
       <section id="main" className=" overflow-hidden mx-auto h-full max-w-7xl">
         {/* <div className="pt-20 text-white"></div> */}
-        {/* <SlideList /> */}
+        <SlideList />
         <TestScroll />
       </section>
     </div>
