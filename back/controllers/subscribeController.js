@@ -24,16 +24,19 @@ exports.subscribe = async (req, res) => {
   let txObject;
   try {
     const filter = { account };
-    const update = { subscribeTimestamp: now(), subscribeState: true };
+    const today = new Date();
+    const update = { subscribeTimestamp: today.toLocaleString(), subscribeState: true };
+    console.log(filter);
 
     await User.findOneAndUpdate(filter, update);
-    const [result]= await User.find(filter)
+    const [result] = await User.find(filter);
     txObject = {
       from: account,
       to,
       value: parseInt(web3.utils.toWei('1', 'ether')).toString(16),
       result,
     };
+    console.log(result);
   } catch (e) {
     console.error(e);
   }
