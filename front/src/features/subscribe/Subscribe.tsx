@@ -3,8 +3,7 @@ import SubscribeContract from '../../../../truffle/build/contracts/Subscribe.jso
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useAppSelector, useAppDispatch } from '../../hooks/exhook';
-import { subscribeAsync } from '../user/userSlice';
-import { userState } from '../user/userSlice';
+import { userState, subscribeAsync } from '../user/userSlice';
 
 const Subscribe = () => {
   //0xc82cf83F8F6381E17C348D418360b58767Df8567
@@ -28,12 +27,11 @@ const Subscribe = () => {
       //   ],
       // });
       if (result.type === 'user/subscribe/fulfilled') {
-        console.log('확인')
-        if( user.userInfo.subscribeState){
+        console.log('확인');
+        if (user.userInfo.subscribeState) {
           alert('구독 완료');
           window.location.href = '/';
         }
-
       }
     } catch (e) {
       console.error(e);
