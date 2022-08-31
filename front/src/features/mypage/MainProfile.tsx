@@ -52,7 +52,7 @@ const MainProfile = () => {
               <span className="cursor-pointer">Upload Music</span>
             </Link>
           </PopoverBody>
-          {/* <PopoverFooter>This is the footer</PopoverFooter> */}
+          <PopoverFooter>This is the footer</PopoverFooter>
         </PopoverContent>
       </Portal>
     </Popover>

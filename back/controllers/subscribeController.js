@@ -30,7 +30,7 @@ exports.subscribe = async (req, res) => {
     txObject = {
       from: account,
       to,
-      value: web3.utils.toWei('1', 'ether'),
+      value: parseInt(web3.utils.toWei('1', 'ether')).toString(16),
       result,
     };
   } catch (e) {
