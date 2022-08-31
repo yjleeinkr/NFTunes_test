@@ -6,7 +6,7 @@ const fs = require('fs');
 
 const thumbnail = async (req, res) => {
   const result = req.file;
-  console.log(result);
+  console.log('결과', result);
 
   if (result?.filename.length != 0) {
     const options = {

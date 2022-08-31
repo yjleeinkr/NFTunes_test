@@ -95,7 +95,7 @@ const AlbumInfo = styled.div`
   }
 `;
 
-const AlbumForm = styled.form`
+const AlbumForm = styled.div`
   #submit {
     box-shadow: inset 0px 0px 29px -20px #ffffff;
     background: linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
@@ -125,9 +125,9 @@ const AlbumForm = styled.form`
   }
 `;
 
-const readURL = (e) => {
+const readURL = (e: React.ChangeEvent<HTMLInputElement>) => {
   if (e.target.files && e.target.files[0]) {
-    var reader = new FileReader();
+    let reader: FileReader = new FileReader();
     reader.onload = function (e) {
       document.querySelector('#preview').src = e.target.result;
     };
@@ -136,7 +136,7 @@ const readURL = (e) => {
 };
 
 const MintingMusicToken = () => {
-  const uploadFile = async (file) => {
+  const uploadCover = async (file: FormData) => {
     try {
       const { data } = await axios.post('http://localhost:4000/api/register/thumbnail', file);
       return data;
@@ -144,14 +144,30 @@ const MintingMusicToken = () => {
       console.log(e);
     }
   };
-  const upload = async (e) => {
-    e.preventDefault();
-    const formData = new FormData();
-    formData.append('file', e.target.file.files[0]);
-    for (let value of formData.values()) {
-      console.log(value);
+
+  const uploadMusic = async (file: FormData) => {
+    try {
+      const { data } = await axios.post('http://localhost:4000/api/register/music', file);
+      console.log(data);
+      return data;
+    } catch (e) {
+      console.log(e);
     }
-    await uploadFile(formData);
+  };
+  const upload = async (e: any) => {
+    e.preventDefault();
+    const formDataImg: FormData = new FormData();
+    const formDataAudio: FormData = new FormData();
+    formDataImg.append('cover', e.target.cover.files[0]);
+    formDataAudio.append('music', e.target.music.files[0]);
+    for (let value of formDataImg.values()) {
+      console.log('밸류1', value);
+    }
+    for (let value of formDataAudio.values()) {
+      console.log('밸류2', value);
+    }
+    uploadCover(formDataImg);
+    uploadMusic(formDataAudio);
   };
   return (
     <OutBox>
@@ -163,16 +179,11 @@ const MintingMusicToken = () => {
               <AlbumCoverBox>
                 <AlbumImg>
                   <img id="preview" />
-                  <input
-                    type="file"
-                    name="file"
-                    accept="image/*"
-                    onChange={readURL}
-                    id="album_cover"
-                    src="https://dummyimage.com/300x100/ffffff/000000.png"
-                  />
+                  <input type="file" name="cover" accept="image/*" onChange={readURL} id="album_cover" src="" />
                 </AlbumImg>
-                <MusicUpload>음악 업로드</MusicUpload>
+                <MusicUpload>
+                  <input type="file" name="music" accept="audio/*" id="music" />
+                </MusicUpload>
               </AlbumCoverBox>
               <AlbumInfo>
                 <h1>앨범 소개</h1>
@@ -180,9 +191,7 @@ const MintingMusicToken = () => {
                   <input type="text" placeholder="작사가" />
                   <input type="text" placeholder="작곡가" />
                   <textarea cols={50} rows={8} placeholder="곡 소개"></textarea>
-                  <button type="submit" id="submit">
-                    업로드
-                  </button>
+                  <input type="submit" id="submit" value="업로드" />
                 </AlbumForm>
               </AlbumInfo>
             </form>
