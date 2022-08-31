@@ -716,11 +716,7 @@
   dependencies:
     "@chakra-ui/utils" "2.0.9"
 
-<<<<<<< HEAD
-"@chakra-ui/react@^2.3.0":
-=======
 "@chakra-ui/react@^2.3.1":
->>>>>>> 817cf0fb02f90be414563371978ea8dfbb48fccf
   "integrity" "sha512-ROaIyQqpN5AXhhxDGkrP37QmnPu/ZJnT1nLdzUxHZE1sO7ujBbir3G+zHlj/Hg2DbYClkB3yfAhA08imeiJh8g=="
   "resolved" "https://registry.npmjs.org/@chakra-ui/react/-/react-2.3.1.tgz"
   "version" "2.3.1"
@@ -1371,11 +1367,7 @@
     "@ethersproject/bytes" "^5.6.1"
     "js-sha3" "0.8.0"
 
-<<<<<<< HEAD
-"@ethersproject/logger@^5.4.0", "@ethersproject/logger@^5.6.0", "@ethersproject/logger@5.6.0":
-=======
 "@ethersproject/logger@^5.6.0", "@ethersproject/logger@5.6.0":
->>>>>>> 817cf0fb02f90be414563371978ea8dfbb48fccf
   "integrity" "sha512-BiBWllUROH9w+P21RzoxJKzqoqpkyM1pRnEKG69bulE9TSQD8SAIvTQqIMZmmCO8pUNkgLP1wndX1gKghSpBmg=="
   "resolved" "https://registry.npmjs.org/@ethersproject/logger/-/logger-5.6.0.tgz"
   "version" "5.6.0"
@@ -1709,7 +1701,6 @@
   dependencies:
     "glob" "7.1.7"
 
-<<<<<<< HEAD
 "@next/swc-linux-x64-gnu@12.2.4":
   "integrity" "sha512-PhXX6NSuIuhHInxPY2VkG2Bl7VllsD3Cjx+pQcS1wTym7Zt7UoLvn05PkRrkiyIkvR+UXnqPUM3TYiSbnemXEw=="
   "resolved" "https://registry.npmjs.org/@next/swc-linux-x64-gnu/-/swc-linux-x64-gnu-12.2.4.tgz"
@@ -1718,11 +1709,6 @@
 "@next/swc-linux-x64-musl@12.2.4":
   "integrity" "sha512-GmC/QROiUZpFirHRfPQqMyCXZ+5+ndbBZrMvL74HtQB/CKXB8K1VM+rvy9Gp/5OaU8Rxp48IcX79NOfI2LiXlA=="
   "resolved" "https://registry.npmjs.org/@next/swc-linux-x64-musl/-/swc-linux-x64-musl-12.2.4.tgz"
-=======
-"@next/swc-darwin-x64@12.2.4":
-  "integrity" "sha512-IUlFMqeLjdIzDorrGC2Dt+2Ae3DbKQbRzCzmDq4/CP1+jJGeDXo/2AHnlE+WYnwQAC4KtAz6pbVnd3KstZWsVA=="
-  "resolved" "https://registry.npmjs.org/@next/swc-darwin-x64/-/swc-darwin-x64-12.2.4.tgz"
->>>>>>> 817cf0fb02f90be414563371978ea8dfbb48fccf
   "version" "12.2.4"
 
 "@nodelib/fs.scandir@2.1.5":
@@ -3585,11 +3571,7 @@
     "ethereum-cryptography" "^0.1.3"
     "rlp" "^2.2.4"
 
-<<<<<<< HEAD
-"ethers@^5.4.4", "ethers@^5.6.9":
-=======
 "ethers@^5.6.9":
->>>>>>> 817cf0fb02f90be414563371978ea8dfbb48fccf
   "integrity" "sha512-lMGC2zv9HC5EC+8r429WaWu3uWJUCgUCt8xxKCFqkrFuBDZXDYIdzDUECxzjf2BMF8IVBByY1EBoGSL3RTm8RA=="
   "resolved" "https://registry.npmjs.org/ethers/-/ethers-5.6.9.tgz"
   "version" "5.6.9"
@@ -5568,15 +5550,7 @@
     "@csstools/postcss-progressive-custom-properties" "^1.1.0"
     "postcss-value-parser" "^4.2.0"
 
-"postcss-load-config@^3.1.0":
-  "integrity" "sha512-6DiM4E7v4coTE4uzA8U//WhtPwyhiim3eyjEMFCnUpzbrkK9wJHgKDT2mR+HbtSrd/NubVaYTOpSpjUl8NQeRg=="
-  "resolved" "https://registry.npmjs.org/postcss-load-config/-/postcss-load-config-3.1.4.tgz"
-  "version" "3.1.4"
-  dependencies:
-    "lilconfig" "^2.0.5"
-    "yaml" "^1.10.2"
-
-"postcss-load-config@^3.1.4":
+"postcss-load-config@^3.1.0", "postcss-load-config@^3.1.4":
   "integrity" "sha512-6DiM4E7v4coTE4uzA8U//WhtPwyhiim3eyjEMFCnUpzbrkK9wJHgKDT2mR+HbtSrd/NubVaYTOpSpjUl8NQeRg=="
   "resolved" "https://registry.npmjs.org/postcss-load-config/-/postcss-load-config-3.1.4.tgz"
   "version" "3.1.4"
