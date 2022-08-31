@@ -16,12 +16,22 @@ const Subscribe = () => {
 
   const sub = async () => {
     try {
-      const result = await dispatch(subscribeAsync(account));
+      let result = await dispatch(subscribeAsync(account));
+      console.log('result', result.payload.value);
+      await window.ethereum.request({
+        method: 'eth_sendTransaction',
+        params: [
+          {
+            from: result.payload.from,
+            to: result.payload.to,
+            value: result.payload.value,
+          },
+        ],
+      });
       if (result.type === 'user/subscribe/fulfilled' && user.userInfo.subscribeState) {
         alert('구독 완료');
         window.location.href = '/';
       }
-      console.log(result);
     } catch (e) {
       console.error(e);
     }
