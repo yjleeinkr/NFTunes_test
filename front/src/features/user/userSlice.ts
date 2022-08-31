@@ -22,13 +22,21 @@ export const modifyProfile = createAsyncThunk('form/modify', async (account: str
   // const response: AxiosResponse
 });
 
-const initialState: UserState = {
+export const subscribeAsync = createAsyncThunk('user/subscribe', async (account: string) => {
+  const response: AxiosResponse = await axios.post('http://localhost:4000/api/subscribe/subscribe', { account });
+  console.log('hello', response.data);
+  return response.data;
+});
+
+export const initialState: UserState = {
   userInfo: {
     _id: '',
     account: '',
     nickname: '',
     email: '',
     avatar: '',
+    subscribeTimestamp: null,
+    subscribeState: false,
   },
   isNew: 'untracked',
   isLogin: false,
@@ -47,6 +55,8 @@ export const userSlice = createSlice({
       state.userInfo.email = '';
       state.userInfo.nickname = '';
       state.userInfo.avatar = '';
+      state.userInfo.subscribeTimestamp = null;
+      state.userInfo.subscribeState = false;
     },
   },
   extraReducers: (builder) => {
@@ -85,7 +95,14 @@ export const userSlice = createSlice({
         state.userInfo.email = '';
         state.userInfo.nickname = '';
         state.userInfo.avatar = '';
-      });
+      })
+      .addCase(subscribeAsync.fulfilled, (state, action) => {
+        const { result } = action.payload;
+        console.log('result', result);
+        state.userInfo.subscribeTimestamp = result.subscribeTimestamp;
+        state.userInfo.subscribeState = result.subscribeState;
+        console.log('스테', state);
+      })
   },
 });
 
