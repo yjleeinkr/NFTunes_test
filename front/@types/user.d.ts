@@ -4,6 +4,8 @@ declare interface IUserInfo {
   nickname: string;
   email: string;
   avatar: string;
+  subscribeTime: Date;
+  sutscribeState: boolean;
 }
 
 declare interface UserState {
