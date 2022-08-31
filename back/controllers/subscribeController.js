@@ -14,19 +14,16 @@ exports.subscribe = async (req, res) => {
   const abi = SubscribeContract.abi;
 
   const deployed = new web3.eth.Contract(abi, to);
-  //   const data = await deployed.methods.subscribe();
-  //   //   console.log(data);
+  // const data = await deployed.methods.subscribe();
+  // console.log('deploydata', data);
 
-  //   const owner = await User.find({
-  //     account,
-  //   });
-  //   console.log('owner', owner);
   let txObject;
   try {
     const filter = { account };
     const today = new Date();
-    const update = { subscribeTimestamp: today.toLocaleString(), subscribeState: true };
-    console.log(filter);
+    // const update = { subscribeTimestamp: today.toLocaleString(), subscribeState: true };
+    const update = { subscribeTimestamp: today, subscribeState: true };
+    console.log('controll', filter);
 
     await User.findOneAndUpdate(filter, update);
     const [result] = await User.find(filter);
@@ -36,7 +33,7 @@ exports.subscribe = async (req, res) => {
       value: parseInt(web3.utils.toWei('1', 'ether')).toString(16),
       result,
     };
-    console.log(result);
+    console.log('controll', result);
   } catch (e) {
     console.error(e);
   }

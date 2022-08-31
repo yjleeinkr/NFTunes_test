@@ -4,6 +4,7 @@ import { NextPage } from 'next';
 // import Minting from '../../src/features/mypage/Minting';
 import styled from 'styled-components';
 import Image from 'next/image';
+import Subscribe from '../subscribe/SubscribeModal';
 
 // worker : gyuri
 // last work : 220824
@@ -85,6 +86,7 @@ const IndividualMenu = styled.li`
 `;
 
 const Mypage: React.FC<{ userInfo: IUserInfo }> = ({ userInfo }) => {
+  const date = userInfo.subscribeTimestamp;
   const modifyProfile = (account) => {};
   return (
     <div>
@@ -96,6 +98,12 @@ const Mypage: React.FC<{ userInfo: IUserInfo }> = ({ userInfo }) => {
               <h1>{userInfo.nickname}</h1>
               <h1>{userInfo.email}</h1>
               <h1>{userInfo.account}</h1>
+              <h1>
+                <Subscribe />
+                {userInfo.subscribeState ? (
+                  <div>다음 결제일 :{/* <span>{userInfo.subscribeTimestamp}</span> */}</div>
+                ) : null}
+              </h1>
             </ProfileInfo>
           </ProfileBox>
           <ContentsBox>
