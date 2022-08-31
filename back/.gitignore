@@ -6,3 +6,4 @@ node_modules
 mongodb-data
 public/upload/*.jpg
 public/upload/*png
+public/upload/*mp3
