@@ -22,13 +22,15 @@ export const modifyProfile = createAsyncThunk('form/modify', async (account: str
   // const response: AxiosResponse
 });
 
-const initialState: UserState = {
+export const initialState: UserState = {
   userInfo: {
     _id: '',
     account: '',
     nickname: '',
     email: '',
     avatar: '',
+    subscribeTimestamp: null,
+    subscribeState: false,
   },
   isNew: 'untracked',
   isLogin: false,
@@ -47,6 +49,8 @@ export const userSlice = createSlice({
       state.userInfo.email = '';
       state.userInfo.nickname = '';
       state.userInfo.avatar = '';
+      state.userInfo.subscribeTimestamp = null;
+      state.userInfo.subscribeState = false;
     },
   },
   extraReducers: (builder) => {

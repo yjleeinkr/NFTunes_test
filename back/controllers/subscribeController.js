@@ -6,39 +6,36 @@ const { db } = require('../models/userModel');
 const { now } = require('mongoose');
 
 exports.subscribe = async (req, res) => {
-  const { account } = req.body.userInfo;
-  console.log('back', account);
+  const { account } = req.body;
 
   const networkId = await web3.eth.net.getId();
   const to = SubscribeContract.networks[networkId].address;
+
   const abi = SubscribeContract.abi;
-  console.log('console', networkId, to, abi);
 
   const deployed = new web3.eth.Contract(abi, to);
-  console.log('deploy', deployed);
   //   const data = await deployed.methods.subscribe();
-  //   console.log(data);
+  //   //   console.log(data);
 
-  const time = User.find({
-    subscribeTimestamp,
-  });
-  console.log('time', time);
+  //   const owner = await User.find({
+  //     account,
+  //   });
+  //   console.log('owner', owner);
+  let txObject;
+  try {
+    const filter = { account };
+    const update = { subscribeTimestamp: now(), subscribeState: true };
 
-  if (time.length === 0) {
-    try {
-      db.User.updateOne({}, { $set: { subscribeTimestamp: now() } }),
-        db.User.updateOne({}, { $set: { subscribeState: true } });
-    } catch (e) {
-      console.error(e);
-    }
+    const result = await User.findOneAndUpdate(filter, update);
+    txObject = {
+      from: account,
+      to,
+      value: web3.utils.toWei('1', 'ether'),
+      result,
+    };
+  } catch (e) {
+    console.error(e);
   }
-
-  let txObject = {
-    from,
-    to,
-    data,
-  };
-  console.logG('back', txObject);
 
   res.json(txObject);
 };
