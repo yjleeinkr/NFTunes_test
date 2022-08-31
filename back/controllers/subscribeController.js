@@ -26,7 +26,8 @@ exports.subscribe = async (req, res) => {
     const filter = { account };
     const update = { subscribeTimestamp: now(), subscribeState: true };
 
-    const result = await User.findOneAndUpdate(filter, update);
+    await User.findOneAndUpdate(filter, update);
+    const [result]= await User.find(filter)
     txObject = {
       from: account,
       to,
