@@ -120,9 +120,15 @@ export const userSlice = createSlice({
         state.userInfo.nickname = '';
         state.userInfo.avatar = '';
       })
+      .addCase(subscribeTxAsync.pending, (state, action) => {
+        state.isLoading = true;
+      })
       .addCase(subscribeTxAsync.fulfilled, (state, action) => {
         const { result } = action.payload;
         console.log('result', result);
+      })
+      .addCase(subscribeStateAsync.pending, (state, action) => {
+        state.isLoading = true;
       })
       .addCase(subscribeStateAsync.fulfilled, (state, action) => {
         const { result } = action.payload;
@@ -132,9 +138,15 @@ export const userSlice = createSlice({
         state.userInfo.subscribeState = result.subscribeState;
         console.log('스테', state);
       })
+      .addCase(subscribeRefundTxAsync.pending, (state, action) => {
+        state.isLoading = true;
+      })
       .addCase(subscribeRefundTxAsync.fulfilled, (state, action) => {
         const { result } = action.payload;
         console.log('refundresult', result);
+      })
+      .addCase(subscribeCancelStateAsync.pending, (state, action) => {
+        state.isLoading = true;
       })
       .addCase(subscribeCancelStateAsync.fulfilled, (state, action) => {
         const { result } = action.payload;
