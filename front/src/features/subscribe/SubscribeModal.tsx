@@ -18,6 +18,7 @@ import {
   useDisclosure,
   Button,
 } from '@chakra-ui/react';
+import { batch } from 'react-redux';
 
 const Subscribe = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -52,7 +53,12 @@ const Subscribe = () => {
     try {
       const txResult = await dispatch(subscribeRefundTxAsync(account));
       console.log('refundtx', txResult);
-      // cZZ
+      const tx = await web3.eth.sendTransaction(txResult.payload);
+      console.log('fronttx', tx);
+      // batch(() => {
+      //   dispatch(handleGnb());
+      //   dispatch(handleScroll());
+      // });
 
       if (txResult.type === 'user/subscribeRefundTx/fulfilled') {
         const stResult = await dispatch(subscribeCancelStateAsync(account));
@@ -83,9 +89,13 @@ const Subscribe = () => {
   return (
     <>
       {subState ? (
-        <span className="cursor-pointer" onClick={subRefund}>
-          구독취소하기
-        </span>
+        <>
+          <button onClick={subRefund}>구독취소하기</button>
+          <div>
+            <p>다음 결제일 </p>
+            <p>{user.userInfo.subscribeEndTimestamp}</p>
+          </div>
+        </>
       ) : (
         <>
           {subStartTime == null ? (

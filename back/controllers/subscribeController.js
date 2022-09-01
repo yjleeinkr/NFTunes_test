@@ -53,14 +53,15 @@ exports.subscribeState = async (req, res) => {
 exports.subscribeRefundTx = async (req, res) => {
   const { account } = req.body;
   const networkId = await web3.eth.net.getId();
-  const from = SubscribeContract.networks[networkId].address;
+  const to = SubscribeContract.networks[networkId].address;
   const abi = SubscribeContract.abi;
-  const deployed = new web3.eth.Contract(abi, from);
+  const deployed = new web3.eth.Contract(abi, to);
   const data = await deployed.methods.cancelSubscribe().encodeABI();
 
   const txObject = {
-    from,
-    to: account,
+    from: account,
+    to,
+    // value: web3.utils.toWei('1', 'ether'),
     data,
   };
   console.log('back', txObject);
