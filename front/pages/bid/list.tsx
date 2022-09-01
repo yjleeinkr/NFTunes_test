@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import Card from '../../src/features/bidList/card';
-import CardList from '../../src/features/bidList/cardList';
+import Card from '../../src/features/bidList/Card';
+import CardList from '../../src/features/bidList/CardList';
 import CardDetail from '../../src/features/bidList/CardDetail';
 
 import { NextPage } from 'next';

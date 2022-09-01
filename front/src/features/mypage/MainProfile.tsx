@@ -1,10 +1,8 @@
 import { useAppSelector } from '../../hooks/exhook';
 import { userState } from '../user/userSlice';
-import { useState } from 'react';
 import {
   Popover,
   PopoverTrigger,
-  Button,
   Portal,
   PopoverContent,
   PopoverArrow,
@@ -12,7 +10,6 @@ import {
   PopoverCloseButton,
   PopoverBody,
   PopoverFooter,
-  Box,
   Flex,
 } from '@chakra-ui/react';
 import Link from 'next/link';
@@ -20,7 +17,6 @@ import Subscribe from '../subscribe/SubscribeModal';
 
 const MainProfile = () => {
   const user = useAppSelector(userState);
-
   return (
     <>
       <Popover placement="bottom-start">
@@ -35,7 +31,7 @@ const MainProfile = () => {
         <Portal>
           <PopoverContent
             w="200px"
-            bgColor="rgb( 10 10 10 / 0.8)"
+            bgColor="rgb( 10 10 10 / 0.9)"
             color="white"
             borderColor="white"
             ringColor="black"
@@ -52,14 +48,13 @@ const MainProfile = () => {
               </Link>
             </PopoverBody>
             <PopoverBody className="hover:bg-emerald-900">
-              <Link href={`/mypage/registermusic`}>
+              <Link href={`/mypage/uploadMusic`}>
                 <span className="cursor-pointer">Upload Music</span>
               </Link>
             </PopoverBody>
-            <PopoverBody className="hover:bg-emerald-900">
+            <PopoverFooter>
               <Subscribe />
-            </PopoverBody>
-            <PopoverFooter>This is the footer</PopoverFooter>
+            </PopoverFooter>
           </PopoverContent>
         </Portal>
       </Popover>
