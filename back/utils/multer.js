@@ -3,7 +3,18 @@ const path = require('path');
 
 const storage = multer.diskStorage({
   destination(req, file, done) {
-    done(null, 'public/upload');
+    const fileType = file.mimetype.split('/')[0];
+    switch (fileType) {
+      case 'audio':
+        done(null, 'public/upload/audio');
+        break;
+      case 'image':
+        done(null, 'public/upload/cover');
+        break;
+      default:
+        done(null, 'public/upload');
+        break;
+    }
   },
 
   filename(req, file, done) {

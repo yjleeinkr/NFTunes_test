@@ -168,7 +168,7 @@ const UploadContainer = () => {
 
   const uploadCover = async (file: FormData) => {
     try {
-      const { data } = await axios.post('http://localhost:4000/api/register/thumbnail', file);
+      const { data } = await axios.post('http://localhost:4000/api/upload/thumbnail', file);
       return data;
     } catch (e) {
       console.log(e);
@@ -177,13 +177,14 @@ const UploadContainer = () => {
 
   const uploadMusic = async (file: FormData) => {
     try {
-      const { data } = await axios.post('http://localhost:4000/api/register/music', file);
-      console.log(data);
+      const { data } = await axios.post('http://localhost:4000/api/upload/music_', file);
+      console.log('뮤직데이터', data);
       return data;
     } catch (e) {
       console.log(e);
     }
   };
+
   const upload = async (e: any) => {
     e.preventDefault();
     const formDataImg: FormData = new FormData();
@@ -196,6 +197,8 @@ const UploadContainer = () => {
     for (let value of formDataAudio.values()) {
       console.log('밸류2', value);
     }
+    console.log(formDataAudio);
+
     uploadCover(formDataImg);
     uploadMusic(formDataAudio);
   };

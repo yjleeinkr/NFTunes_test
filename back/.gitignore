@@ -7,3 +7,5 @@ mongodb-data
 public/upload/*.jpg
 public/upload/*png
 public/upload/*mp3
+public/upload/audio/*
+public/upload/cover/*
