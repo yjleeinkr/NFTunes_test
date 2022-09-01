@@ -5,7 +5,8 @@ const userSchema = mongoose.Schema({
   nickname: { type: String, required: true },
   email: { type: String, required: true },
   avatar: { type: String, required: false, default: 'http://localhost:4000/upload/user.png' },
-  subscribeTimestamp: { type: String, required: false },
+  subscribeStartTimestamp: { type: String, required: false },
+  subscribeEndTimestamp: { type: String, required: false },
   subscribeState: { type: Boolean, required: false, default: false },
 });
 

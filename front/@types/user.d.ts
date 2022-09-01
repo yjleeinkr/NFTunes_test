@@ -4,7 +4,8 @@ declare interface IUserInfo {
   nickname: string;
   email: string;
   avatar: string;
-  subscribeTimestamp: Date;
+  subscribeStartTimestamp: string;
+  subscribeEndTimestamp: string;
   subscribeState: boolean;
 }
 

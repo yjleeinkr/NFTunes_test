@@ -1,6 +1,12 @@
 import { useAppDispatch, useAppSelector } from '../../hooks/exhook';
 import useWeb3 from '../../hooks/useWeb3';
-import { userState, subscribeAsync } from '../user/userSlice';
+import {
+  userState,
+  subscribeTxAsync,
+  subscribeStateAsync,
+  subscribeRefundTxAsync,
+  subscribeCancelStateAsync,
+} from '../user/userSlice';
 import {
   Modal,
   ModalOverlay,
@@ -15,30 +21,24 @@ import {
 
 const Subscribe = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+  const { web3 } = useWeb3();
   const user = useAppSelector(userState);
   const subState = user.userInfo.subscribeState;
+  const subStartTime = user.userInfo.subscribeStartTimestamp;
   const { account } = useWeb3();
   console.log('account', account);
   const dispatch = useAppDispatch();
 
   const sub = async () => {
     try {
-      let result = await dispatch(subscribeAsync(account));
-      console.log('result임?', result);
-      await window.ethereum.request({
-        method: 'eth_sendTransaction',
-        params: [
-          {
-            from: result.payload.from,
-            to: result.payload.to,
-            value: result.payload.value,
-          },
-        ],
-      });
-      if (result.type === 'user/subscribe/fulfilled') {
-        console.log('확인');
-        if (user.userInfo.subscribeState) {
+      const txResult = await dispatch(subscribeTxAsync(account));
+      console.log('txresult', txResult);
+      const tx = await web3.eth.sendTransaction(txResult.payload);
+      console.log('fronttx', tx);
+
+      const stResult = await dispatch(subscribeStateAsync(account));
+      if (stResult.type === 'user/subscribeState/fulfilled') {
+        if (user.userInfo.subscribeState == true) {
           alert('구독 완료');
           window.location.href = '/';
         }
@@ -48,15 +48,55 @@ const Subscribe = () => {
     }
   };
 
+  const subRefund = async () => {
+    try {
+      const txResult = await dispatch(subscribeRefundTxAsync(account));
+      console.log('refundtx', txResult);
+      // cZZ
+
+      if (txResult.type === 'user/subscribeRefundTx/fulfilled') {
+        const stResult = await dispatch(subscribeCancelStateAsync(account));
+        if (stResult.type === 'user/subscribeCancelState/fulfilled') {
+          if (user.userInfo.subscribeState == false) {
+            alert('구독 취소 완료');
+            window.location.href = '/';
+          }
+        }
+      }
+    } catch (e) {
+      console.error(e);
+    }
+
+    // const now = new Date();
+    // const endDate = user.userInfo.subscribeEndTimestamp.toLocaleString();
+    // const date = endDate.split('. ').slice(0, 3).join('-');
+    // console.log(date);
+    // const nowW = new Date(date);
+    // console.log(nowW);
+
+    // const makeDate = date[0]date[1]date[2]
+    // console.log(makeDate);
+    // endDate.setDate(endDate.getTime() + 7)
+    // if (now <= endDate ) {
+  };
+
   return (
     <>
       {subState ? (
-        <span className="cursor-pointer">구독취소하기</span>
+        <span className="cursor-pointer" onClick={subRefund}>
+          구독취소하기
+        </span>
       ) : (
         <>
-          <span className="cursor-pointer" onClick={onOpen}>
-            구독하기
-          </span>
+          {subStartTime == null ? (
+            <span className="cursor-pointer" onClick={onOpen}>
+              구독하기
+            </span>
+          ) : (
+            <span className="cursor-pointer" onClick={onOpen}>
+              재구독하기
+            </span>
+          )}
           <Modal isCentered onClose={onClose} isOpen={isOpen} motionPreset="slideInBottom">
             <ModalOverlay />
             <ModalContent bgColor="gray" h="300">

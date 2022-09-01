@@ -86,7 +86,11 @@ const IndividualMenu = styled.li`
 `;
 
 const Mypage: React.FC<{ userInfo: IUserInfo }> = ({ userInfo }) => {
-  const date = userInfo.subscribeTimestamp;
+  const date = userInfo.subscribeStartTimestamp;
+
+  console.log(date);
+  // date.setDate(date.getTime() + 1);
+  // console.log('date', date);
   const modifyProfile = (account) => {};
   return (
     <div>
@@ -100,9 +104,6 @@ const Mypage: React.FC<{ userInfo: IUserInfo }> = ({ userInfo }) => {
               <h1>{userInfo.account}</h1>
               <h1>
                 <Subscribe />
-                {userInfo.subscribeState ? (
-                  <div>다음 결제일 :{/* <span>{userInfo.subscribeTimestamp}</span> */}</div>
-                ) : null}
               </h1>
             </ProfileInfo>
           </ProfileBox>

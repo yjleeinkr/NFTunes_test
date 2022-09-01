@@ -22,9 +22,31 @@ export const modifyProfile = createAsyncThunk('form/modify', async (account: str
   // const response: AxiosResponse
 });
 
-export const subscribeAsync = createAsyncThunk('user/subscribe', async (account: string) => {
-  const response: AxiosResponse = await axios.post('http://localhost:4000/api/subscribe/subscribe', { account });
-  console.log('hello', response.data);
+export const subscribeTxAsync = createAsyncThunk('user/subscribeTx', async (account: string) => {
+  const response: AxiosResponse = await axios.post('http://localhost:4000/api/subscribe/subscribeTx', { account });
+  console.log('slicesubTx', response.data);
+  return response.data;
+});
+
+export const subscribeStateAsync = createAsyncThunk('user/subscribeState', async (account: string) => {
+  const response: AxiosResponse = await axios.post('http://localhost:4000/api/subscribe/subscribeState', { account });
+  console.log('slicesubSt', response.data);
+  return response.data;
+});
+
+export const subscribeRefundTxAsync = createAsyncThunk('user/subscribeRefundTx', async (account: string) => {
+  const response: AxiosResponse = await axios.post('http://localhost:4000/api/subscribe/subscribeRefundTx', {
+    account,
+  });
+  console.log('slicesubReTx', response.data);
+  return response.data;
+});
+
+export const subscribeCancelStateAsync = createAsyncThunk('user/subscribeCancelState', async (account: string) => {
+  const response: AxiosResponse = await axios.post('http://localhost:4000/api/subscribe/subscribeCancelState', {
+    account,
+  });
+  console.log('slicesubCancel', response.data);
   return response.data;
 });
 
@@ -35,7 +57,8 @@ export const initialState: UserState = {
     nickname: '',
     email: '',
     avatar: '',
-    subscribeTimestamp: null,
+    subscribeStartTimestamp: null,
+    subscribeEndTimestamp: null,
     subscribeState: false,
   },
   isNew: 'untracked',
@@ -55,7 +78,8 @@ export const userSlice = createSlice({
       state.userInfo.email = '';
       state.userInfo.nickname = '';
       state.userInfo.avatar = '';
-      state.userInfo.subscribeTimestamp = null;
+      state.userInfo.subscribeStartTimestamp = null;
+      state.userInfo.subscribeEndTimestamp = null;
       state.userInfo.subscribeState = false;
     },
   },
@@ -96,13 +120,27 @@ export const userSlice = createSlice({
         state.userInfo.nickname = '';
         state.userInfo.avatar = '';
       })
-      .addCase(subscribeAsync.fulfilled, (state, action) => {
+      .addCase(subscribeTxAsync.fulfilled, (state, action) => {
         const { result } = action.payload;
         console.log('result', result);
-        state.userInfo.subscribeTimestamp = result.subscribeTimestamp;
+      })
+      .addCase(subscribeStateAsync.fulfilled, (state, action) => {
+        const { result } = action.payload;
+        console.log('result', result);
+        state.userInfo.subscribeStartTimestamp = result.subscribeStartTimestamp;
+        state.userInfo.subscribeEndTimestamp = result.subscribeEndTimestamp;
         state.userInfo.subscribeState = result.subscribeState;
         console.log('스테', state);
       })
+      .addCase(subscribeRefundTxAsync.fulfilled, (state, action) => {
+        const { result } = action.payload;
+        console.log('refundresult', result);
+      })
+      .addCase(subscribeCancelStateAsync.fulfilled, (state, action) => {
+        const { result } = action.payload;
+        console.log('cancelState', result);
+        state.userInfo.subscribeState = result.subscribeState;
+      });
   },
 });
 
