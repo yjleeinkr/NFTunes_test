@@ -7,3 +7,6 @@ mongodb-data
 public/upload/*.jpg
 public/upload/*png
 public/upload/*mp3
+public/upload/audio/*
+public/upload/cover/*
+/dapptube-9a0414dd7821.json
