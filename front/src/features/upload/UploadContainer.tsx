@@ -15,25 +15,31 @@ const Container = styled.div`
     font-family: 'Light';
     font-size: 20px;
   }
+  > p {
+    margin-top: 60px;
+    text-align: center;
+    color: #efefef;
+    font-family: 'Light';
+    font-size: 14px;
+  }
 `;
 
 const AlbumBox = styled.div`
   border: 1px solid #646464;
   border-radius: 5px;
   width: 100%;
-  height: 450px;
-  display: flex;
 
   > form {
     display: flex;
+    height: 450px;
     justify-content: space-around;
     align-items: center;
   }
 `;
 
 const UploadBox = styled.div`
-  width: 40%;
-  height: 400px;
+  width: 38%;
+  height: 440px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -45,26 +51,27 @@ const ImgUpload = styled.div`
   height: 70%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
 
   > h3 {
     color: #999999;
-    margin: 3px 10px;
+    margin: 0px 10px;
     align-self: flex-start;
-    font-size: 12px;
+    font-size: 14px;
+    font-family: 'Fly';
   }
 
   > img {
     width: 90%;
-    height: 70%;
+    height: 67%;
   }
 `;
 
 const UploadInput = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 80%;
+  width: 90%;
   height: 30px;
 
   > .file_name {
@@ -78,7 +85,7 @@ const UploadInput = styled.div`
   }
 
   > label {
-    color: #fff;
+    color: black;
     background-color: #999999;
     text-align: center;
     font-size: 70%;
@@ -89,6 +96,7 @@ const UploadInput = styled.div`
     align-items: center;
     justify-content: center;
     word-break: keep-all;
+    font-family: 'Fly';
   }
 
   > input[type='file'] {
@@ -112,50 +120,81 @@ const MusicUpload = styled.div`
 
   > h3 {
     color: #999999;
-    margin: 3px 10px;
+    margin: 0px 10px;
     align-self: flex-start;
-    font-size: 12px;
+    font-size: 14px;
+    font-family: 'Fly';
   }
 `;
 
 const AlbumInfo = styled.div`
-  background: skyblue;
-  width: 50%;
-  height: 400px;
-  > h1 {
-    padding: 20px;
+  border: 0.5px dashed #646464;
+  width: 60%;
+  height: 430px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  > h3 {
+    color: #999999;
+    padding: 0px 10px;
+    font-size: 14px;
     font-family: 'Fly';
-    color: #efefef;
   }
 `;
 
 const AlbumForm = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 12px;
+  color: #646464;
+  height: 80%;
+
   #submit {
-    box-shadow: inset 0px 0px 29px -20px #ffffff;
-    background: linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
-    background-color: #ededed;
-    border: 1px solid #dcdcdc;
-    display: block;
+    border: 0.5px solid #efefef;
+    display: inline-block;
     cursor: pointer;
-    color: #575757;
-    font-family: Arial;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 10px 35px;
-    font-family: 'Regular';
-    text-decoration: none;
-    text-shadow: 0px 1px 0px #ffffff;
-    margin: 0 auto;
+    color: #efefef;
+    font-family: 'Fly';
+    font-size: 14px;
+    width: 25%;
+    height: 50px;
+    align-self: flex-end;
+    margin-right: 10px;
   }
 
   #submit:hover {
     background: linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
-    background-color: #dfdfdf;
+    background-color: #efefef;
+    color: black;
   }
 
   #submit:active {
     position: relative;
     top: 1px;
+  }
+
+  > input[type='text'] {
+    background-color: transparent;
+    width: 94%;
+    height: 20%;
+    padding-left: 5px;
+    border-bottom: solid 0.5px #646464;
+  }
+
+  > input[type='text']:focus {
+    outline: none;
+  }
+
+  > textarea {
+    background-color: transparent;
+    width: 94%;
+    height: 80%;
+    outline: none;
+    padding: 10px 5px;
+    resize: none;
   }
 `;
 
@@ -177,7 +216,7 @@ const UploadContainer = () => {
 
   const uploadMusic = async (file: FormData) => {
     try {
-      const { data } = await axios.post('http://localhost:4000/api/upload/music_', file);
+      const { data } = await axios.post('http://localhost:4000/api/upload/music', file);
       console.log('뮤직데이터', data);
       return data;
     } catch (e) {
@@ -243,17 +282,17 @@ const UploadContainer = () => {
             </MusicUpload>
           </UploadBox>
           <AlbumInfo>
-            <h1>앨범 소개</h1>
+            <h3>3. 음원 소개</h3>
             <AlbumForm>
-              <input type="text" placeholder="작사가" />
-              <input type="text" placeholder="작곡가" />
+              <input type="text" placeholder="작사가를 입력해주세요" />
+              <input type="text" placeholder="작곡가를 입력해주세요" />
               <textarea cols={50} rows={8} placeholder="곡 소개"></textarea>
               <input type="submit" id="submit" value="업로드" />
             </AlbumForm>
           </AlbumInfo>
         </form>
       </AlbumBox>
-      <h1>Provide FLAC, WAV, ALAC, or AIFF for highest audio quality.</h1>
+      <p>Provide FLAC, WAV, ALAC, or AIFF for highest audio quality.</p>
     </Container>
   );
 };

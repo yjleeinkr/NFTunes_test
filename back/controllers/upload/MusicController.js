@@ -1,42 +1,32 @@
-const { google } = require('googleapis');
+const { Storage } = require('@google-cloud/storage');
+const storage = new Storage();
 
-const CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
-const CLIENT_SECRET = process.env.GOOGLE_CLIENT_PW;
-const REDIRECT_URI = 'https://developers.google.com/oauthplayground';
-const REFRESH_TOKEN = process.env.REFRESH_TOKEN;
-const fs = require('fs');
-const path = require('path');
-const oauth2Client = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI);
+const bucketName = 'dappmusic';
 
-oauth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
-
-const drive = google.drive({
-  version: 'v3',
-  auth: oauth2Client,
-});
-
-const uploadMusicFile = async (file) => {
-  console.log(file.path);
+const uploadMusic = async (req, res) => {
+  const fileName = `${req.file.filename}`;
+  let result;
   try {
-    const response = await drive.files.create({
-      requestBody: {
-        name: '1',
-        mimeType: 'audio/mpeg',
-      },
-      media: {
-        mimeType: 'audio/mpeg',
-        body: fs.createReadStream(file.path),
-      },
-    });
-    console.log(response.data);
-  } catch (e) {
-    console.log(e.message);
+    const filePath = req.file == undefined ? '' : `public/upload/audio/${fileName}`;
+
+    const options = {
+      destination: fileName,
+    };
+
+    await storage.bucket(bucketName).upload(filePath, options);
+    result = {
+      status: true,
+      msg: `${fileName} has been uploaded on ${bucketName}`,
+    };
+    res.json(result);
+  } catch (err) {
+    console.log(err);
+    result = {
+      status: false,
+      msg: `error msg - ${err.msg}`,
+    };
+    res.json(result);
   }
 };
-const Music = async (req, res) => {
-  const result = req.file;
-  console.log(' 음성파일입니다.', result);
-  uploadMusicFile(result);
-};
 
-module.exports = Music;
+module.exports = uploadMusic;
