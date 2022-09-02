@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { thumbnail } = require('../controllers/upload/thumbnailController');
-const uploadMusic = require('../controllers/upload/musicController');
+const thumbnail = require('../controllers/upload/ThumbnailController');
+const uploadMusic = require('../controllers/upload/MusicController');
 const { upload } = require('../utils/multer.js');
 
 router.post('/thumbnail', upload.single('cover'), thumbnail);
