@@ -33,4 +33,4 @@ const thumbnail = async (req, res) => {
   }
 };
 
-module.exports = { thumbnail };
+module.exports = thumbnail;
