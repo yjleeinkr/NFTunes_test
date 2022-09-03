@@ -3,17 +3,17 @@ import { AppState } from '../../modules/store';
 import axios, { AxiosResponse } from 'axios';
 
 export const joinAsync = createAsyncThunk('user/join', async (userInfo: IUserInfo) => {
-  const response: AxiosResponse = await axios.post('http://localhost:4000/api/user/join', { userInfo });
+  const response: AxiosResponse = await axios.post('https://nft-unes-test-be.vercel.app/api/user/join', { userInfo });
   return response.data;
 });
 
 export const loginAsync = createAsyncThunk('user/login', async (account: string) => {
-  const response: AxiosResponse = await axios.post('http://localhost:4000/api/user/login', { account });
+  const response: AxiosResponse = await axios.post('https://nft-unes-test-be.vercel.app/api/user/login', { account });
   return response.data;
 });
 
 export const checkNickAsync = createAsyncThunk('form/check', async (nickname: string) => {
-  const response: AxiosResponse = await axios.get('http://localhost:4000/api/user/getAllUserNick');
+  const response: AxiosResponse = await axios.get('https://nft-unes-test-be.vercel.app/api/user/getAllUserNick');
   const isValidNick = response.data.every((existedNick: string) => existedNick !== nickname);
   return isValidNick;
 });
@@ -23,29 +23,39 @@ export const modifyProfile = createAsyncThunk('form/modify', async (account: str
 });
 
 export const subscribeTxAsync = createAsyncThunk('user/subscribeTx', async (account: string) => {
-  const response: AxiosResponse = await axios.post('http://localhost:4000/api/subscribe/subscribeTx', { account });
+  const response: AxiosResponse = await axios.post('https://nft-unes-test-be.vercel.app/api/subscribe/subscribeTx', {
+    account,
+  });
   console.log('slicesubTx', response.data);
   return response.data;
 });
 
 export const subscribeStateAsync = createAsyncThunk('user/subscribeState', async (account: string) => {
-  const response: AxiosResponse = await axios.post('http://localhost:4000/api/subscribe/subscribeState', { account });
+  const response: AxiosResponse = await axios.post('https://nft-unes-test-be.vercel.app/api/subscribe/subscribeState', {
+    account,
+  });
   console.log('slicesubSt', response.data);
   return response.data;
 });
 
 export const subscribeRefundTxAsync = createAsyncThunk('user/subscribeRefundTx', async (account: string) => {
-  const response: AxiosResponse = await axios.post('http://localhost:4000/api/subscribe/subscribeRefundTx', {
-    account,
-  });
+  const response: AxiosResponse = await axios.post(
+    'https://nft-unes-test-be.vercel.app/api/subscribe/subscribeRefundTx',
+    {
+      account,
+    },
+  );
   console.log('slicesubReTx', response.data);
   return response.data;
 });
 
 export const subscribeCancelStateAsync = createAsyncThunk('user/subscribeCancelState', async (account: string) => {
-  const response: AxiosResponse = await axios.post('http://localhost:4000/api/subscribe/subscribeCancelState', {
-    account,
-  });
+  const response: AxiosResponse = await axios.post(
+    'https://nft-unes-test-be.vercel.app/api/subscribe/subscribeCancelState',
+    {
+      account,
+    },
+  );
   console.log('slicesubCancel', response.data);
   return response.data;
 });

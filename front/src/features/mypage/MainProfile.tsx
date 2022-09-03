@@ -24,7 +24,11 @@ const MainProfile = () => {
           <Flex w="70px" cursor="pointer" justify="space-between" align="center">
             <img
               className="w-10 h-10 rounded-full flex"
-              src={user.userInfo.avatar === '' ? 'http://localhost:4000/upload/user.png' : user.userInfo.avatar}
+              src={
+                user.userInfo.avatar === ''
+                  ? 'https://nft-unes-test-be.vercel.app/upload/user.png'
+                  : user.userInfo.avatar
+              }
             />
           </Flex>
         </PopoverTrigger>
