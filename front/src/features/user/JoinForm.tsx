@@ -23,6 +23,9 @@ const JoinForm = () => {
       nickname,
       email,
       avatar: '',
+      subscribeState: false,
+      subscribeStartTimestamp: '',
+      subscribeEndTimestamp: '',
     };
     dispatch(joinAsync(userInfo));
     setNickname('');

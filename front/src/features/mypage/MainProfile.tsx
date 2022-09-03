@@ -48,7 +48,7 @@ const MainProfile = () => {
               </Link>
             </PopoverBody>
             <PopoverBody className="hover:bg-emerald-900">
-              <Link href={`/mypage/uploadMusic`}>
+              <Link href={`/mypage/uploadmusic`}>
                 <span className="cursor-pointer">Upload Music</span>
               </Link>
             </PopoverBody>
