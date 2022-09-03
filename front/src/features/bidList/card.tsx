@@ -38,7 +38,7 @@ const CardText = styled.span`
   z-index: 3;
 `;
 
-export const Card = ({ url, nickname }) => {
+const Card = ({ url, nickname }) => {
   return (
     <>
       <CardWrap>
