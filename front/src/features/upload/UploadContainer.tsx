@@ -207,7 +207,11 @@ const UploadContainer = () => {
 
   const uploadCover = async (file: FormData) => {
     try {
-      const { data } = await axios.post('https://nft-unes-test-be.vercel.app/api/upload/thumbnail', file);
+      const { data } = await axios.post('https://nft-unes-test-be.vercel.app/api/upload/thumbnail', file, {
+        headers: {
+          'Access-Control-Allow-Origin': true,
+        },
+      });
       return data;
     } catch (e) {
       console.log(e);
@@ -216,7 +220,11 @@ const UploadContainer = () => {
 
   const uploadMusic = async (file: FormData) => {
     try {
-      const { data } = await axios.post('https://nft-unes-test-be.vercel.app/api/upload/music', file);
+      const { data } = await axios.post('https://nft-unes-test-be.vercel.app/api/upload/music', file, {
+        headers: {
+          'Access-Control-Allow-Origin': true,
+        },
+      });
       console.log('뮤직데이터', data);
       return data;
     } catch (e) {
