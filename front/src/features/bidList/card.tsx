@@ -38,7 +38,12 @@ const CardText = styled.span`
   z-index: 3;
 `;
 
-const Card = ({ url, nickname }) => {
+type CardProps = {
+  url: string;
+  nickname: string;
+};
+
+const Card: React.FC<CardProps> = ({ url, nickname }) => {
   return (
     <>
       <CardWrap>
