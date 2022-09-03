@@ -113,7 +113,7 @@ const Subscribe = () => {
               <ModalHeader color="white">Subscribe</ModalHeader>
               <ModalCloseButton />
               <ModalBody fontSize="2xl" color="white" fontWeight="bold" lineHeight="160%">
-                <p>매월 "1ETH"</p>
+                <p>매월 1ETH</p>
                 <p>여러 아티스트들의 다양한 음악을 들어보세요!</p>
               </ModalBody>
               <ModalFooter>
