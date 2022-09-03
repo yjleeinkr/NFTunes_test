@@ -10,3 +10,5 @@ public/upload/*mp3
 public/upload/audio/*
 public/upload/cover/*
 /dapptube-9a0414dd7821.json
+!public/upload/audio/.keep
+!public/upload/cover/.keep
