@@ -12,7 +12,7 @@ const mongoAtlasUrl = `mongodb+srv://team1:${MONGODB_PW}@nftmarket.skj99nw.mongo
 
 app.use(
   cors({
-    origin: ["*"],
+    origin: "*",
     credentials: true,
   })
 );
