@@ -43,7 +43,7 @@ type CardProps = {
   nickname: string;
 };
 
-const Card: React.FC<CardProps> = ({ url, nickname }) => {
+const Cards: React.FC<CardProps> = ({ url, nickname }) => {
   return (
     <>
       <CardWrap>
@@ -56,4 +56,4 @@ const Card: React.FC<CardProps> = ({ url, nickname }) => {
   );
 };
 
-export default Card;
+export default Cards;

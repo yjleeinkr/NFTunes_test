@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Card from '../../src/features/bidList/Card';
+import Cards from '../../src/features/bidList/Cards';
 import CardList from '../../src/features/bidList/CardList';
 import CardDetail from '../../src/features/bidList/CardDetail';
 
@@ -131,7 +131,7 @@ const bidList: NextPage = () => {
       ))}
       <CardList>
         {bidInfoList.map((v, i) => (
-          <Card url={v.coverUrl} key={i} nickname={v.nickname} />
+          <Cards url={v.coverUrl} key={i} nickname={v.nickname} />
         ))}
       </CardList>
     </OutBox>
