@@ -1,4 +1,4 @@
-import { configureStore, ThunkAction, Action, createStore } from '@reduxjs/toolkit';
+import { configureStore, ThunkAction, Action, createStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import { FC, ReactNode } from 'react';
 import { persistStore } from 'redux-persist';
@@ -34,6 +34,10 @@ const reducer = persistReducer(persistConfig, rootReducer);
 // 가져온 리듀서를 createStore() 해줌.
 export const store = configureStore({
   reducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 });
 
 export const persistor = persistStore(store);
